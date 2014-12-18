@@ -48,9 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'oscm.urls'
+ROOT_URLCONF = 'oscm_system.urls'
 
-WSGI_APPLICATION = 'oscm.wsgi.application'
+WSGI_APPLICATION = 'oscm_system.wsgi.application'
 
 
 # Database
