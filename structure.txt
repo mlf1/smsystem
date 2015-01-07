@@ -1,0 +1,43 @@
+.
+├── oscm
+│   ├── db.sqlite3
+│   ├── manage.py
+│   ├── oscm_app
+│   │   ├── admin.py
+│   │   ├── __init__.py
+│   │   ├── migrations
+│   │   │   └── __init__.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   └── views.py
+│   └── oscm_system
+│       ├── __init__.py
+│       ├── settings.py
+│       ├── urls.py
+│       └── wsgi.py
+├── oscm_doc
+│   ├── Change language activity diagram.uml
+│   ├── Evaluate the Permissions.odt
+│   ├── Evaluate the Permissions.png
+│   ├── Git Branching Workflow.odt
+│   ├── Login activity diagram for Admin.png
+│   ├── Login activity diagram for Admin.uml
+│   ├── Login activity diagram for Manager.png
+│   ├── Login activity diagram for Manager.uml
+│   ├── Login activity diagram for User.png
+│   ├── Login activity diagram for User.uml
+│   ├── Login Process for Admin.odt
+│   ├── Login Process for Manager.odt
+│   ├── Login Process for User.odt
+│   ├── Logout activity diagram.png
+│   ├── Logout activity diagram.uml
+│   ├── Permissions Roles table.pdf
+│   ├── Process for change language.odt
+│   ├── Process for logout.odt
+│   ├── Process for register user.odt
+│   └── proj_f_marilly.odt
+├── readme.txt
+├── requirements.txt
+└── structure.txt
+
+5 directories, 35 files
