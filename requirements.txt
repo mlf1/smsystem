@@ -1,0 +1,4 @@
+Django==1.7.3
+django-extensions==1.4.9
+pipdeptree==0.4.2
+six==1.8.0
