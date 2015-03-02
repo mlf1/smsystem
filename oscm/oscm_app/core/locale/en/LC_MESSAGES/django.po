@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-02 18:02+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: oscm_app/admin.py:21
+msgid "oscm_admin_headerOfPersonalInfo"
+msgstr "Personal information"
+
+#: oscm_app/admin.py:23
+msgid "oscm_admin_headerOfCommonSettings"
+msgstr "Common settings"
+
+#: oscm_app/admin.py:25
+msgid "oscm_admin_headerOfPermissions"
+msgstr "Permissions"
+
+#: oscm_app/admin.py:27
+msgid "oscm_admin_headerOfUserSettings"
+msgstr "User settings"
+
+#: oscm_app/admin.py:29
+msgid "oscm_admin_headerOfImportantDates"
+msgstr "Important dates"
+
+#: oscm_app/authentication/customAuthUserForm.py:16
+#: oscm_app/authentication/customAuthUserForm.py:84
+msgid "oscm_admin_passwordLabelOfUser"
+msgstr "Password"
+
+#: oscm_app/authentication/customAuthUserForm.py:19
+msgid "oscm_admin_passwordConfirmationLabelOfUser"
+msgstr "Password confirmation"
+
+#: oscm_app/authentication/customAuthUserForm.py:19
+msgid "oscm_admin_helpTextPassword2fUser"
+msgstr "Enter the same password as above, for verification."
+
+#: oscm_app/authentication/customAuthUserForm.py:35
+#, python-format
+msgid "Duplicate username: %(value)s"
+msgstr "A user with the '%(value)s' username already exists!!"
+
+#: oscm_app/authentication/customAuthUserForm.py:47
+#, python-format
+msgid "Invalid passwords: %(password1)s, %(password2)s"
+msgstr ""
+"The two password fields ['%(password1)s' and '%(password2)s'] didn't match!!"
+
+#: oscm_app/authentication/customAuthUserForm.py:68
+#, python-format
+msgid "Invalid Ldap authentication: %(value)s"
+msgstr "The Ldap authentication ['%(value)s'] doesn't yet impletemented!!"
+
+#: oscm_app/authentication/customAuthUserForm.py:72
+#, python-format
+msgid "Invalid authentication: %(value)s"
+msgstr "This authentication ['%(value)s'] doesn't exist!!"
+
+#: oscm_app/authentication/customAuthUserForm.py:84
+msgid "oscm_admin_helpTextPasswordOfUser"
+msgstr ""
+"Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"password/\">this "
+"form</a>."
+
+#: oscm_app/authentication/customAuthUserManager.py:14
+#, python-format
+msgid "Missing email address: %(value)s"
+msgstr ""
+"Users must have an email address and not an empty %(value)s email address!!"
+
+#: oscm_app/authentication/customAuthUserManager.py:19
+#, python-format
+msgid "Missing username: %(value)s"
+msgstr "Users must have an username and not an empty %(value)s username!!"
+
+#: oscm_app/authentication/customAuthUserManager.py:24
+#, python-format
+msgid "Missing role: %(value)s"
+msgstr "Users must have a specific role and not an empty %(value)s role!!"
+
+#: oscm_app/authentication/customAuthUserManager.py:29
+#, python-format
+msgid "Missing language: %(value)s"
+msgstr ""
+"Users must have a specific language and not an empty %(value)s language!!"
+
+#: oscm_app/core/templates/admin/auth/user/add_form.html:6
+msgid "oscm_admin_headerOfAddForm"
+msgstr ""
+"First, enter a username, an email address and password, choose a role, a "
+"language and an authentication mode. Then, you'll be able to edit more user "
+"options."
+
+#: oscm_app/core/templates/admin/auth/user/add_form.html:8
+msgid "oscm_admin_popupHeaderOfAddForm"
+msgstr "Enter a username and password."
+
+#: oscm_app/core/templates/admin/base_site.html:4
+#: oscm_app/core/templates/admin/base_site.html:9
+msgid "oscm_admin_headerOfAdmin"
+msgstr "OSCM Admin"
+
+#: oscm_app/customAuthUser.py:24
+msgid "oscm_admin_usernameValidatorOfUser"
+msgstr "Only alphanumeric characters are allowed."
+
+#: oscm_app/customAuthUser.py:28
+msgid "oscm_admin_usernameOfUser"
+msgstr "username"
+
+#: oscm_app/customAuthUser.py:30
+msgid "oscm_admin_emailAddressOfUser"
+msgstr "email address"
+
+#: oscm_app/customAuthUser.py:32
+msgid "oscm_admin_firstNameOfUser"
+msgstr "first name"
+
+#: oscm_app/customAuthUser.py:34
+msgid "oscm_admin_lastNameOfUser"
+msgstr "last name"
+
+#: oscm_app/customAuthUser.py:36
+msgid "oscm_admin_dateJoinedOfUser"
+msgstr "date joined"
+
+#: oscm_app/customAuthUser.py:41
+msgid "oscm_admin_activeStatusOfUser"
+msgstr "active status"
+
+#: oscm_app/customAuthUser.py:41
+msgid "oscm_admin_helpTextActiveStatusOfUser"
+msgstr ""
+"Designates whether this user should be treated as 'active'. Unselect this "
+"instead of deleting accounts."
+
+#: oscm_app/customAuthUser.py:46
+msgid "oscm_admin_staffStatusOfUser"
+msgstr "staff status"
+
+#: oscm_app/customAuthUser.py:46
+msgid "oscm_admin_helpTextStaffStatusOfUser"
+msgstr "Designates whether the user can log into this admin 'site'."
+
+#: oscm_app/customAuthUser.py:65
+msgid "oscm_admin_roleOfUser"
+msgstr "role"
+
+#: oscm_app/customAuthUser.py:68
+msgid "oscm_admin_helpTextRoleOfUser"
+msgstr ""
+"You must choose the role for a specific user between varieties of given "
+"roles."
+
+#: oscm_app/customAuthUser.py:71
+msgid "oscm_admin_languageOfUser"
+msgstr "language"
+
+#: oscm_app/customAuthUser.py:74
+msgid "oscm_admin_helpTextLanguageOfUser"
+msgstr ""
+"You can choose the language for a specific user between varieties of given "
+"languages."
+
+#: oscm_app/customAuthUser.py:77
+msgid "oscm_admin_authenticationModeOfApplication"
+msgstr "authentication mode"
+
+#: oscm_app/customAuthUser.py:80
+msgid "oscm_admin_helpTextAuthenticationModeOfApplication"
+msgstr "There is just the Django authentication."
+
+#: oscm_app/customAuthUser.py:90
+msgid "oscm_admin_headerOfOSCMUser"
+msgstr "OSCM user"
+
+#: oscm_app/customAuthUser.py:91
+msgid "oscm_admin_headerOfOSCMUsers"
+msgstr "OSCM users"
+
+#: oscm_system/settings.py:80
+msgid "German"
+msgstr "German"
+
+#: oscm_system/settings.py:81
+msgid "English"
+msgstr "English"
+
+#: oscm_system/settings.py:82
+msgid "French"
+msgstr "French"
