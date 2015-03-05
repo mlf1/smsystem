@@ -6,6 +6,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import ugettext as _
 
 from oscm_app.customAuthUser import CustomAuthUser
+from .customReadOnlyPasswordHashWidget import CustomReadOnlyPasswordHashWidget
 
 
 class CustomAuthUserCreationForm(forms.ModelForm):
@@ -81,7 +82,7 @@ class CustomAuthUserChangeForm(forms.ModelForm):
 	"""
 	Raw passwords are not stored, so there is no way to see this user's password, but you can change the password using <a href=\"password/\"> this form</a>. 
 	"""
-	password = ReadOnlyPasswordHashField(label=_('oscm_admin_passwordLabelOfUser'), help_text =_('oscm_admin_helpTextPasswordOfUser'))
+	password = ReadOnlyPasswordHashField(label=_('oscm_admin_passwordLabelOfUser'), help_text =_('oscm_admin_helpTextPasswordOfUser'), widget=CustomReadOnlyPasswordHashWidget)
 
 	class Meta:
 		model = CustomAuthUser

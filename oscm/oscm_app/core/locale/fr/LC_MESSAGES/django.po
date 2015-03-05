@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 09:16+0100\n"
+"POT-Creation-Date: 2015-03-05 17:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,60 +20,64 @@ msgstr ""
 
 #: oscm_app/admin.py:21
 msgid "oscm_admin_headerOfPersonalInfo"
-msgstr "Administration de OSCM"
+msgstr "Informations personnelles"
 
 #: oscm_app/admin.py:23
 msgid "oscm_admin_headerOfCommonSettings"
-msgstr "Paramètres de l'utilisateur"
+msgstr "Paramètres communs"
 
 #: oscm_app/admin.py:25
 msgid "oscm_admin_headerOfPermissions"
-msgstr "Administration de OSCM"
+msgstr "Permissions"
 
 #: oscm_app/admin.py:27
 msgid "oscm_admin_headerOfUserSettings"
-msgstr "Paramètres de l'utilisateur"
+msgstr "Préférences de l'utilisateur"
 
 #: oscm_app/admin.py:29
 msgid "oscm_admin_headerOfImportantDates"
-msgstr "Administration de OSCM"
+msgstr "Dates importantes"
 
-#: oscm_app/authentication/customAuthUserForm.py:16
-#: oscm_app/authentication/customAuthUserForm.py:84
+#: oscm_app/authentication/customAuthUserForm.py:17
+#: oscm_app/authentication/customAuthUserForm.py:85
 msgid "oscm_admin_passwordLabelOfUser"
-msgstr "Rôle"
+msgstr "Mot de passe"
 
-#: oscm_app/authentication/customAuthUserForm.py:19
+#: oscm_app/authentication/customAuthUserForm.py:20
 msgid "oscm_admin_passwordConfirmationLabelOfUser"
-msgstr "Rôle"
+msgstr "Confirmation du mot de passe"
 
-#: oscm_app/authentication/customAuthUserForm.py:19
+#: oscm_app/authentication/customAuthUserForm.py:20
 msgid "oscm_admin_helpTextPassword2fUser"
 msgstr "Rôle"
 
-#: oscm_app/authentication/customAuthUserForm.py:35
+#: oscm_app/authentication/customAuthUserForm.py:36
 #, python-format
 msgid "Duplicate username: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/customAuthUserForm.py:47
+#: oscm_app/authentication/customAuthUserForm.py:48
 #, python-format
 msgid "Invalid passwords: %(password1)s, %(password2)s"
 msgstr ""
 
-#: oscm_app/authentication/customAuthUserForm.py:68
+#: oscm_app/authentication/customAuthUserForm.py:69
 #, python-format
 msgid "Invalid Ldap authentication: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/customAuthUserForm.py:72
+#: oscm_app/authentication/customAuthUserForm.py:73
 #, python-format
 msgid "Invalid authentication: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/customAuthUserForm.py:84
+#: oscm_app/authentication/customAuthUserForm.py:85
 msgid "oscm_admin_helpTextPasswordOfUser"
-msgstr "Rôle"
+msgstr ""
+"<strong>Attention: </strong>Les mots de passe ne sont pas enregistrés en "
+"clair, ce qui ne permet pas d'afficher le mot de passe de cet utilisateur, "
+"mais il est possible de le changer en utilisant <a href=\"password/\">ce "
+"formulaire</a>."
 
 #: oscm_app/authentication/customAuthUserManager.py:14
 #, python-format
@@ -94,6 +98,15 @@ msgstr ""
 #, python-format
 msgid "Missing language: %(value)s"
 msgstr ""
+
+#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:22
+msgid "oscm_admin_noPasswordSet"
+msgstr "Aucun mot de passe défini."
+
+#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:27
+msgid "oscm_admin_invalidPasswordFormatOrUnknownHashingAlgorithm"
+msgstr ""
+"Format de mot de passe non valide ou algorithme de hachage non reconnu."
 
 #: oscm_app/core/templates/admin/auth/user/add_form.html:6
 msgid "oscm_admin_headerOfAddForm"
