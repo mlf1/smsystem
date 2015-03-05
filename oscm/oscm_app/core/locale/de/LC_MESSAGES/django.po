@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-02 18:02+0100\n"
+"POT-Creation-Date: 2015-03-05 09:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,20 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: oscm_app/admin.py:21
-#, fuzzy
-#| msgid "oscm_admin_headerOfAdmin"
 msgid "oscm_admin_headerOfPersonalInfo"
 msgstr "OSCM Verwaltung"
 
 #: oscm_app/admin.py:23
-#, fuzzy
-#| msgid "oscm_admin_headerOfUserSettings"
 msgid "oscm_admin_headerOfCommonSettings"
 msgstr "Benutzereinstellungen"
 
 #: oscm_app/admin.py:25
-#, fuzzy
-#| msgid "oscm_admin_headerOfAdmin"
 msgid "oscm_admin_headerOfPermissions"
 msgstr "OSCM Verwaltung"
 
@@ -41,27 +35,19 @@ msgid "oscm_admin_headerOfUserSettings"
 msgstr "Benutzereinstellungen"
 
 #: oscm_app/admin.py:29
-#, fuzzy
-#| msgid "oscm_admin_headerOfAdmin"
 msgid "oscm_admin_headerOfImportantDates"
 msgstr "OSCM Verwaltung"
 
 #: oscm_app/authentication/customAuthUserForm.py:16
 #: oscm_app/authentication/customAuthUserForm.py:84
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_passwordLabelOfUser"
 msgstr "Rolle"
 
 #: oscm_app/authentication/customAuthUserForm.py:19
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_passwordConfirmationLabelOfUser"
 msgstr "Rolle"
 
 #: oscm_app/authentication/customAuthUserForm.py:19
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_helpTextPassword2fUser"
 msgstr "Rolle"
 
@@ -86,8 +72,6 @@ msgid "Invalid authentication: %(value)s"
 msgstr ""
 
 #: oscm_app/authentication/customAuthUserForm.py:84
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_helpTextPasswordOfUser"
 msgstr "Rolle"
 
@@ -112,14 +96,10 @@ msgid "Missing language: %(value)s"
 msgstr ""
 
 #: oscm_app/core/templates/admin/auth/user/add_form.html:6
-#, fuzzy
-#| msgid "oscm_admin_headerOfAdmin"
 msgid "oscm_admin_headerOfAddForm"
 msgstr "OSCM Verwaltung"
 
 #: oscm_app/core/templates/admin/auth/user/add_form.html:8
-#, fuzzy
-#| msgid "oscm_admin_headerOfAdmin"
 msgid "oscm_admin_popupHeaderOfAddForm"
 msgstr "OSCM Verwaltung"
 
@@ -129,62 +109,42 @@ msgid "oscm_admin_headerOfAdmin"
 msgstr "OSCM Verwaltung"
 
 #: oscm_app/customAuthUser.py:24
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_usernameValidatorOfUser"
 msgstr "Rolle"
 
 #: oscm_app/customAuthUser.py:28
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_usernameOfUser"
 msgstr "Rolle"
 
 #: oscm_app/customAuthUser.py:30
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_emailAddressOfUser"
 msgstr "Rolle"
 
 #: oscm_app/customAuthUser.py:32
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_firstNameOfUser"
 msgstr "Rolle"
 
 #: oscm_app/customAuthUser.py:34
-#, fuzzy
-#| msgid "oscm_admin_languageOfUser"
 msgid "oscm_admin_lastNameOfUser"
 msgstr "Sprache"
 
 #: oscm_app/customAuthUser.py:36
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_dateJoinedOfUser"
-msgstr "Rolle"
+msgstr "erstellungsdatum"
 
 #: oscm_app/customAuthUser.py:41
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_activeStatusOfUser"
 msgstr "Rolle"
 
 #: oscm_app/customAuthUser.py:41
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_helpTextActiveStatusOfUser"
 msgstr "Rolle"
 
 #: oscm_app/customAuthUser.py:46
-#, fuzzy
-#| msgid "oscm_admin_languageOfUser"
 msgid "oscm_admin_staffStatusOfUser"
 msgstr "Sprache"
 
 #: oscm_app/customAuthUser.py:46
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_helpTextStaffStatusOfUser"
 msgstr "Rolle"
 
@@ -193,8 +153,6 @@ msgid "oscm_admin_roleOfUser"
 msgstr "Rolle"
 
 #: oscm_app/customAuthUser.py:68
-#, fuzzy
-#| msgid "oscm_admin_roleOfUser"
 msgid "oscm_admin_helpTextRoleOfUser"
 msgstr "Rolle"
 
@@ -203,14 +161,10 @@ msgid "oscm_admin_languageOfUser"
 msgstr "Sprache"
 
 #: oscm_app/customAuthUser.py:74
-#, fuzzy
-#| msgid "oscm_admin_languageOfUser"
 msgid "oscm_admin_helpTextLanguageOfUser"
 msgstr "Sprache"
 
 #: oscm_app/customAuthUser.py:77
-#, fuzzy
-#| msgid "oscm_admin_headerOfAdmin"
 msgid "oscm_admin_authenticationModeOfApplication"
 msgstr "OSCM Verwaltung"
 
@@ -219,14 +173,10 @@ msgid "oscm_admin_helpTextAuthenticationModeOfApplication"
 msgstr ""
 
 #: oscm_app/customAuthUser.py:90
-#, fuzzy
-#| msgid "oscm_admin_headerOfUserSettings"
 msgid "oscm_admin_headerOfOSCMUser"
 msgstr "Benutzereinstellungen"
 
 #: oscm_app/customAuthUser.py:91
-#, fuzzy
-#| msgid "oscm_admin_headerOfUserSettings"
 msgid "oscm_admin_headerOfOSCMUsers"
 msgstr "Benutzereinstellungen"
 
@@ -241,8 +191,3 @@ msgstr "Englisch"
 #: oscm_system/settings.py:82
 msgid "French"
 msgstr "Französisch"
-
-#, fuzzy
-#~| msgid "oscm_admin_headerOfUserSettings"
-#~ msgid "oscm_admin_headerOfUsersSettings"
-#~ msgstr "Benutzereinstellungen"
