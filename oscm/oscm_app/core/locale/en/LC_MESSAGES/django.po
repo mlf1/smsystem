@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 09:16+0100\n"
+"POT-Creation-Date: 2015-03-05 17:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,46 +37,46 @@ msgstr "User settings"
 msgid "oscm_admin_headerOfImportantDates"
 msgstr "Important dates"
 
-#: oscm_app/authentication/customAuthUserForm.py:16
-#: oscm_app/authentication/customAuthUserForm.py:84
+#: oscm_app/authentication/customAuthUserForm.py:17
+#: oscm_app/authentication/customAuthUserForm.py:85
 msgid "oscm_admin_passwordLabelOfUser"
 msgstr "Password"
 
-#: oscm_app/authentication/customAuthUserForm.py:19
+#: oscm_app/authentication/customAuthUserForm.py:20
 msgid "oscm_admin_passwordConfirmationLabelOfUser"
 msgstr "Password confirmation"
 
-#: oscm_app/authentication/customAuthUserForm.py:19
+#: oscm_app/authentication/customAuthUserForm.py:20
 msgid "oscm_admin_helpTextPassword2fUser"
 msgstr "Enter the same password as above, for verification."
 
-#: oscm_app/authentication/customAuthUserForm.py:35
+#: oscm_app/authentication/customAuthUserForm.py:36
 #, python-format
 msgid "Duplicate username: %(value)s"
 msgstr "A user with the '%(value)s' username already exists!!"
 
-#: oscm_app/authentication/customAuthUserForm.py:47
+#: oscm_app/authentication/customAuthUserForm.py:48
 #, python-format
 msgid "Invalid passwords: %(password1)s, %(password2)s"
 msgstr ""
 "The two password fields ['%(password1)s' and '%(password2)s'] didn't match!!"
 
-#: oscm_app/authentication/customAuthUserForm.py:68
+#: oscm_app/authentication/customAuthUserForm.py:69
 #, python-format
 msgid "Invalid Ldap authentication: %(value)s"
 msgstr "The Ldap authentication ['%(value)s'] doesn't yet impletemented!!"
 
-#: oscm_app/authentication/customAuthUserForm.py:72
+#: oscm_app/authentication/customAuthUserForm.py:73
 #, python-format
 msgid "Invalid authentication: %(value)s"
 msgstr "This authentication ['%(value)s'] doesn't exist!!"
 
-#: oscm_app/authentication/customAuthUserForm.py:84
+#: oscm_app/authentication/customAuthUserForm.py:85
 msgid "oscm_admin_helpTextPasswordOfUser"
 msgstr ""
-"Raw passwords are not stored, so there is no way to see this user's "
-"password, but you can change the password using <a href=\"password/\">this "
-"form</a>."
+"<strong>Warning: </strong>Raw passwords are not stored, so there is no way "
+"to see this user's password, but you can change the password using <a href="
+"\"password/\">this form</a>."
 
 #: oscm_app/authentication/customAuthUserManager.py:14
 #, python-format
@@ -99,6 +99,14 @@ msgstr "Users must have a specific role and not an empty %(value)s role!!"
 msgid "Missing language: %(value)s"
 msgstr ""
 "Users must have a specific language and not an empty %(value)s language!!"
+
+#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:22
+msgid "oscm_admin_noPasswordSet"
+msgstr "No password set."
+
+#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:27
+msgid "oscm_admin_invalidPasswordFormatOrUnknownHashingAlgorithm"
+msgstr "Invalid password format or unknown hashing algorithm."
 
 #: oscm_app/core/templates/admin/auth/user/add_form.html:6
 msgid "oscm_admin_headerOfAddForm"
