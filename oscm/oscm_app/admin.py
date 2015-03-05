@@ -36,6 +36,7 @@ class UserAdmin(OriginalUserAdmin):
 		),
 	)
 	list_display = ('username', 'email', 'role', 'language', 'authentication_mode', 'is_staff')
+	list_display_links = ('username', 'email', 'role', 'language', 'authentication_mode', 'is_staff')
 	list_filter = ('username', 'role', 'language')
 	readonly_fields = ('last_login', 'date_joined')
 	search_fields = ('username', 'email', 'role', 'language')
