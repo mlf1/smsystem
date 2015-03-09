@@ -8,6 +8,7 @@ from django.core.validators import RegexValidator
 from django.contrib.auth.models import AbstractBaseUser
 
 from .utils import getAttr
+from .constants import (ADMIN_FIRST_NAME, ADMIN_LAST_NAME)
 from oscm_app.authentication.customAuthUserManager import CustomAuthUserManager
 
 
@@ -94,7 +95,13 @@ class CustomAuthUser(AbstractBaseUser, PermissionsMixin):
 		"""
 		Returns the first_name plus the last_name, with a space in between.
 		"""
-		full_name = '%s %s' % (self.first_name, self.last_name)
+		firstname = self.first_name
+		if not firstname:
+			firstname = ADMIN_FIRST_NAME
+		lastname = self.last_name
+		if not lastname:
+			lastname = ADMIN_LAST_NAME
+		full_name = '%s %s' % (firstname, lastname)
 		return full_name.strip()
 
 	def get_short_name(self):

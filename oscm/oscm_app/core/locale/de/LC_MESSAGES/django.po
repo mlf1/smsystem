@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 17:16+0100\n"
+"POT-Creation-Date: 2015-03-09 13:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,75 +120,101 @@ msgstr "OSCM Verwaltung"
 msgid "oscm_admin_headerOfAdmin"
 msgstr "OSCM Verwaltung"
 
-#: oscm_app/customAuthUser.py:24
+#: oscm_app/core/templates/admin/object_history.html:6
+msgid "oscm_admin_home"
+msgstr "Anfang"
+
+#: oscm_app/core/templates/admin/object_history.html:10
+msgid "oscm_admin_historyOfUser"
+msgstr "Geschichte"
+
+#: oscm_app/core/templates/admin/object_history.html:22
+msgid "oscm_admin_dateAndTimeOfHistory"
+msgstr "Datum/Zeit"
+
+#: oscm_app/core/templates/admin/object_history.html:23
+msgid "oscm_admin_userOfHistory"
+msgstr "Benutzer"
+
+#: oscm_app/core/templates/admin/object_history.html:24
+msgid "oscm_admin_actionOfHistory"
+msgstr "Aktion"
+
+#: oscm_app/core/templates/admin/object_history.html:38
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: oscm_app/customAuthUser.py:25
 msgid "oscm_admin_usernameValidatorOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:28
+#: oscm_app/customAuthUser.py:29
 msgid "oscm_admin_usernameOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:30
+#: oscm_app/customAuthUser.py:31
 msgid "oscm_admin_emailAddressOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:32
+#: oscm_app/customAuthUser.py:33
 msgid "oscm_admin_firstNameOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:34
+#: oscm_app/customAuthUser.py:35
 msgid "oscm_admin_lastNameOfUser"
 msgstr "Sprache"
 
-#: oscm_app/customAuthUser.py:36
+#: oscm_app/customAuthUser.py:37
 msgid "oscm_admin_dateJoinedOfUser"
 msgstr "erstellungsdatum"
 
-#: oscm_app/customAuthUser.py:41
+#: oscm_app/customAuthUser.py:42
 msgid "oscm_admin_activeStatusOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:41
+#: oscm_app/customAuthUser.py:42
 msgid "oscm_admin_helpTextActiveStatusOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:46
+#: oscm_app/customAuthUser.py:47
 msgid "oscm_admin_staffStatusOfUser"
 msgstr "Sprache"
 
-#: oscm_app/customAuthUser.py:46
+#: oscm_app/customAuthUser.py:47
 msgid "oscm_admin_helpTextStaffStatusOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:65
+#: oscm_app/customAuthUser.py:66
 msgid "oscm_admin_roleOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:68
+#: oscm_app/customAuthUser.py:69
 msgid "oscm_admin_helpTextRoleOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:71
+#: oscm_app/customAuthUser.py:72
 msgid "oscm_admin_languageOfUser"
 msgstr "Sprache"
 
-#: oscm_app/customAuthUser.py:74
+#: oscm_app/customAuthUser.py:75
 msgid "oscm_admin_helpTextLanguageOfUser"
 msgstr "Sprache"
 
-#: oscm_app/customAuthUser.py:77
+#: oscm_app/customAuthUser.py:78
 msgid "oscm_admin_authenticationModeOfApplication"
 msgstr "OSCM Verwaltung"
 
-#: oscm_app/customAuthUser.py:80
+#: oscm_app/customAuthUser.py:81
 msgid "oscm_admin_helpTextAuthenticationModeOfApplication"
 msgstr ""
 
-#: oscm_app/customAuthUser.py:90
+#: oscm_app/customAuthUser.py:91
 msgid "oscm_admin_headerOfOSCMUser"
 msgstr "Benutzereinstellungen"
 
-#: oscm_app/customAuthUser.py:91
+#: oscm_app/customAuthUser.py:92
 msgid "oscm_admin_headerOfOSCMUsers"
 msgstr "Benutzereinstellungen"
 
