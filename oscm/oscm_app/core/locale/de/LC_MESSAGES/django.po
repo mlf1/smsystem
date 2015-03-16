@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-15 20:06+0100\n"
+"POT-Creation-Date: 2015-03-16 17:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: oscm_app/admin.py:22
+#: oscm_app/admin.py:24
 msgid "oscm_admin_headerOfPersonalInfo"
 msgstr "Persönliche Informationen"
 
-#: oscm_app/admin.py:26
+#: oscm_app/admin.py:28
 msgid "oscm_admin_headerOfCommonSettings"
 msgstr "Allgemeinen Einstellungen"
 
-#: oscm_app/admin.py:28
+#: oscm_app/admin.py:30
 msgid "oscm_admin_headerOfPermissions"
 msgstr "Berechtigungen"
 
-#: oscm_app/admin.py:34
+#: oscm_app/admin.py:36
 msgid "oscm_admin_headerOfUserSettings"
 msgstr "Benutzereinstellungen"
 
-#: oscm_app/admin.py:37
+#: oscm_app/admin.py:39
 msgid "oscm_admin_headerOfImportantDates"
 msgstr "Wichtige Daten"
 
@@ -74,36 +74,37 @@ msgstr ""
 #: oscm_app/authentication/customAuthUserForm.py:103
 msgid "oscm_admin_helpTextPasswordOfUser"
 msgstr ""
-"<strong>Vorsicht: </strong>Die Passwörter werden nicht als Klartext "
-"gespeichert, somit gibt es keine Möglichkeit das Passwort dieses Benutzers "
-"anzuschauen, allerdings kann das Passwort über <a href=\"password/\">dieses "
-"Formular</a> geändert werden."
+"<span id=\"passwordAdminHelpBlock\" class=\"help-block\"><strong>Info: </"
+"strong>Die Passwörter werden nicht als Klartext gespeichert, somit gibt es "
+"keine Möglichkeit das Passwort dieses Benutzers anzuschauen, allerdings kann "
+"das Passwort über <a href=\"password/\">dieses Formular</a> geändert werden."
+"</span>"
 
-#: oscm_app/authentication/customAuthUserManager.py:25
+#: oscm_app/authentication/customAuthUserManager.py:28
 #, python-format
 msgid "Missing email address: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/customAuthUserManager.py:31
+#: oscm_app/authentication/customAuthUserManager.py:34
 #, python-format
 msgid "Missing username: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/customAuthUserManager.py:37
+#: oscm_app/authentication/customAuthUserManager.py:40
 #, python-format
 msgid "Missing role: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/customAuthUserManager.py:43
+#: oscm_app/authentication/customAuthUserManager.py:46
 #, python-format
 msgid "Missing language: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:25
+#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:26
 msgid "oscm_admin_noPasswordSet"
 msgstr "Kein Passwort gesetzt."
 
-#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:32
+#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:33
 msgid "oscm_admin_invalidPasswordFormatOrUnknownHashAlgo"
 msgstr "Ungültiges Passwortformat oder unbekannter Hashing-Algorithmus."
 
@@ -146,79 +147,79 @@ msgstr ""
 "Dieses Objekt hat keine Änderungsgeschichte. Es wurde möglicherweise nicht "
 "über diese Verwaltungsseiten angelegt."
 
-#: oscm_app/customAuthUser.py:34
+#: oscm_app/customAuthUser.py:31
 msgid "oscm_admin_usernameValidatorOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:39
+#: oscm_app/customAuthUser.py:36
 msgid "oscm_admin_usernameOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:45
+#: oscm_app/customAuthUser.py:42
 msgid "oscm_admin_emailAddressOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:50
+#: oscm_app/customAuthUser.py:47
 msgid "oscm_admin_firstNameOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:56
+#: oscm_app/customAuthUser.py:53
 msgid "oscm_admin_lastNameOfUser"
 msgstr "Sprache"
 
-#: oscm_app/customAuthUser.py:62
+#: oscm_app/customAuthUser.py:59
 msgid "oscm_admin_dateJoinedOfUser"
 msgstr "erstellungsdatum"
 
-#: oscm_app/customAuthUser.py:70
+#: oscm_app/customAuthUser.py:67
 msgid "oscm_admin_activeStatusOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:73
+#: oscm_app/customAuthUser.py:70
 msgid "oscm_admin_helpTextActiveStatusOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:79
+#: oscm_app/customAuthUser.py:76
 msgid "oscm_admin_staffStatusOfUser"
 msgstr "Sprache"
 
-#: oscm_app/customAuthUser.py:82
+#: oscm_app/customAuthUser.py:79
 msgid "oscm_admin_helpTextStaffStatusOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:101
+#: oscm_app/customAuthUser.py:98
 msgid "oscm_admin_roleOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:104
+#: oscm_app/customAuthUser.py:101
 msgid "oscm_admin_helpTextRoleOfUser"
 msgstr "Rolle"
 
-#: oscm_app/customAuthUser.py:108
+#: oscm_app/customAuthUser.py:105
 msgid "oscm_admin_languageOfUser"
 msgstr "Sprache"
 
-#: oscm_app/customAuthUser.py:111
+#: oscm_app/customAuthUser.py:108
 msgid "oscm_admin_helpTextLanguageOfUser"
 msgstr "Sprache"
 
-#: oscm_app/customAuthUser.py:115
+#: oscm_app/customAuthUser.py:112
 msgid "oscm_admin_authenticationModeOfApplication"
 msgstr "OSCM Verwaltung"
 
-#: oscm_app/customAuthUser.py:118
+#: oscm_app/customAuthUser.py:115
 msgid "oscm_admin_helpTextAuthenticationModeOfApplication"
 msgstr ""
 
-#: oscm_app/customAuthUser.py:128
+#: oscm_app/customAuthUser.py:125
 msgid "oscm_admin_headerOfOSCMUser"
 msgstr "Benutzereinstellungen"
 
-#: oscm_app/customAuthUser.py:129
+#: oscm_app/customAuthUser.py:126
 msgid "oscm_admin_headerOfOSCMUsers"
 msgstr "Benutzereinstellungen"
 
-#: oscm_app/utils.py:15
+#: oscm_app/utils.py:14
 msgid "oscm_settings_noAttribute"
 msgstr "Sie haben das folgende Attribut nicht gesetzt"
 

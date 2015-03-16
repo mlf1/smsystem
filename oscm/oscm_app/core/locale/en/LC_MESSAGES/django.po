@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-15 20:06+0100\n"
+"POT-Creation-Date: 2015-03-16 17:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: oscm_app/admin.py:22
+#: oscm_app/admin.py:24
 msgid "oscm_admin_headerOfPersonalInfo"
 msgstr "Personal information"
 
-#: oscm_app/admin.py:26
+#: oscm_app/admin.py:28
 msgid "oscm_admin_headerOfCommonSettings"
 msgstr "Common settings"
 
-#: oscm_app/admin.py:28
+#: oscm_app/admin.py:30
 msgid "oscm_admin_headerOfPermissions"
 msgstr "Permissions"
 
-#: oscm_app/admin.py:34
+#: oscm_app/admin.py:36
 msgid "oscm_admin_headerOfUserSettings"
 msgstr "User settings"
 
-#: oscm_app/admin.py:37
+#: oscm_app/admin.py:39
 msgid "oscm_admin_headerOfImportantDates"
 msgstr "Important dates"
 
@@ -74,37 +74,38 @@ msgstr "This authentication ['%(value)s'] doesn't exist!!"
 #: oscm_app/authentication/customAuthUserForm.py:103
 msgid "oscm_admin_helpTextPasswordOfUser"
 msgstr ""
-"<strong>Warning: </strong>Raw passwords are not stored, so there is no way "
-"to see this user's password, but you can change the password using <a href="
-"\"password/\">this form</a>."
+"<span id=\"passwordAdminHelpBlock\" class=\"help-block\"><strong>Info: </"
+"strong>Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"password/\">this "
+"form</a>.</span>"
 
-#: oscm_app/authentication/customAuthUserManager.py:25
+#: oscm_app/authentication/customAuthUserManager.py:28
 #, python-format
 msgid "Missing email address: %(value)s"
 msgstr ""
 "Users must have an email address and not an empty %(value)s email address!!"
 
-#: oscm_app/authentication/customAuthUserManager.py:31
+#: oscm_app/authentication/customAuthUserManager.py:34
 #, python-format
 msgid "Missing username: %(value)s"
 msgstr "Users must have an username and not an empty %(value)s username!!"
 
-#: oscm_app/authentication/customAuthUserManager.py:37
+#: oscm_app/authentication/customAuthUserManager.py:40
 #, python-format
 msgid "Missing role: %(value)s"
 msgstr "Users must have a specific role and not an empty %(value)s role!!"
 
-#: oscm_app/authentication/customAuthUserManager.py:43
+#: oscm_app/authentication/customAuthUserManager.py:46
 #, python-format
 msgid "Missing language: %(value)s"
 msgstr ""
 "Users must have a specific language and not an empty %(value)s language!!"
 
-#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:25
+#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:26
 msgid "oscm_admin_noPasswordSet"
 msgstr "No password set."
 
-#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:32
+#: oscm_app/authentication/customReadOnlyPasswordHashWidget.py:33
 msgid "oscm_admin_invalidPasswordFormatOrUnknownHashAlgo"
 msgstr "Invalid password format or unknown hashing algorithm."
 
@@ -150,85 +151,85 @@ msgstr ""
 "This object doesn't have a change history. It probably wasn't added via this "
 "admin site."
 
-#: oscm_app/customAuthUser.py:34
+#: oscm_app/customAuthUser.py:31
 msgid "oscm_admin_usernameValidatorOfUser"
 msgstr "Only alphanumeric characters are allowed."
 
-#: oscm_app/customAuthUser.py:39
+#: oscm_app/customAuthUser.py:36
 msgid "oscm_admin_usernameOfUser"
 msgstr "username"
 
-#: oscm_app/customAuthUser.py:45
+#: oscm_app/customAuthUser.py:42
 msgid "oscm_admin_emailAddressOfUser"
 msgstr "email address"
 
-#: oscm_app/customAuthUser.py:50
+#: oscm_app/customAuthUser.py:47
 msgid "oscm_admin_firstNameOfUser"
 msgstr "first name"
 
-#: oscm_app/customAuthUser.py:56
+#: oscm_app/customAuthUser.py:53
 msgid "oscm_admin_lastNameOfUser"
 msgstr "last name"
 
-#: oscm_app/customAuthUser.py:62
+#: oscm_app/customAuthUser.py:59
 msgid "oscm_admin_dateJoinedOfUser"
 msgstr "creation date"
 
-#: oscm_app/customAuthUser.py:70
+#: oscm_app/customAuthUser.py:67
 msgid "oscm_admin_activeStatusOfUser"
 msgstr "active status"
 
-#: oscm_app/customAuthUser.py:73
+#: oscm_app/customAuthUser.py:70
 msgid "oscm_admin_helpTextActiveStatusOfUser"
 msgstr ""
 "Designates whether this user should be treated as 'active'. Unselect this "
 "instead of deleting accounts."
 
-#: oscm_app/customAuthUser.py:79
+#: oscm_app/customAuthUser.py:76
 msgid "oscm_admin_staffStatusOfUser"
 msgstr "staff status"
 
-#: oscm_app/customAuthUser.py:82
+#: oscm_app/customAuthUser.py:79
 msgid "oscm_admin_helpTextStaffStatusOfUser"
 msgstr "Designates whether the user can log into this admin 'site'."
 
-#: oscm_app/customAuthUser.py:101
+#: oscm_app/customAuthUser.py:98
 msgid "oscm_admin_roleOfUser"
 msgstr "role"
 
-#: oscm_app/customAuthUser.py:104
+#: oscm_app/customAuthUser.py:101
 msgid "oscm_admin_helpTextRoleOfUser"
 msgstr ""
 "You must choose the role for a specific user between varieties of given "
 "roles."
 
-#: oscm_app/customAuthUser.py:108
+#: oscm_app/customAuthUser.py:105
 msgid "oscm_admin_languageOfUser"
 msgstr "language"
 
-#: oscm_app/customAuthUser.py:111
+#: oscm_app/customAuthUser.py:108
 msgid "oscm_admin_helpTextLanguageOfUser"
 msgstr ""
 "You can choose the language for a specific user between varieties of given "
 "languages."
 
-#: oscm_app/customAuthUser.py:115
+#: oscm_app/customAuthUser.py:112
 msgid "oscm_admin_authenticationModeOfApplication"
 msgstr "authentication mode"
 
-#: oscm_app/customAuthUser.py:118
+#: oscm_app/customAuthUser.py:115
 msgid "oscm_admin_helpTextAuthenticationModeOfApplication"
 msgstr "There is just the Django authentication."
 
-#: oscm_app/customAuthUser.py:128
+#: oscm_app/customAuthUser.py:125
 msgid "oscm_admin_headerOfOSCMUser"
 msgstr "OSCM user"
 
-#: oscm_app/customAuthUser.py:129
+#: oscm_app/customAuthUser.py:126
 msgid "oscm_admin_headerOfOSCMUsers"
 msgstr "OSCM users"
 
-#: oscm_app/utils.py:15
+#: oscm_app/utils.py:14
 msgid "oscm_settings_noAttribute"
 msgstr "You haven't set the following attribute"
 

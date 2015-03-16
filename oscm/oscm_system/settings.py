@@ -97,6 +97,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '/Users/mlf/Projets/myRepo/smsystem/oscm/static'
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, APP_NAME, APP_CORE, 'static'),
