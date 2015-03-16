@@ -97,6 +97,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '/Users/mlf/Projets/myRepo/smsystem/oscm/static'
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, APP_NAME, APP_CORE, 'static'),
@@ -122,7 +124,7 @@ TEMPLATE_LOADERS = (
 #      OSCM settings       #
 ############################
 # Authentication User Model
-AUTH_USER_MODEL = '{0}.{1}'.format(APP_NAME,'CustomAuthUser')
+AUTH_USER_MODEL = '{0}.{1}'.format(APP_NAME, 'CustomAuthUser')
 
 # Default role
 DEFAULT_ROLE = 'U'
@@ -140,6 +142,5 @@ DEFAULT_AUTHENTICATION_MODE = 'D'
 # User authentication modes
 USER_AUTHENTICATION_MODES = (
     ('D', 'Django'),
-    # This next feature doesn't yet exist but the specific db column has been created
-    #('L', 'Ldap'),
+    # The following feature doesn't yet exist. Ex: ('L', 'Ldap'),
 )
