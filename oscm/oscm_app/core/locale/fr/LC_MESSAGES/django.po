@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-16 17:01+0100\n"
+"POT-Creation-Date: 2015-03-18 14:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,23 +149,23 @@ msgstr ""
 
 #: oscm_app/customAuthUser.py:31
 msgid "oscm_admin_usernameValidatorOfUser"
-msgstr "Rôle"
+msgstr "Seuls les caractères alpha-numériques [0-9a-zA-Z] sont autorisés."
 
 #: oscm_app/customAuthUser.py:36
 msgid "oscm_admin_usernameOfUser"
-msgstr "Rôle"
+msgstr "pseudo"
 
 #: oscm_app/customAuthUser.py:42
 msgid "oscm_admin_emailAddressOfUser"
-msgstr "Rôle"
+msgstr "adresse e-mail"
 
 #: oscm_app/customAuthUser.py:47
 msgid "oscm_admin_firstNameOfUser"
-msgstr "Rôle"
+msgstr "Prénom"
 
 #: oscm_app/customAuthUser.py:53
 msgid "oscm_admin_lastNameOfUser"
-msgstr "Langue"
+msgstr "Nom"
 
 #: oscm_app/customAuthUser.py:59
 msgid "oscm_admin_dateJoinedOfUser"
@@ -173,19 +173,21 @@ msgstr "date de création"
 
 #: oscm_app/customAuthUser.py:67
 msgid "oscm_admin_activeStatusOfUser"
-msgstr "Rôle"
+msgstr "actif"
 
 #: oscm_app/customAuthUser.py:70
 msgid "oscm_admin_helpTextActiveStatusOfUser"
-msgstr "Rôle"
+msgstr ""
+"Précise si l'utilisateur doit être considéré comme actif. Décochez ceci "
+"plutôt que de supprimer le compte."
 
 #: oscm_app/customAuthUser.py:76
 msgid "oscm_admin_staffStatusOfUser"
-msgstr "Langue"
+msgstr "statut équipe"
 
 #: oscm_app/customAuthUser.py:79
 msgid "oscm_admin_helpTextStaffStatusOfUser"
-msgstr "Rôle"
+msgstr "Précise si l'utilisateur peut se connecter à ce site d'administration."
 
 #: oscm_app/customAuthUser.py:98
 msgid "oscm_admin_roleOfUser"
@@ -193,7 +195,9 @@ msgstr "Rôle"
 
 #: oscm_app/customAuthUser.py:101
 msgid "oscm_admin_helpTextRoleOfUser"
-msgstr "Rôle"
+msgstr ""
+"Vous devez choisir le rôle pour un utilisateur spécifique parmi les "
+"différents rôles donnés."
 
 #: oscm_app/customAuthUser.py:105
 msgid "oscm_admin_languageOfUser"
@@ -201,36 +205,38 @@ msgstr "Langue"
 
 #: oscm_app/customAuthUser.py:108
 msgid "oscm_admin_helpTextLanguageOfUser"
-msgstr "Langue"
+msgstr ""
+"Vous pouvez choisir la langue pour un utilisateur spécifique parmi les "
+"différentes langues données."
 
 #: oscm_app/customAuthUser.py:112
 msgid "oscm_admin_authenticationModeOfApplication"
-msgstr "Administration de OSCM"
+msgstr "mode d'authentification"
 
 #: oscm_app/customAuthUser.py:115
 msgid "oscm_admin_helpTextAuthenticationModeOfApplication"
-msgstr ""
+msgstr "Il y a juste l'authentification Django."
 
 #: oscm_app/customAuthUser.py:125
 msgid "oscm_admin_headerOfOSCMUser"
-msgstr "Paramètres de l'utilisateur"
+msgstr "utilisateur OSCM"
 
 #: oscm_app/customAuthUser.py:126
 msgid "oscm_admin_headerOfOSCMUsers"
-msgstr "Paramètres de l'utilisateur"
+msgstr "utilisateurs OSCM"
 
 #: oscm_app/utils.py:14
 msgid "oscm_settings_noAttribute"
 msgstr "Vous n'avez pas mis l'attribut suivant"
 
-#: oscm_system/settings.py:80
+#: oscm_system/settings.py:79
 msgid "German"
 msgstr "Allemand"
 
-#: oscm_system/settings.py:81
+#: oscm_system/settings.py:80
 msgid "English"
 msgstr "Anglais"
 
-#: oscm_system/settings.py:82
+#: oscm_system/settings.py:81
 msgid "French"
 msgstr "Français"
