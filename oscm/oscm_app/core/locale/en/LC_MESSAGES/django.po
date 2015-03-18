@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-16 17:01+0100\n"
+"POT-Creation-Date: 2015-03-18 14:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,7 +153,7 @@ msgstr ""
 
 #: oscm_app/customAuthUser.py:31
 msgid "oscm_admin_usernameValidatorOfUser"
-msgstr "Only alphanumeric characters are allowed."
+msgstr "Only alphanumeric characters [0-9a-zA-Z] are allowed."
 
 #: oscm_app/customAuthUser.py:36
 msgid "oscm_admin_usernameOfUser"
@@ -177,7 +177,7 @@ msgstr "creation date"
 
 #: oscm_app/customAuthUser.py:67
 msgid "oscm_admin_activeStatusOfUser"
-msgstr "active status"
+msgstr "active"
 
 #: oscm_app/customAuthUser.py:70
 msgid "oscm_admin_helpTextActiveStatusOfUser"
@@ -233,14 +233,14 @@ msgstr "OSCM users"
 msgid "oscm_settings_noAttribute"
 msgstr "You haven't set the following attribute"
 
-#: oscm_system/settings.py:80
+#: oscm_system/settings.py:79
 msgid "German"
 msgstr "German"
 
-#: oscm_system/settings.py:81
+#: oscm_system/settings.py:80
 msgid "English"
 msgstr "English"
 
-#: oscm_system/settings.py:82
+#: oscm_system/settings.py:81
 msgid "French"
 msgstr "French"
