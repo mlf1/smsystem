@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.utils.translation import ugettext_lazy
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -73,13 +74,11 @@ DATABASES = {
 # Default language, it will be used, if django can't recognize user's language
 LANGUAGE_CODE = 'en'
 
-ugettext = lambda s: s
-
 # List of activated languages
 LANGUAGES = (
-    ('de', ugettext('German')),
-    ('en', ugettext('English')),
-    ('fr', ugettext('French')),
+    ('de', ugettext_lazy('German')),
+    ('en', ugettext_lazy('English')),
+    ('fr', ugettext_lazy('French')),
 )
 
 TIME_ZONE = 'Europe/Zurich'
