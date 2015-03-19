@@ -4,8 +4,9 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import ugettext as _
 
-from oscm_app.customAuthUser import CustomAuthUser
-from .customReadOnlyPasswordHashWidget import CustomReadOnlyPasswordHashWidget
+from oscm_app.custom_auth_user import CustomAuthUser
+from .custom_read_only_password_hash_widget import (
+    CustomReadOnlyPasswordHashWidget)
 
 
 class CustomAuthUserCreationForm(forms.ModelForm):

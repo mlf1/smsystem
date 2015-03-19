@@ -10,7 +10,8 @@ from django.contrib.auth.models import AbstractBaseUser
 
 from .utils import get_attr
 from .constants import (ADMIN_FIRST_NAME, ADMIN_LAST_NAME)
-from oscm_app.authentication.customAuthUserManager import CustomAuthUserManager
+from .authentication.custom_auth_user_manager import (
+    CustomAuthUserManager)
 
 
 class CustomAuthUser(AbstractBaseUser, PermissionsMixin):

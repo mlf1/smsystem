@@ -177,10 +177,16 @@ class Command(BaseCommand):
                             val = input('%s %s: ' % (
                                 force_str(choices),
                                 capfirst(field.verbose_name)))
+                            if val == '':
+                                self.stderr.write(
+                                    "Invalid choice: empty value. Select a "
+                                    "valid choice.")
+                                user_data[field_name] = None
+                                continue
                             try:
                                 if (
-                                    (int(val) < 1) or
-                                    (int(val) > len(field.choices))
+                                    int(val) < 1 or
+                                    int(val) > len(field.choices)
                                 ):
                                     self.stderr.write(
                                         "Invalid choice: select a valid "

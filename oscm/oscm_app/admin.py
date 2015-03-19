@@ -4,8 +4,8 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as OriginalUserAdmin
 from django.utils.translation import ugettext as _
 
-from .customAuthUser import CustomAuthUser
-from oscm_app.authentication.customAuthUserForm import (
+from .custom_auth_user import CustomAuthUser
+from .authentication.custom_auth_user_form import (
     CustomAuthUserChangeForm,
     CustomAuthUserCreationForm)
 
