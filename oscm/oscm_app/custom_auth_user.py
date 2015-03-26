@@ -1,17 +1,16 @@
 # oscm_app
 
-from django.utils.translation import ugettext as _
-from django.utils import timezone
-from django.contrib.auth.models import PermissionsMixin
-from django.db import models
+from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin)
 from django.core.validators import RegexValidator
 from django.core.mail import send_mail
-from django.contrib.auth.models import AbstractBaseUser
+from django.db import models
+from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
 
-from .utils import get_attr
-from .constants import (ADMIN_FIRST_NAME, ADMIN_LAST_NAME)
 from .authentication.custom_auth_user_manager import (
     CustomAuthUserManager)
+from .constants import (ADMIN_FIRST_NAME, ADMIN_LAST_NAME)
+from .utils import get_attr
 
 
 class CustomAuthUser(AbstractBaseUser, PermissionsMixin):
@@ -123,6 +122,10 @@ class CustomAuthUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['email', 'role', 'language']
 
     class Meta:
+        """
+        Use this Meta class on any model to specify various
+        model-specific options.
+        """
         verbose_name = _('oscm_admin_headerOfOSCMUser')
         verbose_name_plural = _('oscm_admin_headerOfOSCMUsers')
 
