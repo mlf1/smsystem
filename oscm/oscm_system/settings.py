@@ -143,3 +143,7 @@ USER_AUTHENTICATION_MODES = (
     ('D', 'Django'),
     # The following feature doesn't yet exist. Ex: ('L', 'Ldap'),
 )
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/'
