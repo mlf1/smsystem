@@ -6,6 +6,6 @@ urlpatterns = patterns(
     # Examples:
     # url(r'^$', 'oscm.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^oscm/', include('oscm_app.urls')),
+    url(r'^oscm/', include('oscm_app.urls', namespace='oscm')),
     url(r'^admin/', include(admin.site.urls)),
 )
