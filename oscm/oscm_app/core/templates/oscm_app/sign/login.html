@@ -1,0 +1,36 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "login" %}{% endblock %}
+{% block content %}
+
+<ul class="user-msg error django-form-error">
+{% for field in form %}
+  <div>
+    {% if form.non_field_errors %}
+        <ul class='form-errors'>
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  </div>
+  <div>
+    {% if form.errors %}
+        <ul class='form-errors'>
+            {% for error in form.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  </div>
+{% endfor %}
+</ul>
+<form action="{% url "oscm:login" %}" method="POST">
+  {% csrf_token %}
+  <p>
+    {{ form.as_p }}
+  </p>
+  <input id="login" type="submit" value="Login" />
+</form>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block meta_title %}
+    {% trans "oscm_labelOfError500" %}
+{% endblock %}
+{% block title %}
+    {% trans "oscm_labelOfError500" %}
+{% endblock %}
+{% block content %}
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">{% trans "oscm_typeOfError500" %}</h3>
+        </div>
+        <div class="panel-body">{% trans "oscm_messageOfError500" %}</div>
+    </div>
+{% endblock %}

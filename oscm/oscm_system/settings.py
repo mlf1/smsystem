@@ -24,11 +24,11 @@ APP_CORE = 'core'
 SECRET_KEY = 'njlzn&@v=wse614vybnntrrr+tj#9xj7*!w_$wcez^se5y1!v$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -144,6 +144,6 @@ USER_AUTHENTICATION_MODES = (
     # The following feature doesn't yet exist. Ex: ('L', 'Ldap'),
 )
 
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'oscm:login'
+LOGOUT_URL = 'oscm:logout'
+LOGIN_REDIRECT_URL = 'oscm:index'
