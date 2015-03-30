@@ -24,11 +24,11 @@ APP_CORE = 'core'
 SECRET_KEY = 'njlzn&@v=wse614vybnntrrr+tj#9xj7*!w_$wcez^se5y1!v$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
