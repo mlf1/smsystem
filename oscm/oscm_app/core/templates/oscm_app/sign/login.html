@@ -1,0 +1,29 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "login" %}{% endblock %}
+{% block body_id %}{% trans "login" %}{% endblock %}
+{% block content_title %}
+    <h2>{% trans "Authentication" %}</h2>
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <p>{% blocktrans with oscm_username=user.username %}You are already logged as {{ oscm_username }}.{% endblocktrans %}</p>
+    <a href="{% url "oscm:home" %}">{% trans "[Home]" %}</a>
+{% else %}
+<div class="row">
+    <div class="span12">
+        <form action="{% url "oscm:login" %}" method="POST" class="form-horizontal">
+            <legend>{% trans "Log in to an existing account" %}</legend>
+            <fieldset>
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">{% trans "Login" %}</button>
+            </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

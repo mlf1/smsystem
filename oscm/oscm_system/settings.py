@@ -144,6 +144,11 @@ USER_AUTHENTICATION_MODES = (
     # The following feature doesn't yet exist. Ex: ('L', 'Ldap'),
 )
 
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = '/'
+# Used for the authentication in the frontend
+LOGIN_URL = 'oscm:login'
+LOGOUT_URL = 'oscm:logout'
+LOGIN_REDIRECT_URL = 'oscm:index'
+
+# Used to keep the session active for longer periods of time.
+SESSION_REMEMBER = None
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 3
