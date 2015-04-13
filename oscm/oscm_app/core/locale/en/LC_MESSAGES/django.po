@@ -151,10 +151,31 @@ msgstr ""
 "This object doesn't have a change history. It probably wasn't added via this "
 "admin site."
 
+#: oscm_app/core/templates/oscm_app/errors/404.html:4
+msgid "oscm_labelOfError404"
+msgstr "Page not found"
+
+#: oscm_app/core/templates/oscm_app/errors/404.html:7
+msgid "oscm_idOfError404"
+msgstr "error_404"
+
+#: oscm_app/core/templates/oscm_app/errors/404.html:12
+msgid "oscm_typeOfError404"
+msgstr "Page not found."
+
+#: oscm_app/core/templates/oscm_app/errors/404.html:14
+msgid "oscm_messageOfError404"
+msgstr "The page you requested does not exist.<p>It's been reported to the "
+"site administrators via e-mail and should be fixed shortly. "
+"Thanks for your patience.</p>"
+
 #: oscm_app/core/templates/oscm_app/errors/500.html:4
-#: oscm_app/core/templates/oscm_app/errors/500.html:7
 msgid "oscm_labelOfError500"
-msgstr "Error 500"
+msgstr "Server error"
+
+#: oscm_app/core/templates/oscm_app/errors/500.html:7
+msgid "oscm_idOfError500"
+msgstr "error_500"
 
 #: oscm_app/core/templates/oscm_app/errors/500.html:12
 msgid "oscm_typeOfError500"
@@ -162,8 +183,9 @@ msgstr "Server error."
 
 #: oscm_app/core/templates/oscm_app/errors/500.html:14
 msgid "oscm_messageOfError500"
-msgstr "There's been an error. It's been reported to the site administrators "
-"via e-mail and should be fixed shortly. Thanks for your patience."
+msgstr "There's been an error.<p>It's been reported to the site "
+"administrators via e-mail and should be fixed shortly. "
+"Thanks for your patience.</p>"
 
 #: oscm_app/customAuthUser.py:31
 msgid "oscm_admin_usernameValidatorOfUser"

@@ -1,13 +1,14 @@
 # oscm_app
 
 from django.conf.urls import (patterns, url)
-
-# Example 1: url(r'^welcome$', 'home'),
-# Example 2: url(r'^$', "index", name='index'),
+from django.views.generic.base import TemplateView
 
 
 urlpatterns = patterns(
     'oscm_app.views',
+    url(r'^$', TemplateView.as_view(
+        template_name='oscm_app/index.html'),
+        name='index'),
     )
 
 urlpatterns += patterns(
@@ -15,15 +16,15 @@ urlpatterns += patterns(
     url(r'^home$',
         'home_view',
         {'template_name': 'oscm_app/home.html'},
-        prefix='',
         name='home'),
     url(r'^login$',
         'login_view',
         {'template_name': 'oscm_app/sign/login.html'},
-        prefix='',
         name='login'),
     url(r'^logout$',
         'logout_view',
-        {'template_name': 'oscm_app/sign/logout.html'},
+        {
+            'template_name': 'oscm_app/sign/logout.html',
+            'next_page': '/oscm/'},
         name='logout'),
-    )
+)

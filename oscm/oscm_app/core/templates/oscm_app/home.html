@@ -1,14 +1,18 @@
 {% extends "oscm_app/base.html" %}
 {% load i18n %}
 {% block title %}
-{% trans "Welcome to OSCM application." %}
+{% trans "Welcome to your OSCM's homepage." %}
 {% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
-
-Welcome, {{ user.username }}. Thanks for logging in.
+    <p>{% blocktrans with oscm_username=user.username %}Welcome, {{ oscm_username }}. Thanks for logging in.{% endblocktrans %}</p>
+    <a href="{% url "oscm:logout" %}">{% trans "[logout]" %}</a>
 {% else %}
-
-Welcome TEST, new OSCM user. Please log in.
+    <p>
+    {% blocktrans %}
+        Welcome, new OSCM user. Please log in.
+    {% endblocktrans %}
+    </p>
+    <a href="{% url "oscm:login" %}">[{% trans "[login]" %}</a>
 {% endif %}
 {% endblock %}
