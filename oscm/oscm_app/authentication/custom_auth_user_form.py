@@ -1,11 +1,12 @@
 # oscm_app/authentication
 
 from django import forms
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import ugettext as _
 
-from oscm_app.customAuthUser import CustomAuthUser
-from .customReadOnlyPasswordHashWidget import CustomReadOnlyPasswordHashWidget
+from .custom_read_only_password_hash_widget import (
+    CustomReadOnlyPasswordHashWidget)
 
 
 class CustomAuthUserCreationForm(forms.ModelForm):
@@ -25,7 +26,11 @@ class CustomAuthUserCreationForm(forms.ModelForm):
         help_text=_('oscm_admin_helpTextPassword2fUser'))
 
     class Meta:
-        model = CustomAuthUser
+        """
+        Use this Meta class on any model to specify various
+        model-specific options.
+        """
+        model = get_user_model()
         fields = (
             'username',
             'email',
@@ -39,8 +44,9 @@ class CustomAuthUserCreationForm(forms.ModelForm):
         """
         username = self.cleaned_data["username"]
         try:
-            CustomAuthUser._default_manager.get(username=username)
-        except CustomAuthUser.DoesNotExist:
+            get_user_model()._meta.model._default_manager.get(
+                username=username)
+        except get_user_model()._meta.model.DoesNotExist:
             return username
         # 'Username must be unique'
         raise forms.ValidationError(
@@ -71,7 +77,7 @@ class CustomAuthUserCreationForm(forms.ModelForm):
         # Check the authentication mode
         auth_mode = custom_user.authentication_mode
         # TODO: Remove if it's working
-        print("Auth_mode is {0}.", auth_mode)
+        print("Auth_mode is {auth}.".format(auth=auth_mode))
         if auth_mode == 'D':
             custom_user.set_password(self.cleaned_data['password1'])
             if commit:
@@ -104,7 +110,11 @@ class CustomAuthUserChangeForm(forms.ModelForm):
         widget=CustomReadOnlyPasswordHashWidget)
 
     class Meta:
-        model = CustomAuthUser
+        """
+        Use this Meta class on any model to specify various
+        model-specific options.
+        """
+        model = get_user_model()
         fields = (
             'username',
             'password',
