@@ -4,8 +4,8 @@ from django import forms
 from django.contrib.auth.hashers import (
     UNUSABLE_PASSWORD_PREFIX, identify_hasher)
 from django.forms.utils import flatatt
-from django.utils.safestring import mark_safe
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
 
 

@@ -20,6 +20,7 @@ class NotRunningInTTYException(BaseException):
 
 
 class Command(BaseCommand):
+
     """
     Management utility to create OSCM superusers.
     """
@@ -67,13 +68,13 @@ class Command(BaseCommand):
                 dest='database',
                 default=DEFAULT_DB_ALIAS,
                 help='Specifies the database to use. Default is "default".'),
-            ) + tuple(
-                make_option(
-                    '--%s' % field,
-                    dest=field,
-                    default=None,
-                    help='Specifies the %s for the OSCM superuser.' % field)
-                for field in self.UserModel.REQUIRED_FIELDS)
+        ) + tuple(
+            make_option(
+                '--%s' % field,
+                dest=field,
+                default=None,
+                help='Specifies the %s for the OSCM superuser.' % field)
+            for field in self.UserModel.REQUIRED_FIELDS)
 
     option_list = BaseCommand.option_list
 
@@ -177,11 +178,15 @@ class Command(BaseCommand):
                             val = input('%s %s: ' % (
                                 force_str(choices),
                                 capfirst(field.verbose_name)))
+                            if val == '':
+                                self.stderr.write(
+                                    "Invalid choice: empty value. Select a "
+                                    "valid choice.")
+                                user_data[field_name] = None
+                                continue
                             try:
-                                if (
-                                    (int(val) < 1) or
-                                    (int(val) > len(field.choices))
-                                ):
+                                if (int(val) < 1
+                                        or int(val) > len(field.choices)):
                                     self.stderr.write(
                                         "Invalid choice: select a valid "
                                         "choice between 1 and %d. \'%s\' in "
@@ -189,7 +194,7 @@ class Command(BaseCommand):
                                         "." % (len(field.choices), val))
                                     user_data[field_name] = None
                                     continue
-                                raw_value = field.choices[(int(val)-1)][0]
+                                raw_value = field.choices[(int(val) - 1)][0]
                             except (ValueError, IndexError):
                                 self.stderr.write(
                                     "Invalid choice: select a valid choice. "
@@ -256,7 +261,7 @@ class Command(BaseCommand):
                     "OSCM superuser creation skipped due to not running in a "
                     "TTY. You can run `manage.py createoscmsuperuser` in "
                     "your project to create one manually."
-                    )
+                )
 
         if username:
             user_data[self.UserModel.USERNAME_FIELD] = username

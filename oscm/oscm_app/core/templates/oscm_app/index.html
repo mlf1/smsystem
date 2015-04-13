@@ -1,0 +1,24 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Welcome to the OSCM application." %}{% endblock %}
+{% block body_id %}{% trans "indexpage" %}{% endblock %}
+{% block content_title %}{% trans "Homepage of the OSCM application." %}
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <p>{% blocktrans with oscm_username=user.username %}
+        Welcome, {{ oscm_username }}. Thanks for logging in.
+    {% endblocktrans %}</p>
+    <a href="{% url "oscm:home" %}">{% trans "[Home]" %}</a>
+{% else %}
+    <p>
+    {% blocktrans %}
+        Welcome, new OSCM user to the OSCM application. Please log in.
+    {% endblocktrans %}
+    </p>
+    <a href="{% url "oscm:login" %}">{% trans "[login]" %}</a>
+    {% if ACCOUNT_OPEN_REGISTER %}
+
+    {% endif %}
+{% endif %}
+{% endblock %}
