@@ -58,6 +58,7 @@ class UserAdmin(OriginalUserAdmin):
         'role',
         'language',
         'authentication_mode',
+        'is_active',
         'is_staff')
     list_display_links = (
         'username',
@@ -65,8 +66,9 @@ class UserAdmin(OriginalUserAdmin):
         'role',
         'language',
         'authentication_mode',
+        'is_active',
         'is_staff')
-    list_filter = ('username', 'role', 'language')
+    list_filter = ('username', 'role', 'language', 'is_active')
     readonly_fields = ('last_login', 'date_joined')
     search_fields = ('username', 'email', 'role', 'language')
     ordering = ('username',)
