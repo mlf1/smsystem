@@ -11,7 +11,7 @@ from django.utils.translation import ugettext as _
 
 class CustomReadOnlyPasswordHashWidget(forms.Widget):
     """
-    This widget is used to display the password filed in the edit mode.
+    This widget is used to display the password field in the edit mode.
     """
 
     def render(self, name, value, attrs=None):

@@ -3,13 +3,14 @@
 from django.conf.urls import (patterns, url)
 from django.views.generic.base import TemplateView
 
+from .registration.registration_views import Registration
 
 urlpatterns = patterns(
     'oscm_app.views',
     url(r'^$', TemplateView.as_view(
         template_name='oscm_app/index.html'),
         name='index'),
-    )
+)
 
 urlpatterns += patterns(
     'oscm_app.sign.log_views',
@@ -27,4 +28,19 @@ urlpatterns += patterns(
             'template_name': 'oscm_app/sign/logout.html',
             'next_page': '/oscm/'},
         name='logout'),
+)
+
+urlpatterns += patterns(
+    'oscm_app.registration.registration_views',
+    url(r'^register$', Registration.as_view(
+        template_name='oscm_app/registration/registration.html',
+        disallowed_url='oscm:registration_disallowed',
+        success_url='oscm:registration_completed'),
+        name='registration'),
+    url(r'^register/closed/$', TemplateView.as_view(
+        template_name='oscm_app/registration/registration_closed.html'),
+        name='registration_disallowed'),
+    url(r'^register/completed/$', TemplateView.as_view(
+        template_name='oscm_app/registration/registration_completed.html'),
+        name='registration_completed'),
 )

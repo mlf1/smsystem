@@ -4,15 +4,19 @@
 {% trans "Welcome to your OSCM's homepage." %}
 {% endblock %}
 {% block content %}
-{% if user.is_authenticated %}
-    <p>{% blocktrans with oscm_username=user.username %}Welcome, {{ oscm_username }}. Thanks for logging in.{% endblocktrans %}</p>
-    <a href="{% url "oscm:logout" %}">{% trans "[logout]" %}</a>
+{% if user.is_authenticated and user.is_active %}
+    <p>
+    {% blocktrans with oscm_username=user.username %}
+        Welcome, {{ oscm_username }}. Thanks for logging in.
+    {% endblocktrans %}
+    </p>
+    <a href="{% url "oscm:logout" %}">{% trans "[Logout]" %}</a>
 {% else %}
     <p>
     {% blocktrans %}
         Welcome, new OSCM user. Please log in.
     {% endblocktrans %}
     </p>
-    <a href="{% url "oscm:login" %}">[{% trans "[login]" %}</a>
+    <a href="{% url "oscm:login" %}">{% trans "[Login]" %}</a>
 {% endif %}
 {% endblock %}

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from django.utils.translation import ugettext_lazy
+from django.conf import global_settings as default_settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -149,6 +150,18 @@ LOGIN_URL = 'oscm:login'
 LOGOUT_URL = 'oscm:logout'
 LOGIN_REDIRECT_URL = 'oscm:index'
 
-# Used to keep the session active for longer periods of time.
+# Used to keep the session active for longer periods of time
 SESSION_REMEMBER = None
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 3
+
+# Used with the registration process in the frontend
+# If True, users can register
+REGISTRATION_OPEN = True
+
+# If True, the user's account will be automatically activated.
+REGISTRATION_AUTO_ACTIVATED_ACCOUNT = False
+
+TEMPLATE_CONTEXT_PROCESSORS = default_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'oscm_app.custom_context_processors.retrieve_setting_parameters',
+    'django.core.context_processors.request',
+)
