@@ -1,0 +1,34 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Registration completed" %}{% endblock %}
+{% block body_id %}{% trans "Registration completed" %}{% endblock %}
+{% block content_title %}
+<h2>{% trans "Registration completed" %}</h2>
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <p>
+     {% blocktrans with oscm_username=user.username %}
+        You have successfully registered as {{ oscm_username }}.
+     {% endblocktrans %}
+    </p>
+    {% if user.is_active %}
+        <p>
+        {% trans "Your OSCM account has been activated." %}
+        </p>
+        <a href="{% url "oscm:home" %}">{% trans "[Home]" %}</a>
+    {% else %}
+        <p>
+        {% blocktrans %}
+        But your OSCM account is not yet activated.
+        {% endblocktrans %}
+        </p>
+        <a href="{% url "oscm:index" %}">{% trans "[Home]" %}</a>
+    {% endif %}
+{% else %}
+    <p>
+    {% trans "You must have an OSCM account before." %}
+    <a href="{% url "oscm:index" %}">{% trans "[Home]" %}</a>
+    </p>
+{% endif %}
+{% endblock %}

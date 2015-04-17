@@ -53,7 +53,12 @@ msgstr "Enter the same password as above, for verification."
 #: oscm_app/authentication/customAuthUserForm.py:47
 #, python-format
 msgid "Duplicate username: %(value)s"
-msgstr "A user with the '%(value)s' username already exists!!"
+msgstr "An OSCM user with the '%(value)s' username already exists!!"
+
+#: oscm_app/authentication/customAuthUserForm.py:81
+#, python-format
+msgid "Duplicate email: %(value)s"
+msgstr "An OSCM user with the '%(value)s email already exists!!'"
 
 #: oscm_app/authentication/customAuthUserForm.py:60
 #, python-format

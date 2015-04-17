@@ -34,6 +34,9 @@ def next_url(request):
 
 
 def set_form_field_order(form, fields_order):
+    """
+    Order the fields in the form.
+    """
     assert isinstance(form.fields, OrderedDict)
     form.fields = OrderedDict(
         (f, form.fields[f]) for f in fields_order)

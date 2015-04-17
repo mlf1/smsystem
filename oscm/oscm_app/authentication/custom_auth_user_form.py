@@ -7,9 +7,59 @@ from django.utils.translation import ugettext as _
 
 from .custom_read_only_password_hash_widget import (
     CustomReadOnlyPasswordHashWidget)
+from oscm_app.utils import get_attr
 
 
-class CustomAuthUserCreationForm(forms.ModelForm):
+class BaseCustomAuthUserForm(forms.ModelForm):
+    """
+    Base form of the CustomAuthUser.
+    """
+
+    class Meta:
+        """
+        Use this Meta class on any model to specify various
+        model-specific options.
+        """
+        model = get_user_model()
+
+        fields = (
+            'username',
+            'password',
+            'email',
+            'first_name',
+            'last_name',
+            'role',
+            'language',
+            'authentication_mode',
+            'is_active',
+            'is_staff',
+            'is_superuser',
+            'user_permissions')
+
+    def clean_role(self):
+        """
+        If Role=Manager, the OSCM's user account will set 'is_staff' to
+        'True'.
+        If Role=Admin, the OSCM's user account will set 'is_staff' to 'True'
+        and 'is_superuser' to 'True' too.
+        """
+        role = self.cleaned_data['role']
+        print("Role is {role}.".format(role=role))
+        if role == 'A':
+            self.cleaned_data['is_staff'] = True
+            self.cleaned_data['is_superuser'] = True
+        elif role == 'M':
+            self.cleaned_data['is_staff'] = True
+            self.cleaned_data['is_superuser'] = False
+        else:
+            print("There is no rights for the {role} role.".format(
+                role=dict(get_attr('USER_ROLES')).get(role)))
+            self.cleaned_data['is_staff'] = False
+            self.cleaned_data['is_superuser'] = False
+        return role
+
+
+class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
     """
     A form for creating new users. Includes all the required fields, plus a
     repeated password.
@@ -17,12 +67,16 @@ class CustomAuthUserCreationForm(forms.ModelForm):
     # Password
     password1 = forms.CharField(
         label=_('oscm_admin_passwordLabelOfUser'),
-        widget=forms.PasswordInput)
+        widget=forms.PasswordInput(attrs={
+            'placeholder': _(
+                'oscm_admin_passwordLabelOfUser').lower()}))
     # Password confirmation
     # 'Enter the same password as above, for verification.''
     password2 = forms.CharField(
         label=_('oscm_admin_passwordConfirmationLabelOfUser'),
-        widget=forms.PasswordInput,
+        widget=forms.PasswordInput(attrs={
+            'placeholder': _(
+                'oscm_admin_passwordConfirmationLabelOfUser').lower()}),
         help_text=_('oscm_admin_helpTextPassword2fUser'))
 
     class Meta:
@@ -38,6 +92,19 @@ class CustomAuthUserCreationForm(forms.ModelForm):
             'language',
             'authentication_mode')
 
+    def __init__(self, *args, **kwargs):
+        super(CustomAuthUserCreationForm, self).__init__(*args, **kwargs)
+        # Added 'placeholder' field
+        for name, field in self.fields.items():
+            if name == 'username':
+                field.widget.attrs.update({
+                    'placeholder': _('oscm_admin_usernameOfUser')})
+                continue
+            if name == 'email':
+                field.widget.attrs.update({
+                    'placeholder': _('oscm_admin_emailAddressOfUser')})
+                continue
+
     def clean_username(self):
         """
         Check that the username is unique
@@ -45,7 +112,7 @@ class CustomAuthUserCreationForm(forms.ModelForm):
         username = self.cleaned_data["username"]
         try:
             get_user_model()._meta.model._default_manager.get(
-                username=username)
+                username__iexact=username)
         except get_user_model()._meta.model.DoesNotExist:
             return username
         # 'Username must be unique'
@@ -53,6 +120,22 @@ class CustomAuthUserCreationForm(forms.ModelForm):
             _('Duplicate username: %(value)s'),
             code='duplicate',
             params={'value': username},)
+
+    def clean_email(self):
+        """
+        Check that the email is unique
+        """
+        email = self.cleaned_data["email"]
+        try:
+            get_user_model()._meta.model._default_manager.get(
+                email__iexact=email)
+        except get_user_model()._meta.model.DoesNotExist:
+            return email
+        # 'email must be unique'
+        raise forms.ValidationError(
+            _('Duplicate email: %(value)s'),
+            code='duplicate',
+            params={'value': email},)
 
     def clean_password2(self):
         """
@@ -74,6 +157,12 @@ class CustomAuthUserCreationForm(forms.ModelForm):
         """
         custom_user = super(CustomAuthUserCreationForm, self).save(
             commit=False)
+        return self.save_account(custom_user, commit)
+
+    def save_account(self, custom_user, commit=True):
+        """
+        Save the account of the OSCM user.
+        """
         # Check the authentication mode
         auth_mode = custom_user.authentication_mode
         # TODO: Remove if it's working
@@ -81,6 +170,7 @@ class CustomAuthUserCreationForm(forms.ModelForm):
         if auth_mode == 'D':
             custom_user.set_password(self.cleaned_data['password1'])
             if commit:
+                print("Save CustUser")
                 custom_user.save()
             return custom_user
         else:
@@ -96,7 +186,7 @@ class CustomAuthUserCreationForm(forms.ModelForm):
                     params={'value': auth_mode},)
 
 
-class CustomAuthUserChangeForm(forms.ModelForm):
+class CustomAuthUserChangeForm(BaseCustomAuthUserForm):
     """
     A form for updating users. Includes all the fields on the user.
 
@@ -108,26 +198,6 @@ class CustomAuthUserChangeForm(forms.ModelForm):
         label=_('oscm_admin_passwordLabelOfUser'),
         help_text=_('oscm_admin_helpTextPasswordOfUser'),
         widget=CustomReadOnlyPasswordHashWidget)
-
-    class Meta:
-        """
-        Use this Meta class on any model to specify various
-        model-specific options.
-        """
-        model = get_user_model()
-        fields = (
-            'username',
-            'password',
-            'email',
-            'first_name',
-            'last_name',
-            'role',
-            'language',
-            'authentication_mode',
-            'is_active',
-            'is_staff',
-            'is_superuser',
-            'user_permissions')
 
     def clean_password(self):
         """
