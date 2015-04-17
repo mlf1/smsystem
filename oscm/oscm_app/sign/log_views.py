@@ -61,7 +61,7 @@ def login_view(request, template_name='login.html'):
         else:
             if user.is_active:
                 login(request, user)
-                print(_("OSCM User \'{0:s}\' is logged.").format(
+                print(_("OSCM User \'{0:s}\' is logged in.").format(
                     user.username))
                 return HttpResponseRedirect(reverse('oscm:home'))
             else:

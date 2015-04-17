@@ -1,0 +1,30 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Registration closed" %}{% endblock %}
+{% block body_id %}{% trans "Registration closed" %}{% endblock %}
+{% block content_title %}
+<h2>{% if registration_allowed %}{% trans "Registration opened" %}{% else %}{% trans "Registration closed" %}{% endif %}</h2>
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated and user.is_active %}
+    <p>{% blocktrans with oscm_username=user.username %}You are already registered as {{ oscm_username }}.{% endblocktrans %}</p>
+    {% if not registration_allowed %}
+        <p>
+        {% trans "Registration is currently closed on this site." %}
+        </p>
+        <a href="{% url "oscm:home" %}">{% trans "[Home]" %}</a>
+    {% endif %}
+{% else %}
+    {% if not registration_allowed %}
+        <p>
+        {% trans "Registration is currently closed on this site." %}
+        </p>
+        <a href="{% url "oscm:index" %}">{% trans "[Home]" %}</a>
+    {% else %}
+        {% blocktrans %}
+        You can register your OSCM account.
+        {% endblocktrans %}
+        <a href="{% url "oscm:registration" %}">{% trans "[Register]" %}</a>
+    {% endif %}
+{% endif %}
+{% endblock %}

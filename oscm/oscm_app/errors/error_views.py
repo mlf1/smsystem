@@ -25,28 +25,15 @@ def page_not_found(request):
     2. Generate Content for this view
     """
     template = loader.get_template('oscm_app/errors/404.html')
-
     context = {
         'message': 'All: %s' % request,
     }
-    """
-    context = Context({
-        'message': 'All: %s' % request,
-        })
-    """
     c = RequestContext(request, context)
-
     # 3. Return Template for this view + Data
     return HttpResponse(
         content=template.render(c),
         content_type='text/html; charset=utf-8',
         status=404)
-    """
-    return HttpResponse(
-        content=template.render(context),
-        content_type='text/html; charset=utf-8',
-        status=404)
-    """
 
 
 def server_error(request):
