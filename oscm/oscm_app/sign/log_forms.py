@@ -52,6 +52,8 @@ class LoginForm(forms.Form):
         """
         Clean the "LoginForm".
         """
+        # Ensures that any validation logic in parent classes is maintained.
+        super(LoginForm, self).clean()
         if self._errors:
             return
         self.auth_user()

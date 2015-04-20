@@ -3,6 +3,7 @@
 from django.contrib.auth import (authenticate, login, get_user_model)
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
+from django.template import RequestContext
 from django.utils.translation import ugettext as _
 from django.views.generic.edit import CreateView
 
@@ -44,8 +45,6 @@ class Registration(CreateView):
             self.request.session.modified = True
             print(_("OSCM User \'{0:s}\' is logged in.").format(
                 str(username)))
-        else:
-            self.request.session.modified = False
         return validation
 
     def get_success_url(self):
