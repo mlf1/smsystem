@@ -1,6 +1,8 @@
 # oscm_app/sign
 
 # from django.contrib import messages
+import logging
+
 from django.contrib.auth import (login, logout)
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import csrf
@@ -12,6 +14,9 @@ from django.views.decorators.debug import sensitive_post_parameters
 
 from .log_forms import LoginForm
 from oscm_app.utils import next_url
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
 
 
 @login_required
@@ -27,6 +32,15 @@ def home_view(request, template_name='home.html'):
 
 
 @login_required
+def logout_get_view(request):
+    """
+    Logout the current OSCM User.
+    """
+    logout(request)
+    return HttpResponseRedirect(reverse('oscm:index'))
+
+
+@login_required
 def logout_view(request, template_name='logout.html', next_page=None):
     """
     Display the logout and handles the logout action.
@@ -35,7 +49,8 @@ def logout_view(request, template_name='logout.html', next_page=None):
         username = request.user.username
         # Since we know the user is logged in, we can now just log them out.
         logout(request)
-        print(_("OSCM User \'{0:s}\' is logged out.").format(str(username)))
+        logger.info(_("OSCM User \'{0:s}\' is logged out.").format(
+            str(username)))
         # messages.success(request, _("You have been logged out."))
         return HttpResponseRedirect(next_url(request) or get_script_prefix())
     else:
@@ -55,19 +70,19 @@ def login_view(request, template_name='login.html'):
         user = form.login(request)
         if user is None:
             # Return an 'invalid login' error message
-            print(_("User with \'{0:s}\' is invalid!!").format(
+            logger.info(_("OSCM User with \'{0:s}\' is invalid!!").format(
                 request.username))
             return HttpResponseRedirect(reverse('oscm:home'))
         else:
             if user.is_active:
                 login(request, user)
-                print(_("OSCM User \'{0:s}\' is logged in.").format(
-                    user.username))
+                logger.info(_("OSCM User \'{0:s}\' is logged in.").format(
+                    str(user.username)))
                 return HttpResponseRedirect(reverse('oscm:home'))
             else:
                 # Return a 'disabled account' error message
-                print(_("OSCM User \'{0:s}\' is inactive!!").format(
-                    user.username))
+                logger.info(_("OSCM User \'{0:s}\' is inactive!!").format(
+                    str(user.username)))
                 return HttpResponseRedirect(reverse('oscm:home'))
     else:
         context = {"form": form, "title": _("Log in")}
