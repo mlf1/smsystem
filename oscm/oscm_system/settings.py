@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import logging.config
 import os
+# import sys
 from django.utils.translation import ugettext_lazy
 from django.conf import global_settings as default_settings
 
@@ -165,3 +167,146 @@ TEMPLATE_CONTEXT_PROCESSORS = default_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'oscm_app.custom_context_processors.retrieve_setting_parameters',
     'django.core.context_processors.request',
 )
+
+# Logging configuration.
+LOGGING_CONFIG = None
+# Date format of logs.
+LOG_DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+# Base directory of logs.
+LOG_BASE_DIR = os.path.normpath(os.path.join(BASE_DIR, 'logs'))
+# Max size of rotating files (bytes).
+LOG_MAX_SIZE = 1024 * 1024 * 5
+# Count of backup files for the logs (=how many rollovers are kept).
+LOG_BACKUP_COUNT = 7
+# Whatever I want, as I already have
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'simple': {
+            'format':
+                '[%(asctime)s] %(levelname)s %(module)s '
+                '%(message)s',
+            'datefmt': LOG_DATE_FORMAT,
+            },
+        'main_formatters': {
+            'format':
+                '%(levelname)s:%(name)s: %(message)s '
+                '(%(asctime)s; %(filename)s:%(lineno)d)',
+            'datefmt': LOG_DATE_FORMAT,
+            },
+        'verbose': {
+            'format':
+                "[%(asctime)-15s] %(name)-5s %(levelname)-8s "
+                "(%(filename)s:%(lineno)d) "
+                "%(message)s",
+            'datefmt': LOG_DATE_FORMAT,
+            },
+        'full_verbose': {
+            'format':
+                '[LEVEL:%(levelname)s] TIME:%(asctime)s '
+                '[MODULE:%(module)s FUNCNAME:%(funcName)s LINE:%(lineno)d] '
+                'PROCESS:%(process)d THREAD:%(thread)d MESSAGE:%(message)s',
+            'datefmt': LOG_DATE_FORMAT,
+            },
+        },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue'
+        },
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'oscm_app': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(
+                LOG_BASE_DIR,
+                'oscm_app.log'),
+            'formatter': 'simple',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            # 'stream': sys.stdout
+            'filters': ['require_debug_true'],
+            'formatter': 'main_formatters',
+        },
+        'test': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(
+                LOG_BASE_DIR,
+                'main_debug.log'),
+            # 5 MB
+            'maxBytes': LOG_MAX_SIZE,
+            'backupCount': LOG_BACKUP_COUNT,
+            'formatter': 'full_verbose',
+            'filters': ['require_debug_true'],
+        },
+        'prod': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(
+                LOG_BASE_DIR,
+                'main.log'),
+            # 5 MB
+            'maxBytes': LOG_MAX_SIZE,
+            'backupCount': LOG_BACKUP_COUNT,
+            'formatter': 'main_formatters',
+            'filters': ['require_debug_false'],
+        },
+        'dba_logfile': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(
+                LOG_BASE_DIR,
+                'django_dba.log'),
+            # 5 MB
+            'maxBytes': LOG_MAX_SIZE,
+            'backupCount': LOG_BACKUP_COUNT,
+            'formatter': 'simple'
+        },
+        'null': {
+            "class": 'django.utils.log.NullHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['null'],
+            'level': 'INFO',
+        },
+        'django.request': {
+            'handlers': ['mail_admins', 'console'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'django.db.backends': {
+            'handlers': ['dba_logfile', 'console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'oscm_app': {
+            'handlers': ['oscm_app', 'test', 'console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'py.warnings': {
+            'handlers': ['null'],
+        },
+        '': {
+            'handlers': ['console', 'prod', 'test'],
+            'level': 'DEBUG',
+        },
+    }
+}
+
+logging.config.dictConfig(LOGGING)

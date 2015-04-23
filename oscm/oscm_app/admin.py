@@ -11,6 +11,7 @@ from .authentication.custom_auth_user_form import (
 
 
 class UserAdmin(OriginalUserAdmin):
+
     """
     Define a new User admin
     """

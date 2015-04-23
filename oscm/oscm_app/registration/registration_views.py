@@ -1,9 +1,10 @@
 # oscm_app/register
 
+import logging
+
 from django.contrib.auth import (authenticate, login, get_user_model)
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
-from django.template import RequestContext
 from django.utils.translation import ugettext as _
 from django.views.generic.edit import CreateView
 
@@ -12,8 +13,16 @@ from django.views.generic.edit import CreateView
 from .registration_forms import RegistrationFormTOS
 from oscm_app.utils import get_attr
 
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
+
 
 class Registration(CreateView):
+
+    """
+    This class is used for the registration view.
+    """
+
     form_class = RegistrationFormTOS
     template_name = 'registration/registration.html'
     model = get_user_model()
@@ -27,6 +36,7 @@ class Registration(CreateView):
         """
         registration_allowed = self.registration_allowed(request)
         if not registration_allowed:
+            logger.debug(_("Registration is closed."))
             return redirect(self.disallowed_url)
         return super(Registration, self).dispatch(
             request, *args, **kwargs)
@@ -40,10 +50,9 @@ class Registration(CreateView):
         password = form.cleaned_data['password1']
         user = authenticate(username=username, password=password)
         login(self.request, user)
-        print(_("OSCM User \'{0:s}\' is registered.").format(str(username)))
         if get_attr('REGISTRATION_AUTO_ACTIVATED_ACCOUNT', False):
             self.request.session.modified = True
-            print(_("OSCM User \'{0:s}\' is logged in.").format(
+            logger.info(_("OSCM User \'{0:s}\' is logged in.").format(
                 str(username)))
         return validation
 

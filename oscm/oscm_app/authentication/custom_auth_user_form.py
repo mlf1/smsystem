@@ -1,5 +1,7 @@
 # oscm_app/authentication
 
+import logging
+
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
@@ -9,13 +11,18 @@ from .custom_read_only_password_hash_widget import (
     CustomReadOnlyPasswordHashWidget)
 from oscm_app.utils import get_attr
 
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
+
 
 class BaseCustomAuthUserForm(forms.ModelForm):
+
     """
     Base form of the CustomAuthUser.
     """
 
     class Meta:
+
         """
         Use this Meta class on any model to specify various
         model-specific options.
@@ -44,7 +51,7 @@ class BaseCustomAuthUserForm(forms.ModelForm):
         and 'is_superuser' to 'True' too.
         """
         role = self.cleaned_data['role']
-        print("Role is {role}.".format(role=role))
+        logger.debug(_("Role is \'%s\'." % role))
         if role == 'A':
             self.cleaned_data['is_staff'] = True
             self.cleaned_data['is_superuser'] = True
@@ -52,14 +59,15 @@ class BaseCustomAuthUserForm(forms.ModelForm):
             self.cleaned_data['is_staff'] = True
             self.cleaned_data['is_superuser'] = False
         else:
-            print("There is no rights for the {role} role.".format(
-                role=dict(get_attr('USER_ROLES')).get(role)))
+            logger.debug(_("There is no rights for the \'%s\' role." % dict(
+                get_attr('USER_ROLES')).get(role)))
             self.cleaned_data['is_staff'] = False
             self.cleaned_data['is_superuser'] = False
         return role
 
 
 class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
+
     """
     A form for creating new users. Includes all the required fields, plus a
     repeated password.
@@ -80,6 +88,7 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         help_text=_('oscm_admin_helpTextPassword2fUser'))
 
     class Meta:
+
         """
         Use this Meta class on any model to specify various
         model-specific options.
@@ -116,8 +125,10 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         except get_user_model()._meta.model.DoesNotExist:
             return username
         # 'Username must be unique'
+        msg = _('Duplicate username: %(value)s')
+        logger.error(msg % {'value': username})
         raise forms.ValidationError(
-            _('Duplicate username: %(value)s'),
+            msg,
             code='duplicate',
             params={'value': username},)
 
@@ -132,8 +143,10 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         except get_user_model()._meta.model.DoesNotExist:
             return email
         # 'email must be unique'
+        msg = _('Duplicate email: %(value)s')
+        logger.error(msg % {'value': email})
         raise forms.ValidationError(
-            _('Duplicate email: %(value)s'),
+            msg,
             code='duplicate',
             params={'value': email},)
 
@@ -145,8 +158,12 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         password2 = self.cleaned_data.get('password2')
         if password1 and password2 and password1 != password2:
             # 'Passwords don't match'
+            msg = _('Invalid passwords: %(password1)s, %(password2)s')
+            logger.error(msg % {
+                'password1': password1,
+                'password2': password2})
             raise forms.ValidationError(
-                _('Invalid passwords: %(password1)s, %(password2)s'),
+                msg,
                 code='invalid',
                 params={'password1': password1, 'password2': password2},)
         return password2
@@ -166,27 +183,35 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         # Check the authentication mode
         auth_mode = custom_user.authentication_mode
         # TODO: Remove if it's working
-        print("Auth_mode is {auth}.".format(auth=auth_mode))
+        logger.debug(_("Auth_mode is \'%s\'." % auth_mode))
         if auth_mode == 'D':
             custom_user.set_password(self.cleaned_data['password1'])
             if commit:
-                print("Save CustUser")
                 custom_user.save()
+                logger.debug(
+                    _(
+                        "OSCM User \'%s\' is "
+                        "registered." % custom_user.username))
             return custom_user
         else:
             if auth_mode == 'L':
+                msg = _('Invalid Ldap authentication: %(value)s')
+                logger.error(msg % {'value': auth_mode})
                 raise forms.ValidationError(
-                    _('Invalid Ldap authentication: %(value)s'),
+                    msg,
                     code='invalid',
                     params={'value': auth_mode},)
             else:
+                msg = _('Invalid authentication: %(value)s')
+                logger.error(msg % {'value': auth_mode})
                 raise forms.ValidationError(
-                    _('Invalid authentication: %(value)s'),
+                    msg,
                     code='invalid',
                     params={'value': auth_mode},)
 
 
 class CustomAuthUserChangeForm(BaseCustomAuthUserForm):
+
     """
     A form for updating users. Includes all the fields on the user.
 

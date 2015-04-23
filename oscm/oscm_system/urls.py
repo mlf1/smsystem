@@ -1,6 +1,6 @@
 # oscm_system
 
-from django.conf.urls import (patterns, include, url)
+from django.conf.urls import (include, patterns, url)
 from django.contrib import admin
 from django.views.generic.base import RedirectView
 

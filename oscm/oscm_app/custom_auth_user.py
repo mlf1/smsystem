@@ -14,6 +14,7 @@ from .utils import get_attr
 
 
 class CustomAuthUser(AbstractBaseUser, PermissionsMixin):
+
     """
     A fully featured User model with admin-compliant permissions.
     Username, email, role and language are required.
@@ -122,6 +123,7 @@ class CustomAuthUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['email', 'role', 'language']
 
     class Meta:
+
         """
         Use this Meta class on any model to specify various
         model-specific options.

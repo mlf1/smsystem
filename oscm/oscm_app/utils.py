@@ -1,11 +1,16 @@
 # oscm_app
 
+import logging
+
 from collections import OrderedDict
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.http import is_safe_url
 from django.utils.translation import ugettext as _
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
 
 
 def get_attr(name, default_parameter=None):
@@ -14,9 +19,11 @@ def get_attr(name, default_parameter=None):
     """
     if not hasattr(settings, name):
         if default_parameter is None:
-            raise ImproperlyConfigured("{error_message}: '{name}'.".format(
+            msg = "{error_message}: '{name}'.".format(
                 error_message=_('oscm_settings_noAttribute'),
-                name=name))
+                name=name)
+            logger.error(msg)
+            raise ImproperlyConfigured(msg)
         else:
             return default_parameter
     else:
