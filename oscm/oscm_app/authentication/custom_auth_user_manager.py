@@ -6,6 +6,7 @@ from django.utils.translation import ugettext as _
 
 
 class CustomAuthUserManager(BaseUserManager):
+
     """
     Manager for 'CustomAuthUser' model.
     """

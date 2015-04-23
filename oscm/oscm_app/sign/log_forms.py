@@ -1,16 +1,23 @@
 # oscm_app/sign
 
+import logging
+
 from django import forms
 from django.contrib.auth import authenticate
 from django.utils.translation import ugettext as _
 
 from oscm_app.utils import (set_form_field_order, get_attr)
 
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
+
 
 class LoginForm(forms.Form):
+
     """
     This form is used to log the OSCM user in the frontend.
     """
+
     username = forms.CharField(
         max_length=255,
         required=True,
@@ -60,7 +67,7 @@ class LoginForm(forms.Form):
         return self.cleaned_data
 
     def login(self, request):
-        print("User: ", self.user)
+        logger.debug(_("OSCM User: \'%s\'." % self.user))
         if self.user is None:
             self.user = self.auth_user()
         remember = get_attr('SESSION_REMEMBER')
@@ -82,7 +89,7 @@ class LoginForm(forms.Form):
         if user:
             if not user.is_active:
                 # An inactive account was used - no logging in!
-                print(_(
+                logger.error(_(
                     "No logging in! An inactive account was used with the "
                     "following OSCM user: \'{0}\'.").format(username))
                 raise forms.ValidationError(
@@ -91,7 +98,7 @@ class LoginForm(forms.Form):
                 self.user = user
         else:
             # Bad login details were provided. So we can't log the user in.
-            print(_(
+            logger.error(_(
                 "Invalid login details: "
                 "username=\'{0}\', password=\'{1}\'.").format(
                     username,
