@@ -6,17 +6,14 @@
 {% block content %}
 {% if user.is_authenticated and user.is_active %}
     <p>
-    {% blocktrans with oscm_username=user.username %}
-        Welcome, {{ oscm_username }}. Thanks for logging in.
-    {% endblocktrans %}
+    {% blocktrans with oscm_username=user.username %}Welcome, {{ oscm_username }}. Thanks for logging in.{% endblocktrans %}
     </p>
-    <a href="{% url "oscm:logout" %}">{% trans "[Logout]" %}</a>
+    <a href="{% url "oscm:logout" %}">{% trans "[Log out]" %}</a>
+    <a href="{% url "oscm:account_settings" pk=user.id %}">{% trans "[Account Settings]" %}</a>
 {% else %}
     <p>
-    {% blocktrans %}
-        Welcome, new OSCM user. Please log in.
-    {% endblocktrans %}
+    {% blocktrans %}Welcome, new OSCM User. Please log in.{% endblocktrans %}
     </p>
-    <a href="{% url "oscm:login" %}">{% trans "[Login]" %}</a>
+    <a href="{% url "oscm:login" %}">{% trans "[Log in]" %}</a>
 {% endif %}
 {% endblock %}

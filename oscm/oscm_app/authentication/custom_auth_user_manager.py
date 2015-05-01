@@ -20,7 +20,7 @@ class CustomAuthUserManager(BaseUserManager):
                     is_superuser,
                     password=None):
         """
-        Creates and saves a OSCM user with the given username, email, role,
+        Creates and saves a OSCM User with the given username, email, role,
         language and password.
         """
         if not email:

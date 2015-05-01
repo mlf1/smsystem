@@ -1,0 +1,30 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Account Settings" %}{% endblock %}
+{% block body_id %}{% trans "settings" %}{% endblock %}
+{% block content_title %}
+<h2>{% trans "Account Settings" %}</h2>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="span12">
+        <form action="{% url "oscm:account_settings" pk=user.id %}" method="POST" class="form-horizontal">
+            <fieldset>
+                {% csrf_token %}
+                <table summary="{% trans "Settings" %}" id="{% trans "settings" %}">
+                    <caption>{% trans "Settings" %}</caption>
+                    {{ form.as_table }}
+                    <tr>
+                        <th></th>
+                        <td>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">{% trans "Update settings" %}</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}

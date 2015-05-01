@@ -4,7 +4,7 @@ import logging
 
 from django import forms
 from django.contrib.auth import authenticate
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 from oscm_app.utils import (set_form_field_order, get_attr)
 
@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 class LoginForm(forms.Form):
 
     """
-    This form is used to log the OSCM user in the frontend.
+    This form is used to log the OSCM User in the frontend.
     """
 
     username = forms.CharField(
@@ -91,7 +91,7 @@ class LoginForm(forms.Form):
                 # An inactive account was used - no logging in!
                 logger.error(_(
                     "No logging in! An inactive account was used with the "
-                    "following OSCM user: \'{0}\'.").format(username))
+                    "following OSCM User: \'{0}\'.").format(username))
                 raise forms.ValidationError(
                     self.error_messages['account_inactive'])
             else:

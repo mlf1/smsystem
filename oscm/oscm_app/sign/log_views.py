@@ -9,11 +9,12 @@ from django.core.context_processors import csrf
 from django.core.urlresolvers import (get_script_prefix, reverse)
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.utils import translation
 from django.utils.translation import ugettext as _
 from django.views.decorators.debug import sensitive_post_parameters
 
 from .log_forms import LoginForm
-from oscm_app.utils import next_url
+from oscm_app.utils import (get_attr, next_url)
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -22,7 +23,7 @@ logger = logging.getLogger(__name__)
 @login_required
 def home_view(request, template_name='home.html'):
     """
-    This is the home page of the OSCM user.
+    This is the home page of the OSCM User.
     """
     loggedin = request.user.is_authenticated()
     return render(
@@ -51,6 +52,21 @@ def logout_view(request, template_name='logout.html', next_page=None):
         logout(request)
         logger.info(_("OSCM User \'{0:s}\' is logged out.").format(
             str(username)))
+        # Set the user's language if necessary
+        current_language = translation.get_language()
+        default_language = get_attr('LANGUAGE_CODE')
+        if current_language != default_language:
+            logger.debug(
+                _(
+                    "Change the current language \'%(current_language)s\' "
+                    "to \'%(default_language)s\'."), {
+                        "current_language": current_language,
+                        "default_language": default_language})
+            # "activate()"" works only for the current view
+            translation.activate(default_language)
+            # Set the session variable
+            request.session[
+                translation.LANGUAGE_SESSION_KEY] = default_language
         # messages.success(request, _("You have been logged out."))
         return HttpResponseRedirect(next_url(request) or get_script_prefix())
     else:
@@ -78,6 +94,23 @@ def login_view(request, template_name='login.html'):
                 login(request, user)
                 logger.info(_("OSCM User \'{0:s}\' is logged in.").format(
                     str(user.username)))
+                # Set the user's language if necessary
+                current_language = translation.get_language()
+                user_language = user.language
+                if current_language != user_language:
+                    logger.debug(
+                        _(
+                            "Change the current language "
+                            "\'%(current_language)s\' to "
+                            "the OSCM User's language "
+                            "\'%(user_language)s\'."), {
+                                "current_language": current_language,
+                                "user_language": user_language})
+                    # "activate()"" works only for the current view
+                    translation.activate(user_language)
+                    # Set the session variable
+                    request.session[
+                        translation.LANGUAGE_SESSION_KEY] = user_language
                 return HttpResponseRedirect(reverse('oscm:home'))
             else:
                 # Return a 'disabled account' error message

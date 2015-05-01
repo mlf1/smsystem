@@ -5,6 +5,7 @@ import logging
 from django.contrib.auth import (authenticate, login, get_user_model)
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
+from django.utils import translation
 from django.utils.translation import ugettext as _
 from django.views.generic.edit import CreateView
 
@@ -54,6 +55,18 @@ class Registration(CreateView):
             self.request.session.modified = True
             logger.info(_("OSCM User \'{0:s}\' is logged in.").format(
                 str(username)))
+            # Set the user's language if necessary
+            current_language = translation.get_language()
+            user_language = self.get_object().language
+            if current_language != user_language:
+                logger.debug(
+                    "Change the current language \'%s\' to \'%s\'." % (
+                        current_language, user_language))
+                # "activate()"" works only for the current view
+                translation.activate(user_language)
+                # Set the session variable
+                self.request.session[
+                    translation.LANGUAGE_SESSION_KEY] = user_language
         return validation
 
     def get_success_url(self):
