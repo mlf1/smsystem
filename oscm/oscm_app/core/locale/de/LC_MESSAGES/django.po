@@ -319,7 +319,7 @@ msgstr "Willkommen, neue OSCM Benutzer bei der OSCM Anwendung."
 
 #: oscm_app/core/templates/oscm_app/index.html:15
 msgid "Please log in."
-msgstr ""
+msgstr "Bitte anmelden."
 
 #: oscm_app/core/templates/oscm_app/index.html:19
 msgid "Or if you have not logged in before, then please register first."
