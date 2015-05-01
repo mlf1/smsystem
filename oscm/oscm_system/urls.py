@@ -14,5 +14,18 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
 )
 
+urlpatterns += patterns(
+    '',
+    (r'^i18n/', include('django.conf.urls.i18n')),
+)
+
+handler403 = 'oscm_app.errors.error_views.permission_denied'
 handler404 = 'oscm_app.errors.error_views.page_not_found'
 handler500 = 'oscm_app.errors.error_views.server_error'
+
+urlpatterns += patterns(
+    '',
+    url(r'^403$', handler403, name='403'),
+    url(r'^404$', handler404, name='404'),
+    url(r'^500$', handler500, name='500'),
+)
