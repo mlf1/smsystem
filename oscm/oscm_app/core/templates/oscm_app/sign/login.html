@@ -1,6 +1,6 @@
 {% extends "oscm_app/base.html" %}
 {% load i18n %}
-{% block title %}{% trans "login" %}{% endblock %}
+{% block title %}{% trans "Log in" %}{% endblock %}
 {% block body_id %}{% trans "login" %}{% endblock %}
 {% block content_title %}
     <h2>{% trans "Authentication" %}</h2>
@@ -19,7 +19,7 @@
             {{ form.as_p }}
             {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
             <div class="form-actions">
-                <button type="submit" class="btn btn-primary">{% trans "Login" %}</button>
+                <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
             </div>
             </fieldset>
         </form>

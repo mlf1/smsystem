@@ -5,7 +5,7 @@ import logging
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 from .custom_read_only_password_hash_widget import (
     CustomReadOnlyPasswordHashWidget)
@@ -21,6 +21,17 @@ class BaseCustomAuthUserForm(forms.ModelForm):
     Base form of the CustomAuthUser.
     """
 
+    error_messages = {
+        'duplicate username': _('Duplicate username: %(username)s'),
+        'duplicate email': _('Duplicate email: %(email)s'),
+        'invalid passwords': _(
+            'Invalid passwords: %(password1)s, %(password2)s'),
+        'invalid authentication': _(
+            'Invalid authentication: %(authentication)s'),
+        'invalid Ldap authentication': _(
+            'Invalid Ldap authentication: %(authentication)s')
+    }
+
     class Meta:
 
         """
@@ -28,7 +39,6 @@ class BaseCustomAuthUserForm(forms.ModelForm):
         model-specific options.
         """
         model = get_user_model()
-
         fields = (
             'username',
             'password',
@@ -77,14 +87,14 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         label=_('oscm_admin_passwordLabelOfUser'),
         widget=forms.PasswordInput(attrs={
             'placeholder': _(
-                'oscm_admin_passwordLabelOfUser').lower()}))
+                'oscm_admin_passwordLabelOfUser')}))
     # Password confirmation
     # 'Enter the same password as above, for verification.''
     password2 = forms.CharField(
         label=_('oscm_admin_passwordConfirmationLabelOfUser'),
         widget=forms.PasswordInput(attrs={
             'placeholder': _(
-                'oscm_admin_passwordConfirmationLabelOfUser').lower()}),
+                'oscm_admin_passwordConfirmationLabelOfUser')}),
         help_text=_('oscm_admin_helpTextPassword2fUser'))
 
     class Meta:
@@ -125,12 +135,13 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         except get_user_model()._meta.model.DoesNotExist:
             return username
         # 'Username must be unique'
-        msg = _('Duplicate username: %(value)s')
-        logger.error(msg % {'value': username})
+        logger.error(
+            self.error_messages['duplicate username'] % {
+                'username': username})
         raise forms.ValidationError(
-            msg,
+            self.error_messages['duplicate username'],
             code='duplicate',
-            params={'value': username},)
+            params={'username': username},)
 
     def clean_email(self):
         """
@@ -143,12 +154,12 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         except get_user_model()._meta.model.DoesNotExist:
             return email
         # 'email must be unique'
-        msg = _('Duplicate email: %(value)s')
-        logger.error(msg % {'value': email})
+        logger.error(self.error_messages['duplicate email'] % {
+            'email': email})
         raise forms.ValidationError(
-            msg,
+            self.error_messages['duplicate email'],
             code='duplicate',
-            params={'value': email},)
+            params={'email': email},)
 
     def clean_password2(self):
         """
@@ -158,12 +169,11 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         password2 = self.cleaned_data.get('password2')
         if password1 and password2 and password1 != password2:
             # 'Passwords don't match'
-            msg = _('Invalid passwords: %(password1)s, %(password2)s')
-            logger.error(msg % {
+            logger.error(self.error_messages['invalid passwords'] % {
                 'password1': password1,
                 'password2': password2})
             raise forms.ValidationError(
-                msg,
+                self.error_messages['invalid passwords'],
                 code='invalid',
                 params={'password1': password1, 'password2': password2},)
         return password2
@@ -178,7 +188,7 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
 
     def save_account(self, custom_user, commit=True):
         """
-        Save the account of the OSCM user.
+        Save the account of the OSCM User.
         """
         # Check the authentication mode
         auth_mode = custom_user.authentication_mode
@@ -186,28 +196,28 @@ class CustomAuthUserCreationForm(BaseCustomAuthUserForm):
         logger.debug(_("Auth_mode is \'%s\'." % auth_mode))
         if auth_mode == 'D':
             custom_user.set_password(self.cleaned_data['password1'])
-            if commit:
-                custom_user.save()
-                logger.debug(
-                    _(
-                        "OSCM User \'%s\' is "
-                        "registered." % custom_user.username))
-            return custom_user
         else:
             if auth_mode == 'L':
-                msg = _('Invalid Ldap authentication: %(value)s')
-                logger.error(msg % {'value': auth_mode})
+                logger.error(self.error_messages[
+                    'invalid Ldap authentication'] % {'value': auth_mode})
                 raise forms.ValidationError(
-                    msg,
+                    self.error_messages['invalid Ldap authentication'],
                     code='invalid',
                     params={'value': auth_mode},)
             else:
-                msg = _('Invalid authentication: %(value)s')
-                logger.error(msg % {'value': auth_mode})
+                logger.error(self.error_messages[
+                    'invalid authentication'] % {'authentication': auth_mode})
                 raise forms.ValidationError(
-                    msg,
+                    self.error_messages['invalid authentication'],
                     code='invalid',
                     params={'value': auth_mode},)
+        if self.has_changed() or commit:
+            custom_user.save()
+            logger.info(
+                _(
+                    "OSCM User \'%s\' is "
+                    "registered." % custom_user.username))
+        return custom_user
 
 
 class CustomAuthUserChangeForm(BaseCustomAuthUserForm):

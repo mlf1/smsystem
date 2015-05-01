@@ -4,6 +4,7 @@ from django.conf.urls import (patterns, url)
 from django.views.generic.base import TemplateView
 
 from .registration.registration_views import Registration
+from .preferences.account_settings_view import AccountSettings
 
 urlpatterns = patterns(
     'oscm_app.views',
@@ -43,4 +44,12 @@ urlpatterns += patterns(
     url(r'^register/completed/$', TemplateView.as_view(
         template_name='oscm_app/registration/registration_completed.html'),
         name='registration_completed'),
+)
+
+urlpatterns += patterns(
+    'oscm_app.preferences.oscm_account_settings_view',
+    url(r'^home/settings/(?P<pk>\d+)/$', AccountSettings.as_view(
+        template_name='oscm_app/preferences/settings.html',
+        success_url='oscm:home'),
+        name='account_settings'),
 )

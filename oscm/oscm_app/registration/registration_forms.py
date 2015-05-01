@@ -77,7 +77,7 @@ class RegistrationFormTOS(CustomAuthUserCreationForm):
 
     def save_account(self, custom_user, commit=True):
         """
-        Check configuration parameters and save account of the OSCM user.
+        Check configuration parameters and save account of the OSCM User.
         """
         custom_user = super(RegistrationFormTOS, self).save_account(
             custom_user,
@@ -86,11 +86,13 @@ class RegistrationFormTOS(CustomAuthUserCreationForm):
             # Activated OSCM account
             custom_user.is_active = True
             logger.info(
-                _("OSCM user \'%s\' is activated." % custom_user.username))
+                _("OSCM User \'%s\' is activated." % custom_user.username))
+        else:
+            logger.info(
+                _("OSCM User \'%s\' is not yet activated." % (
+                    custom_user.username)))
         if commit:
             custom_user.save()
             logger.info(
-                _("OSCM user \'%s\' is registered." % custom_user.username))
-            if not custom_user.is_active:
-                logger.info(_("But your OSCM account is not yet activated."))
+                _("OSCM User \'%s\' is registered." % custom_user.username))
         return custom_user

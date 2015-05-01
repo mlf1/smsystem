@@ -1,0 +1,22 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}
+    {% trans "oscm_labelOfError403" %}
+{% endblock %}
+{% block body_id %}
+    {% trans "oscm_idOfError403" %}
+{% endblock %}
+{% block content %}
+    <p>{% blocktrans with oscm_username=user.username %}OSCM User {{ oscm_username }} [{{ ip_address }}, {{ app }}] cannot {% endblocktrans %}{% if error_message %}{{error_message}}{% else %}{% trans "do that. " %}{% endif %}</p>
+    <p>{% trans "Please sign in to a different account or register for a new one:" %}</p>
+    <form method="post" action="{% url 'oscm:logout' %}">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{% url 'oscm:login' %}"/>
+        <button type="submit">{% trans "Log in" %}</button>
+    </form>
+    <form method="post" action="{% url 'oscm:logout' %}">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{% url 'oscm:registration' %}"/>
+        <button type="submit">{% trans "Register" %}</button>
+    </form>
+{% endblock content %}

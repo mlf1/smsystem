@@ -1,22 +1,22 @@
 {% extends "oscm_app/base.html" %}
 {% load i18n %}
-{% block title %}{% trans "Log out" %}{% endblock %}
-{% block body_id %}{% trans "Log out" %}{% endblock %}
+{% block title %}{% trans "Logout" %}{% endblock %}
+{% block body_id %}{% trans "logout" %}{% endblock %}
 {% block content_title %}
-<h2>{% trans "Log out" %}</h2>
+<h2>{% trans "Logout" %}</h2>
 {% endblock %}
 {% block content %}
 {% if user.is_authenticated and user.is_active %}
 <div class="row">
     <div class="span12">
         <form method="POST" action="{% url "oscm:logout" %}" class="form-horizontal">
-            <legend>{% trans "Log out" %}</legend>
+            <legend>{% trans "Logout" %}</legend>
             <fieldset>
                 {% csrf_token %}
                 <p>{% trans "Are you sure you want to log out?" %}</p>
                 {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">{% trans "Logout" %}</button>
+                    <button type="submit" class="btn btn-primary">{% trans "Log out" %}</button>
                 </div>
             </fieldset>
         </form>
