@@ -129,6 +129,8 @@ class AccountSettingsForm(BaseCustomAuthUserForm):
         """
         if commit and self.has_been_modified:
             custom_user.save()
+            # Set the initial state
+            self.has_been_modified = False
             logger.info(
                 _(
                     "OSCM Account settings from the OSCM User \'%s\' has "
