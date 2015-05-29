@@ -1,19 +1,30 @@
 {% extends "oscm_app/base.html" %}
+{% load nav %}
 {% load i18n %}
 {% block title %}
 {% trans "Welcome to your OSCM's homepage." %}
 {% endblock %}
+{% block side_block %}
+    <ul class="nav nav-sidebar">
+        {% url 'oscm:account_settings' pk=user.id as oscm_account_settings_url %}
+        <li class="{% active request oscm_account_settings_url exact_match=True %}">
+            <a href="{{ oscm_account_settings_url }}">{% trans "Account Settings" %}</a>
+        </li>
+    </ul>
+{% endblock %}
 {% block content %}
 {% if user.is_authenticated and user.is_active %}
-    <p>
+    <p class="alert alert-info">
     {% blocktrans with oscm_username=user.username %}Welcome, {{ oscm_username }}. Thanks for logging in.{% endblocktrans %}
     </p>
-    <a href="{% url "oscm:logout" %}">{% trans "[Log out]" %}</a>
-    <a href="{% url "oscm:account_settings" pk=user.id %}">{% trans "[Account Settings]" %}</a>
 {% else %}
-    <p>
-    {% blocktrans %}Welcome, new OSCM User. Please log in.{% endblocktrans %}
-    </p>
-    <a href="{% url "oscm:login" %}">{% trans "[Log in]" %}</a>
+    <ul>
+        <li>
+            <p>
+            {% blocktrans %}Welcome, new OSCM User. Please log in.{% endblocktrans %}
+            </p>
+            <a href="{% url "oscm:login" %}" class="btn btn-link"><mark>{% trans "Log in" %}</mark></a>
+        </li>
+    </ul>
 {% endif %}
 {% endblock %}

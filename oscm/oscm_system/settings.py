@@ -98,9 +98,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = os.path.join(BASE_DIR, 'static/')
 
-STATIC_ROOT = '/Users/mlf/Projets/myRepo/smsystem/oscm/static'
+ROOT_PATH = os.path.join(BASE_DIR, '..')
+
+STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -213,10 +215,10 @@ LOGGING = {
         },
     'filters': {
         'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
+            '()': 'django.utils.log.RequireDebugFalse',
         },
         'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue'
+            '()': 'django.utils.log.RequireDebugTrue',
         },
     },
     'handlers': {
