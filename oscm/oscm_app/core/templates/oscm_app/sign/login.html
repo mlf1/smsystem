@@ -1,29 +1,67 @@
 {% extends "oscm_app/base.html" %}
+{% load bootstrapform %}
 {% load i18n %}
 {% block title %}{% trans "Log in" %}{% endblock %}
 {% block body_id %}{% trans "login" %}{% endblock %}
-{% block content_title %}
-    <h2>{% trans "Authentication" %}</h2>
-{% endblock %}
-{% block content %}
-{% if user.is_authenticated and user.is_active %}
-    <p>{% blocktrans with oscm_username=user.username %}You are already logged as {{ oscm_username }}.{% endblocktrans %}</p>
-    <a href="{% url "oscm:home" %}">{% trans "[Home]" %}</a>
-{% else %}
-<div class="row">
-    <div class="span12">
-        <form action="{% url "oscm:login" %}" method="POST" class="form-horizontal">
-            <legend>{% trans "Log in to an existing account" %}</legend>
-            <fieldset>
-            {% csrf_token %}
-            {{ form.as_p }}
-            {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
+{% block container %}
+    <div class="col-md-12">
+        <div class="modal-dialog panel panel-default" style="margin-bottom:0">
+            <div class="panel-heading">
+                <h3 class="panel-title">{% trans "Authentication" %}</h3>
             </div>
-            </fieldset>
-        </form>
+            <div class="panel-body">
+                {% if user.is_authenticated and user.is_active %}
+                    <p class="alert alert-warning">{% blocktrans with oscm_username=user.username %}You are already logged as {{ oscm_username }}.{% endblocktrans %}</p>
+                {% else %}
+                    {% if form.errors and not form.non_field_errors %}
+                        <p class="alert alert-danger">
+                            {% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}
+                            {% endif %}
+                        </p>
+                    {% endif %}
+                    {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                            <p class="alert alert-danger">
+                                {{ error }}
+                            </p>
+                        {% endfor %}
+                    {% endif %}
+                    <form method="POST" action="{% url 'oscm:login' %}" role="form">
+                        <legend>{% trans "Log in to an existing account" %}</legend>
+                        <fieldset>
+                            {% csrf_token %}
+                            {% for field in form %}
+                                {% if field.errors %}
+                                    <div class="form-group has-error has-feedback">
+                                        <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
+                                        <div class="controls">{{ field }}
+                                            <span class="help-block">
+                                                {% for error in  field.errors %}{{ error }}{% endfor %}
+                                            </span>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="form-group has-feedback">
+                                        <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
+                                        <div class="controls">{{ field }}
+                                            {% if field.help_text %}
+                                                <p class="help-block"><small>{{ field.help_text }}</small></p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+                          <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Log in" %}</button>
+                      </fieldset>
+                    </form>
+                    {% if registration_allowed %}
+                    <div class="footnote">
+                        {% trans "Don't have an account ?" %}<a href="{% url 'oscm:registration' %}">{% trans "Register" %}</a>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
     </div>
-</div>
-{% endif %}
-{% endblock %}
+{% endblock container %}

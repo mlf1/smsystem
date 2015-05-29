@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.core.urlresolvers import reverse
 from django.utils import translation
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import UpdateView
 
 from .account_settings_form import AccountSettingsForm
@@ -58,6 +58,11 @@ class AccountSettings(UserCheckMixin, UpdateView):
                 translation.LANGUAGE_SESSION_KEY] = user_language
             # self.request.session['django_language'] = user_language
             # self.request.LANGUAGE_CODE = translation.get_language()
+        if self.object:
+            messages.add_message(
+                self.request,
+                self.messages['settings_updated']['level'],
+                self.messages['settings_updated']['text'])
         return super(AccountSettings, self).form_valid(form)
 
     def get_success_url(self):

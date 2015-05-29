@@ -21,10 +21,12 @@ class LoginForm(forms.Form):
     username = forms.CharField(
         max_length=255,
         required=True,
+        label=_('Username'),
         widget=forms.TextInput(attrs={
             'placeholder': _('Username'),
             'autofocus': 'autofocus'}))
     password = forms.CharField(
+        label=_('Password'),
         widget=forms.PasswordInput(
             render_value=False,
             attrs={'placeholder': _('Password')}),

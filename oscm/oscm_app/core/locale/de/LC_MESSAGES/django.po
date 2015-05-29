@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 14:33+0200\n"
+"POT-Creation-Date: 2015-05-29 13:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,7 +86,7 @@ msgstr "Passwort bestätigen"
 
 #: oscm_app/authentication/custom_auth_user_form.py:98
 msgid "oscm_admin_helpTextPassword2fUser"
-msgstr "Rolle"
+msgstr "Bitte das gleiche Passwort zur Überprüfung nochmal eingeben."
 
 #: oscm_app/authentication/custom_auth_user_form.py:120
 #: oscm_app/custom_auth_user.py:37
@@ -185,11 +185,54 @@ msgstr ""
 "Dieses Objekt hat keine Änderungsgeschichte. Es wurde möglicherweise nicht "
 "über diese Verwaltungsseiten angelegt."
 
-#: oscm_app/core/templates/oscm_app/copyright.html:2
-msgid ""
-"© Bern University of Applied Sciences Engineering and Information "
-"Technology, 2015"
-msgstr "© Berner Fachhochschule Technik und Informatik, 2015"
+#: oscm_app/core/templates/oscm_app/base.html:36
+msgid "OSCM"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/base.html:40
+#: oscm_app/core/templates/oscm_app/index.html:10
+#: oscm_app/core/templates/oscm_app/registration/registration.html:9
+#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:10
+#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:15
+#: oscm_app/core/templates/oscm_app/registration/registration_completed.html:11
+#: oscm_app/core/templates/oscm_app/registration/registration_completed.html:17
+#: oscm_app/core/templates/oscm_app/sign/logout.html:25
+msgid "Home"
+msgstr "Start"
+
+#: oscm_app/core/templates/oscm_app/base.html:41
+msgid "About"
+msgstr "Darüber"
+
+#: oscm_app/core/templates/oscm_app/base.html:42
+msgid "Contact"
+msgstr "Kontakt"
+
+#: oscm_app/core/templates/oscm_app/base.html:47
+msgid "Admin"
+msgstr "Verwaltung"
+
+#: oscm_app/core/templates/oscm_app/base.html:56
+#: oscm_app/core/templates/oscm_app/sign/logout.html:3
+#: oscm_app/core/templates/oscm_app/sign/logout.html:9
+#: oscm_app/core/templates/oscm_app/sign/logout.html:18
+#: oscm_app/sign/log_views.py:73
+msgid "Log out"
+msgstr "Abmelden"
+
+#: oscm_app/core/templates/oscm_app/base.html:58
+#: oscm_app/core/templates/oscm_app/errors/403.html:20
+#: oscm_app/core/templates/oscm_app/home.html:26
+#: oscm_app/core/templates/oscm_app/index.html:18
+#: oscm_app/core/templates/oscm_app/sign/login.html:4
+#: oscm_app/core/templates/oscm_app/sign/login.html:55
+#: oscm_app/sign/log_views.py:121
+msgid "Log in"
+msgstr "Anmelden"
+
+#: oscm_app/core/templates/oscm_app/base.html:67
+msgid "oscm_nameOfApplication"
+msgstr "OSCM Anwendung"
 
 #: oscm_app/core/templates/oscm_app/errors/403.html:4
 msgid "oscm_labelOfError403"
@@ -199,32 +242,32 @@ msgstr "Fehlende Zugriffsberechtigungen"
 msgid "oscm_idOfError403"
 msgstr "fehler_403"
 
-#: oscm_app/core/templates/oscm_app/errors/403.html:10
+#: oscm_app/core/templates/oscm_app/errors/403.html:12
+msgid "oscm_typeOfError403"
+msgstr "Fehlende Zugriffsberechtigungen."
+
+#: oscm_app/core/templates/oscm_app/errors/403.html:15
 #, python-format
 msgid "OSCM User %(oscm_username)s [%(ip_address)s, %(app)s] cannot "
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/errors/403.html:10
+#: oscm_app/core/templates/oscm_app/errors/403.html:15
 msgid "do that. "
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/errors/403.html:11
-msgid "Please sign in to a different account or register for a new one:"
+#: oscm_app/core/templates/oscm_app/errors/403.html:16
+msgid "Please sign in to a different account or register for a new one."
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/errors/403.html:15
-#: oscm_app/core/templates/oscm_app/sign/login.html:3
-#: oscm_app/core/templates/oscm_app/sign/login.html:22
-#: oscm_app/sign/log_views.py:121
-msgid "Log in"
-msgstr ""
-
-#: oscm_app/core/templates/oscm_app/errors/403.html:20
-#: oscm_app/core/templates/oscm_app/registration/registration.html:3
-#: oscm_app/core/templates/oscm_app/registration/registration.html:20
-#: oscm_app/core/templates/oscm_app/registration/registration.html:27
+#: oscm_app/core/templates/oscm_app/errors/403.html:25
+#: oscm_app/core/templates/oscm_app/index.html:23
+#: oscm_app/core/templates/oscm_app/registration/registration.html:4
+#: oscm_app/core/templates/oscm_app/registration/registration.html:55
+#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:20
+#: oscm_app/core/templates/oscm_app/sign/login.html:60
+#: oscm_app/registration/registration_views.py:65
 msgid "Register"
-msgstr "Sichern"
+msgstr "Registrieren"
 
 #: oscm_app/core/templates/oscm_app/errors/404.html:4
 msgid "oscm_labelOfError404"
@@ -262,32 +305,47 @@ msgstr ""
 "benachrichtig und wird sich in Kürze um den Fehler kümmern. Wir danken für "
 "Ihr Verständnis.</p>"
 
-#: oscm_app/core/templates/oscm_app/home.html:4
+#: oscm_app/core/templates/oscm_app/footer.html:3
+msgid "Back to top"
+msgstr "Zurück nach oben"
+
+#: oscm_app/core/templates/oscm_app/footer.html:4
+msgid "Help"
+msgstr "Hilfe ?"
+
+#: oscm_app/core/templates/oscm_app/footer.html:8
+msgid "GitHub"
+msgstr "GitHub"
+
+#: oscm_app/core/templates/oscm_app/footer.html:9
+msgid "Ordering and Supplier Chain Manager"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/footer.html:10
+msgid ""
+"© Bern University of Applied Sciences Engineering and Information "
+"Technology, 2015"
+msgstr "&copy; Berner Fachhochschule Technik und Informatik, 2015"
+
+#: oscm_app/core/templates/oscm_app/home.html:5
 msgid "Welcome to your OSCM's homepage."
 msgstr "Willkommen auf der Startseite Ihrer OSCM."
 
-#: oscm_app/core/templates/oscm_app/home.html:9
-#: oscm_app/core/templates/oscm_app/index.html:9
+#: oscm_app/core/templates/oscm_app/home.html:11
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:4
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:9
+msgid "Account Settings"
+msgstr "Kontoeinstellungen"
+
+#: oscm_app/core/templates/oscm_app/home.html:18
+#: oscm_app/core/templates/oscm_app/index.html:11
 #, python-format
 msgid "Welcome, %(oscm_username)s. Thanks for logging in."
 msgstr "Willkommen, %(oscm_username)s. Schön, dass Sie hier sind."
 
-#: oscm_app/core/templates/oscm_app/home.html:11
-msgid "[Log out]"
-msgstr ""
-
-#: oscm_app/core/templates/oscm_app/home.html:12
-msgid "[Account Settings]"
-msgstr "[Kontoeinstellungen]"
-
-#: oscm_app/core/templates/oscm_app/home.html:15
+#: oscm_app/core/templates/oscm_app/home.html:24
 msgid "Welcome, new OSCM User. Please log in."
 msgstr "Willkommen, neue Benutzer. Bitte anmelden."
-
-#: oscm_app/core/templates/oscm_app/home.html:17
-#: oscm_app/core/templates/oscm_app/index.html:16
-msgid "[Log in]"
-msgstr ""
 
 #: oscm_app/core/templates/oscm_app/index.html:3
 msgid "Welcome to the OSCM application."
@@ -299,79 +357,68 @@ msgstr ""
 
 #: oscm_app/core/templates/oscm_app/index.html:5
 msgid "Homepage of the OSCM application."
-msgstr ""
+msgstr "Startseite von der OSCM Anwendung."
 
-#: oscm_app/core/templates/oscm_app/index.html:10
-#: oscm_app/core/templates/oscm_app/registration/registration.html:13
-#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:15
-#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:22
-#: oscm_app/core/templates/oscm_app/registration/registration_completed.html:19
-#: oscm_app/core/templates/oscm_app/registration/registration_completed.html:26
-#: oscm_app/core/templates/oscm_app/registration/registration_completed.html:32
-#: oscm_app/core/templates/oscm_app/sign/login.html:11
-#: oscm_app/core/templates/oscm_app/sign/logout.html:26
-msgid "[Home]"
-msgstr ""
-
-#: oscm_app/core/templates/oscm_app/index.html:13
+#: oscm_app/core/templates/oscm_app/index.html:16
 msgid "Welcome, new OSCM User to the OSCM application."
 msgstr "Willkommen, neue OSCM Benutzer bei der OSCM Anwendung."
 
-#: oscm_app/core/templates/oscm_app/index.html:15
+#: oscm_app/core/templates/oscm_app/index.html:17
 msgid "Please log in."
 msgstr "Bitte anmelden."
 
-#: oscm_app/core/templates/oscm_app/index.html:19
+#: oscm_app/core/templates/oscm_app/index.html:22
 msgid "Or if you have not logged in before, then please register first."
 msgstr ""
+"Oder wenn Sie in vorher dann nicht geloggt haben, tragen Sie sich bitte "
+"erstens an."
 
-#: oscm_app/core/templates/oscm_app/index.html:20
-#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:27
-msgid "[Register]"
-msgstr "[Sichern]"
-
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:3
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:6
-msgid "Account Settings"
-msgstr "Kontoeinstellungen"
-
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:4
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:14
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:5
 msgid "settings"
 msgstr "einstellungen"
 
 #: oscm_app/core/templates/oscm_app/preferences/settings.html:14
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:15
+#: oscm_app/core/templates/oscm_app/registration/registration.html:19
+#: oscm_app/core/templates/oscm_app/sign/login.html:18
+msgid "Please correct the error below."
+msgstr "Korrigieren Sie bitte den aufgeführten Fehler unten."
+
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:14
+#: oscm_app/core/templates/oscm_app/registration/registration.html:19
+#: oscm_app/core/templates/oscm_app/sign/login.html:18
+msgid "Please correct the errors below."
+msgstr "Bitte die unten aufgeführten Fehler korrigieren."
+
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:26
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:21
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:51
 msgid "Update settings"
 msgstr "Update-Einstellungen"
 
-#: oscm_app/core/templates/oscm_app/registration/registration.html:4
-#: oscm_app/core/templates/oscm_app/registration/registration.html:20
+#: oscm_app/core/templates/oscm_app/registration/registration.html:5
 msgid "register"
-msgstr "sichern"
+msgstr "registrieren"
 
-#: oscm_app/core/templates/oscm_app/registration/registration.html:6
-msgid "Registration"
-msgstr ""
-
-#: oscm_app/core/templates/oscm_app/registration/registration.html:10
+#: oscm_app/core/templates/oscm_app/registration/registration.html:9
+#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:11
 #, python-format
-msgid ""
-"\n"
-"        You are already registered as %(oscm_username)s."
+msgid "You are already registered as %(oscm_username)s."
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/registration/registration.html:21
+#: oscm_app/core/templates/oscm_app/registration/registration.html:14
+msgid "Registration"
+msgstr "Registrierung"
+
+#: oscm_app/core/templates/oscm_app/registration/registration.html:31
 msgid "Sign Up For Your Account"
-msgstr ""
+msgstr "Registrieren Sie sich für ein Benutzerkonto"
 
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:3
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:4
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:6
+#: oscm_app/core/templates/oscm_app/registration/registration_completed.html:6
 msgid "Registration closed"
 msgstr ""
 
@@ -379,22 +426,13 @@ msgstr ""
 msgid "Registration opened"
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:10
-#, python-format
-msgid "You are already registered as %(oscm_username)s."
-msgstr ""
-
-#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:13
-#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:20
+#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:16
 msgid "Registration is currently closed on this site."
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:24
-msgid ""
-"\n"
-"        You can register your OSCM account.\n"
-"        "
-msgstr ""
+#: oscm_app/core/templates/oscm_app/registration/registration_closed.html:21
+msgid "You can register your OSCM account."
+msgstr "Sie können Ihr OSCM Benutzerkonto registrieren."
 
 #: oscm_app/core/templates/oscm_app/registration/registration_completed.html:3
 #: oscm_app/core/templates/oscm_app/registration/registration_completed.html:4
@@ -411,55 +449,37 @@ msgid ""
 msgstr ""
 
 #: oscm_app/core/templates/oscm_app/registration/registration_completed.html:17
-msgid "Your OSCM account has been activated."
-msgstr ""
+msgid "You must have an OSCM Account before."
+msgstr "Sie müssen eingeloggt sein, um diese Anwendung benutzen zu können."
 
-#: oscm_app/core/templates/oscm_app/registration/registration_completed.html:22
-msgid ""
-"\n"
-"        But your OSCM account is not yet activated.\n"
-"        "
-msgstr ""
-
-#: oscm_app/core/templates/oscm_app/registration/registration_completed.html:30
-msgid "You must have an OSCM account before."
-msgstr ""
-
-#: oscm_app/core/templates/oscm_app/sign/login.html:4
+#: oscm_app/core/templates/oscm_app/sign/login.html:5
 msgid "login"
-msgstr ""
-
-#: oscm_app/core/templates/oscm_app/sign/login.html:6
-msgid "Authentication"
-msgstr ""
+msgstr "anmelden"
 
 #: oscm_app/core/templates/oscm_app/sign/login.html:10
+msgid "Authentication"
+msgstr "Bestätigung"
+
+#: oscm_app/core/templates/oscm_app/sign/login.html:14
 #, python-format
 msgid "You are already logged as %(oscm_username)s."
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/sign/login.html:16
+#: oscm_app/core/templates/oscm_app/sign/login.html:30
 msgid "Log in to an existing account"
-msgstr ""
+msgstr "Melden Sie sich bei einem bestehenden Konto an"
 
-#: oscm_app/core/templates/oscm_app/sign/logout.html:3
-#: oscm_app/core/templates/oscm_app/sign/logout.html:6
-#: oscm_app/core/templates/oscm_app/sign/logout.html:13
-msgid "Logout"
-msgstr ""
+#: oscm_app/core/templates/oscm_app/sign/login.html:60
+msgid "Don't have an account ?"
+msgstr "Noch keinen Account ? "
 
 #: oscm_app/core/templates/oscm_app/sign/logout.html:4
 msgid "logout"
-msgstr ""
+msgstr "abmelden"
 
-#: oscm_app/core/templates/oscm_app/sign/logout.html:16
-msgid "Are you sure you want to log out?"
-msgstr ""
-
-#: oscm_app/core/templates/oscm_app/sign/logout.html:19
-#: oscm_app/sign/log_views.py:73
-msgid "Log out"
-msgstr ""
+#: oscm_app/core/templates/oscm_app/sign/logout.html:15
+msgid "Are you sure you want to log out ?"
+msgstr "Bist Du sicher, dass du Dich abmelden möchtest ?"
 
 #: oscm_app/custom_auth_user.py:32
 msgid "oscm_admin_usernameValidatorOfUser"
@@ -540,14 +560,14 @@ msgstr ""
 msgid "No field has been modified."
 msgstr ""
 
-#: oscm_app/preferences/account_settings_form.py:134
+#: oscm_app/preferences/account_settings_form.py:136
 #, python-format
 msgid "OSCM Account settings from the OSCM User '%s' has been updated."
 msgstr ""
 
 #: oscm_app/preferences/account_settings_view.py:34
 msgid "OSCM Account settings updated."
-msgstr ""
+msgstr "Aktualisierte Kontoeinstellungen."
 
 #: oscm_app/registration/registration_forms.py:26
 msgid "I have read and agree to the Terms of Service"
@@ -576,52 +596,65 @@ msgstr ""
 msgid "OSCM User '%s' is not yet activated."
 msgstr ""
 
+#: oscm_app/registration/registration_views.py:36
+msgid "OSCM Account created."
+msgstr "OSCM angelegte Benutzerkonto."
+
 #: oscm_app/registration/registration_views.py:40
+msgid "Your OSCM Account has been activated."
+msgstr "Ihr OSCM Konto ist aktiviert worden."
+
+#: oscm_app/registration/registration_views.py:44
+msgid "But your OSCM Account is not yet activated."
+msgstr "Aber Ihr OSCM Konto wird noch nicht aktiviert."
+
+#: oscm_app/registration/registration_views.py:55
 msgid "Registration is closed."
 msgstr ""
 
-#: oscm_app/registration/registration_views.py:56
+#: oscm_app/registration/registration_views.py:79
 #: oscm_app/sign/log_views.py:95
 msgid "OSCM User '{0:s}' is logged in."
-msgstr ""
+msgstr "OSCM User '{0:s}' is logged in."
 
-#: oscm_app/sign/log_forms.py:25
+#: oscm_app/sign/log_forms.py:24 oscm_app/sign/log_forms.py:26
 msgid "Username"
-msgstr ""
+msgstr "Benutzername"
 
-#: oscm_app/sign/log_forms.py:30
+#: oscm_app/sign/log_forms.py:29 oscm_app/sign/log_forms.py:32
 msgid "Password"
-msgstr ""
+msgstr "Passwort"
 
-#: oscm_app/sign/log_forms.py:33
+#: oscm_app/sign/log_forms.py:35
 msgid "Remember Me"
 msgstr "Auf desem Computer merken"
 
-#: oscm_app/sign/log_forms.py:35
+#: oscm_app/sign/log_forms.py:37
 msgid "If checked you will stay logged in for 3 weeks."
 msgstr ""
-
-#: oscm_app/sign/log_forms.py:40
-msgid "This account is currently inactive."
-msgstr ""
+"Wenn diese Einstellung aktiv ist, werden Sie während 3 Wochen angemeldet."
 
 #: oscm_app/sign/log_forms.py:42
-msgid "The username and/or password you specified are not correct."
-msgstr "Die Email Adresse und/oder das angegebene Passwort sind nicht korrekt."
+msgid "This account is currently inactive."
+msgstr "Dieses Konto ist derzeit inaktiv."
 
-#: oscm_app/sign/log_forms.py:70
+#: oscm_app/sign/log_forms.py:44
+msgid "The username and/or password you specified are not correct."
+msgstr "Der Benutzername und/oder das angegebene Passwort sind nicht korrekt."
+
+#: oscm_app/sign/log_forms.py:72
 #, python-format
 msgid "OSCM User: '%s'."
 msgstr ""
 
-#: oscm_app/sign/log_forms.py:93
+#: oscm_app/sign/log_forms.py:95
 #, python-brace-format
 msgid ""
 "No logging in! An inactive account was used with the following OSCM User: "
 "'{0}'."
 msgstr ""
 
-#: oscm_app/sign/log_forms.py:102
+#: oscm_app/sign/log_forms.py:104
 #, python-brace-format
 msgid "Invalid login details: username='{0}', password='{1}'."
 msgstr ""

@@ -3,32 +3,18 @@
 {% block title %}{% trans "Registration completed" %}{% endblock %}
 {% block body_id %}{% trans "Registration completed" %}{% endblock %}
 {% block content_title %}
-<h2>{% trans "Registration completed" %}</h2>
+<h2>{% if registration_allowed and user.is_authenticated %}{% trans "Registration completed" %}{% else %}{% trans "Registration closed" %}{% endif %}</h2>
 {% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
-    <p>
-     {% blocktrans with oscm_username=user.username %}
+    <p class="alert alert-success">
+        <a href="{% url "oscm:home" %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>{% blocktrans with oscm_username=user.username %}
         You have successfully registered as {{ oscm_username }}.
      {% endblocktrans %}
     </p>
-    {% if user.is_active %}
-        <p>
-        {% trans "Your OSCM account has been activated." %}
-        </p>
-        <a href="{% url "oscm:home" %}">{% trans "[Home]" %}</a>
-    {% else %}
-        <p>
-        {% blocktrans %}
-        But your OSCM account is not yet activated.
-        {% endblocktrans %}
-        </p>
-        <a href="{% url "oscm:index" %}">{% trans "[Home]" %}</a>
-    {% endif %}
 {% else %}
-    <p>
-    {% trans "You must have an OSCM account before." %}
+    <p class="alert alert-warning">
+        <a href="{% url "oscm:index" %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>{% trans "You must have an OSCM Account before." %}
     </p>
-    <a href="{% url "oscm:index" %}">{% trans "[Home]" %}</a>
 {% endif %}
 {% endblock %}
