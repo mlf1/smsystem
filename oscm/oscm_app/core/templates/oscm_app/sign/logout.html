@@ -1,28 +1,27 @@
 {% extends "oscm_app/base.html" %}
 {% load i18n %}
-{% block title %}{% trans "Logout" %}{% endblock %}
+{% block title %}{% trans "Log out" %}{% endblock %}
 {% block body_id %}{% trans "logout" %}{% endblock %}
-{% block content_title %}
-<h2>{% trans "Logout" %}</h2>
-{% endblock %}
 {% block content %}
 {% if user.is_authenticated and user.is_active %}
-<div class="row">
-    <div class="span12">
+<div class="modal-dialog panel panel-default" style="margin-bottom:0">
+    <div class="panel-heading">
+        <h3 class="panel-title">{% trans "Log out" %}</h3>
+    </div>
+    <div class="panel-body">
         <form method="POST" action="{% url "oscm:logout" %}" class="form-horizontal">
-            <legend>{% trans "Logout" %}</legend>
             <fieldset>
                 {% csrf_token %}
-                <p>{% trans "Are you sure you want to log out?" %}</p>
+                <p class="alert alert-warning">{% trans "Are you sure you want to log out ?" %}</p>
                 {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">{% trans "Log out" %}</button>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">{% trans "Log out" %}</button>
                 </div>
             </fieldset>
         </form>
     </div>
 </div>
 {% else %}
-<a href="{% url "oscm:index" %}">{% trans "[Home]" %}</a>
+    <a href="{% url "oscm:index" %}" class="btn btn-link"><mark>{% trans "Home" %}</mark></a>
 {% endif %}
 {% endblock %}

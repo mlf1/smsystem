@@ -2,23 +2,27 @@
 {% load i18n %}
 {% block title %}{% trans "Welcome to the OSCM application." %}{% endblock %}
 {% block body_id %}{% trans "indexpage" %}{% endblock %}
-{% block content_title %}{% trans "Homepage of the OSCM application." %}
+{% block content_title %}<p class="lead">{% trans "Homepage of the OSCM application." %}</p>
 {% endblock %}
 {% block content %}
 {% if user.is_authenticated and user.is_active %}
-    <p>{% blocktrans with oscm_username=user.username %}Welcome, {{ oscm_username }}. Thanks for logging in.{% endblocktrans %}</p>
-    <a href="{% url "oscm:home" %}">{% trans "[Home]" %}</a>
-{% else %}
-    <p>
-    {% blocktrans %}Welcome, new OSCM User to the OSCM application.{% endblocktrans %}
+    <p class="alert alert-info">
+        <a href="{% url "oscm:home" %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>
+        {% blocktrans with oscm_username=user.username %}Welcome, {{ oscm_username }}. Thanks for logging in.{% endblocktrans %}
     </p>
-    {% trans "Please log in." %}
-    <a href="{% url "oscm:login" %}">{% trans "[Log in]" %}</a>
+{% else %}
+<ul>
+    <li>
+        <p class="text-info">{% blocktrans %}Welcome, new OSCM User to the OSCM application.{% endblocktrans %}
+        {% trans "Please log in." %}</p>
+        <a href="{% url "oscm:login" %}" class="btn btn-link"><mark>{% trans "Log in" %}</mark></a>
+    </li>
     {% if registration_allowed %}
-        <p>
-        {% blocktrans %}Or if you have not logged in before, then please register first.{% endblocktrans %}
-        <a href="{% url "oscm:registration" %}">{% trans "[Register]" %}</a>
-        </p>
+        <li>
+            <p class="text-info">{% blocktrans %}Or if you have not logged in before, then please register first.{% endblocktrans %}</p>
+            <a href="{% url "oscm:registration" %}" class="btn btn-link"><mark>{% trans "Register" %}</mark></a>
+        </li>
     {% endif %}
+</ul>
 {% endif %}
 {% endblock %}

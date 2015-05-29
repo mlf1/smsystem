@@ -2,11 +2,12 @@
 
 import logging
 
-from django.contrib.auth import (authenticate, login, get_user_model)
+from django.contrib import messages
+from django.contrib.auth import (authenticate, get_user_model, login, logout)
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.utils import translation
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import CreateView
 
 # from registration import signals
@@ -29,6 +30,20 @@ class Registration(CreateView):
     model = get_user_model()
     disallowed_url = 'registration_disallowed'
     success_url = 'registration/registration_completed.html'
+    messages = {
+        "account_created": {
+            "level": messages.SUCCESS,
+            "text": _("OSCM Account created.")
+        },
+        "account_activated": {
+            "level": messages.SUCCESS,
+            "text": _("Your OSCM Account has been activated.")
+        },
+        "account_not_activated": {
+            "level": messages.WARNING,
+            "text": _("But your OSCM Account is not yet activated.")
+        },
+    }
 
     def dispatch(self, request, *args, **kwargs):
         """
@@ -41,6 +56,14 @@ class Registration(CreateView):
             return redirect(self.disallowed_url)
         return super(Registration, self).dispatch(
             request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        """
+        Inject 'title' into the context.
+        """
+        context = super(Registration, self).get_context_data(**kwargs)
+        context['title'] = _('Register')
+        return context
 
     def form_valid(self, form):
         """
@@ -57,7 +80,7 @@ class Registration(CreateView):
                 str(username)))
             # Set the user's language if necessary
             current_language = translation.get_language()
-            user_language = self.get_object().language
+            user_language = user.language
             if current_language != user_language:
                 logger.debug(
                     "Change the current language \'%s\' to \'%s\'." % (
@@ -67,6 +90,24 @@ class Registration(CreateView):
                 # Set the session variable
                 self.request.session[
                     translation.LANGUAGE_SESSION_KEY] = user_language
+        else:
+            logout(self.request)
+        if self.object:
+            messages.add_message(
+                self.request,
+                self.messages['account_created']['level'],
+                self.messages['account_created']['text'])
+            print("is_active: %s" % user.is_active)
+            if user.is_active:
+                messages.add_message(
+                    self.request,
+                    self.messages['account_activated']['level'],
+                    self.messages['account_activated']['text'])
+            else:
+                messages.add_message(
+                    self.request,
+                    self.messages['account_not_activated']['level'],
+                    self.messages['account_not_activated']['text'])
         return validation
 
     def get_success_url(self):

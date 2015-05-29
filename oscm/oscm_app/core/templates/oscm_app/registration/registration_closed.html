@@ -7,24 +7,19 @@
 {% endblock %}
 {% block content %}
 {% if user.is_authenticated and user.is_active %}
-    <p>{% blocktrans with oscm_username=user.username %}You are already registered as {{ oscm_username }}.{% endblocktrans %}</p>
-    {% if not registration_allowed %}
-        <p>
-        {% trans "Registration is currently closed on this site." %}
-        </p>
-        <a href="{% url "oscm:home" %}">{% trans "[Home]" %}</a>
-    {% endif %}
+    <p class="alert alert-warning"><a href="{% url "oscm:home" %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>
+    {% blocktrans with oscm_username=user.username %}You are already registered as {{ oscm_username }}.{% endblocktrans %}</p>
 {% else %}
     {% if not registration_allowed %}
-        <p>
-        {% trans "Registration is currently closed on this site." %}
+        <p class="alert alert-warning">
+            <a href="{% url "oscm:index" %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>
+            {% trans "Registration is currently closed on this site." %}
         </p>
-        <a href="{% url "oscm:index" %}">{% trans "[Home]" %}</a>
     {% else %}
-        {% blocktrans %}
-        You can register your OSCM account.
-        {% endblocktrans %}
-        <a href="{% url "oscm:registration" %}">{% trans "[Register]" %}</a>
+        <p class="alert alert-info">
+            <a href="{% url "oscm:registration" %}" class="close" data-dismiss="alert">{% trans "Register" %}</a>
+            {% blocktrans %}You can register your OSCM account.{% endblocktrans %}
+        </p>
     {% endif %}
 {% endif %}
 {% endblock %}
