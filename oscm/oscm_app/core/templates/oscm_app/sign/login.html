@@ -53,12 +53,19 @@
                             {% endfor %}
                             {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
                           <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Log in" %}</button>
-                      </fieldset>
+                        </fieldset>
+                        {% comment %}
+                            <!-- Into the future: retrieve password feature -->
+                            <p class="text-right">
+                                <a href="{% url 'oscm:retrieve_password' %}">Forgot Password?</a>
+                            </p>
+                        {% endcomment %}
                     </form>
                     {% if registration_allowed %}
                     <div class="footnote">
                         {% trans "Don't have an account ?" %}<a href="{% url 'oscm:registration' %}">{% trans "Register" %}</a>
                     </div>
+
                     {% endif %}
                 {% endif %}
             </div>

@@ -7,7 +7,14 @@
 
   <head>
     {% block head %}
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      {% block head_meta %}
+        {% block head_meta_charset %}
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        {% endblock head_meta_charset %}
+        {% block head_meta_viewport %}
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% endblock head_meta_viewport %}
+      {% endblock head_meta %}
     <title>{% block title %}{% endblock %}</title>
     <!-- Bootstrap -->
     <link href="{% static 'oscm_app/css/bootstrap.min.css' %}"
