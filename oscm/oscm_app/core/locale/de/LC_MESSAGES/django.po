@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-29 13:08+0200\n"
+"POT-Creation-Date: 2015-06-10 12:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -185,11 +185,11 @@ msgstr ""
 "Dieses Objekt hat keine Änderungsgeschichte. Es wurde möglicherweise nicht "
 "über diese Verwaltungsseiten angelegt."
 
-#: oscm_app/core/templates/oscm_app/base.html:36
+#: oscm_app/core/templates/oscm_app/base.html:43
 msgid "OSCM"
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/base.html:40
+#: oscm_app/core/templates/oscm_app/base.html:47
 #: oscm_app/core/templates/oscm_app/index.html:10
 #: oscm_app/core/templates/oscm_app/registration/registration.html:9
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:10
@@ -200,19 +200,19 @@ msgstr ""
 msgid "Home"
 msgstr "Start"
 
-#: oscm_app/core/templates/oscm_app/base.html:41
+#: oscm_app/core/templates/oscm_app/base.html:48
 msgid "About"
 msgstr "Darüber"
 
-#: oscm_app/core/templates/oscm_app/base.html:42
+#: oscm_app/core/templates/oscm_app/base.html:49
 msgid "Contact"
 msgstr "Kontakt"
 
-#: oscm_app/core/templates/oscm_app/base.html:47
+#: oscm_app/core/templates/oscm_app/base.html:54
 msgid "Admin"
 msgstr "Verwaltung"
 
-#: oscm_app/core/templates/oscm_app/base.html:56
+#: oscm_app/core/templates/oscm_app/base.html:63
 #: oscm_app/core/templates/oscm_app/sign/logout.html:3
 #: oscm_app/core/templates/oscm_app/sign/logout.html:9
 #: oscm_app/core/templates/oscm_app/sign/logout.html:18
@@ -220,7 +220,7 @@ msgstr "Verwaltung"
 msgid "Log out"
 msgstr "Abmelden"
 
-#: oscm_app/core/templates/oscm_app/base.html:58
+#: oscm_app/core/templates/oscm_app/base.html:65
 #: oscm_app/core/templates/oscm_app/errors/403.html:20
 #: oscm_app/core/templates/oscm_app/home.html:26
 #: oscm_app/core/templates/oscm_app/index.html:18
@@ -230,7 +230,7 @@ msgstr "Abmelden"
 msgid "Log in"
 msgstr "Anmelden"
 
-#: oscm_app/core/templates/oscm_app/base.html:67
+#: oscm_app/core/templates/oscm_app/base.html:74
 msgid "oscm_nameOfApplication"
 msgstr "OSCM Anwendung"
 
@@ -264,7 +264,7 @@ msgstr ""
 #: oscm_app/core/templates/oscm_app/registration/registration.html:4
 #: oscm_app/core/templates/oscm_app/registration/registration.html:55
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:20
-#: oscm_app/core/templates/oscm_app/sign/login.html:60
+#: oscm_app/core/templates/oscm_app/sign/login.html:67
 #: oscm_app/registration/registration_views.py:65
 msgid "Register"
 msgstr "Registrieren"
@@ -469,7 +469,7 @@ msgstr ""
 msgid "Log in to an existing account"
 msgstr "Melden Sie sich bei einem bestehenden Konto an"
 
-#: oscm_app/core/templates/oscm_app/sign/login.html:60
+#: oscm_app/core/templates/oscm_app/sign/login.html:67
 msgid "Don't have an account ?"
 msgstr "Noch keinen Account ? "
 
