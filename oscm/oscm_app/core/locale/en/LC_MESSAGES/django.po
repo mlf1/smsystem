@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-10 12:46+0200\n"
+"POT-Creation-Date: 2015-06-15 15:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -397,6 +397,10 @@ msgid "Settings"
 msgstr "Settings"
 
 #: oscm_app/core/templates/oscm_app/preferences/settings.html:51
+msgid "Cancel"
+msgstr "Cancel"
+
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:52
 msgid "Update settings"
 msgstr "Update settings"
 
@@ -567,7 +571,7 @@ msgstr ""
 msgid "OSCM Account settings from the OSCM User '%s' has been updated."
 msgstr ""
 
-#: oscm_app/preferences/account_settings_view.py:34
+#: oscm_app/preferences/account_settings_view.py:35
 msgid "OSCM Account settings updated."
 msgstr "OSCM Account settings updated."
 
