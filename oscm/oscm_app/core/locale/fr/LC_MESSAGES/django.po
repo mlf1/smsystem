@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-15 15:45+0200\n"
+"POT-Creation-Date: 2015-06-17 11:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -196,7 +196,7 @@ msgstr ""
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:15
 #: oscm_app/core/templates/oscm_app/registration/registration_completed.html:11
 #: oscm_app/core/templates/oscm_app/registration/registration_completed.html:17
-#: oscm_app/core/templates/oscm_app/sign/logout.html:25
+#: oscm_app/core/templates/oscm_app/sign/logout.html:26
 msgid "Home"
 msgstr "Accueil"
 
@@ -215,7 +215,7 @@ msgstr "Administration"
 #: oscm_app/core/templates/oscm_app/base.html:63
 #: oscm_app/core/templates/oscm_app/sign/logout.html:3
 #: oscm_app/core/templates/oscm_app/sign/logout.html:9
-#: oscm_app/core/templates/oscm_app/sign/logout.html:18
+#: oscm_app/core/templates/oscm_app/sign/logout.html:19
 #: oscm_app/sign/log_views.py:73
 msgid "Log out"
 msgstr "Déconnexion"
@@ -395,6 +395,7 @@ msgid "Settings"
 msgstr "Paramètres"
 
 #: oscm_app/core/templates/oscm_app/preferences/settings.html:51
+#: oscm_app/core/templates/oscm_app/sign/logout.html:18
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -569,7 +570,7 @@ msgstr ""
 msgid "OSCM Account settings from the OSCM User '%s' has been updated."
 msgstr ""
 
-#: oscm_app/preferences/account_settings_view.py:35
+#: oscm_app/preferences/account_settings_view.py:34
 msgid "OSCM Account settings updated."
 msgstr "Paramètres de votre compte OSCM mis à jour."
 

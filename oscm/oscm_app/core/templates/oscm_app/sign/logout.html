@@ -15,6 +15,7 @@
                 <p class="alert alert-warning">{% trans "Are you sure you want to log out ?" %}</p>
                 {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
                 <div class="form-actions">
+                    <a href="{% url 'oscm:home' %}" class="btn btn-lg btn-default btn-block">{% trans "Cancel" %}</a>
                     <button type="submit" class="btn btn-lg btn-primary btn-block">{% trans "Log out" %}</button>
                 </div>
             </fieldset>
