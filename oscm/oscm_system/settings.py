@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import logging.config
 import os
-# import sys
 from django.utils.translation import ugettext_lazy
 from django.conf import global_settings as default_settings
 
