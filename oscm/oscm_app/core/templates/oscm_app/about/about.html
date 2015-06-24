@@ -1,0 +1,22 @@
+
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "About OSCM application." %}{% endblock %}
+{% block body_id %}{% trans "aboutpage" %}{% endblock %}
+{% block container %}
+    <div class="col-md-12">
+        <div class="modal-dialog panel panel-default" style="margin-bottom:0">
+            <div class="panel-heading">
+                <h3 class="panel-title">{% trans "About OSCM" %}</h3>
+            </div>
+            <div class="panel-body">
+                <p class="lead">
+                    {% blocktrans %}This is OSCM's about page.{% endblocktrans %}
+                </p>
+                <p>
+                    {% blocktrans %}This is an helper application to optimize the ordering process in an engineering laboratory. The term OSCM is an abbreviation for Ordering and Supplier Chain Manager. This helper application OSCM is based on the framework Django – a Python based framework.{% endblocktrans %}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock container %}

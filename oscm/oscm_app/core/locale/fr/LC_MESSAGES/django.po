@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-29 13:08+0200\n"
+"POT-Creation-Date: 2015-06-23 00:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -185,11 +185,35 @@ msgstr ""
 "Cet objet n'a pas d'historique. Il n'a probablement pas été ajouté au moyen "
 "de cette administration."
 
-#: oscm_app/core/templates/oscm_app/base.html:36
-msgid "OSCM"
+#: oscm_app/core/templates/oscm_app/about/about.html:4
+msgid "About OSCM application."
+msgstr "A propos de l'application OSCM."
+
+#: oscm_app/core/templates/oscm_app/about/about.html:5
+msgid "aboutpage"
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/base.html:40
+#: oscm_app/core/templates/oscm_app/about/about.html:10
+msgid "About OSCM"
+msgstr "A propos de OSCM"
+
+#: oscm_app/core/templates/oscm_app/about/about.html:14
+msgid "This is OSCM's about page."
+msgstr "Ceci est la <strong>page concernant OSCM</strong>."
+
+#: oscm_app/core/templates/oscm_app/about/about.html:17
+msgid ""
+"This is an helper application to optimize the ordering process in an "
+"engineering laboratory. The term OSCM is an abbreviation for Ordering and "
+"Supplier Chain Manager. This helper application OSCM is based on the "
+"framework Django – a Python based framework."
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/base.html:43
+msgid "OSCM"
+msgstr "OSCM"
+
+#: oscm_app/core/templates/oscm_app/base.html:47
 #: oscm_app/core/templates/oscm_app/index.html:10
 #: oscm_app/core/templates/oscm_app/registration/registration.html:9
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:10
@@ -200,19 +224,19 @@ msgstr ""
 msgid "Home"
 msgstr "Accueil"
 
-#: oscm_app/core/templates/oscm_app/base.html:41
+#: oscm_app/core/templates/oscm_app/base.html:48
 msgid "About"
 msgstr "A propos"
 
-#: oscm_app/core/templates/oscm_app/base.html:42
+#: oscm_app/core/templates/oscm_app/base.html:49
 msgid "Contact"
 msgstr "Contact"
 
-#: oscm_app/core/templates/oscm_app/base.html:47
+#: oscm_app/core/templates/oscm_app/base.html:54
 msgid "Admin"
 msgstr "Administration"
 
-#: oscm_app/core/templates/oscm_app/base.html:56
+#: oscm_app/core/templates/oscm_app/base.html:63
 #: oscm_app/core/templates/oscm_app/sign/logout.html:3
 #: oscm_app/core/templates/oscm_app/sign/logout.html:9
 #: oscm_app/core/templates/oscm_app/sign/logout.html:18
@@ -220,7 +244,7 @@ msgstr "Administration"
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: oscm_app/core/templates/oscm_app/base.html:58
+#: oscm_app/core/templates/oscm_app/base.html:65
 #: oscm_app/core/templates/oscm_app/errors/403.html:20
 #: oscm_app/core/templates/oscm_app/home.html:26
 #: oscm_app/core/templates/oscm_app/index.html:18
@@ -230,7 +254,7 @@ msgstr "Déconnexion"
 msgid "Log in"
 msgstr "Se connecter"
 
-#: oscm_app/core/templates/oscm_app/base.html:67
+#: oscm_app/core/templates/oscm_app/base.html:74
 msgid "oscm_nameOfApplication"
 msgstr "Application OSCM"
 
@@ -264,7 +288,7 @@ msgstr ""
 #: oscm_app/core/templates/oscm_app/registration/registration.html:4
 #: oscm_app/core/templates/oscm_app/registration/registration.html:55
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:20
-#: oscm_app/core/templates/oscm_app/sign/login.html:60
+#: oscm_app/core/templates/oscm_app/sign/login.html:67
 #: oscm_app/registration/registration_views.py:65
 msgid "Register"
 msgstr "Enregistrer"
@@ -322,7 +346,7 @@ msgstr ""
 
 #: oscm_app/core/templates/oscm_app/footer.html:10
 msgid ""
-"© Bern University of Applied Sciences Engineering and Information "
+"© Bern University of Applied Sciences in Engineering and Information "
 "Technology, 2015"
 msgstr ""
 "&copy; Haute école spécialisée bernoise Ingénierie et Technologie de "
@@ -470,7 +494,7 @@ msgstr ""
 msgid "Log in to an existing account"
 msgstr "S'identifier avec un compte existant"
 
-#: oscm_app/core/templates/oscm_app/sign/login.html:60
+#: oscm_app/core/templates/oscm_app/sign/login.html:67
 msgid "Don't have an account ?"
 msgstr "Vous n'avez pas de compte ? "
 
