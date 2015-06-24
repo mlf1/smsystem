@@ -14,6 +14,13 @@ urlpatterns = patterns(
 )
 
 urlpatterns += patterns(
+    'oscm_app.about.about_views',
+    url(r'^about$', TemplateView.as_view(
+        template_name='oscm_app/about/about.html'),
+        name='about'),
+)
+
+urlpatterns += patterns(
     'oscm_app.sign.log_views',
     url(r'^home$',
         'home_view',

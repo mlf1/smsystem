@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-17 11:48+0200\n"
+"POT-Creation-Date: 2015-06-24 09:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -185,9 +185,33 @@ msgstr ""
 "Dieses Objekt hat keine Änderungsgeschichte. Es wurde möglicherweise nicht "
 "über diese Verwaltungsseiten angelegt."
 
+#: oscm_app/core/templates/oscm_app/about/about.html:4
+msgid "About OSCM application."
+msgstr "Über der OSCM Anwendung."
+
+#: oscm_app/core/templates/oscm_app/about/about.html:5
+msgid "aboutpage"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/about/about.html:10
+msgid "About OSCM"
+msgstr "Über OSCM"
+
+#: oscm_app/core/templates/oscm_app/about/about.html:14
+msgid "This is OSCM's about page."
+msgstr "Das ist die <strong>Seite über OSCM</strong>."
+
+#: oscm_app/core/templates/oscm_app/about/about.html:17
+msgid ""
+"This is an helper application to optimize the ordering process in an "
+"engineering laboratory. The term OSCM is an abbreviation for Ordering and "
+"Supplier Chain Manager. This helper application OSCM is based on the "
+"framework Django – a Python based framework."
+msgstr ""
+
 #: oscm_app/core/templates/oscm_app/base.html:43
 msgid "OSCM"
-msgstr ""
+msgstr "OSCM"
 
 #: oscm_app/core/templates/oscm_app/base.html:47
 #: oscm_app/core/templates/oscm_app/index.html:10
@@ -202,7 +226,7 @@ msgstr "Start"
 
 #: oscm_app/core/templates/oscm_app/base.html:48
 msgid "About"
-msgstr "Darüber"
+msgstr "Über"
 
 #: oscm_app/core/templates/oscm_app/base.html:49
 msgid "Contact"
@@ -323,7 +347,7 @@ msgstr ""
 
 #: oscm_app/core/templates/oscm_app/footer.html:10
 msgid ""
-"© Bern University of Applied Sciences Engineering and Information "
+"© Bern University of Applied Sciences in Engineering and Information "
 "Technology, 2015"
 msgstr "&copy; Berner Fachhochschule Technik und Informatik, 2015"
 
