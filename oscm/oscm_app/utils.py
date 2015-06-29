@@ -47,8 +47,3 @@ def set_form_field_order(form, fields_order):
     assert isinstance(form.fields, OrderedDict)
     form.fields = OrderedDict(
         (f, form.fields[f]) for f in fields_order)
-
-LOGIN_REDIRECT_URL = getattr(settings, 'LOGIN_REDIRECT_URL', '/')
-USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
-PASSWORD_INPUT_RENDER_VALUE = False
-SESSION_REMEMBER = None
