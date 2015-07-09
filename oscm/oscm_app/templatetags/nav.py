@@ -13,7 +13,7 @@ def active(request, pattern, exact_match=False):
         if not pattern.startswith('^'):
             pattern = '^' + pattern
         if not pattern.endswith('$'):
-            pattern = pattern + '$'
+            pattern += '$'
     if hasattr(request, 'path') and re.search(pattern, request.path):
         return 'active'
     return ''
