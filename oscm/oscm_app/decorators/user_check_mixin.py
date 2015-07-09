@@ -1,3 +1,4 @@
+# coding=utf-8
 # oscm_app/decorator
 
 from django.contrib.auth.decorators import login_required

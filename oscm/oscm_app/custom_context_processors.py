@@ -1,3 +1,4 @@
+# coding=utf-8
 # oscm_app
 
 from .utils import get_attr

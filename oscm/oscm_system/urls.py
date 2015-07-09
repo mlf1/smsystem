@@ -1,3 +1,4 @@
+# coding=utf-8
 # oscm_system
 
 from django.conf.urls import (include, patterns, url)

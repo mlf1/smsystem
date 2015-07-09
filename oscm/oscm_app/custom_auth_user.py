@@ -1,3 +1,4 @@
+# coding=utf-8
 # oscm_app
 
 from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin)

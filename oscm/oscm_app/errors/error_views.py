@@ -1,3 +1,4 @@
+# coding=utf-8
 # oscm_app/errors
 
 from django.shortcuts import render
