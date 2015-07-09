@@ -6,7 +6,9 @@ OSCM Prototype requires:
 * Python==3.4.2
 * Django==1.7.3
 * django-extensions==1.4.9
-	- six [required: >=1.2, installed: 1.8.0]
+	- six [required: >=1.2, installed: 1.9.0]
+* mysqlclient==1.3.6
+* wheel==0.24.0
 
 
 Usage
