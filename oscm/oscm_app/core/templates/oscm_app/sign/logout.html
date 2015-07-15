@@ -9,7 +9,7 @@
         <h3 class="panel-title">{% trans "Log out" %}</h3>
     </div>
     <div class="panel-body">
-        <form method="POST" action="{% url "oscm:logout" %}" class="form-horizontal">
+        <form method="POST" action="{% url 'oscm:logout' %}" class="form-horizontal">
             <fieldset>
                 {% csrf_token %}
                 <p class="alert alert-warning">{% trans "Are you sure you want to log out ?" %}</p>
@@ -23,6 +23,6 @@
     </div>
 </div>
 {% else %}
-    <a href="{% url "oscm:index" %}" class="btn btn-link"><mark>{% trans "Home" %}</mark></a>
+    <a href="{% url 'oscm:index' %}" class="btn btn-link"><mark>{% trans "Home" %}</mark></a>
 {% endif %}
 {% endblock %}

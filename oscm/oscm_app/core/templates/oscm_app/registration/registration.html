@@ -6,7 +6,7 @@
 {% block content %}
     {% if user.is_authenticated and user.is_active %}
         <p class="alert alert-warning">
-            <a href="{% url "oscm:home" %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>{% blocktrans with oscm_username=user.username %}You are already registered as {{ oscm_username }}.{% endblocktrans %}
+            <a href="{% url 'oscm:home' %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>{% blocktrans with oscm_username=user.username %}You are already registered as {{ oscm_username }}.{% endblocktrans %}
         </p>
     {% else %}
         <div class="modal-dialog panel panel-default" style="margin-bottom:0">

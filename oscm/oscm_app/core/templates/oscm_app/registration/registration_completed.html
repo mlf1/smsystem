@@ -8,13 +8,13 @@
 {% block content %}
 {% if user.is_authenticated %}
     <p class="alert alert-success">
-        <a href="{% url "oscm:home" %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>{% blocktrans with oscm_username=user.username %}
+        <a href="{% url 'oscm:home' %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>{% blocktrans with oscm_username=user.username %}
         You have successfully registered as {{ oscm_username }}.
      {% endblocktrans %}
     </p>
 {% else %}
     <p class="alert alert-warning">
-        <a href="{% url "oscm:index" %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>{% trans "You must have an OSCM Account before." %}
+        <a href="{% url 'oscm:index' %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>{% trans "You must have an OSCM Account before." %}
     </p>
 {% endif %}
 {% endblock %}
