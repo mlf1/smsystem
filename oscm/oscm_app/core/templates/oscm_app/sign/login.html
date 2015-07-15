@@ -27,9 +27,9 @@
                         {% endfor %}
                     {% endif %}
                     <form method="POST" action="{% url 'oscm:login' %}" role="form">
-                        <legend>{% trans "Log in to an existing account" %}</legend>
+                        {% csrf_token %}
                         <fieldset>
-                            {% csrf_token %}
+                            <legend>{% trans "Log in to an existing account" %}</legend>
                             {% for field in form %}
                                 {% if field.errors %}
                                     <div class="form-group has-error has-feedback">

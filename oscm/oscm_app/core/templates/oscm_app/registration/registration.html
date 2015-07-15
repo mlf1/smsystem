@@ -28,9 +28,9 @@
                     {% endfor %}
                 {% endif %}
                 <form method="POST" action="{% url 'oscm:registration' %}" role="form">
-                    <legend>{% trans "Sign Up For Your Account" %}</legend>
+                    {% csrf_token %}
                     <fieldset>
-                        {% csrf_token %}
+                        <legend>{% trans "Sign Up For Your Account" %}</legend>
                         {% for field in form %}
                             {% if field.errors %}
                                 <div class="form-group has-error has-feedback">
