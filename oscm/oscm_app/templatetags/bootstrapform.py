@@ -63,7 +63,7 @@ def append_attr(field, attr):
 def bootstrapform_field_id(field):
     try:
         if (hasattr(field, 'field')) and (
-                hasattr(field.field, 'widget')) and (field.field.widget):
+                hasattr(field.field, 'widget')) and field.field.widget:
             widget = field.field.widget
             widget_type = field.field.__class__.__name__.lower()
             if widget_type == 'BooleanField'.lower():
