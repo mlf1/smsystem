@@ -1,7 +1,10 @@
+# coding=utf-8
 # oscm_app/preferences
 
+# python imports
 import logging
 
+# django imports
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.core.urlresolvers import reverse
@@ -9,8 +12,9 @@ from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import UpdateView
 
+# OSCM imports
 from .account_settings_form import AccountSettingsForm
-from oscm_app.decorators.user_check_mixin import UserCheckMixin
+from ..decorators.user_check_mixin import UserCheckMixin
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)

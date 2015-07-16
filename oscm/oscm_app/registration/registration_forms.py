@@ -1,14 +1,18 @@
+# coding=utf-8
 # oscm_app/register
 
+# python imports
 import logging
 
+# django imports
 from django import forms
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
 
-from oscm_app.authentication.custom_auth_user_form import (
+# OSCM imports
+from ..authentication.custom_auth_user_form import (
     CustomAuthUserCreationForm)
-from oscm_app.utils import get_attr
+from ..utils import get_attr
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
