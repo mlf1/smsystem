@@ -1,5 +1,6 @@
 # oscm_app/sign
 
+# python imports
 # from django.contrib import messages
 import logging
 
@@ -14,7 +15,7 @@ from django.utils.translation import ugettext as _
 from django.views.decorators.debug import sensitive_post_parameters
 
 from .log_forms import LoginForm
-from oscm_app.utils import (get_attr, next_url)
+from ..utils import (get_attr, next_url)
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
