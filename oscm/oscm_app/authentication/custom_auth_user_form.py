@@ -1,15 +1,19 @@
+# coding=utf-8
 # oscm_app/authentication
 
+# python imports
 import logging
 
+# django imports
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import ugettext_lazy as _
 
+# OSCM imports
 from .custom_read_only_password_hash_widget import (
     CustomReadOnlyPasswordHashWidget)
-from oscm_app.utils import get_attr
+from ..utils import get_attr
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
