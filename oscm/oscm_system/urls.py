@@ -1,9 +1,10 @@
+# coding=utf-8
 # oscm_system
 
+# django imports
 from django.conf.urls import (include, patterns, url)
 from django.contrib import admin
 from django.views.generic.base import RedirectView
-
 
 urlpatterns = patterns(
     '',
