@@ -1,9 +1,12 @@
+# coding=utf-8
 # oscm_app
 
+# django imports
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as OriginalUserAdmin
 from django.utils.translation import ugettext as _
 
+# OSCM imports
 from .custom_auth_user import CustomAuthUser
 from .authentication.custom_auth_user_form import (
     CustomAuthUserChangeForm,

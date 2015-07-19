@@ -1,10 +1,13 @@
+# coding=utf-8
 # oscm_app
 
+# django imports
 from django.conf.urls import (patterns, url)
 from django.views.generic.base import TemplateView
 
-from .registration.registration_views import Registration
+# OSCM imports
 from .preferences.account_settings_view import AccountSettings
+from .registration.registration_views import Registration
 
 urlpatterns = patterns(
     'oscm_app.views',
