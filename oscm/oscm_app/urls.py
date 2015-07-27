@@ -6,6 +6,7 @@ from django.conf.urls import (patterns, url)
 from django.views.generic.base import TemplateView
 
 # OSCM imports
+# from .cart.catalogue.catalogue_views import Catalogue
 from .preferences.account_settings_view import AccountSettings
 from .registration.registration_views import Registration
 
@@ -57,9 +58,19 @@ urlpatterns += patterns(
 )
 
 urlpatterns += patterns(
-    'oscm_app.preferences.oscm_account_settings_view',
+    'oscm_app.preferences.account_settings_view',
     url(r'^home/settings/(?P<pk>\d+)/$', AccountSettings.as_view(
         template_name='oscm_app/preferences/settings.html',
         success_url='oscm:home'),
         name='account_settings'),
 )
+
+"""
+urlpatterns += patterns(
+    'oscm_app.cart.catalogue.catalogue_view',
+    url(r'^home/catalogue/(?P<pk>\d+)/$', Catalogue.as_view(
+        template_name='oscm_app/cart/catalogue/catalogue.html',
+        success_url='oscm:home'),
+        name='catalogue'),
+)
+"""
