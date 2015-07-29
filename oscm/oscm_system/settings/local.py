@@ -110,7 +110,6 @@ STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, APP_NAME, APP_CORE, 'static'),
 )
-print("SD: %s" % STATICFILES_DIRS)
 
 # Used for the translation files
 LOCALE_PATHS = (
