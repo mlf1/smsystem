@@ -102,7 +102,7 @@ USE_TZ = True
 
 STATIC_URL = os.path.join(BASE_DIR, 'static/')
 
-ROOT_PATH = os.path.abspath(os.path.join(BASE_DIR, '..'))
+ROOT_PATH = os.path.abspath(os.path.join(BASE_DIR, os.pardir))
 
 STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 
