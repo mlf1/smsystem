@@ -17,7 +17,7 @@ class Supplier(models.Model):
     * A supplier holds all shop supplier related information.
     * A Supplier is only created by the OSCM administrator.
     """
-    produits = models.ManyToManyField('Produit')
+    products = models.ManyToManyField('Product', through='Offre', related_name='suppliers')
     # Supplier name
     name = models.CharField(max_length=250, blank=True)
     # Slug name : part of the URL
@@ -75,10 +75,13 @@ class Offre(models.Model):
 
     """
     This class is used as an intermediary class between
-    'Produit' and 'Supplier'
+    'Product' and 'Supplier'
     """
-    produit = models.ForeignKey('Produit')
+    product = models.ForeignKey('Product')
     supplier = models.ForeignKey('Supplier')
 
+    class Meta:
+        unique_together = ('product', 'supplier')
+
     def __str__(self):
-        return "{0} sent by {1}".format(self.produit, self.supplier)
+        return "{0} sent by {1}".format(self.product, self.supplier)

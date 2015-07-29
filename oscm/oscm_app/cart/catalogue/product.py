@@ -1,14 +1,23 @@
 # coding=utf-8
 # oscm_app/cart/catalogue
 
+# python imports
+import uuid
+
 # django imports
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
 from ...constants import PRODUCTS
-from ...utils import ProductNumberGenerator
 from ..cart_manager import CartManager
+
+
+def generate_product_number():
+    """
+    Generates the product number
+    """
+    return str(uuid.uuid4())
 
 
 class Product(models.Model):
@@ -36,14 +45,14 @@ class Product(models.Model):
     # Slug name : part of the URL
     slug_name = models.CharField(max_length=120, unique=True, blank=False)
     # Generate product number
-    prod_no_gen = ProductNumberGenerator()
+    # prod_no_gen = ProductNumberGenerator
     # The unique code of the product
     code = models.CharField(
         verbose_name=_('oscm_admin_codeOfProduct'),
         max_length=100,
         editable=False,
         unique=True,
-        default=prod_no_gen.generate_product_number,
+        default=generate_product_number,
     )
     # Short description about the product
     description = models.TextField(
