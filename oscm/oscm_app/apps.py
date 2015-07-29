@@ -14,5 +14,6 @@ class OSCMConfig(AppConfig):
     verbose_name = get_attr('VERBOSE_APP_NAME')
 
     def ready(self):
-        # Import signals.handlers
-        print("Models: %s" % self.get_models().__str__())
+        """
+        Import signals.handlers
+        """

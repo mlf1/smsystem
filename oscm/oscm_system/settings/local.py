@@ -15,7 +15,8 @@ import os
 from django.utils.translation import ugettext_lazy as _
 from django.conf import global_settings as default_settings
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+CURRENT_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(os.path.join(CURRENT_DIR, os.pardir))
 
 APP_NAME = 'oscm_app'
 VERBOSE_APP_NAME = 'OSCM Application'
@@ -101,7 +102,7 @@ USE_TZ = True
 
 STATIC_URL = os.path.join(BASE_DIR, 'static/')
 
-ROOT_PATH = os.path.join(BASE_DIR, '..')
+ROOT_PATH = os.path.abspath(os.path.join(BASE_DIR, '..'))
 
 STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 
@@ -109,6 +110,7 @@ STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, APP_NAME, APP_CORE, 'static'),
 )
+print("SD: %s" % STATICFILES_DIRS)
 
 # Used for the translation files
 LOCALE_PATHS = (

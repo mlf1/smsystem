@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-25 00:53+0200\n"
+"POT-Creation-Date: 2015-07-27 23:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: oscm_app/admin.py:55
+#: oscm_app/admin.py:56
 msgid "oscm_admin_headerOfPersonalInfo"
 msgstr "Informations personnelles"
 
-#: oscm_app/admin.py:59
+#: oscm_app/admin.py:60
 msgid "oscm_admin_headerOfCommonSettings"
 msgstr "Paramètres communs"
 
-#: oscm_app/admin.py:61
+#: oscm_app/admin.py:62
 msgid "oscm_admin_headerOfPermissions"
 msgstr "Permissions"
 
-#: oscm_app/admin.py:67
+#: oscm_app/admin.py:68
 msgid "oscm_admin_headerOfUserSettings"
 msgstr "Préférences de l'utilisateur"
 
-#: oscm_app/admin.py:70
+#: oscm_app/admin.py:71
 msgid "oscm_admin_headerOfImportantDates"
 msgstr ""
 
@@ -311,19 +311,33 @@ msgstr "Action"
 msgid "oscm_admin_lastEditDateOfCategory"
 msgstr "Nom"
 
+#: oscm_app/cart/catalogue/category.py:43
+#, fuzzy
+#| msgid "oscm_admin_actionOfHistory"
+msgid "oscm_admin_displayOfCategory"
+msgstr "Action"
+
 #: oscm_app/cart/catalogue/category.py:44
+#, fuzzy
+#| msgid "oscm_admin_helpTextActiveStatusOfUser"
+msgid "oscm_admin_helpTextActiveStatusOfCategory"
+msgstr ""
+"Précise si l'utilisateur doit être considéré comme actif. Décochez ceci "
+"plutôt que de supprimer le compte."
+
+#: oscm_app/cart/catalogue/category.py:49
 #, fuzzy
 #| msgid "oscm_admin_headerOfOSCMUser"
 msgid "oscm_admin_headerOfCategory"
 msgstr "utilisateur OSCM"
 
-#: oscm_app/cart/catalogue/category.py:45
+#: oscm_app/cart/catalogue/category.py:50
 #, fuzzy
 #| msgid "oscm_admin_headerOfOSCMUsers"
 msgid "oscm_admin_headerOfCategories"
 msgstr "utilisateurs OSCM"
 
-#: oscm_app/cart/catalogue/category.py:52
+#: oscm_app/cart/catalogue/category.py:57
 #, python-format
 msgid "category (name: %s)"
 msgstr ""
@@ -1093,64 +1107,64 @@ msgstr ""
 msgid "oscm_settings_noAttribute"
 msgstr "Vous n'avez pas mis l'attribut suivant"
 
-#: oscm_system/settings.py:83
+#: oscm_system/settings/local.py:85
 msgid "German"
 msgstr "Allemand"
 
-#: oscm_system/settings.py:84
+#: oscm_system/settings/local.py:86
 msgid "English"
 msgstr "Anglais"
 
-#: oscm_system/settings.py:85
+#: oscm_system/settings/local.py:87
 msgid "French"
 msgstr "Français"
 
-#: oscm_system/settings.py:160
+#: oscm_system/settings/local.py:162
 msgid "oscm_cart_status_created"
 msgstr ""
 
-#: oscm_system/settings.py:161
+#: oscm_system/settings/local.py:163
 #, fuzzy
 #| msgid "oscm_admin_staffStatusOfUser"
 msgid "oscm_cart_status_saved"
 msgstr "statut équipe"
 
-#: oscm_system/settings.py:162
+#: oscm_system/settings/local.py:164
 msgid "oscm_cart_status_completed"
 msgstr ""
 
-#: oscm_system/settings.py:172
+#: oscm_system/settings/local.py:174
 msgid "oscm_cart_item_status_created"
 msgstr ""
 
-#: oscm_system/settings.py:173
+#: oscm_system/settings/local.py:175
 msgid "oscm_cart_item_status_saved"
 msgstr ""
 
-#: oscm_system/settings.py:174
+#: oscm_system/settings/local.py:176
 msgid "oscm_cart_item_status_completed"
 msgstr ""
 
-#: oscm_system/settings.py:187
+#: oscm_system/settings/local.py:189
 msgid "oscm_order_status_created"
 msgstr ""
 
-#: oscm_system/settings.py:188
+#: oscm_system/settings/local.py:190
 msgid "oscm_order_status_confirmed"
 msgstr ""
 
-#: oscm_system/settings.py:189
+#: oscm_system/settings/local.py:191
 msgid "oscm_order_status_cancelled"
 msgstr ""
 
-#: oscm_system/settings.py:190
+#: oscm_system/settings/local.py:192
 msgid "oscm_order_status_paid"
 msgstr ""
 
-#: oscm_system/settings.py:191
+#: oscm_system/settings/local.py:193
 msgid "oscm_order_status_completed"
 msgstr ""
 
-#: oscm_system/settings.py:192
+#: oscm_system/settings/local.py:194
 msgid "oscm_order_status_archived"
 msgstr ""
