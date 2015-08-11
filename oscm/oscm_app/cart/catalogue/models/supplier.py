@@ -2,12 +2,15 @@
 # oscm_app/cart/supplier
 
 # django imports
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
 from ...constants import SUPPLIERS
-from ..cart_manager import CartManager
+from ...utils import get_attr
+from ..cart_manager import CartQuerySet
+from .product import Product
 
 
 class Supplier(models.Model):
@@ -22,7 +25,11 @@ class Supplier(models.Model):
         through='Offre',
         related_name='suppliers')
     # Supplier name
-    name = models.CharField(max_length=250, blank=True)
+    name = models.CharField(
+        max_length=250,
+        null=False,
+        blank=False,
+        unique=True)
     # Slug name : part of the URL
     slug_name = models.SlugField(max_length=120, unique=True, blank=False)
     # Short description about the supplier
@@ -43,29 +50,31 @@ class Supplier(models.Model):
     # Active status
     is_active = models.BooleanField(
         verbose_name=_('oscm_admin_activeStatusOfSupplier'),
-        default=True,
+        default=False,
         null=False,
         help_text=_('oscm_admin_helpTextActiveStatusOfSupplier'))
 
     class Meta:
         ordering = ["name", ]
-        db_table = "%(app_label)s_" + SUPPLIERS
+        db_table = '%s_%s' % (get_attr('APP_NAME'), SUPPLIERS)
         verbose_name = _('oscm_admin_headerOfSupplier')
         verbose_name_plural = _('oscm_admin_headerOfSuppliers')
 
-    objects = CartManager()
+    objects = CartQuerySet.as_manager()
 
-    def get_all_products(self):
+    def get_products(self):
         """
         Retrieves all products from the current supplier.
         """
-        return
+        return Product.objects.filter(supplier=self)
 
     def get_absolute_url(self):
         """
         Retrieves the specific url of the supplier.
         """
-        return
+        return reverse(
+            'oscm:supplier_view',
+            kwargs={'supplier_slug': self.slug_name})
 
     def __str__(self):
         """

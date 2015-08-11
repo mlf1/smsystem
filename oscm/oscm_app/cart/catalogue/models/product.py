@@ -10,7 +10,8 @@ from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
 from ...constants import PRODUCTS
-from ..cart_manager import CartManager
+from ...utils import get_attr
+from ..cart_manager import CartQuerySet
 
 
 def generate_product_number():
@@ -86,11 +87,11 @@ class Product(models.Model):
 
     class Meta:
         ordering = ["name", "category", "supplier", ]
-        db_table = "%(app_label)s_" + PRODUCTS
+        db_table = '%s_%s' % (get_attr('APP_NAME'), PRODUCTS)
         verbose_name = _('oscm_admin_headerOfProduct')
         verbose_name_plural = _('oscm_admin_headerOfProducts')
 
-    objects = CartManager()
+    objects = CartQuerySet.as_manager()
 
     @property
     def category_name(self):
