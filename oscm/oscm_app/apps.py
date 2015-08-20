@@ -17,3 +17,4 @@ class OSCMConfig(AppConfig):
         """
         Import signals.handlers
         """
+        import oscm_app.handlers

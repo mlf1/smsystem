@@ -1,14 +1,14 @@
 # coding=utf-8
-# oscm_app/cart
+# oscm_app/cart/models
 
 # django imports
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
-from ..constants import (
+from ...constants import (
     CART_ITEM_STATUSES, CART_ITEMS, DEFAULT_CART_ITEM_STATUS)
-from ..utils import get_attr
+from ...utils import get_attr
 
 
 class CartItem(models.Model):
@@ -58,16 +58,9 @@ class CartItem(models.Model):
 
     class Meta:
         ordering = ["status", "creation_date", ]
-        db_table = "%(app_label)s_" + CART_ITEMS
+        db_table = '%s_%s' % (get_attr('APP_NAME'), CART_ITEMS)
         verbose_name = _('oscm_admin_headerOfCartItem')
         verbose_name_plural = _('oscm_admin_headerOfCartItems')
-
-    @property
-    def total(self):
-        """
-        Retrieves the total price of cart item.
-        """
-        return self.quantity * self.product.price
 
     @property
     def name(self):
@@ -77,11 +70,11 @@ class CartItem(models.Model):
         return self.product.name
 
     @property
-    def price(self):
+    def total_price(self):
         """
-        Retrieves the price of cart item.
+        Retrieves the total price of cart item.
         """
-        return self.product.unit_price
+        return self.product.unit_price*self.quantity
 
     def get_absolute_url(self):
         """

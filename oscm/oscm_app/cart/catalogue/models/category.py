@@ -1,15 +1,16 @@
 # coding=utf-8
-# oscm_app/cart/catalogue
+# oscm_app/cart/catalogue/models
 
 # django imports
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
-from ...constants import CATEGORIES
-from ...utils import get_attr
-from ..cart_manager import CartQuerySet
+from ....constants import CATEGORIES
+from ....utils import get_attr
+from ...cart_manager import CartQuerySet
 from .product import Product
 
 
@@ -60,7 +61,7 @@ class Category(models.Model):
         """
         Displays the name of categories.
         """
-        return _("category (name: %s)") % self.name
+        return _("category (name: %(name)s)") % {'name': self.name}
 
     def get_active_products(self):
         """
@@ -75,8 +76,21 @@ class Category(models.Model):
         return Product.objects.filter(category=self)
 
     def get_absolute_url(self):
-        # reverse('oscm:category', args=[self.slug_name])
-        print("CAT: %s" % self.name)
         return reverse(
             'oscm:category',
             kwargs={'slug_name': self.slug_name})
+
+    def get_delete_url(self):
+        return reverse(
+            'oscm:delete_category',
+            kwargs={'slug_name': self.slug_name})
+
+    def save(self, *args, **kwargs):
+        """
+        Saves category with the slug parameter.
+        """
+        self.slug_name = slugify(self.name)
+        super(Category, self).save(*args, **kwargs)
+
+    def delete(self, using=None):
+        super(Category, self).delete()

@@ -1,0 +1,35 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Categories" %}{% endblock %}
+{% block body_id %}{% trans "categories" %}{% endblock %}
+{% block side_block %}
+    {% include "oscm_app/menu.html" %}
+{% endblock %}
+{% block content %}
+<div class="modal-dialog panel panel-default" style="margin-bottom:0">
+    <div class="panel-heading">
+        <h3 class="panel-title">{% trans "Categories" %}</h3>
+    </div>
+    <div class="panel-body">
+        {% if categories %}
+            <ol>
+            {% for cat in categories %}
+                <li>
+                    <a href="{% url 'oscm:category' cat.slug_name %}">{{ cat }}</a>
+                </li>
+            {% endfor %}
+            </ol>
+        {% else %}
+             <ul><li><strong>{% trans "No categories" %}</strong></li></ul>
+        {% endif %}
+        {% if user.role == 'A' %}
+            {% comment %}
+            <a href="{% url 'oscm:add_category' %}" role="button" class="btn btn-primary btn-lg btn-block">{% trans "Add category" %}</a>
+            {% endcomment %}
+            <a href="{% url 'oscm:add_category' %}" role="button" class="btn btn-primary btn-lg btn-block" data-adding-text="&lt;span class='glyphicon glyphicon-plus'&gt;&lt;/span&gt; Adding...">
+                <span class="glyphicon glyphicon-plus"></span>{% trans "Add" %}
+            </a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

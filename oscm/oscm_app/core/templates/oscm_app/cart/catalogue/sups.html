@@ -1,0 +1,9 @@
+{% load i18n %}
+{% if sups %}
+    {% for s in sups %}
+       {% if s == act_sup %}<li class="active">{% else %}<li>{% endif %}
+        <a href="{% url 'oscm:supplier' s.slug_name %}">{{ s.name }}</a></li>
+    {% endfor %}
+{% else %}
+    <li><strong>{% trans "No supplier at present." %}</strong></li>
+{% endif %}

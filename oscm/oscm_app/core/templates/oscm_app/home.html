@@ -1,65 +1,10 @@
 {% extends "oscm_app/base.html" %}
-{% load nav %}
 {% load i18n %}
 {% block title %}
 {% trans "Welcome to your OSCM's homepage." %}
 {% endblock %}
 {% block side_block %}
-    <ul class="nav nav-sidebar">
-        {% url 'oscm:account_settings' pk=user.id as oscm_account_settings_url %}
-        <li class="{% active request oscm_account_settings_url exact_match=True %}">
-            <a href="{{ oscm_account_settings_url }}">{% trans "Account Settings" %}</a>
-        </li>
-        {% if user.role == 'U' %}
-            {% url 'oscm:catalogue' pk=user.id as oscm_catalogue_url %}
-            <li class="{% active request oscm_catalogue_url exact_match=True %}">
-               <a href="{{ oscm_catalogue_url }}">{% trans "Catalogue" %}</a>
-                    {% block side_sub_block %}
-                        {% get_category_list category %}
-                    {% endblock %}
-            </li>
-        {% endif %}
-        {% if user.role == 'U' or user.role == 'M' %}
-            {% url 'oscm:cart' pk=user.id as oscm_cart_url %}
-            <li class="{% active request oscm_cart_url exact_match=True %}">
-               <a href="{{ oscm_cart_url }}">{% trans "Cart" %}</a>
-                    <ul class="dropdown-menu children">
-                        <li><a href="#">Submenu 1</a></li>
-                        <li><a href="#">Submenu 2</a></li>
-                        <li><a href="#">Submenu 3</a></li>
-                    </ul>
-            </li>
-            {% url 'oscm:order' pk=user.id as oscm_order_url %}
-            <li class="{% active request oscm_order_url exact_match=True %}">
-               <a href="{{ oscm_order_url }}">{% trans "Order" %}</a>
-                    <ul class="dropdown-menu children">
-                        <li><a href="#">Submenu 1</a></li>
-                        <li><a href="#">Submenu 2</a></li>
-                        <li><a href="#">Submenu 3</a></li>
-                    </ul>
-            </li>
-        {% endif %}
-        {% if user.role == 'A' %}
-            {% url 'oscm:products' pk=user.id as oscm_products_url %}
-            <li class="{% active request oscm_products_url exact_match=True %}">
-               <a href="{{ oscm_products_url }}">{% trans "Products" %}</a>
-                    <ul class="dropdown-menu children">
-                        <li><a href="#">Submenu 1</a></li>
-                        <li><a href="#">Submenu 2</a></li>
-                        <li><a href="#">Submenu 3</a></li>
-                    </ul>
-            </li>
-            {% url 'oscm:categories' pk=user.id as oscm_categories_url %}
-            <li class="{% active request oscm_categories_url exact_match=True %}">
-               <a href="{{ oscm_categorires_url }}">{% trans "Categories" %}</a>
-                    <ul class="dropdown-menu children">
-                        <li><a href="#">Submenu 1</a></li>
-                        <li><a href="#">Submenu 2</a></li>
-                        <li><a href="#">Submenu 3</a></li>
-                    </ul>
-            </li>
-        {% endif %}
-    </ul>
+    {% include "oscm_app/menu.html" %}
 {% endblock %}
 {% block content %}
 {% if user.is_authenticated and user.is_active %}

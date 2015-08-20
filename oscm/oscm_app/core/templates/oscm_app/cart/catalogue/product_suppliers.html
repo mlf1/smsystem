@@ -1,0 +1,55 @@
+{% load i18n %}
+{% load nav %}
+<div id="product_suppliers" role="tabpanel" class="tab-pane fade">
+{% if user.role == 'A' %}
+    {% if suppliers_list %}
+        <table class="table table-condensed table-striped text-center" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-flat="true" data-show-export="true" data-pagination="true">
+            <thead>
+                <tr>
+                    <th class="text-center" data-field="name" data-sortable="true">{% trans 'name' %}</th>
+                    <th class="text-center" data-field="address" data-sortable="true">{% trans 'address' %}</th>
+                    <th class="text-center" data-field="description" data-sortable="true">{% trans 'description' %}</th>
+                    <th class="text-center" data-field="is_active" data-sortable="true">{% trans 'is_active' %}</th>
+               </tr>
+            </thead>
+            <tbody style="overflow:auto;">
+                {% for supplier in suppliers_list %}
+                    <tr>
+                        <td><a href="{% url 'oscm:supplier' supplier.slug_name %}">{{ supplier.name }}</a></td>
+                        <td>{{ supplier.address }}</td>
+                        <td>{{ supplier.description }}</td>
+                        <td>{{ supplier.is_active }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    {% comment %}
+        <ol>
+        {% for supplier in suppliers_list %}
+            {% url 'oscm:supplier' slug_name=supplier.slug_name as oscm_product_suppliers_url %}
+            <li class="{% active request oscm_supplier_url exact_match=True %}">
+                <a href="{{oscm_product_suppliers_url}}">{{ supplier }}</a>
+            </li>
+        {% endfor %}
+        </ol>
+    {% endcomment %}
+    {% else %}
+        <ul><li>{% trans "No suppliers" %}</li></ul>
+    {% endif %}
+{% else %}
+    {% if active_suppliers_list %}
+        <ol>
+        {% for supplier in active_suppliers_list %}
+            {% url 'oscm:supplier' slug_name=supplier.slug_name as oscm_product_suppliers_url %}
+            <li class="{% active request oscm_product_suppliers_url exact_match=True %}">
+                <a href="{{oscm_product_suppliers_url}}">{{ supplier }}</a>
+            </li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <ul><li>{% trans "No suppliers" %}</li></ul>
+    {% endif %}
+{% endif %}
+</div>

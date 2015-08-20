@@ -35,28 +35,39 @@ ORDER_ITEMS = 'order_items'
 INVOICES = 'invoices'
 
 # Default cart status
-DEFAULT_CART_STATUS = 'DEFAULT_CART_STATUS'
+DEFAULT_CART_STATUS = 'CART_STATUS_CREATED'
 
 # Cart statuses
 CART_STATUSES = 'CART_STATUSES'
 
 # Default cart item status
-DEFAULT_CART_ITEM_STATUS = 'DEFAULT_CART_ITEM_STATUS'
+DEFAULT_CART_ITEM_STATUS = 'CART_ITEM_STATUS_CREATED'
 
 # Cart item statuses
 CART_ITEM_STATUSES = 'CART_ITEM_STATUSES'
 
 # Default order status
-DEFAULT_ORDER_STATUS = 'DEFAULT_ORDER_STATUS'
+DEFAULT_ORDER_STATUS = 'ORDER_STATUS_CREATED'
 
 # Order statuses
 ORDER_STATUSES = 'ORDER_STATUSES'
 
 # Default order item status
-DEFAULT_ORDER_ITEM_STATUS = 'DEFAULT_ORDER_ITEM_STATUS'
+DEFAULT_ORDER_ITEM_STATUS = 'ORDER_ITEM_STATUS_CREATED'
 
 # Order item statuses
 ORDER_ITEM_STATUSES = 'ORDER_ITEM_STATUSES'
 
 # Order base (this parameter can be set in settings for the next if necessary)
 ORDER_BASE = 100000
+
+# Default roles
+ADMIN_ROLE = 'A'
+MANAGER_ROLE = 'M'
+USER_ROLE = 'U'
+
+# Signals
+CATEGORY_DELETED_SIGNAL = 'category_deleted_signal'
+CATEGORY_UPDATED_SIGNAL = 'category_updated_signal'
+PRODUCT_DELETED_SIGNAL = 'product_deleted_signal'
+SUPPLIER_DELETED_SIGNAL = 'supplier_deleted_signal'

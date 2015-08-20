@@ -1,0 +1,57 @@
+{% load i18n %}
+{% load nav %}
+<div id="cart_items" role="tabpanel" class="tab-pane fade">
+{% if user.role == 'A' %}
+    {% if cart_items_list %}
+        <table class="table table-condensed table-striped text-center" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-flat="true" data-show-export="true" data-pagination="true">
+            <thead>
+                <tr>
+                    <th class="text-center" data-field="name" data-sortable="true">{% trans 'name' %}</th>
+                    <th class="text-center" data-field="unit_price" data-sortable="true">{% trans 'price' %}</th>
+                    <th class="text-center" data-field="sku" data-sortable="true">{% trans 'sku' %}</th>
+                    <th class="text-center" data-field="quantity" data-sortable="true">{% trans 'quantity' %}</th>
+                    <th class="text-center" data-field="description" data-sortable="true">{% trans 'description' %}</th>
+                    <th class="text-center" data-field="is_active" data-sortable="true">{% trans 'is_active' %}</th>
+               </tr>
+            </thead>
+            <tbody style="overflow:auto;">
+                {% for cart_item in cart_items_list %}
+                    <tr>
+                        <td><a href="{% url 'oscm:product' product.slug_name %}">{{ cart_item.product.name }}</a></td>
+                        <td>{{ cart_item.product.unit_price }}</td>
+                        <td>{{ cart_item.product.sku }}</td>
+                        <td>{{ cart_item.product.quantity }}</td>
+                        <td>{{ cart_item.product.description }}</td>
+                        <td>{{ cart_item.product.is_active }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% comment %}
+        <ol>
+        {% for cart_item in cart_items_list %}
+            {% url 'oscm:cart_item' pk=cart_item.id as oscm_cart_items_url %}
+            <li class="{% active request oscm_cart_items_url exact_match=True %}">
+                <a href="{{oscm_cart_items_url}}">{{ cart_item }}</a>
+            </li>
+        {% endfor %}
+        </ol>
+    {% endcomment %}
+    {% else %}
+        <ul><li>{% trans "No cart items" %}</li></ul>
+    {% endif %}
+{% else %}
+    {% if cart_items_list %}
+        <ol>
+        {% for cart_item in cart_items_list %}
+            {% url 'oscm:cart_item' pk=cart_item.id as oscm_cart_items_url %}
+            <li class="{% active request oscm_cart_items_url exact_match=True %}">
+                <a href="{{oscm_cart_items_url}}">{{ product }}</a>
+            </li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <ul><li>{% trans "No cart items" %}</li></ul>
+    {% endif %}
+{% endif %}
+</div>

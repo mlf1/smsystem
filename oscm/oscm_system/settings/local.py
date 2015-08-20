@@ -1,4 +1,5 @@
 # coding=utf-8
+# coding=utf-8
 """
 Django settings for oscm project.
 
@@ -192,6 +193,24 @@ ORDER_STATUSES = (
     (ORDER_STATUS_PAID, _('oscm_order_status_paid')),
     (ORDER_STATUS_COMPLETED, _('oscm_order_status_completed')),
     (ORDER_STATUS_ARCHIVED, _('oscm_order_status_archived')),
+)
+
+# Default order item statuses
+ORDER_ITEM_STATUS_CREATED = 0
+ORDER_ITEM_STATUS_CONFIRMED = 1
+ORDER_ITEM_STATUS_CANCELLED = 2
+ORDER_ITEM_STATUS_PAID = 3
+ORDER_ITEM_STATUS_COMPLETED = 4
+ORDER_ITEM_STATUS_ARCHIVED = 5
+
+# Order item statuses
+ORDER_ITEM_STATUSES = (
+    (ORDER_ITEM_STATUS_CREATED, _('oscm_order_item_status_created')),
+    (ORDER_ITEM_STATUS_CONFIRMED, _('oscm_order_item_status_confirmed')),
+    (ORDER_ITEM_STATUS_CANCELLED, _('oscm_order_item_status_cancelled')),
+    (ORDER_ITEM_STATUS_PAID, _('oscm_order_item_status_paid')),
+    (ORDER_ITEM_STATUS_COMPLETED, _('oscm_order_item_status_completed')),
+    (ORDER_ITEM_STATUS_ARCHIVED, _('oscm_order_item_status_archived')),
 )
 
 # Used for the authentication in the frontend

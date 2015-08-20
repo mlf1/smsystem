@@ -1,14 +1,15 @@
 # coding=utf-8
-# oscm_app/cart
+# oscm_app/cart/models
 
 # django imports
-from django.contrib.auth import get_user_model
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
-from ..constants import CARTS, CART_STATUSES, DEFAULT_CART_STATUS
-from ..utils import get_attr
+from ...constants import CARTS, CART_STATUSES, DEFAULT_CART_STATUS
+from ...utils import get_attr
+from .cart_item import CartItem
 
 
 class Cart(models.Model):
@@ -19,9 +20,11 @@ class Cart(models.Model):
 
     # Owner of the cart
     owner = models.ForeignKey(
-        get_user_model(),
+        get_attr('AUTH_USER_MODEL'),
+        blank=False,
         related_name='carts',
         verbose_name=_("oscm_admin_ownerOfCart"),
+        help_text=_('oscm_admin_helpTextOwnerOfCart'),
         limit_choices_to={'role': get_attr('DEFAULT_ROLE')},
     )
 
@@ -30,7 +33,8 @@ class Cart(models.Model):
         verbose_name=_('oscm_admin_projectNameOfCart'),
         help_text=_('oscm_admin_helpTextProjectNameOfCart'),
         max_length=250,
-        blank=True,
+        blank=False,
+        null=False
     )
 
     # Creation date
@@ -54,7 +58,7 @@ class Cart(models.Model):
     # Retrieved the different statuses from the settings file
     CART_STATUSES = get_attr(CART_STATUSES)
     # Status
-    status = models.CharField(
+    status = models.IntegerField(
         verbose_name=_('oscm_admin_statusOfCart'),
         max_length=32,
         default=DEFAULT_CART_STATUS,
@@ -71,7 +75,7 @@ class Cart(models.Model):
 
     class Meta:
         ordering = ["status", "creation_date", ]
-        db_table = "%(app_label)s_" + CARTS
+        db_table = '%s_%s' % (get_attr('APP_NAME'), CARTS)
         verbose_name = _('oscm_admin_headerOfCart')
         verbose_name_plural = _('oscm_admin_headerOfCarts')
 
@@ -80,17 +84,41 @@ class Cart(models.Model):
         Displays the status, the owner and the number of carts.
         """
         return _(
-            "%(status)s cart (owner: %(owner)s, project_name: "
-            "%(project_name)s, lines: %(num_lines)d)") \
-            % {
-                'status': self.status,
-                'owner': self.owner,
-                'project_name': self.project_name,
-                'num_lines': self.num_lines}
+            "cart (status: %(status)s, owner: %(owner)s, project name: "
+            "%(project_name)s, number of cart items: %(nb_cart_items)d)"
+        ) % {
+            'status': self.CART_STATUSES[self.status][1],
+            'owner': self.owner,
+            'project_name': self.project_name,
+            'nb_cart_items': self.nb_cart_items
+        }
+
+    def get_cart_items(self):
+        """
+        Retrieves all cart items for a given cart.
+        """
+        CartItem.objects.filter(cart=self)
+
+    @property
+    def nb_cart_items(self):
+        """
+        Retrieves the number of distinct cart items for a given cart.
+        """
+        return CartItem.objects.filter(cart=self).count()
 
     @property
     def is_empty(self):
         """
         Test if this cart is empty.
         """
-        return self.id is None or self.num_lines == 0
+        return self.id is None or self.nb_cart_items == 0
+
+    def get_absolute_url(self):
+        return reverse(
+            'oscm:cart',
+            kwargs={'pk': self.pk})
+
+    def get_delete_url(self):
+        return reverse(
+            'oscm:delete_cart',
+            kwargs={'pk': self.pk})

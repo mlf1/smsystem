@@ -1,22 +1,25 @@
 # coding=utf-8
+# oscm_app
 
 # django imports
-import django.dispatch
+from django.dispatch import Signal
 
 # Product
-product_changed = django.dispatch.Signal()
+product_changed = Signal()
 
 # Category
-category_changed = django.dispatch.Signal()
+category_deleted = Signal(providing_args=['request'])
+category_updated = Signal(providing_args=["category", "form"])
+category_changed = Signal()
 
 # Cart
-cart_changed = django.dispatch.Signal()
+cart_changed = Signal()
 
 # Cart item
-cart_item_changed = django.dispatch.Signal()
+cart_item_changed = Signal()
 
 # Order
-order_changed = django.dispatch.Signal()
+order_changed = Signal()
 
 # Order item
-order_item_changed = django.dispatch.Signal()
+order_item_changed = Signal()

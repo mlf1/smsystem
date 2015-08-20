@@ -1,4 +1,38 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% load bootstrapform %}
+{% block title %}{% trans "Cart" %}{% endblock %}
+{% block body_id %}{% trans "cart" %}{% endblock %}
+{% block side_block %}
+    {% include "oscm_app/menu.html" %}
+{% endblock %}
 {% block content %}
-<h1>Cart Page Here</h1>
-Cart item count: {{ cart_item_count }}
+<div class="modal-dialog panel panel-default" style="margin-bottom:0">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ cart.project_name }}</h3>
+    </div>
+    <div class="panel-body">
+        {% if form.errors and not form.non_field_errors %}
+            <p class="alert alert-danger">
+                {% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}
+                {% endif %}
+            </p>
+        {% endif %}
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <p class="alert alert-danger">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        {% endif %}
+        <ul id="cartTabs" class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#cart_details" data-toggle="tab" aria-controls="cart_details" role="tab">{% trans 'Details' %}</a></li>
+            <li role="presentation"><a href="#cart_items" data-toggle="tab" aria-controls="cart_items" role="tab">{% trans 'Cart items' %}</a></li>
+        </ul>
+        <div class="tab-content">
+            {% include "oscm_app/cart/cart_details.html" %}
+            {% include "oscm_app/cart/cart_items.html" %}
+        </div>
+    </div>
+</div>
 {% endblock %}

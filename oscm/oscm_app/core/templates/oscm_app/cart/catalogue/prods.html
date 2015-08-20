@@ -1,0 +1,9 @@
+{% load i18n %}
+{% if prods %}
+    {% for p in prods %}
+       {% if p == act_prod %}<li class="active">{% else %}<li>{% endif %}
+        <a href="{% url 'oscm:product' slug_name=p.slug_name %}">{{ p.name }}</a></li>
+    {% endfor %}
+{% else %}
+    <li><strong>{% trans "No product at present." %}</strong></li>
+{% endif %}

@@ -1,17 +1,19 @@
 # coding=utf-8
-# oscm_app/cart/catalogue
+# oscm_app/cart/catalogue/models
 
 # python imports
 import uuid
 
 # django imports
+from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
-from ...constants import PRODUCTS
-from ...utils import get_attr
-from ..cart_manager import CartQuerySet
+from ....constants import PRODUCTS
+from ....utils import get_attr
+from ...cart_manager import CartQuerySet
 
 
 def generate_product_number():
@@ -28,7 +30,7 @@ class Product(models.Model):
     """
 
     # Supplier
-    supplier = models.ForeignKey('Supplier')
+    # supplier = models.ForeignKey('Supplier')
     # Category
     category = models.ForeignKey('Category')
     # Creation date
@@ -42,7 +44,8 @@ class Product(models.Model):
         verbose_name=_('oscm_admin_nameOfProduct'),
         help_text=_('oscm_admin_helpTextNameOfProduct'),
         max_length=250,
-        blank=True)
+        blank=False,
+        null=False)
     # Slug name : part of the URL
     slug_name = models.CharField(max_length=120, unique=True, blank=False)
     # Generate product number
@@ -86,7 +89,7 @@ class Product(models.Model):
         default=False)
 
     class Meta:
-        ordering = ["name", "category", "supplier", ]
+        ordering = ["name", "category", ]
         db_table = '%s_%s' % (get_attr('APP_NAME'), PRODUCTS)
         verbose_name = _('oscm_admin_headerOfProduct')
         verbose_name_plural = _('oscm_admin_headerOfProducts')
@@ -100,12 +103,18 @@ class Product(models.Model):
         """
         return self.category.name
 
-    @property
-    def supplier_name(self):
+    def get_active_suppliers(self):
         """
-        Retrieves the supplier name of the product.
+        Retrieves all active suppliers for a given product.
         """
-        return self.supplier.name
+        return Product.objects.get(id=self.id).supplier_set.filter(
+            is_active=True)
+
+    def get_suppliers(self):
+        """
+        Retrieves all suppliers for a given product.
+        """
+        return Product.objects.get(id=self.id).supplier_set.all()
 
     def __str__(self):
         """
@@ -113,9 +122,27 @@ class Product(models.Model):
         """
         return _(
             "product (name: %(name)s, quantity: %(quantity)d, "
-            "unit price: %(unit_price)d, code: %(code)s)") \
+            "unit price: %(unit_price)d, category: %(category)s, code: %(code)s)") \
             % {
                 'name': self.name,
                 'quantity': self.quantity,
                 'unit_price': self.unit_price,
+                'category': self.category.name,
                 'code': self.code}
+
+    def get_absolute_url(self):
+        return reverse(
+            'oscm:product',
+            kwargs={'slug_name': self.slug_name})
+
+    def get_delete_url(self):
+        return reverse(
+            'oscm:delete_product',
+            kwargs={'slug_name': self.slug_name})
+
+    def save(self, *args, **kwargs):
+        """
+        Saves product with the slug parameter.
+        """
+        self.slug_name = slugify(self.name)
+        super(Product, self).save(*args, **kwargs)

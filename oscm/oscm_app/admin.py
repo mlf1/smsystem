@@ -7,11 +7,16 @@ from django.contrib.auth.admin import UserAdmin as OriginalUserAdmin
 from django.utils.translation import ugettext as _
 
 # OSCM imports
+from .cart.admin import CartAdmin
+from .cart.catalogue.admin import (CategoryAdmin, ProductAdmin, SupplierAdmin)
+from .cart.catalogue.models.category import Category
+from .cart.catalogue.models.product import Product
+from .cart.catalogue.models.supplier import Supplier
+from .cart.models.cart import Cart
 from .custom_auth_user import CustomAuthUser
 from .authentication.custom_auth_user_form import (
     CustomAuthUserChangeForm,
     CustomAuthUserCreationForm)
-# from .cart.catalogue.category import Category
 
 
 def export_csv(modeladmin, request, queryset):
@@ -106,14 +111,10 @@ class UserAdmin(OriginalUserAdmin):
     ordering = ('username',)
     filter_horizontal = ('groups', 'user_permissions',)
 
-"""
-class CategoryAdmin(admin.ModelAdmin):
-    actions=[export_csv]
-    prepopulated_fields = {"slug_name": ('name',)}
-    list_display = ('name', 'description')
-"""
-
 # admin.site.add_action(export_csv, 'CSV')
 
 admin.site.register(CustomAuthUser, UserAdmin)
-# admin.site.register(Category, CategoryAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Supplier, SupplierAdmin)
+admin.site.register(Product, ProductAdmin)
+admin.site.register(Cart, CartAdmin)
