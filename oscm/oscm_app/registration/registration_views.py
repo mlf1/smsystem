@@ -101,7 +101,6 @@ class Registration(CreateView):
                 self.request,
                 self.messages['account_created']['level'],
                 self.messages['account_created']['text'])
-            print("is_active: %s" % user.is_active)
             if user.is_active:
                 messages.add_message(
                     self.request,

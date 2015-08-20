@@ -1,0 +1,9 @@
+{% load i18n %}
+{% if cats %}
+    {% for c in cats %}
+       {% if c == act_cat %}<li class="active">{% else %}<li>{% endif %}
+        <a href="{% url 'oscm:category' slug_name=c.slug_name %}">{{ c.name }}</a></li>
+    {% endfor %}
+{% else %}
+    <li><strong>{% trans "No category at present." %}</strong></li>
+{% endif %}

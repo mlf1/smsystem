@@ -1,0 +1,9 @@
+{% load i18n %}
+{% if cts %}
+    {% for ct in cts %}
+       {% if ct == act_cart %}<li class="active">{% else %}<li>{% endif %}
+        <a href="{% url 'oscm:cart' pk=ct.id %}">{{ ct.project_name }}</a></li>
+    {% endfor %}
+{% else %}
+    <li><strong>{% trans "No cart at present." %}</strong></li>
+{% endif %}

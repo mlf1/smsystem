@@ -47,7 +47,7 @@ class AccountSettings(UserCheckMixin, UpdateView):
         """
         If the form is valid, save the associated model.
         """
-        self.object = form.save()
+        instance = form.save()
         # Set the user's language if necessary
         current_language = translation.get_language()
         user_language = self.get_object().language
@@ -62,7 +62,7 @@ class AccountSettings(UserCheckMixin, UpdateView):
                 translation.LANGUAGE_SESSION_KEY] = user_language
             # self.request.session['django_language'] = user_language
             # self.request.LANGUAGE_CODE = translation.get_language()
-        if self.object:
+        if instance:
             messages.add_message(
                 self.request,
                 self.messages['settings_updated']['level'],
