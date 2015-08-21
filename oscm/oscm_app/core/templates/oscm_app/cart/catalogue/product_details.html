@@ -43,11 +43,11 @@
             {% if user.role == 'A' %}
                 <a href="{% url 'oscm:product' slug_name=product.slug_name %}" class="btn btn-lg btn-default btn-block">{% trans "Cancel" %}</a>
                 <a href="{{ product.get_delete_url }}" role="button" class="btn btn-lg btn-danger btn-block" data-deleting-text="&lt;span class='glyphicon glyphicon-trash'&gt;&lt;/span&gt; Deleting...">
-                    <span class="glyphicon glyphicon-trash"></span>{% trans "Delete" %}
+                    <span class="glyphicon glyphicon-trash"></span> {% trans "Delete" %}
                 </a>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Update product parameters" %}</button>
             {% else %}
-                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Add cart" %}</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-shopping-cart"></span> {% trans "Add cart" %}</button>
             {% endif %}
         </fieldset>
     </form>

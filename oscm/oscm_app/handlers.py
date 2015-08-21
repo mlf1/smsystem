@@ -62,7 +62,7 @@ def category_deleted_handler(sender, **kwargs):
 
 def product_deleted_handler(sender, **kwargs):
     """
-    Signal intercept for category deleted
+    Signal intercept for product deleted
     """
     if kwargs.get('instance'):
         logger.info(
@@ -72,7 +72,7 @@ def product_deleted_handler(sender, **kwargs):
 
 def supplier_deleted_handler(sender, **kwargs):
     """
-    Signal intercept for category deleted
+    Signal intercept for supplier deleted
     """
     if kwargs.get('instance'):
         logger.info(

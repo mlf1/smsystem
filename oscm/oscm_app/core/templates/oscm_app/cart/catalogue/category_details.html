@@ -43,7 +43,7 @@
                 {% if user.role == 'A' %}
                     <a href="{% url 'oscm:category' slug_name=category.slug_name %}" class="btn btn-lg btn-default btn-block">{% trans "Cancel" %}</a>
                     <a href="{{ category.get_delete_url }}" role="button" class="btn btn-lg btn-danger btn-block" data-deleting-text="&lt;span class='glyphicon glyphicon-trash'&gt;&lt;/span&gt; Deleting...">
-                        <span class="glyphicon glyphicon-trash"></span>{% trans "Delete" %}
+                        <span class="glyphicon glyphicon-trash"></span> {% trans "Delete" %}
                     </a>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Update category parameters" %}</button>
                 {% endif %}
