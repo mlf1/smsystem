@@ -34,6 +34,7 @@
                             <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
                             <div class="controls">{{ field }}
                                 <span class="help-block">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                     {% for error in  field.errors %}{{ error }}{% endfor %}
                                 </span>
                             </div>
@@ -60,7 +61,7 @@
                     </div>
                 {% endfor %}
                 {% if next %}<input type="hidden" name="next" value="{% url 'oscm:supplier' slug_name=supplier.slug_name %}">{% endif %}
-                 <a href="{% url 'oscm:home' %}" class="btn btn-lg btn-default btn-block">{% trans "Cancel" %}</a>
+                 <a href="{% url 'oscm:home' %}" role="button" class="btn btn-lg btn-default btn-block"><span class="glyphicon glyphicon-remove"></span> {% trans "Cancel" %}</a>
                  <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Create supplier" %}</button>
              </fieldset>
         </form>

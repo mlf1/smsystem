@@ -127,7 +127,9 @@ class Supplier(models.Model):
         """
         Retrieves all active products from the current supplier.
         """
-        return Supplier.objects.get(id=self.id).products.filter(is_active=True)
+        return Supplier.objects.get(id=self.id).products.filter(
+            is_active=True,
+            category__is_active=True)
 
     def get_absolute_url(self):
         """

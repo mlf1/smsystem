@@ -14,6 +14,7 @@
                             <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
                             <div class="controls">{{ field }}
                                 <span class="help-block">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                     {% for error in  field.errors %}{{ error }}{% endfor %}
                                 </span>
                             </div>
@@ -41,7 +42,7 @@
                 {% endfor %}
                 {% if next %}<input type="hidden" name="next" value="{% url 'oscm:category' slug_name=category.slug_name %}">{% endif %}
                 {% if user.role == 'A' %}
-                    <a href="{% url 'oscm:category' slug_name=category.slug_name %}" class="btn btn-lg btn-default btn-block">{% trans "Cancel" %}</a>
+                    <a href="{% url 'oscm:category' slug_name=category.slug_name %}" role="button" class="btn btn-lg btn-default btn-block"><span class="glyphicon glyphicon-remove"></span> {% trans "Cancel" %}</a>
                     <a href="{{ category.get_delete_url }}" role="button" class="btn btn-lg btn-danger btn-block" data-deleting-text="&lt;span class='glyphicon glyphicon-trash'&gt;&lt;/span&gt; Deleting...">
                         <span class="glyphicon glyphicon-trash"></span> {% trans "Delete" %}
                     </a>

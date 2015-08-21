@@ -36,6 +36,7 @@
                                         <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
                                         <div class="controls">{{ field }}
                                             <span class="help-block">
+                                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                                 {% for error in  field.errors %}{{ error }}{% endfor %}
                                             </span>
                                         </div>

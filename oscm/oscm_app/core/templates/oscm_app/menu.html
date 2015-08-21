@@ -7,19 +7,23 @@
     </li>
     {% if user.role == 'U' %}
         {% url 'oscm:catalogue' as oscm_catalogue_url %}
-        <li class="{% active request oscm_catalogue_url exact_match=True %}">
-            <a href="{{ oscm_catalogue_url }}">{% trans "Catalogue" %}</a>
-            <ul class="nav-sidebar">
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Catalogue" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuCats">
+                <li class="{% active request oscm_catalogue_url exact_match=True %}"><a href="{{ oscm_catalogue_url }}">{% trans "All" %}</a></li>
+                <li role="presentation" class="divider"></li>
                 {% get_category_list category %}
             </ul>
         </li>
     {% endif %}
     {% if user.role == 'U' or user.role == 'M' %}
         {% url 'oscm:carts' pk=user.id as oscm_cart_url %}
-        <li class="{% active request oscm_cart_url exact_match=True %}">
-            <a href="{{ oscm_cart_url }}">{% trans "Carts" %}</a>
-            <ul class="nav-sidebar">
-                {% get_carts_list cart user %}
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Carts" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuCats">
+                <li class="{% active request oscm_cart_url exact_match=True %}"><a href="{{ oscm_cart_url }}">{% trans "All" %}</a></li>
+                <li role="presentation" class="divider"></li>
+                 {% get_carts_list cart user %}
             </ul>
         </li>
         {% url 'oscm:orders' pk=user.id as oscm_order_url %}
@@ -34,23 +38,32 @@
     {% endif %}
     {% if user.role == 'A' %}
         {% url 'oscm:products' as oscm_products_url %}
-        <li class="{% active request oscm_products_url exact_match=True %}">
-            <a href="{{ oscm_products_url }}">{% trans "Products" %}</a>
-            <ul class="dropdown-menu children nav-sidebar">
+        {% comment %}
+            <li class="{% active request oscm_products_url exact_match=True %}"><a href="{{ oscm_products_url }}">{% trans "Products" %}</a></li>
+        {% endcomment %}
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Products" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuProds">
+                <li class="{% active request oscm_products_url exact_match=True %}"><a href="{{ oscm_products_url }}">{% trans "All" %}</a></li>
+                <li role="presentation" class="divider"></li>
                 {% get_product_list product user.role %}
             </ul>
         </li>
         {% url 'oscm:categories' as oscm_categories_url %}
-        <li class="{% active request oscm_categories_url exact_match=True %}">
-            <a href="{{ oscm_categories_url }}">{% trans "Categories" %}</a>
-            <ul class="nav-sidebar">
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Categories" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuCatas">
+                <li class="{% active request oscm_categories_url exact_match=True %}"><a href="{{ oscm_categories_url }}">{% trans "All" %}</a></li>
+                <li role="presentation" class="divider"></li>
                 {% get_category_list category user.role %}
             </ul>
         </li>
         {% url 'oscm:suppliers' as oscm_suppliers_url %}
-        <li class="{% active request oscm_suppliers_url exact_match=True %}">
-            <a href="{{ oscm_suppliers_url }}">{% trans "Suppliers" %}</a>
-            <ul class="nav-sidebar">
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Suppliers" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuSups">
+                <li class="{% active request oscm_suppliers_url exact_match=True %}"><a href="{{ oscm_suppliers_url }}">{% trans "All" %}</a></li>
+                <li role="presentation" class="divider"></li>
                 {% get_supplier_list supplier user.role %}
             </ul>
         </li>

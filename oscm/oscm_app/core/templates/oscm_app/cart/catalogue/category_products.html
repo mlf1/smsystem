@@ -22,7 +22,7 @@
                         <td>{{ product.sku }}</td>
                         <td>{{ product.quantity }}</td>
                         <td>{{ product.description }}</td>
-                        <td>{{ product.is_active }}</td>
+                        <td>{% if product.is_active %}<span class="glyphicon glyphicon-ok-circle">{% else %}<span class="glyphicon glyphicon-ban-circle">{% endif %}</span></td>
                     </tr>
                 {% endfor %}
             </tbody>
