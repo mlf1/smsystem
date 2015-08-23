@@ -1,5 +1,11 @@
 {% load i18n %}
+{% load nav %}
 {% if prods %}
+    {% if is_menu %}
+        {% url 'oscm:products' as oscm_products_url %}
+        <li class="{% active request oscm_products_url exact_match=True %}"><a href="{{ oscm_products_url }}">{% trans "All" %}</a></li>
+        <li role="presentation" class="divider"></li>
+    {% endif %}
     {% for p in prods %}
        {% if p == act_prod %}<li class="active">{% else %}<li>{% endif %}
         <a href="{% url 'oscm:product' slug_name=p.slug_name %}">{{ p.name }}</a></li>

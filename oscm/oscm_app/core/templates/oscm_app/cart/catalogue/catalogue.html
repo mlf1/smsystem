@@ -20,17 +20,17 @@
         <div class="tab-content">
             <div id="prod_cats" role="tabpanel" class="tab-pane fade in active">
                 <ol>
-                    {% get_category_list category user.role %}
+                    {% get_category_list request category user.role %}
                 </ol>
             </div>
             <div id="prod_sups" role="tabpanel" class="tab-pane fade">
                 <ol>
-                    {% get_supplier_list category user.role %}
+                    {% get_supplier_list request supplier user.role %}
                 </ol>
             </div>
             <div id="prod_all" role="tabpanel" class="tab-pane fade">
                 <ol>
-                    {% get_product_list category user.role True %}
+                    {% get_product_list request product user.role True %}
                 </ol>
             </div>
         </div>

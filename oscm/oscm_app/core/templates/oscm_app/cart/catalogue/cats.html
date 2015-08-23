@@ -1,5 +1,17 @@
 {% load i18n %}
+{% load nav %}
 {% if cats %}
+    {% if is_menu %}
+        {% if request.user.role == 'A' %}
+            {% url 'oscm:categories' as oscm_categories_url %}
+            <li class="{% active request oscm_categories_url exact_match=True %}"><a href="{{ oscm_categories_url }}">{% trans "All" %}</a></li>
+            <li role="presentation" class="divider"></li>
+        {% else %}
+            {% url 'oscm:catalogue' as oscm_catalogue_url %}
+            <li class="{% active request oscm_catalogue_url exact_match=True %}"><a href="{{ oscm_catalogue_url }}">{% trans "All" %}</a></li>
+            <li role="presentation" class="divider"></li>
+        {% endif %}
+    {% endif %}
     {% for c in cats %}
        {% if c == act_cat %}<li class="active">{% else %}<li>{% endif %}
         <a href="{% url 'oscm:category' slug_name=c.slug_name %}">{{ c.name }}</a></li>

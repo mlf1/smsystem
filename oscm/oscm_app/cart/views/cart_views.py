@@ -8,13 +8,15 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import DetailView, ListView, UpdateView
 
 # OSCM imports
-from ..constants import (
+from ...constants import (
     ADMIN_ROLE,
+    DEFAULT_CART_STATUS,
     MANAGER_ROLE,
     USER_ROLE)
-from ..decorators.user_check_mixin import UserCheckMixin
-from .forms.cart_interest_form import CartInterestForm
-from .models.cart import Cart
+from ...decorators.user_check_mixin import UserCheckMixin
+from ...utils import get_attr
+from ..forms.cart_interest_form import CartInterestForm
+from ..models.cart import Cart
 
 
 class CartDisplay(DetailView):
@@ -29,8 +31,8 @@ class CartDisplay(DetailView):
         cart = self.object
         # Add in a QuerySet of all posts for the given estimates
         context['cart'] = cart
-        context['cart_items_list'] = cart.get_cart_items()
         self.fill_data(cart, context)
+        context['cart_items_list'] = cart.get_cart_items()
         return context
 
     def fill_data(self, cart, context):
@@ -59,10 +61,11 @@ class CartsDisplay(UserCheckMixin, ListView):
         # self.args[0] suppose que l'url prend un paramètre, ce que nous
         # n'avons pas fait.  C'est pour l'exemple.
         queryset = super(CartsDisplay, self).get_queryset()
-        if self.request.user.role == \
-                MANAGER_ROLE or self.request.user.role == ADMIN_ROLE:
+        if self.request.user.role == ADMIN_ROLE:
             # return Cart.objects.all()
             return queryset
+        elif self.request.user.role == MANAGER_ROLE:
+            return queryset.exclude(status=get_attr(DEFAULT_CART_STATUS))
         elif self.request.user.role == USER_ROLE:
             # return Cart.objects.filter(owner=self.request.user)
             return queryset.filter(owner=self.request.user)

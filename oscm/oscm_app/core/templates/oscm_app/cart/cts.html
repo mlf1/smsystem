@@ -1,5 +1,9 @@
 {% load i18n %}
+{% load nav %}
 {% if cts %}
+    {% url 'oscm:carts' pk=user_id as oscm_cart_url %}
+    <li class="{% active request oscm_cart_url exact_match=True %}"><a href="{{ oscm_cart_url }}">{% trans "All" %}</a></li>
+    <li role="presentation" class="divider"></li>
     {% for ct in cts %}
        {% if ct == act_cart %}<li class="active">{% else %}<li>{% endif %}
         <a href="{% url 'oscm:cart' pk=ct.id %}">{{ ct.project_name }}</a></li>

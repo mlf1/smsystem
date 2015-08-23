@@ -40,6 +40,9 @@ INVOICES = 'invoices'
 # Default cart status
 DEFAULT_CART_STATUS = 'CART_STATUS_CREATED'
 
+# Cart status saved
+CART_STATUS_SAVED = 'CART_STATUS_SAVED'
+
 # Cart statuses
 CART_STATUSES = 'CART_STATUSES'
 
