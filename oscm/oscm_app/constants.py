@@ -19,6 +19,9 @@ CATEGORIES = 'categories'
 # Products
 PRODUCTS = 'products'
 
+# Default product minimum quantity
+DEFAULT_PRODUCT_MINIMUM_QUANTITY = 'PRODUCT_MINIMUM_QUANTITY'
+
 # Carts
 CARTS = 'carts'
 

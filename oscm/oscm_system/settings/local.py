@@ -153,6 +153,9 @@ USER_AUTHENTICATION_MODES = (
     # The following feature doesn't yet exist. Ex: ('L', 'Ldap'),
 )
 
+# Default minimum quantity for a product
+PRODUCT_MINIMUM_QUANTITY = 50
+
 # Default cart statuses
 CART_STATUS_CREATED = 0
 CART_STATUS_SAVED = 1

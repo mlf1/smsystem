@@ -35,6 +35,7 @@ class ProductInterestForm(ObjectInterestForm):
             'description',
             'unit_price',
             'quantity',
+            'minimum_quantity',
             'sku',
             'is_active',
             'category',
@@ -48,6 +49,7 @@ class ProductInterestForm(ObjectInterestForm):
             "description",
             "unit_price",
             "quantity",
+            "minimum_quantity",
             "sku",
             "is_active",
             "category",
@@ -59,6 +61,7 @@ class ProductInterestForm(ObjectInterestForm):
             self.fields['description'].widget.attrs['readonly'] = 'True'
             self.fields['unit_price'].widget.attrs['readonly'] = 'True'
             self.fields['quantity'].widget.attrs['readonly'] = 'True'
+            self.fields['minimum_quantity'].widget = forms.HiddenInput()
             self.fields['sku'].widget.attrs['readonly'] = 'True'
 
     def clean_name(self):
@@ -97,6 +100,21 @@ class ProductInterestForm(ObjectInterestForm):
             quantity,
         )
 
+    def clean_minimum_quantity(self):
+        min_quantity = self.cleaned_data['minimum_quantity']
+        if min_quantity <= 0:
+            logger.error(self.error_messages['invalid quantity'] % {
+                'quantity': min_quantity})
+            raise forms.ValidationError(
+                self.error_messages['invalid quantity'],
+                code='invalid',
+                params={'quantity': min_quantity},)
+        return self.check_update_value(
+            'product details',
+            'minimum_quantity',
+            min_quantity,
+        )
+
     def clean_sku(self):
         return self.check_update_value(
             'product details',
@@ -116,6 +134,8 @@ class ProductInterestForm(ObjectInterestForm):
                 self.initial['description']
                 and self.cleaned_data['quantity'] ==
                 self.initial['quantity']
+                and self.cleaned_data['minimum_quantity'] ==
+                self.initial['minimum_quantity']
                 and self.cleaned_data['sku'] ==
                 self.initial['sku']
                 and self.cleaned_data['unit_price'] ==

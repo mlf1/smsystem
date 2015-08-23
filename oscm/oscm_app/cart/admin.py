@@ -36,3 +36,7 @@ class CartAdmin(admin.ModelAdmin):
     readonly_fields = ('last_edit_date', 'creation_date')
     ordering = ('requested_due_date', 'status', 'owner', 'project_name')
     search_fields = ['requested_due_date', 'status', 'owner', ]
+
+class CartItemAdmin(admin.ModelAdmin):
+    # actions=[export_csv]
+    view_on_site = False

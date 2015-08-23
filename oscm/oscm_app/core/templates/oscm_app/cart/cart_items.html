@@ -19,12 +19,11 @@
                     <tr>
                         <td><a href="{% url 'oscm:product' product.slug_name %}">{{ cart_item.product.name }}</a></td>
                         <td>{{ cart_item.product.unit_price }}</td>
-                        <td>{{ cart_item.product.sku }}</td>
-                        <td>{{ cart_item.product.quantity }}</td>
-                        <td>{{ cart_item.product.description }}</td>
-                        <td>{{ cart_item.product.is_active }}</td>
+                        <td>{% if cart_item.product.sku %}{{ cart_item.product.sku }}{% else %}<span class="glyphicon glyphicon-minus"></span>{% endif %}</td>
+                        <td>{{ cart_item.quantity }}</td>
+                        <td>{{ cart_item.total_price }}</td>
                     </tr>
-                {% endfor %}
+                {% endfor %}glyphicon glyphicon-minus
             </tbody>
         </table>
     {% comment %}

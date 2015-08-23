@@ -34,6 +34,7 @@ class ProductForm(forms.ModelForm):
             "description",
             "unit_price",
             "quantity",
+            "minimum_quantity",
             "sku",
             "is_active",
             "category",
@@ -46,6 +47,7 @@ class ProductForm(forms.ModelForm):
             "description",
             "unit_price",
             "quantity",
+            "minimum_quantity",
             "sku",
             "is_active",
             "category", ])

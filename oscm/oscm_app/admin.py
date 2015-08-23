@@ -8,11 +8,13 @@ from django.utils.translation import ugettext as _
 
 # OSCM imports
 from .cart.admin import CartAdmin
+from .cart.admin import CartItemAdmin
 from .cart.catalogue.admin import (CategoryAdmin, ProductAdmin, SupplierAdmin)
 from .cart.catalogue.models.category import Category
 from .cart.catalogue.models.product import Product
 from .cart.catalogue.models.supplier import Supplier
 from .cart.models.cart import Cart
+from .cart.models.cart_item import CartItem
 from .custom_auth_user import CustomAuthUser
 from .authentication.custom_auth_user_form import (
     CustomAuthUserChangeForm,
@@ -118,3 +120,4 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Supplier, SupplierAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Cart, CartAdmin)
+admin.site.register(CartItem, CartItemAdmin)

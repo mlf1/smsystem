@@ -16,9 +16,10 @@
                 {% for supplier in suppliers_list %}
                     <tr>
                         <td><a href="{% url 'oscm:supplier' supplier.slug_name %}">{{ supplier.name }}</a></td>
-                        <td>{{ supplier.address }}</td>
-                        <td>{{ supplier.description }}</td>
-                        <td>{{ supplier.is_active }}</td>
+                        <td>{% if supplier.address %}{{ supplier.address }}{% else %}<span class="glyphicon glyphicon-minus"></span>{% endif %}</td>
+                        <td>{% if supplier.description %}{{ supplier.description }}{% else %}<span class="glyphicon glyphicon-minus"></span>{% endif %}</td>
+                        <td>{% if supplier.supplier_website %}{{ supplier.supplier_website }}{% else %}<span class="glyphicon glyphicon-minus"></span>{% endif %}</td>
+                        <td>{% if supplier.is_active %}<span class="glyphicon glyphicon-ok-circle"></span>{% else %}<span class="glyphicon glyphicon-ban-circle"></span>{% endif %}</td>
                     </tr>
                 {% endfor %}
             </tbody>

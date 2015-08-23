@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-20 23:02+0200\n"
+"POT-Creation-Date: 2015-08-23 18:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: oscm_app/admin.py:61
+#: oscm_app/admin.py:63
 msgid "oscm_admin_headerOfPersonalInfo"
 msgstr "Personal information"
 
-#: oscm_app/admin.py:65
+#: oscm_app/admin.py:67
 msgid "oscm_admin_headerOfCommonSettings"
 msgstr "Common settings"
 
-#: oscm_app/admin.py:67
+#: oscm_app/admin.py:69
 msgid "oscm_admin_headerOfPermissions"
 msgstr "Permissions"
 
-#: oscm_app/admin.py:73
+#: oscm_app/admin.py:75
 msgid "oscm_admin_headerOfUserSettings"
 msgstr "User settings"
 
-#: oscm_app/admin.py:76 oscm_app/cart/admin.py:17
-#: oscm_app/cart/catalogue/admin.py:33
+#: oscm_app/admin.py:78 oscm_app/cart/admin.py:17
+#: oscm_app/cart/catalogue/admin.py:34
 msgid "oscm_admin_headerOfImportantDates"
 msgstr "Important dates"
 
@@ -157,13 +157,7 @@ msgstr "Cart information"
 msgid "oscm_admin_headerOfStatus"
 msgstr "Status"
 
-#: oscm_app/cart/cart_views.py:81
-#, fuzzy
-#| msgid "OSCM Category details updated."
-msgid "OSCM Cart details updated."
-msgstr "OSCM Category details updated."
-
-#: oscm_app/cart/catalogue/admin.py:31
+#: oscm_app/cart/catalogue/admin.py:32
 #: oscm_app/cart/catalogue/models/category.py:54
 msgid "oscm_admin_headerOfCategory"
 msgstr "OSCM Category"
@@ -175,7 +169,7 @@ msgid "OSCM Category '%s' has been created."
 msgstr "OSCM Category details updated."
 
 #: oscm_app/cart/catalogue/forms/category_interest_form.py:79
-#: oscm_app/cart/catalogue/forms/product_interest_form.py:126
+#: oscm_app/cart/catalogue/forms/product_interest_form.py:127
 #: oscm_app/cart/catalogue/forms/supplier_interest_form.py:102
 #: oscm_app/cart/forms/cart_interest_form.py:130
 #: oscm_app/preferences/account_settings_form.py:118
@@ -224,7 +218,7 @@ msgstr ""
 msgid "OSCM Product '%s' has been created."
 msgstr "Your OSCM Account has been activated."
 
-#: oscm_app/cart/catalogue/forms/product_interest_form.py:148
+#: oscm_app/cart/catalogue/forms/product_interest_form.py:149
 #, python-format
 msgid "OSCM Product details from the product '%s' has been updated."
 msgstr ""
@@ -313,30 +307,34 @@ msgid "oscm_admin_quantityOfProduct"
 msgstr "available quantity"
 
 #: oscm_app/cart/catalogue/models/product.py:81
+msgid "oscm_admin_minimumQuantityOfProduct"
+msgstr "minimum quantity"
+
+#: oscm_app/cart/catalogue/models/product.py:86
 msgid "oscm_admin_skuOfProduct"
 msgstr "SKU"
 
-#: oscm_app/cart/catalogue/models/product.py:82
+#: oscm_app/cart/catalogue/models/product.py:87
 msgid "oscm_admin_helpTextUniqueArticleNoOfProduct"
 msgstr "You can set the unique id (uuid) of the product."
 
-#: oscm_app/cart/catalogue/models/product.py:87
+#: oscm_app/cart/catalogue/models/product.py:92
 msgid "oscm_admin_displayOfProduct"
 msgstr "displayed"
 
-#: oscm_app/cart/catalogue/models/product.py:88
+#: oscm_app/cart/catalogue/models/product.py:93
 msgid "oscm_admin_helpTextActiveStatusOfProduct"
 msgstr "You can set the activ status of the product."
 
-#: oscm_app/cart/catalogue/models/product.py:94
+#: oscm_app/cart/catalogue/models/product.py:99
 msgid "oscm_admin_headerOfProduct"
 msgstr "OSCM Product"
 
-#: oscm_app/cart/catalogue/models/product.py:95
+#: oscm_app/cart/catalogue/models/product.py:100
 msgid "oscm_admin_headerOfProducts"
 msgstr "OSCM Products"
 
-#: oscm_app/cart/catalogue/models/product.py:124
+#: oscm_app/cart/catalogue/models/product.py:129
 #, python-format
 msgid ""
 "product (name: %(name)s, quantity: %(quantity)d, unit price: %(unit_price)d, "
@@ -391,7 +389,7 @@ msgstr "OSCM Supplier"
 msgid "oscm_admin_headerOfSuppliers"
 msgstr "OSCM Suppliers"
 
-#: oscm_app/cart/catalogue/models/supplier.py:145
+#: oscm_app/cart/catalogue/models/supplier.py:147
 #, python-format
 msgid "supplier (name: %(name)s, address: %(address)s)"
 msgstr ""
@@ -417,65 +415,65 @@ msgstr "Number of cart items"
 msgid "OSCM Cart details from the cart '%s' has been updated."
 msgstr ""
 
-#: oscm_app/cart/models/cart.py:26
+#: oscm_app/cart/models/cart.py:27
 msgid "oscm_admin_ownerOfCart"
 msgstr "owner"
 
-#: oscm_app/cart/models/cart.py:27
+#: oscm_app/cart/models/cart.py:28
 #, fuzzy
 #| msgid "oscm_admin_helpTextStatusOfCart"
 msgid "oscm_admin_helpTextOwnerOfCart"
 msgstr "Designates the status of the cart."
 
-#: oscm_app/cart/models/cart.py:33
+#: oscm_app/cart/models/cart.py:34
 msgid "oscm_admin_projectNameOfCart"
 msgstr "project name"
 
-#: oscm_app/cart/models/cart.py:34
+#: oscm_app/cart/models/cart.py:35
 msgid "oscm_admin_helpTextProjectNameOfCart"
 msgstr "You must set the project name for the cart."
 
-#: oscm_app/cart/models/cart.py:42
+#: oscm_app/cart/models/cart.py:43
 msgid "oscm_admin_creationDateOfCart"
 msgstr "creation date"
 
-#: oscm_app/cart/models/cart.py:47
+#: oscm_app/cart/models/cart.py:48
 msgid "oscm_admin_lastEditDateOfCart"
 msgstr "last edit date"
 
-#: oscm_app/cart/models/cart.py:52
+#: oscm_app/cart/models/cart.py:53
 msgid "oscm_admin_requestedDueDateOfCart"
 msgstr "requested due date"
 
-#: oscm_app/cart/models/cart.py:53
+#: oscm_app/cart/models/cart.py:54
 msgid "oscm_admin_helpTextRequestedDueDateOfCart"
 msgstr "You must set the requested due date for the cart."
 
-#: oscm_app/cart/models/cart.py:62
+#: oscm_app/cart/models/cart.py:63
 msgid "oscm_admin_statusOfCart"
 msgstr "status"
 
-#: oscm_app/cart/models/cart.py:66
+#: oscm_app/cart/models/cart.py:67
 msgid "oscm_admin_helpTextStatusOfCart"
 msgstr "Designates the status of the cart."
 
-#: oscm_app/cart/models/cart.py:70
+#: oscm_app/cart/models/cart.py:71
 msgid "oscm_admin_descriptionOfCart"
 msgstr "description"
 
-#: oscm_app/cart/models/cart.py:72
+#: oscm_app/cart/models/cart.py:73
 msgid "oscm_admin_helpTextDescriptionOfCart"
 msgstr "You can set the description of the cart."
 
-#: oscm_app/cart/models/cart.py:79
+#: oscm_app/cart/models/cart.py:80
 msgid "oscm_admin_headerOfCart"
 msgstr "OSCM Cart"
 
-#: oscm_app/cart/models/cart.py:80
+#: oscm_app/cart/models/cart.py:81
 msgid "oscm_admin_headerOfCarts"
 msgstr "OSCM Carts"
 
-#: oscm_app/cart/models/cart.py:87
+#: oscm_app/cart/models/cart.py:91
 #, python-format
 msgid ""
 "cart (status: %(status)s, owner: %(owner)s, project name: %(project_name)s, "
@@ -484,39 +482,66 @@ msgstr ""
 "cart (status: %(status)s, owner: %(owner)s, project name: %(project_name)s, "
 "number of cart items: %(nb_cart_items)d)"
 
-#: oscm_app/cart/models/cart_item.py:26
+#: oscm_app/cart/models/cart_item.py:28
 msgid "oscm_admin_statusOfCartItem"
 msgstr "status"
 
-#: oscm_app/cart/models/cart_item.py:30
+#: oscm_app/cart/models/cart_item.py:32
 #, fuzzy
 #| msgid "oscm_admin_helpTextStaffStatusOfUser"
 msgid "oscm_admin_helpTextStatusOfCartItem"
 msgstr "Designates whether the user can log into this admin 'site'."
 
-#: oscm_app/cart/models/cart_item.py:38
+#: oscm_app/cart/models/cart_item.py:40
 msgid "oscm_admin_quantityOfCartItem"
 msgstr "quantity"
 
-#: oscm_app/cart/models/cart_item.py:43
+#: oscm_app/cart/models/cart_item.py:45
 msgid "oscm_admin_totalPriceOfCartItem"
 msgstr "total price"
 
-#: oscm_app/cart/models/cart_item.py:50
+#: oscm_app/cart/models/cart_item.py:52
 msgid "oscm_admin_creationDateOfCartItem"
 msgstr "creation date"
 
-#: oscm_app/cart/models/cart_item.py:55
+#: oscm_app/cart/models/cart_item.py:57
 msgid "oscm_admin_lastEditDateOfCartItem"
 msgstr "last edit date"
 
-#: oscm_app/cart/models/cart_item.py:62
+#: oscm_app/cart/models/cart_item.py:64
 msgid "oscm_admin_headerOfCartItem"
 msgstr "OSCM Cart item"
 
-#: oscm_app/cart/models/cart_item.py:63
+#: oscm_app/cart/models/cart_item.py:65
 msgid "oscm_admin_headerOfCartItems"
 msgstr "OSCM Cart items"
+
+#: oscm_app/cart/models/cart_item.py:101
+#, python-format
+msgid ""
+"cart item (project name: %(cart_projet_name)s, product name: "
+"%(product_name)s, status: %(status)s, quantity: %(quantity)d, total price: "
+"%(total_price)d)"
+msgstr ""
+
+#: oscm_app/cart/models/cart_item.py:113
+#, python-format
+msgid ""
+"cart item (product name: %(product_name)s, status: %(status)s, quantity: "
+"%(quantity)d, total price: %(total_price)d)"
+msgstr ""
+
+#: oscm_app/cart/views/cart_item_views.py:64
+#, fuzzy
+#| msgid "OSCM Category details updated."
+msgid "OSCM Cart item details updated."
+msgstr "OSCM Category details updated."
+
+#: oscm_app/cart/views/cart_views.py:83
+#, fuzzy
+#| msgid "OSCM Category details updated."
+msgid "OSCM Cart details updated."
+msgstr "OSCM Category details updated."
 
 #: oscm_app/core/templates/admin/auth/user/add_form.html:6
 msgid "oscm_admin_headerOfAddForm"
@@ -624,7 +649,7 @@ msgstr "Log out"
 #: oscm_app/core/templates/oscm_app/home.html:20
 #: oscm_app/core/templates/oscm_app/index.html:18
 #: oscm_app/core/templates/oscm_app/sign/login.html:4
-#: oscm_app/core/templates/oscm_app/sign/login.html:55
+#: oscm_app/core/templates/oscm_app/sign/login.html:56
 #: oscm_app/sign/log_views.py:125
 msgid "Log in"
 msgstr "Log in"
@@ -651,6 +676,9 @@ msgstr "cart"
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:17
 #: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:17
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:17
 #: oscm_app/core/templates/oscm_app/preferences/settings.html:14
 #: oscm_app/core/templates/oscm_app/registration/registration.html:19
 #: oscm_app/core/templates/oscm_app/sign/login.html:18
@@ -667,6 +695,9 @@ msgstr "Please correct the error below."
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:17
 #: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:17
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:17
 #: oscm_app/core/templates/oscm_app/preferences/settings.html:14
 #: oscm_app/core/templates/oscm_app/registration/registration.html:19
 #: oscm_app/core/templates/oscm_app/sign/login.html:18
@@ -677,6 +708,7 @@ msgstr "Please correct the errors below."
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category.html:29
 #: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:29
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:29
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:29
 msgid "Details"
 msgstr "Details"
 
@@ -684,19 +716,21 @@ msgstr "Details"
 msgid "Cart items"
 msgstr "Cart items"
 
-#: oscm_app/core/templates/oscm_app/cart/cart_details.html:39
-#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:63
-#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:63
-#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:63
-#: oscm_app/core/templates/oscm_app/cart/catalogue/category_details.html:45
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:45
-#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_details.html:45
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:51
+#: oscm_app/core/templates/oscm_app/cart/cart_details.html:40
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:64
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:64
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:64
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_details.html:46
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:46
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_details.html:46
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:64
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item_details.html:45
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:52
 #: oscm_app/core/templates/oscm_app/sign/logout.html:18
 msgid "Cancel"
 msgstr "Cancel"
 
-#: oscm_app/core/templates/oscm_app/cart/cart_details.html:40
+#: oscm_app/core/templates/oscm_app/cart/cart_details.html:41
 msgid "Update cart parameters"
 msgstr "Update cart parameters"
 
@@ -739,14 +773,14 @@ msgstr "description"
 msgid "is_active"
 msgstr "displayed"
 
-#: oscm_app/core/templates/oscm_app/cart/cart_items.html:42
-#: oscm_app/core/templates/oscm_app/cart/cart_items.html:55
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:41
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:54
 msgid "No cart items"
 msgstr "No cart items"
 
 #: oscm_app/core/templates/oscm_app/cart/carts.html:4
 #: oscm_app/core/templates/oscm_app/cart/carts.html:12
-#: oscm_app/core/templates/oscm_app/menu.html:20
+#: oscm_app/core/templates/oscm_app/menu.html:22
 msgid "Carts"
 msgstr "Carts"
 
@@ -771,7 +805,7 @@ msgstr "category"
 msgid "add_category"
 msgstr "category"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:64
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:65
 #, fuzzy
 #| msgid "category"
 msgid "Create category"
@@ -790,7 +824,8 @@ msgstr "products"
 msgid "add_product"
 msgstr "products"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:64
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:65
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:65
 #, fuzzy
 #| msgid "product"
 msgid "Create product"
@@ -809,7 +844,7 @@ msgstr "supplier"
 msgid "add_supplier"
 msgstr "supplier"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:64
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:65
 #, fuzzy
 #| msgid "supplier"
 msgid "Create supplier"
@@ -828,7 +863,7 @@ msgstr "catalogue"
 #: oscm_app/core/templates/oscm_app/cart/catalogue/catalogue.html:16
 #: oscm_app/core/templates/oscm_app/cart/catalogue/categories.html:3
 #: oscm_app/core/templates/oscm_app/cart/catalogue/categories.html:11
-#: oscm_app/core/templates/oscm_app/menu.html:45
+#: oscm_app/core/templates/oscm_app/menu.html:55
 msgid "Categories"
 msgstr "Categories"
 
@@ -836,7 +871,7 @@ msgstr "Categories"
 #: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:30
 #: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:3
 #: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:11
-#: oscm_app/core/templates/oscm_app/menu.html:52
+#: oscm_app/core/templates/oscm_app/menu.html:64
 msgid "Suppliers"
 msgstr "Suppliers"
 
@@ -845,7 +880,7 @@ msgstr "Suppliers"
 #: oscm_app/core/templates/oscm_app/cart/catalogue/products.html:3
 #: oscm_app/core/templates/oscm_app/cart/catalogue/products.html:11
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:30
-#: oscm_app/core/templates/oscm_app/menu.html:38
+#: oscm_app/core/templates/oscm_app/menu.html:46
 msgid "Products"
 msgstr "Products"
 
@@ -872,13 +907,14 @@ msgstr "Category"
 msgid "category"
 msgstr "category"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/category_details.html:47
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:47
-#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_details.html:47
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_details.html:48
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:48
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_details.html:48
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item_details.html:47
 msgid "Delete"
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/category_details.html:49
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_details.html:50
 msgid "Update category parameters"
 msgstr "Update category parameters"
 
@@ -909,6 +945,7 @@ msgstr "category"
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:12
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:12
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:12
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:12
 msgid "Confirm delete"
 msgstr ""
 
@@ -921,12 +958,14 @@ msgstr "Are you sure you want to log out ?"
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:32
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:32
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:32
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:32
 msgid "No"
 msgstr ""
 
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:37
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:37
 #: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:37
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:37
 msgid "Yes"
 msgstr ""
 
@@ -978,11 +1017,11 @@ msgstr "Products"
 msgid "product"
 msgstr "products"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:49
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:50
 msgid "Update product parameters"
 msgstr "Update product parameters"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:51
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:52
 msgid "Add cart"
 msgstr "Add cart"
 
@@ -990,8 +1029,8 @@ msgstr "Add cart"
 msgid "address"
 msgstr "address"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:40
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:53
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:41
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:54
 #: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:21
 msgid "No suppliers"
 msgstr "No suppliers"
@@ -1008,7 +1047,7 @@ msgstr "Suppliers"
 msgid "supplier"
 msgstr "supplier"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_details.html:49
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_details.html:50
 msgid "Update supplier parameters"
 msgstr "Update supplier parameters"
 
@@ -1023,6 +1062,55 @@ msgstr "No supplier at present."
 #: oscm_app/core/templates/oscm_app/cart/cts.html:8
 msgid "No cart at present."
 msgstr "No cart at present."
+
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:4
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:12
+#, fuzzy
+#| msgid "No cart items"
+msgid "Add cart item"
+msgstr "No cart items"
+
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:5
+#, fuzzy
+#| msgid "category"
+msgid "add_cart_item"
+msgstr "category"
+
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:4
+#, fuzzy
+#| msgid "Cart items"
+msgid "Cart Item"
+msgstr "Cart items"
+
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:5
+#, fuzzy
+#| msgid "Cart items"
+msgid "cart item"
+msgstr "Cart items"
+
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item_details.html:49
+#, fuzzy
+#| msgid "Update cart parameters"
+msgid "Update cart item parameters"
+msgstr "Update cart parameters"
+
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:4
+#, fuzzy
+#| msgid "category"
+msgid "Delete cart item"
+msgstr "category"
+
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:5
+#, fuzzy
+#| msgid "category"
+msgid "delete_cart_item"
+msgstr "category"
+
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:30
+#, fuzzy
+#| msgid "Are you sure you want to log out ?"
+msgid "Are you sure you want to delete the following cart item ?"
+msgstr "Are you sure you want to log out ?"
 
 #: oscm_app/core/templates/oscm_app/errors/403.html:4
 msgid "oscm_labelOfError403"
@@ -1052,9 +1140,9 @@ msgstr "Please sign in to a different account or register for a new one."
 #: oscm_app/core/templates/oscm_app/errors/403.html:25
 #: oscm_app/core/templates/oscm_app/index.html:23
 #: oscm_app/core/templates/oscm_app/registration/registration.html:4
-#: oscm_app/core/templates/oscm_app/registration/registration.html:55
+#: oscm_app/core/templates/oscm_app/registration/registration.html:56
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:20
-#: oscm_app/core/templates/oscm_app/sign/login.html:67
+#: oscm_app/core/templates/oscm_app/sign/login.html:68
 #: oscm_app/registration/registration_views.py:69
 msgid "Register"
 msgstr "Register"
@@ -1161,7 +1249,15 @@ msgstr "Or if you have not logged in before, then please register first."
 msgid "Account Settings"
 msgstr "Account Settings"
 
-#: oscm_app/core/templates/oscm_app/menu.html:27
+#: oscm_app/core/templates/oscm_app/menu.html:13
+#: oscm_app/core/templates/oscm_app/menu.html:24
+#: oscm_app/core/templates/oscm_app/menu.html:48
+#: oscm_app/core/templates/oscm_app/menu.html:57
+#: oscm_app/core/templates/oscm_app/menu.html:66
+msgid "All"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/menu.html:31
 msgid "Orders"
 msgstr "Orders"
 
@@ -1173,7 +1269,7 @@ msgstr "settings"
 msgid "Settings"
 msgstr "Settings"
 
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:52
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:53
 msgid "Update settings"
 msgstr "Update settings"
 
@@ -1249,7 +1345,7 @@ msgstr ""
 msgid "Log in to an existing account"
 msgstr "Log in to an existing account"
 
-#: oscm_app/core/templates/oscm_app/sign/login.html:67
+#: oscm_app/core/templates/oscm_app/sign/login.html:68
 msgid "Don't have an account ?"
 msgstr "Don't have an account ? "
 
@@ -1589,74 +1685,74 @@ msgstr "English"
 msgid "French"
 msgstr "French"
 
-#: oscm_system/settings/local.py:163
+#: oscm_system/settings/local.py:166
 msgid "oscm_cart_status_created"
 msgstr "created"
 
-#: oscm_system/settings/local.py:164
+#: oscm_system/settings/local.py:167
 msgid "oscm_cart_status_saved"
 msgstr "saved"
 
-#: oscm_system/settings/local.py:165
+#: oscm_system/settings/local.py:168
 msgid "oscm_cart_status_completed"
 msgstr "completed"
 
-#: oscm_system/settings/local.py:175
+#: oscm_system/settings/local.py:178
 msgid "oscm_cart_item_status_created"
 msgstr "created"
 
-#: oscm_system/settings/local.py:176
+#: oscm_system/settings/local.py:179
 msgid "oscm_cart_item_status_saved"
 msgstr "saved"
 
-#: oscm_system/settings/local.py:177
+#: oscm_system/settings/local.py:180
 msgid "oscm_cart_item_status_completed"
 msgstr "completed"
 
-#: oscm_system/settings/local.py:190
+#: oscm_system/settings/local.py:193
 msgid "oscm_order_status_created"
 msgstr "created"
 
-#: oscm_system/settings/local.py:191
+#: oscm_system/settings/local.py:194
 msgid "oscm_order_status_confirmed"
 msgstr "confirmed"
 
-#: oscm_system/settings/local.py:192
+#: oscm_system/settings/local.py:195
 msgid "oscm_order_status_cancelled"
 msgstr "cancelled"
 
-#: oscm_system/settings/local.py:193
+#: oscm_system/settings/local.py:196
 msgid "oscm_order_status_paid"
 msgstr "paid"
 
-#: oscm_system/settings/local.py:194
+#: oscm_system/settings/local.py:197
 msgid "oscm_order_status_completed"
 msgstr "completed"
 
-#: oscm_system/settings/local.py:195
+#: oscm_system/settings/local.py:198
 msgid "oscm_order_status_archived"
 msgstr "archived"
 
-#: oscm_system/settings/local.py:208
+#: oscm_system/settings/local.py:211
 msgid "oscm_order_item_status_created"
 msgstr "created"
 
-#: oscm_system/settings/local.py:209
+#: oscm_system/settings/local.py:212
 msgid "oscm_order_item_status_confirmed"
 msgstr "confirmed"
 
-#: oscm_system/settings/local.py:210
+#: oscm_system/settings/local.py:213
 msgid "oscm_order_item_status_cancelled"
 msgstr "cancelled"
 
-#: oscm_system/settings/local.py:211
+#: oscm_system/settings/local.py:214
 msgid "oscm_order_item_status_paid"
 msgstr "paid"
 
-#: oscm_system/settings/local.py:212
+#: oscm_system/settings/local.py:215
 msgid "oscm_order_item_status_completed"
 msgstr "completed"
 
-#: oscm_system/settings/local.py:213
+#: oscm_system/settings/local.py:216
 msgid "oscm_order_item_status_archived"
 msgstr "archived"

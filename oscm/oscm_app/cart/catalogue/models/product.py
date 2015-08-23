@@ -11,7 +11,7 @@ from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
-from ....constants import PRODUCTS
+from ....constants import DEFAULT_PRODUCT_MINIMUM_QUANTITY, PRODUCTS
 from ....utils import get_attr
 from ...cart_manager import CartQuerySet
 
@@ -75,6 +75,11 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField(
         verbose_name=_('oscm_admin_quantityOfProduct'),
         default=1,
+    )
+    # Minimum quantity
+    minimum_quantity = models.PositiveIntegerField(
+        verbose_name=_('oscm_admin_minimumQuantityOfProduct'),
+        default=get_attr(DEFAULT_PRODUCT_MINIMUM_QUANTITY),
     )
     #  The external unique id of the product (EAN or UPC)
     sku = models.CharField(

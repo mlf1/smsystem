@@ -9,6 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 # OSCM imports
 from ...constants import CARTS, CART_STATUSES, DEFAULT_CART_STATUS
 from ...utils import get_attr
+from ..cart_manager import CartQuerySet
 from .cart_item import CartItem
 
 
@@ -79,9 +80,12 @@ class Cart(models.Model):
         verbose_name = _('oscm_admin_headerOfCart')
         verbose_name_plural = _('oscm_admin_headerOfCarts')
 
+    objects = CartQuerySet.as_manager()
+
     def __str__(self):
         """
-        Displays the status, the owner and the number of carts.
+        Displays the status, the owner, the project
+        name and the number of cart items.
         """
         return _(
             "cart (status: %(status)s, owner: %(owner)s, project name: "
@@ -97,7 +101,7 @@ class Cart(models.Model):
         """
         Retrieves all cart items for a given cart.
         """
-        CartItem.objects.filter(cart=self)
+        return CartItem.objects.filter(cart=self)
 
     @property
     def nb_cart_items(self):

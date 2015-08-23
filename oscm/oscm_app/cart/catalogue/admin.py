@@ -26,6 +26,7 @@ class ProductAdmin(admin.ModelAdmin):
             'description',
             'unit_price',
             'quantity',
+            'minimum_quantity',
             'sku',
             'is_active']}),
         (_('oscm_admin_headerOfCategory'), {'fields': ['category']}),
@@ -40,6 +41,7 @@ class ProductAdmin(admin.ModelAdmin):
         'code',
         'unit_price',
         'quantity',
+        'minimum_quantity',
         'sku',
         'is_active',
     )
@@ -49,6 +51,7 @@ class ProductAdmin(admin.ModelAdmin):
         'code',
         'unit_price',
         'quantity',
+        'minimum_quantity',
         'sku',
         'is_active',
     )

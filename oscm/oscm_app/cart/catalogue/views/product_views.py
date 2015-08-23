@@ -109,6 +109,7 @@ class ProductDisplay(DetailView):
                 'description': product.description,
                 'unit_price': product.unit_price,
                 'quantity': product.quantity,
+                'minimum_quantity': product.minimum_quantity,
                 'sku': product.sku,
                 'is_active': product.is_active,
                 'category': product.category,
