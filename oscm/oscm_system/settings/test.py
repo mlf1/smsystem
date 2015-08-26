@@ -71,7 +71,7 @@ WSGI_APPLICATION = 'oscm_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {'init_command': 'SET foreign_key_checks = 0;' },
+        'OPTIONS': {'init_command': 'SET foreign_key_checks = 0;'},
         'NAME': 'oscm_db',
         'USER': 'root',
         'PASSWORD': 'bfh',
@@ -306,7 +306,7 @@ LOGGING = {
                 'oscm_app.log'),
             'formatter': 'simple',
             'filters': ['require_debug_false'],
-        }
+        },
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
