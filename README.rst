@@ -12,14 +12,14 @@ OSCM Prototype requires:
 Usage
 =====
 
-Enter the project and take a look around::
+Enter the project and take a look around:
 
 .. code-block:: console
 
 	$ cd smsystem/
 	$ ls
 
-Create a GitHub repo and push it there::
+Create a GitHub repo and push it there:
 
 .. code-block:: console
 
@@ -49,14 +49,14 @@ Development and Testing
 Dependencies for developing OSCM are listed in requirements.txt.
 Use of a virtual environment is strongly recommended.
 
-First make sure to create and activate a virtualenv_, then open a terminal at the project root and install the requirements for local development::
+First make sure to create and activate a 'virtualenv_', then open a terminal at the project root and install the requirements for local development:
+
+.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 
 .. code-block:: console
 
 	$ virtualenv .
 	$ source bin/activate
-
-.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 
 .. code-block:: console
 

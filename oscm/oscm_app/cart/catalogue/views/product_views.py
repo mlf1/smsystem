@@ -126,6 +126,21 @@ class AddProductView(UserCheckMixin, CreateView):
     context_object_name = "product"
     slug_field = "slug_name"
     slug_url_kwarg = "slug_name"
+    messages = {
+        "product_created": {
+            "level": messages.SUCCESS,
+            "text": _("OSCM Product created.")
+        },
+    }
+
+    def form_valid(self, form):
+        instance = form.save()
+        if instance:
+            messages.add_message(
+                self.request,
+                self.messages['product_created']['level'],
+                self.messages['product_created']['text'])
+        return super(AddProductView, self).form_valid(form)
 
     def get_success_url(self):
         return reverse('oscm:products')

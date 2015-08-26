@@ -56,13 +56,19 @@ class ProductInterestForm(ObjectInterestForm):
         ])
         if is_hidden:
             self.fields['is_active'].widget = forms.HiddenInput()
-            self.fields['category'].widget = forms.HiddenInput()
+            self.fields['category'].widget.attrs['disabled'] = 'True'
             self.fields['name'].widget.attrs['readonly'] = 'True'
             self.fields['description'].widget.attrs['readonly'] = 'True'
             self.fields['unit_price'].widget.attrs['readonly'] = 'True'
             self.fields['quantity'].widget.attrs['readonly'] = 'True'
             self.fields['minimum_quantity'].widget = forms.HiddenInput()
             self.fields['sku'].widget.attrs['readonly'] = 'True'
+
+    def clean_category(self):
+        return self.check_update_value(
+            'product details',
+            'category',
+            self.cleaned_data['category'])
 
     def clean_name(self):
         return self.check_update_value(
@@ -138,6 +144,8 @@ class ProductInterestForm(ObjectInterestForm):
                 self.initial['minimum_quantity']
                 and self.cleaned_data['sku'] ==
                 self.initial['sku']
+                and self.cleaned_data['category'] ==
+                self.initial['category']
                 and self.cleaned_data['unit_price'] ==
                 self.initial['unit_price']
                 and self.cleaned_data['is_active'] ==

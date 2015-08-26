@@ -14,7 +14,7 @@ from ..cart.catalogue.models.supplier import Supplier
 from ..cart.models.cart import Cart
 from ..constants import (
     ADMIN_ROLE,
-    CART_STATUS_SAVED,
+    DEFAULT_CART_STATUS,
     MANAGER_ROLE,
     USER_ROLE
 )
@@ -120,7 +120,7 @@ def get_carts_list(request, cart=None, user=None):
             'user_id': user.id}
     elif user.role == MANAGER_ROLE:
         return {
-            'cts': Cart.objects.filter(status=get_attr(CART_STATUS_SAVED)),
+            'cts': Cart.objects.exclude(status=get_attr(DEFAULT_CART_STATUS)),
             'act_cart': cart,
             'request': request,
             'user_id': user.id}

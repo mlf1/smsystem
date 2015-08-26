@@ -30,7 +30,7 @@
             </div>
             <div id="prod_all" role="tabpanel" class="tab-pane fade">
                 <ol>
-                    {% get_product_list request product user.role True %}
+                    {% get_product_list request product role=user.role inheritance=True %}
                 </ol>
             </div>
         </div>

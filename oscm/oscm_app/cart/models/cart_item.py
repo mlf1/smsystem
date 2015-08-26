@@ -2,10 +2,12 @@
 # oscm_app/cart/models
 
 # django imports
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
+from ..cart_manager import CartQuerySet
 from ...constants import (
     CART_ITEM_STATUSES, CART_ITEMS, DEFAULT_CART_ITEM_STATUS)
 from ...utils import get_attr
@@ -22,7 +24,7 @@ class CartItem(models.Model):
     # Retrieved the different statuses from the settings file
     CART_ITEM_STATUSES = get_attr(CART_ITEM_STATUSES)
     # Status
-    status = models.CharField(
+    status = models.IntegerField(
         verbose_name=_('oscm_admin_statusOfCartItem'),
         max_length=32,
         default=DEFAULT_CART_ITEM_STATUS,
@@ -32,7 +34,7 @@ class CartItem(models.Model):
     # Product
     product = models.ForeignKey('Product')
     # Cart
-    cart = models.ForeignKey('Cart', null=True, blank=True)
+    cart = models.ForeignKey('Cart')
     # Quantity
     quantity = models.PositiveIntegerField(
         verbose_name=_('oscm_admin_quantityOfCartItem'),
@@ -62,6 +64,8 @@ class CartItem(models.Model):
         verbose_name = _('oscm_admin_headerOfCartItem')
         verbose_name_plural = _('oscm_admin_headerOfCartItems')
 
+    objects = CartQuerySet.as_manager()
+
     @property
     def name(self):
         """
@@ -79,7 +83,13 @@ class CartItem(models.Model):
     def get_absolute_url(self):
         """
         """
-        return self.product.get_absolute_url()
+        # return self.product.get_absolute_url()
+        return reverse('oscm:cart_item', kwargs={'pk': self.pk})
+
+    def get_delete_url(self):
+        """
+        """
+        return reverse('oscm:delete_cart_item', kwargs={'pk': self.pk})
 
     def __str__(self):
         """
@@ -87,6 +97,25 @@ class CartItem(models.Model):
         the product name and the item status.
         """
         if self.cart:
-            return '{0}: {1}'.format(self.cart.id, self.product.name)
+            return _(
+                "cart item (project name: %(cart_projet_name)s, "
+                "product name: %(product_name)s, status: %(status)s, "
+                "quantity: %(quantity)d, total price: %(total_price)d)"
+                ) % {
+                    'cart_projet_name': self.cart.project_name,
+                    'product_name': self.product.name,
+                    'status': self.CART_ITEM_STATUSES[self.status][1],
+                    'quantity': self.quantity,
+                    'total_price': self.total_price
+                }
         else:
-            return '{0}: {1}'.format(self.product.name, self.status)
+            return _(
+                "cart item (product name: %(product_name)s, "
+                "status: %(status)s, quantity: %(quantity)d, "
+                "total price: %(total_price)d)"
+                ) % {
+                    'product_name': self.product.name,
+                    'status': self.CART_ITEM_STATUSES[self.status][1],
+                    'quantity': self.quantity,
+                    'total_price': self.total_price
+                }
