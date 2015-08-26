@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load nav %}
-<div id="supplier_products" role="tabpanel" class="tab-pane fade">
+<div id="supplier_products" role="tabpanel" class="table-responsive fade">
 {% if user.role == 'A' %}
     {% if products_list %}
         <table class="table table-condensed table-striped text-center" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-flat="true" data-show-export="true" data-pagination="true">
