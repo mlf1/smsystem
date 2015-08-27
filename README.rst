@@ -8,7 +8,6 @@ OSCM Prototype requires:
 * django-extensions==1.4.9
 	- six [required: >=1.2, installed: 1.8.0]
 
-
 Usage
 =====
 
@@ -41,7 +40,6 @@ The steps below will get you up and running with a local development environment
 * pip
 * virtualenv (see below)
 * MySQL (replace your configurations in the setting files)
-
 
 Development and Testing
 =======================

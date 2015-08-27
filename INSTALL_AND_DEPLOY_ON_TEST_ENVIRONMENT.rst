@@ -2,7 +2,6 @@
 Deploy and install on the test environment
 ##########################################
 
-
 Connect to the test server
 ==========================
 
@@ -77,8 +76,8 @@ Deactivate the virtual environment:
     (myenv) $ deactivate
     $
 
-SMTP server:
-============
+SMTP Server
+===========
 
 You can use Postfix (on *Linux*) or create a test *SMTP* server with *Django* just run this command via the *python shell* you had set up.
 It will not send the email buy as you run tests you will be able to see the content of your email display in the *shell* window.
@@ -228,7 +227,7 @@ Create the static directory and collect the specific files:
     (myenv) $ python manage.py collectstatic
 
 The server
-==============
+==========
 
 How to launch the server ?
 
