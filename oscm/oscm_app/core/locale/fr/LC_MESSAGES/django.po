@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-24 09:33+0200\n"
+"POT-Creation-Date: 2015-08-26 13:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,98 +18,98 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: oscm_app/admin.py:25
+#: oscm_app/admin.py:26
 msgid "oscm_admin_headerOfPersonalInfo"
 msgstr "Informations personnelles"
 
-#: oscm_app/admin.py:29
+#: oscm_app/admin.py:30
 msgid "oscm_admin_headerOfCommonSettings"
 msgstr "Paramètres communs"
 
-#: oscm_app/admin.py:31
+#: oscm_app/admin.py:32
 msgid "oscm_admin_headerOfPermissions"
 msgstr "Permissions"
 
-#: oscm_app/admin.py:37
+#: oscm_app/admin.py:38
 msgid "oscm_admin_headerOfUserSettings"
 msgstr "Préférences de l'utilisateur"
 
-#: oscm_app/admin.py:40
+#: oscm_app/admin.py:41
 msgid "oscm_admin_headerOfImportantDates"
-msgstr ""
-
-#: oscm_app/authentication/custom_auth_user_form.py:25
-#, python-format
-msgid "Duplicate username: %(username)s"
 msgstr ""
 
 #: oscm_app/authentication/custom_auth_user_form.py:26
 #, python-format
+msgid "Duplicate username: %(username)s"
+msgstr ""
+
+#: oscm_app/authentication/custom_auth_user_form.py:27
+#, python-format
 msgid "Duplicate email: %(email)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:28
+#: oscm_app/authentication/custom_auth_user_form.py:29
 #, python-format
 msgid "Invalid passwords: %(password1)s, %(password2)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:30
+#: oscm_app/authentication/custom_auth_user_form.py:31
 #, python-format
 msgid "Invalid authentication: %(authentication)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:32
+#: oscm_app/authentication/custom_auth_user_form.py:33
 #, python-format
 msgid "Invalid Ldap authentication: %(authentication)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:64
+#: oscm_app/authentication/custom_auth_user_form.py:65
 #, python-format
 msgid "Role is '%s'."
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:72
+#: oscm_app/authentication/custom_auth_user_form.py:73
 #, python-format
 msgid "There is no rights for the '%s' role."
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:87
-#: oscm_app/authentication/custom_auth_user_form.py:90
-#: oscm_app/authentication/custom_auth_user_form.py:233
+#: oscm_app/authentication/custom_auth_user_form.py:88
+#: oscm_app/authentication/custom_auth_user_form.py:91
+#: oscm_app/authentication/custom_auth_user_form.py:234
 msgid "oscm_admin_passwordLabelOfUser"
 msgstr "Mot de passe"
 
-#: oscm_app/authentication/custom_auth_user_form.py:94
-#: oscm_app/authentication/custom_auth_user_form.py:97
+#: oscm_app/authentication/custom_auth_user_form.py:95
+#: oscm_app/authentication/custom_auth_user_form.py:98
 msgid "oscm_admin_passwordConfirmationLabelOfUser"
 msgstr "Confirmation du mot de passe"
 
-#: oscm_app/authentication/custom_auth_user_form.py:98
+#: oscm_app/authentication/custom_auth_user_form.py:99
 msgid "oscm_admin_helpTextPassword2fUser"
 msgstr "Saisissez le même mot de passe que précédemment, pour vérification."
 
-#: oscm_app/authentication/custom_auth_user_form.py:120
-#: oscm_app/custom_auth_user.py:37
+#: oscm_app/authentication/custom_auth_user_form.py:121
+#: oscm_app/custom_auth_user.py:38
 msgid "oscm_admin_usernameOfUser"
 msgstr "pseudo"
 
-#: oscm_app/authentication/custom_auth_user_form.py:124
-#: oscm_app/custom_auth_user.py:43
+#: oscm_app/authentication/custom_auth_user_form.py:125
+#: oscm_app/custom_auth_user.py:44
 msgid "oscm_admin_emailAddressOfUser"
 msgstr "adresse e-mail"
 
-#: oscm_app/authentication/custom_auth_user_form.py:196
+#: oscm_app/authentication/custom_auth_user_form.py:197
 #, python-format
 msgid "Auth_mode is '%s'."
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:218
-#: oscm_app/registration/registration_forms.py:97
+#: oscm_app/authentication/custom_auth_user_form.py:219
+#: oscm_app/registration/registration_forms.py:98
 #, python-format
 msgid "OSCM User '%s' is registered."
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:234
+#: oscm_app/authentication/custom_auth_user_form.py:235
 msgid "oscm_admin_helpTextPasswordOfUser"
 msgstr ""
 "<span id=\"passwordAdminHelpBlock\" class=\"help-block\"><strong>Info: </"
@@ -117,31 +117,31 @@ msgstr ""
 "pas d'afficher le mot de passe de cet utilisateur, mais il est possible de "
 "le changer en utilisant <a href=\"password/\">ce formulaire</a>.</span>"
 
-#: oscm_app/authentication/custom_auth_user_manager.py:29
+#: oscm_app/authentication/custom_auth_user_manager.py:30
 #, python-format
 msgid "Missing email address: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_manager.py:35
+#: oscm_app/authentication/custom_auth_user_manager.py:36
 #, python-format
 msgid "Missing username: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_manager.py:41
+#: oscm_app/authentication/custom_auth_user_manager.py:42
 #, python-format
 msgid "Missing role: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_manager.py:47
+#: oscm_app/authentication/custom_auth_user_manager.py:48
 #, python-format
 msgid "Missing language: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_read_only_password_hash_widget.py:27
+#: oscm_app/authentication/custom_read_only_password_hash_widget.py:28
 msgid "oscm_admin_noPasswordSet"
 msgstr "Aucun mot de passe défini."
 
-#: oscm_app/authentication/custom_read_only_password_hash_widget.py:34
+#: oscm_app/authentication/custom_read_only_password_hash_widget.py:35
 msgid "oscm_admin_invalidPasswordFormatOrUnknownHashAlgo"
 msgstr ""
 "Format de mot de passe non valide ou algorithme de hachage non reconnu."
@@ -240,7 +240,7 @@ msgstr "Administration"
 #: oscm_app/core/templates/oscm_app/sign/logout.html:3
 #: oscm_app/core/templates/oscm_app/sign/logout.html:9
 #: oscm_app/core/templates/oscm_app/sign/logout.html:19
-#: oscm_app/sign/log_views.py:73
+#: oscm_app/sign/log_views.py:74
 msgid "Log out"
 msgstr "Déconnexion"
 
@@ -250,7 +250,7 @@ msgstr "Déconnexion"
 #: oscm_app/core/templates/oscm_app/index.html:18
 #: oscm_app/core/templates/oscm_app/sign/login.html:4
 #: oscm_app/core/templates/oscm_app/sign/login.html:55
-#: oscm_app/sign/log_views.py:121
+#: oscm_app/sign/log_views.py:122
 msgid "Log in"
 msgstr "Se connecter"
 
@@ -289,7 +289,7 @@ msgstr ""
 #: oscm_app/core/templates/oscm_app/registration/registration.html:55
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:20
 #: oscm_app/core/templates/oscm_app/sign/login.html:67
-#: oscm_app/registration/registration_views.py:65
+#: oscm_app/registration/registration_views.py:66
 msgid "Register"
 msgstr "Enregistrer"
 
@@ -511,187 +511,187 @@ msgstr "deconnexion"
 msgid "Are you sure you want to log out ?"
 msgstr "Etes-vous sûr de vouloir vous déconnecter ?"
 
-#: oscm_app/custom_auth_user.py:32
+#: oscm_app/custom_auth_user.py:33
 msgid "oscm_admin_usernameValidatorOfUser"
 msgstr "Seuls les caractères alpha-numériques [0-9a-zA-Z] sont autorisés."
 
-#: oscm_app/custom_auth_user.py:48
+#: oscm_app/custom_auth_user.py:49
 msgid "oscm_admin_firstNameOfUser"
 msgstr "Prénom"
 
-#: oscm_app/custom_auth_user.py:54
+#: oscm_app/custom_auth_user.py:55
 msgid "oscm_admin_lastNameOfUser"
 msgstr "Nom"
 
-#: oscm_app/custom_auth_user.py:60
+#: oscm_app/custom_auth_user.py:61
 msgid "oscm_admin_dateJoinedOfUser"
 msgstr "date de création"
 
-#: oscm_app/custom_auth_user.py:68
+#: oscm_app/custom_auth_user.py:69
 msgid "oscm_admin_activeStatusOfUser"
 msgstr "actif"
 
-#: oscm_app/custom_auth_user.py:71
+#: oscm_app/custom_auth_user.py:72
 msgid "oscm_admin_helpTextActiveStatusOfUser"
 msgstr ""
 "Précise si l'utilisateur doit être considéré comme actif. Décochez ceci "
 "plutôt que de supprimer le compte."
 
-#: oscm_app/custom_auth_user.py:77
+#: oscm_app/custom_auth_user.py:78
 msgid "oscm_admin_staffStatusOfUser"
 msgstr "statut équipe"
 
-#: oscm_app/custom_auth_user.py:80
+#: oscm_app/custom_auth_user.py:81
 msgid "oscm_admin_helpTextStaffStatusOfUser"
 msgstr "Précise si l'utilisateur peut se connecter à ce site d'administration."
 
-#: oscm_app/custom_auth_user.py:99
+#: oscm_app/custom_auth_user.py:100
 msgid "oscm_admin_roleOfUser"
 msgstr "Rôle"
 
-#: oscm_app/custom_auth_user.py:102
+#: oscm_app/custom_auth_user.py:103
 msgid "oscm_admin_helpTextRoleOfUser"
 msgstr ""
 "Vous devez choisir le rôle pour un utilisateur spécifique parmi les "
 "différents rôles donnés."
 
-#: oscm_app/custom_auth_user.py:106
+#: oscm_app/custom_auth_user.py:107
 msgid "oscm_admin_languageOfUser"
 msgstr "Langue"
 
-#: oscm_app/custom_auth_user.py:109
+#: oscm_app/custom_auth_user.py:110
 msgid "oscm_admin_helpTextLanguageOfUser"
 msgstr ""
 "Vous pouvez choisir la langue pour un utilisateur spécifique parmi les "
 "différentes langues données."
 
-#: oscm_app/custom_auth_user.py:113
+#: oscm_app/custom_auth_user.py:114
 msgid "oscm_admin_authenticationModeOfApplication"
 msgstr "mode d'authentification"
 
-#: oscm_app/custom_auth_user.py:116
+#: oscm_app/custom_auth_user.py:117
 msgid "oscm_admin_helpTextAuthenticationModeOfApplication"
 msgstr "Il y a juste l'authentification Django."
 
-#: oscm_app/custom_auth_user.py:131
+#: oscm_app/custom_auth_user.py:132
 msgid "oscm_admin_headerOfOSCMUser"
 msgstr "utilisateur OSCM"
 
-#: oscm_app/custom_auth_user.py:132
+#: oscm_app/custom_auth_user.py:133
 msgid "oscm_admin_headerOfOSCMUsers"
 msgstr "utilisateurs OSCM"
 
-#: oscm_app/errors/error_views.py:75
+#: oscm_app/errors/error_views.py:76
 msgid "access to the view. "
 msgstr ""
 
-#: oscm_app/preferences/account_settings_form.py:114
+#: oscm_app/preferences/account_settings_form.py:115
 msgid "No field has been modified."
 msgstr ""
 
-#: oscm_app/preferences/account_settings_form.py:136
+#: oscm_app/preferences/account_settings_form.py:137
 #, python-format
 msgid "OSCM Account settings from the OSCM User '%s' has been updated."
 msgstr ""
 
-#: oscm_app/preferences/account_settings_view.py:34
+#: oscm_app/preferences/account_settings_view.py:35
 msgid "OSCM Account settings updated."
 msgstr "Paramètres de votre compte OSCM mis à jour."
 
-#: oscm_app/registration/registration_forms.py:26
+#: oscm_app/registration/registration_forms.py:27
 msgid "I have read and agree to the Terms of Service"
 msgstr "J'ai lu et accepté les Conditions Générales d'Utilisation"
 
-#: oscm_app/registration/registration_forms.py:28
+#: oscm_app/registration/registration_forms.py:29
 msgid "You must agree to the terms to register"
 msgstr "Vous devez accepter les conditions d'utilisation pour vous inscrire"
 
-#: oscm_app/registration/registration_forms.py:64
+#: oscm_app/registration/registration_forms.py:65
 msgid "Appends the '{0:s}' field to the excluded fields list."
 msgstr ""
 
-#: oscm_app/registration/registration_forms.py:75
+#: oscm_app/registration/registration_forms.py:76
 #, python-format
 msgid "Remove %s field."
 msgstr ""
 
-#: oscm_app/registration/registration_forms.py:89
+#: oscm_app/registration/registration_forms.py:90
 #, python-format
 msgid "OSCM User '%s' is activated."
 msgstr ""
 
-#: oscm_app/registration/registration_forms.py:92
+#: oscm_app/registration/registration_forms.py:93
 #, python-format
 msgid "OSCM User '%s' is not yet activated."
 msgstr ""
 
-#: oscm_app/registration/registration_views.py:36
+#: oscm_app/registration/registration_views.py:37
 msgid "OSCM Account created."
 msgstr "Compte OSCM créé."
 
-#: oscm_app/registration/registration_views.py:40
+#: oscm_app/registration/registration_views.py:41
 msgid "Your OSCM Account has been activated."
 msgstr "Votre compte OSCM a été activé."
 
-#: oscm_app/registration/registration_views.py:44
+#: oscm_app/registration/registration_views.py:45
 msgid "But your OSCM Account is not yet activated."
 msgstr "Mais votre compte OSCM n'est pas encore activé."
 
-#: oscm_app/registration/registration_views.py:55
+#: oscm_app/registration/registration_views.py:56
 msgid "Registration is closed."
 msgstr ""
 
-#: oscm_app/registration/registration_views.py:79
-#: oscm_app/sign/log_views.py:95
+#: oscm_app/registration/registration_views.py:80
+#: oscm_app/sign/log_views.py:96
 msgid "OSCM User '{0:s}' is logged in."
 msgstr ""
 
-#: oscm_app/sign/log_forms.py:24 oscm_app/sign/log_forms.py:26
+#: oscm_app/sign/log_forms.py:25 oscm_app/sign/log_forms.py:27
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: oscm_app/sign/log_forms.py:29 oscm_app/sign/log_forms.py:32
+#: oscm_app/sign/log_forms.py:30 oscm_app/sign/log_forms.py:33
 msgid "Password"
 msgstr "Mot de passe"
 
-#: oscm_app/sign/log_forms.py:35
+#: oscm_app/sign/log_forms.py:36
 msgid "Remember Me"
 msgstr "Se souvenir de moi"
 
-#: oscm_app/sign/log_forms.py:37
+#: oscm_app/sign/log_forms.py:38
 msgid "If checked you will stay logged in for 3 weeks."
 msgstr "Si cette case est cochée vous resterez connecté pour 3 semaines."
 
-#: oscm_app/sign/log_forms.py:42
+#: oscm_app/sign/log_forms.py:43
 msgid "This account is currently inactive."
 msgstr "Ce compte est actuellement inactif."
 
-#: oscm_app/sign/log_forms.py:44
+#: oscm_app/sign/log_forms.py:45
 msgid "The username and/or password you specified are not correct."
 msgstr "L'identifiant et/ou le mot de passe saisis ne sont pas corrects."
 
-#: oscm_app/sign/log_forms.py:72
+#: oscm_app/sign/log_forms.py:73
 #, python-format
 msgid "OSCM User: '%s'."
 msgstr ""
 
-#: oscm_app/sign/log_forms.py:95
+#: oscm_app/sign/log_forms.py:96
 #, python-brace-format
 msgid ""
 "No logging in! An inactive account was used with the following OSCM User: "
 "'{0}'."
 msgstr ""
 
-#: oscm_app/sign/log_forms.py:104
+#: oscm_app/sign/log_forms.py:105
 #, python-brace-format
 msgid "Invalid login details: username='{0}', password='{1}'."
 msgstr ""
 
-#: oscm_app/sign/log_views.py:53
+#: oscm_app/sign/log_views.py:54
 msgid "OSCM User '{0:s}' is logged out."
 msgstr ""
 
-#: oscm_app/sign/log_views.py:61
+#: oscm_app/sign/log_views.py:62
 #, python-format
 msgid ""
 "Change the current language '%(current_language)s' to '%(default_language)s'."
@@ -699,11 +699,11 @@ msgstr ""
 "Change la langue courante '%(current_language)s' par la langue par défaut "
 "'%(default_language)s'."
 
-#: oscm_app/sign/log_views.py:89
+#: oscm_app/sign/log_views.py:90
 msgid "OSCM User with '{0:s}' is invalid!!"
 msgstr ""
 
-#: oscm_app/sign/log_views.py:103
+#: oscm_app/sign/log_views.py:104
 #, python-format
 msgid ""
 "Change the current language '%(current_language)s' to the OSCM User's "
@@ -712,22 +712,22 @@ msgstr ""
 "Change la langue courante '%(current_language)s' par la langue choisie par "
 "l'utilisateur OSCM '%(user_language)s'."
 
-#: oscm_app/sign/log_views.py:117
+#: oscm_app/sign/log_views.py:118
 msgid "OSCM User '{0:s}' is inactive!!"
 msgstr ""
 
-#: oscm_app/utils.py:23
+#: oscm_app/utils.py:24
 msgid "oscm_settings_noAttribute"
 msgstr "Vous n'avez pas mis l'attribut suivant"
 
-#: oscm_system/settings.py:83
+#: oscm_system/settings.py:82
 msgid "German"
 msgstr "Allemand"
 
-#: oscm_system/settings.py:84
+#: oscm_system/settings.py:83
 msgid "English"
 msgstr "Anglais"
 
-#: oscm_system/settings.py:85
+#: oscm_system/settings.py:84
 msgid "French"
 msgstr "Français"

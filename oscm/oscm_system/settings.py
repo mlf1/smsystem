@@ -26,11 +26,11 @@ APP_CORE = 'core'
 SECRET_KEY = 'njlzn&@v=wse614vybnntrrr+tj#9xj7*!w_$wcez^se5y1!v$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -66,8 +66,13 @@ WSGI_APPLICATION = 'oscm_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'oscm_db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {'init_command': 'SET foreign_key_checks = 0;' },
+        'NAME': 'oscm_db',
+        'USER': 'root',
+        'PASSWORD': 'bfh',
+        'HOST': '127.0.0.1',
+        'PORT': '',
     }
 }
 
@@ -227,12 +232,13 @@ LOGGING = {
             'class': 'django.utils.log.AdminEmailHandler'
         },
         'oscm_app': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.FileHandler',
             'filename': os.path.join(
                 LOG_BASE_DIR,
                 'oscm_app.log'),
             'formatter': 'simple',
+            'filters': ['require_debug_false'],
         },
         'console': {
             'level': 'DEBUG',
