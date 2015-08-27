@@ -37,7 +37,7 @@
         </div>
     {% endfor %}
     {% if next %}<input type="hidden" name="next" value="{% url 'oscm:cart' pk=cart.id %}">{% endif %}
-    {% if user.role != 'U' and cart.status != 3 %}
+    {% if request.user.role != 'U' and cart.status != 0 or request.user.role == 'U' and cart.status == 0 %}
         <a href="{% url 'oscm:cart' pk=cart.id %}" role="button" class="btn btn-lg btn-default btn-block"><span class="glyphicon glyphicon-remove"></span> {% trans "Cancel" %}</a>
         <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Update cart parameters" %}</button>
     {% endif %}
