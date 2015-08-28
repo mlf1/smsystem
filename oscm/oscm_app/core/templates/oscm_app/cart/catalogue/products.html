@@ -12,11 +12,11 @@
     </div>
     <div class="panel-body">
         {% if products %}
-            <ol>
+            <div class="list-group"><ol>
             {% for prod in products %}
-                <li><a href="{% url 'oscm:product' prod.slug_name %}">{{ prod }}</a></li>
+                <li><a href="{% url 'oscm:product' prod.slug_name %}" class="list-group-item">{{ prod }}</a></li>
             {% endfor %}
-            </ol>
+            </ol></div>
         {% else %}
              <ul><li><strong>{% trans "No products" %}</strong></li></ul>
         {% endif %}

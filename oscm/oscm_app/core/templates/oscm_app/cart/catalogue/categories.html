@@ -12,13 +12,13 @@
     </div>
     <div class="panel-body">
         {% if categories %}
-            <ol>
+            <div class="list-group"><ol>
             {% for cat in categories %}
                 <li>
-                    <a href="{% url 'oscm:category' cat.slug_name %}">{{ cat }}</a>
+                    <a href="{% url 'oscm:category' cat.slug_name %}" class="list-group-item">{{ cat }}</a>
                 </li>
             {% endfor %}
-            </ol>
+            </ol></div>
         {% else %}
              <ul><li><strong>{% trans "No categories" %}</strong></li></ul>
         {% endif %}

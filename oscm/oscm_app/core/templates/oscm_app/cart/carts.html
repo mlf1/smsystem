@@ -13,11 +13,11 @@
     </div>
     <div class="panel-body">
         {% if carts %}
-            <ol>
+            <div class="list-group"><ol>
             {% for cart in carts %}
-                <li><a href="{% url 'oscm:cart' pk=cart.id %}">{{ cart }}</a></li>
+                <li><a href="{% url 'oscm:cart' pk=cart.id %}" class="list-group-item">{{ cart }}</a></li>
             {% endfor %}
-            </ol>
+            </ol></div>
         {% else %}
              <ul><li><strong>{% trans "No carts" %}</strong></li></ul>
         {% endif %}
