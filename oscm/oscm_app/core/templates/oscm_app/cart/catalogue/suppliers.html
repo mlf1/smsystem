@@ -14,7 +14,12 @@
         {% if suppliers %}
             <div class="list-group"><ol>
             {% for sup in suppliers %}
-                <li><a href="{% url 'oscm:supplier' sup.slug_name %}" class="list-group-item">{{ sup }}</a></li>
+                <li>
+                    <a href="{% url 'oscm:supplier' sup.slug_name %}" class="list-group-item">
+                        {% if sup.is_active %}<span class="badge alert-info"><span class="glyphicon glyphicon-ok-circle"></span></span>
+                        {% else %}<span class="badge alert-danger"><span class="glyphicon glyphicon-ban-circle"></span></span>{% endif %}{{ sup }}
+                    </a>
+                </li>
             {% endfor %}
              </ol></div>
         {% else %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-27 11:56+0200\n"
+"POT-Creation-Date: 2015-08-30 22:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgid "oscm_admin_headerOfUserSettings"
 msgstr "Préférences de l'utilisateur"
 
 #: oscm_app/admin.py:78 oscm_app/cart/admin.py:17
-#: oscm_app/cart/catalogue/admin.py:34
+#: oscm_app/cart/catalogue/admin.py:35
 msgid "oscm_admin_headerOfImportantDates"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgstr "Action"
 msgid "oscm_admin_headerOfStatus"
 msgstr "utilisateurs OSCM"
 
-#: oscm_app/cart/catalogue/admin.py:32
+#: oscm_app/cart/catalogue/admin.py:33
 #: oscm_app/cart/catalogue/models/category.py:54
 msgid "oscm_admin_headerOfCategory"
 msgstr "OSCM catégorie"
@@ -312,14 +312,18 @@ msgid "oscm_admin_quantityOfProduct"
 msgstr "quantité disponible"
 
 #: oscm_app/cart/catalogue/models/product.py:81
+msgid "oscm_admin_bookedQuantityOfProduct"
+msgstr "quantité réservée"
+
+#: oscm_app/cart/catalogue/models/product.py:86
 msgid "oscm_admin_minimumQuantityOfProduct"
 msgstr "quantité miminum"
 
-#: oscm_app/cart/catalogue/models/product.py:86
+#: oscm_app/cart/catalogue/models/product.py:91
 msgid "oscm_admin_skuOfProduct"
 msgstr "SKU"
 
-#: oscm_app/cart/catalogue/models/product.py:87
+#: oscm_app/cart/catalogue/models/product.py:92
 #, fuzzy
 #| msgid "oscm_admin_helpTextRoleOfUser"
 msgid "oscm_admin_helpTextUniqueArticleNoOfProduct"
@@ -327,11 +331,11 @@ msgstr ""
 "Vous devez choisir le rôle pour un utilisateur spécifique parmi les "
 "différents rôles donnés."
 
-#: oscm_app/cart/catalogue/models/product.py:92
+#: oscm_app/cart/catalogue/models/product.py:97
 msgid "oscm_admin_displayOfProduct"
 msgstr "affiché"
 
-#: oscm_app/cart/catalogue/models/product.py:93
+#: oscm_app/cart/catalogue/models/product.py:98
 #, fuzzy
 #| msgid "oscm_admin_helpTextActiveStatusOfUser"
 msgid "oscm_admin_helpTextActiveStatusOfProduct"
@@ -339,15 +343,15 @@ msgstr ""
 "Précise si l'utilisateur doit être considéré comme actif. Décochez ceci "
 "plutôt que de supprimer le compte."
 
-#: oscm_app/cart/catalogue/models/product.py:99
+#: oscm_app/cart/catalogue/models/product.py:104
 msgid "oscm_admin_headerOfProduct"
 msgstr "OSCM produit"
 
-#: oscm_app/cart/catalogue/models/product.py:100
+#: oscm_app/cart/catalogue/models/product.py:105
 msgid "oscm_admin_headerOfProducts"
 msgstr "OSCM produits"
 
-#: oscm_app/cart/catalogue/models/product.py:129
+#: oscm_app/cart/catalogue/models/product.py:134
 #, python-format
 msgid ""
 "product (name: %(name)s, quantity: %(quantity)d, unit price: %(unit_price)d, "
@@ -356,7 +360,7 @@ msgstr ""
 
 #: oscm_app/cart/catalogue/models/supplier.py:40
 msgid "Enter a valid URL"
-msgstr ""
+msgstr "Veuillez entrer une adresse URL valide"
 
 #: oscm_app/cart/catalogue/models/supplier.py:84
 msgid "oscm_admin_descriptionOfSupplier"
@@ -384,7 +388,7 @@ msgstr "site Web du fournisseur"
 
 #: oscm_app/cart/catalogue/models/supplier.py:103
 msgid "Url must start with 'http://' or 'https://'."
-msgstr ""
+msgstr "L'addresse URL doit commencer par 'http://' ou 'https://'."
 
 #: oscm_app/cart/catalogue/models/supplier.py:107
 msgid "oscm_admin_activeStatusOfSupplier"
@@ -409,7 +413,7 @@ msgstr "OSCM fournisseurs"
 #: oscm_app/cart/catalogue/models/supplier.py:147
 #, python-format
 msgid "supplier (name: %(name)s, address: %(address)s)"
-msgstr ""
+msgstr "fournisseur (nom: %(name)s, adresse: %(address)s)"
 
 #: oscm_app/cart/catalogue/views/category_views.py:47
 msgid "OSCM Category details updated."
@@ -510,6 +514,8 @@ msgid ""
 "cart (status: %(status)s, owner: %(owner)s, project name: %(project_name)s, "
 "number of cart items: %(nb_cart_items)d)"
 msgstr ""
+"caddie (statut: %(status)s, propriétaire: %(owner)s, nom du project: "
+"%(project_name)s, nombre d'articles: %(nb_cart_items)d)"
 
 #: oscm_app/cart/models/cart_item.py:28
 msgid "oscm_admin_statusOfCartItem"
@@ -786,37 +792,41 @@ msgstr "Articles du caddie"
 msgid "Update cart parameters"
 msgstr "Mise-à-jour des paramètres du caddie"
 
-#: oscm_app/core/templates/oscm_app/cart/cart_items.html:9
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:8
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:9
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:9
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:19
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:9
 msgid "name"
 msgstr "nom"
 
-#: oscm_app/core/templates/oscm_app/cart/cart_items.html:10
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:9
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:11
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:11
 msgid "sku"
 msgstr "sku"
 
-#: oscm_app/core/templates/oscm_app/cart/cart_items.html:11
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:10
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:10
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:10
 msgid "price"
 msgstr "prix"
 
-#: oscm_app/core/templates/oscm_app/cart/cart_items.html:12
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:11
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:12
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:12
 msgid "quantity"
 msgstr "quantité"
 
-#: oscm_app/core/templates/oscm_app/cart/cart_items.html:13
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:12
 msgid "total price"
 msgstr "prix total"
 
-#: oscm_app/core/templates/oscm_app/cart/cart_items.html:40
-#: oscm_app/core/templates/oscm_app/cart/cart_items.html:53
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:13
+msgid "status"
+msgstr "statut"
+
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:44
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:57
 msgid "No cart items"
 msgstr "Pas d'article dans le caddie"
 
@@ -830,16 +840,14 @@ msgstr "Caddies"
 msgid "carts"
 msgstr "caddies"
 
-#: oscm_app/core/templates/oscm_app/cart/carts.html:22
+#: oscm_app/core/templates/oscm_app/cart/carts.html:27
 msgid "No carts"
 msgstr "Pas de caddie"
 
 #: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:4
 #: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:12
-#, fuzzy
-#| msgid "category"
 msgid "Add category"
-msgstr "catégorie"
+msgstr "Ajouter catégorie"
 
 #: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:5
 #, fuzzy
@@ -954,13 +962,13 @@ msgid "Update category parameters"
 msgstr "Mise-à-jour des paramètres de la catégorie"
 
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:13
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:11
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:21
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:13
 msgid "description"
 msgstr "description"
 
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:14
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:13
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:23
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:14
 msgid "is_active"
 msgstr "affiché"
@@ -1076,16 +1084,16 @@ msgstr "produit"
 msgid "Update product parameters"
 msgstr "Mis-à-jour des paramètres du produit"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:10
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:20
 msgid "address"
 msgstr "adresse"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:12
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:22
 msgid "website"
 msgstr "site Web"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:42
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:55
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:52
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:65
 #: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:21
 msgid "No suppliers"
 msgstr "Pas de fournisseur"

@@ -76,6 +76,11 @@ class Product(models.Model):
         verbose_name=_('oscm_admin_quantityOfProduct'),
         default=1,
     )
+    # Booked quantity
+    booked_quantity = models.PositiveIntegerField(
+        verbose_name=_('oscm_admin_bookedQuantityOfProduct'),
+        default=0,
+    )
     # Minimum quantity
     minimum_quantity = models.PositiveIntegerField(
         verbose_name=_('oscm_admin_minimumQuantityOfProduct'),

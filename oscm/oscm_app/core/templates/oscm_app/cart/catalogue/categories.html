@@ -15,7 +15,10 @@
             <div class="list-group"><ol>
             {% for cat in categories %}
                 <li>
-                    <a href="{% url 'oscm:category' cat.slug_name %}" class="list-group-item">{{ cat }}</a>
+                    <a href="{% url 'oscm:category' cat.slug_name %}" class="list-group-item">
+                        {% if cat.is_active %}<span class="badge alert-info"><span class="glyphicon glyphicon-ok-circle"></span></span>
+                        {% else %}<span class="badge alert-danger"><span class="glyphicon glyphicon-ban-circle"></span></span>{% endif %}{{ cat }}
+                    </a>
                 </li>
             {% endfor %}
             </ol></div>

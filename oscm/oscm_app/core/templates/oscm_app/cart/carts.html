@@ -15,7 +15,12 @@
         {% if carts %}
             <div class="list-group"><ol>
             {% for cart in carts %}
-                <li><a href="{% url 'oscm:cart' pk=cart.id %}" class="list-group-item">{{ cart }}</a></li>
+                <li>
+                    <a href="{% url 'oscm:cart' pk=cart.id %}" class="list-group-item">
+                        {% if cart.status == 2 %}<span class="badge alert-success">{{ cart.get_status_display }}</span>
+                        {% else %}<span class="badge alert-info">{{ cart.get_status_display }}</span>{% endif %}{{ cart }}
+                    </a>
+                </li>
             {% endfor %}
             </ol></div>
         {% else %}

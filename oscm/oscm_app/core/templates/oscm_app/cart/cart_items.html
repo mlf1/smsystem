@@ -10,6 +10,7 @@
                     <th class="text-center" data-field="unit_price" data-sortable="true">{% trans 'price' %}</th>
                     <th class="text-center" data-field="quantity" data-sortable="true">{% trans 'quantity' %}</th>
                     <th class="text-center" data-field="total_price" data-sortable="true">{% trans 'total price' %}</th>
+                    <th class="text-center" data-field="status" data-sortable="true">{% trans 'status' %}</th>
                </tr>
             </thead>
             <tbody style="overflow:auto;">
@@ -20,8 +21,12 @@
                         <td>{{ cart_item.product.unit_price }}</td>
                         <td>{{ cart_item.quantity }}</td>
                         <td>{{ cart_item.total_price }}</td>
+                        <td>
+                            {% if cart_item.status == 2 %}<span class="badge alert-success">{{ cart_item.get_status_display }}</span>
+                            {% else %}<span class="badge alert-info">{{ cart_item.get_status_display }}</span>{% endif %}
+                        </td>
                     </tr>
-                {% endfor %}glyphicon glyphicon-minus
+                {% endfor %}
             </tbody>
         </table>
     {% comment %}
@@ -29,7 +34,10 @@
         {% for cart_item in cart_items_list %}
             {% url 'oscm:cart_item' pk=cart_item.id as oscm_cart_items_url %}
             <li>
-                <a href="{{ oscm_cart_items_url }}" class="list-group-item">{{ cart_item }}</a>
+                <a href="{{ oscm_cart_items_url }}" class="list-group-item">
+                    {% if cart_item.status == 2%}<span class="badge alert-success">{{ cart_item.get_status_display }}</span>
+                    {% else %}<span class="badge alert-info">{{ cart_item.get_status_display }}</span>{% endif %}{{ cart_item }}
+                </a>
             </li>
         {% endfor %}
         </ol></div>
@@ -43,7 +51,10 @@
         {% for cart_item in cart_items_list %}
             {% url 'oscm:cart_item' pk=cart_item.id as oscm_cart_items_url %}
             <li>
-                <a href="{{ oscm_cart_items_url }}" class="list-group-item">{{ cart_item }}</a>
+                <a href="{{ oscm_cart_items_url }}" class="list-group-item">
+                    {% if cart_item.status == 2 %}<span class="badge alert-success">{{ cart_item.get_status_display }}</span>
+                    {% else %}<span class="badge alert-info">{{ cart_item.get_status_display }}</span>{% endif %}{{ cart_item }}
+                </a>
             </li>
         {% endfor %}
         </ol></div>

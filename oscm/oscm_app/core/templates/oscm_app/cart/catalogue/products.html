@@ -14,7 +14,12 @@
         {% if products %}
             <div class="list-group"><ol>
             {% for prod in products %}
-                <li><a href="{% url 'oscm:product' prod.slug_name %}" class="list-group-item">{{ prod }}</a></li>
+                <li>
+                    <a href="{% url 'oscm:product' prod.slug_name %}" class="list-group-item">
+                        {% if prod.is_active %}<span class="badge alert-info"><span class="glyphicon glyphicon-ok-circle"></span></span>
+                        {% else %}<span class="badge alert-danger"><span class="glyphicon glyphicon-ban-circle"></span></span>{% endif %}{{ prod }}
+                    </a>
+                </li>
             {% endfor %}
             </ol></div>
         {% else %}
