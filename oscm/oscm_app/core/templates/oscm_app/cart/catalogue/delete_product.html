@@ -28,7 +28,7 @@
         <form method="POST" action="{% url 'oscm:delete_product' slug_name=product.slug_name %}" role="form">
             {% csrf_token %}
             <p class="alert alert-warning">{% trans 'Are you sure you want to delete the following product ?' %}</p>
-            <ul><li>{{ product }}</li></ul>
+            <div class="list-group"><p class="list-group-item">{{ product }}</p></div>
             <button type="button" class="btn btn-lg btn-default btn-block" onclick="window.history.go(-1);">{% trans "No" %}</button>
             {% comment %}
             <a href="{% url 'oscm:home' %}" class="btn btn-lg btn-default btn-block">{% trans "No" %}</a>

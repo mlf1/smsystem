@@ -136,7 +136,7 @@ class Supplier(models.Model):
         Retrieves the specific url of the supplier.
         """
         return reverse(
-            'oscm:supplier_view',
+            'oscm:supplier',
             kwargs={'supplier_slug': self.slug_name})
 
     def __str__(self):

@@ -9,10 +9,11 @@ import logging
 from django import forms
 from django.forms.extras.widgets import SelectDateWidget
 # from django.forms import SplitDateTimeWidget
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 # OSCM imports
-from ...utils import set_form_field_order
+from ...constants import DEFAULT_CART_STATUS
+from ...utils import get_attr, set_form_field_order
 from ..catalogue.forms.object_interest_form import ObjectInterestForm
 from ..models.cart import Cart
 
@@ -30,6 +31,10 @@ class CartInterestForm(ObjectInterestForm):
         min_value=0,
         label=_('oscm_admin_nbCartItemsLabelOfCart'),
         widget=forms.TextInput(),)
+    total_amount = forms.IntegerField(
+        min_value=0,
+        label=_('oscm_admin_totalAmountLabelOfCart'),
+        widget=forms.TextInput(),)
 
     class Meta:
 
@@ -45,12 +50,14 @@ class CartInterestForm(ObjectInterestForm):
             'requested_due_date',
             'status',
             'nb_cart_items',
+            'total_amount',
         )
         widgets = {
             'requested_due_date': SelectDateWidget(), }
+        is_hidden = False
 
     def __init__(self, *args, **kwargs):
-        is_hidden = kwargs.pop('is_hidden', None)
+        self.is_hidden = kwargs.pop('is_hidden', None)
         super(CartInterestForm, self).__init__(*args, **kwargs)
         set_form_field_order(self, [
             "project_name",
@@ -58,13 +65,22 @@ class CartInterestForm(ObjectInterestForm):
             "owner",
             "requested_due_date",
             "status",
-            "nb_cart_items"])
-        if is_hidden:
+            "nb_cart_items",
+            "total_amount"])
+        if self.is_hidden:
             self.fields['owner'].widget = forms.HiddenInput()
+            # Form isn't editable for the user (role=U)
+            # and cart.status=completed or saved)
+            if self.initial['status'] != get_attr(DEFAULT_CART_STATUS):
+                self.fields['project_name'].widget.attrs['readonly'] = 'True'
+                self.fields['description'].widget.attrs['readonly'] = 'True'
+                self.fields['requested_due_date'].widget.attrs[
+                    'disabled'] = 'True'
         # Show 'status' and 'nb_cart_items', but these fields aren't editable.
         self.fields['status'].widget.attrs['disabled'] = 'True'
         self.fields['status'].required = False
         self.fields['nb_cart_items'].widget.attrs['readonly'] = 'True'
+        self.fields['total_amount'].widget.attrs['readonly'] = 'True'
 
     def clean_project_name(self):
         return self.check_update_value(

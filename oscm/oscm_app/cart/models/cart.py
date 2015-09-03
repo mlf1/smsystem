@@ -89,12 +89,14 @@ class Cart(models.Model):
         """
         return _(
             "cart (status: %(status)s, owner: %(owner)s, project name: "
-            "%(project_name)s, number of cart items: %(nb_cart_items)d)"
+            "%(project_name)s, number of cart items: %(nb_cart_items)d, "
+            "total amount: %(total_amount)d)"
         ) % {
             'status': self.CART_STATUSES[self.status][1],
             'owner': self.owner,
             'project_name': self.project_name,
-            'nb_cart_items': self.nb_cart_items
+            'nb_cart_items': self.nb_cart_items,
+            'total_amount': self.total_amount,
         }
 
     def get_cart_items(self):
@@ -109,6 +111,16 @@ class Cart(models.Model):
         Retrieves the number of distinct cart items for a given cart.
         """
         return CartItem.objects.filter(cart=self).count()
+
+    @property
+    def total_amount(self):
+        """
+        Retrieves the total amount of cart items for a given cart.
+        """
+        total_amount = 0
+        for cart_item in self.get_cart_items():
+            total_amount += cart_item.total_price
+        return total_amount
 
     @property
     def is_empty(self):

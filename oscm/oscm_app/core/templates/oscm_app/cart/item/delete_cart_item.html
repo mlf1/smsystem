@@ -1,8 +1,8 @@
 {% extends "oscm_app/base.html" %}
 {% load i18n %}
 {% load bootstrapform %}
-{% block title %}{% trans "Delete supplier" %}{% endblock %}
-{% block body_id %}{% trans "delete_supplier" %}{% endblock %}
+{% block title %}{% trans "Delete cart item" %}{% endblock %}
+{% block body_id %}{% trans "delete_cart_item" %}{% endblock %}
 {% block side_block %}
     {% include "oscm_app/menu.html" %}
 {% endblock %}
@@ -25,14 +25,11 @@
                 </p>
             {% endfor %}
         {% endif %}
-        <form method="POST" action="{% url 'oscm:delete_supplier' slug_name=supplier.slug_name %}" role="form">
+        <form method="POST" action="{% url 'oscm:delete_cart_item' pk=cart_item.id %}" role="form">
             {% csrf_token %}
-            <p class="alert alert-warning">{% trans 'Are you sure you want to delete the following supplier ?' %}</p>
-            <div class="list-group"><p class="list-group-item">{{ supplier }}</p></div>
+            <p class="alert alert-warning"><span class="glyphicon glyphicon-warning-sign"></span> {% trans 'Are you sure you want to delete the following cart item ?' %}</p>
+            <div class="list-group"><p class="list-group-item">{{ cart_item }}</p></div>
             <button type="button" class="btn btn-lg btn-default btn-block" onclick="window.history.go(-1);">{% trans "No" %}</button>
-            {% comment %}
-            <a href="{% url 'oscm:home' %}" class="btn btn-lg btn-default btn-block">{% trans "No" %}</a>
-            {% endcomment%}
             <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Yes" %}</button>
         </form>
     </div>
