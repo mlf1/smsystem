@@ -5,7 +5,7 @@
     <p>{% blocktrans with product_description=product.description %}Description: {{ product_description }}{% endblocktrans %}</p>
     <p>{% blocktrans with product_active=product.is_active %}Active: {{ product_active }}{% endblocktrans %}</p>
     {% endcomment %}
-    <form method="POST" action="{% url 'oscm:product_details' slug_name=product.slug_name %}" role="form">
+    <form method="POST" action="{% url 'oscm:cart_item_details' pk=cart_item.id %}" role="form">
         {% csrf_token %}
         <fieldset>
             {% for field in form.visible_fields %}
@@ -40,16 +40,12 @@
                     </div>
                 </div>
             {% endfor %}
-            {% if next %}<input type="hidden" name="next" value="{% url 'oscm:product' slug_name=product.slug_name %}">{% endif %}
-            {% if user.role == 'A' %}
-                <a href="{% url 'oscm:product' slug_name=product.slug_name %}" role="button" class="btn btn-lg btn-default btn-block"><span class="glyphicon glyphicon-remove"></span> {% trans "Cancel" %}</a>
-                <a href="{{ product.get_delete_url }}" role="button" class="btn btn-lg btn-danger btn-block" data-deleting-text="&lt;span class='glyphicon glyphicon-trash'&gt;&lt;/span&gt; Deleting...">
+            {% if next %}<input type="hidden" name="next" value="{% url 'oscm:cart_item' pk=cart_item.id %}">{% endif %}
+                <a href="{% url 'oscm:cart_item' pk=cart_item.id %}" role="button" class="btn btn-lg btn-default btn-block"><span class="glyphicon glyphicon-remove"></span> {% trans "Cancel" %}</a>
+                <a href="{{ cart_item.get_delete_url }}" role="button" class="btn btn-lg btn-danger btn-block" data-deleting-text="&lt;span class='glyphicon glyphicon-trash'&gt;&lt;/span&gt; Deleting...">
                     <span class="glyphicon glyphicon-trash"></span> {% trans "Delete" %}
                 </a>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Update product parameters" %}</button>
-            {% else %}
-                <a href="{% url 'oscm:add_cart_item' product.slug_name %}" role="button" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-shopping-cart"></span> {% trans "Add cart" %}</a>
-            {% endif %}
+                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Update cart item parameters" %}</button>
         </fieldset>
     </form>
 </div>

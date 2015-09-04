@@ -76,6 +76,7 @@ MANAGER_ROLE = 'M'
 USER_ROLE = 'U'
 
 # Signals
+CART_ITEM_DELETED_SIGNAL = 'cart_item_deleted_signal'
 CATEGORY_DELETED_SIGNAL = 'category_deleted_signal'
 CATEGORY_UPDATED_SIGNAL = 'category_updated_signal'
 PRODUCT_DELETED_SIGNAL = 'product_deleted_signal'

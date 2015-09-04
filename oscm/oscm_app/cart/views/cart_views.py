@@ -5,7 +5,7 @@
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import DetailView, ListView, UpdateView
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 # OSCM imports
 from ...constants import (
@@ -44,6 +44,7 @@ class CartDisplay(DetailView):
                 'requested_due_date': cart.requested_due_date,
                 'status': cart.status,
                 'nb_cart_items': cart.nb_cart_items,
+                'total_amount': cart.total_amount,
             },
             is_hidden=self.request.user.role == USER_ROLE
         )
@@ -114,3 +115,49 @@ class CartInterest(UserCheckMixin, UpdateView):
         return reverse(
             'oscm:cart',
             kwargs={'pk': self.kwargs['pk']})
+
+
+class AddCartView(UserCheckMixin, CreateView):
+
+    model = Cart
+    template_name = "add_cart.html"
+    form_class = CartInterestForm
+    context_object_name = "cart"
+    slug_field = "slug_name"
+    slug_url_kwarg = "slug_name"
+    messages = {
+        "cart_created": {
+            "level": messages.SUCCESS,
+            "text": _("OSCM Cart created.")
+        },
+    }
+
+    def get_initial(self):
+        """
+        Retrieve initial data
+        """
+        initial = super(AddCartView, self).get_initial()
+        initial['slug_name'] = self.kwargs.get('slug_name')
+        # if self.request.user.role == USER_ROLE:
+        # initial['owner'] = self.request.user.role
+        # initial['cart'] = Cart.objects.filter(owner=initial['owner'])
+        # self.fields['nb_cart_items'].widget = forms.HiddenInput()
+        # print("INI: %s" % initial['cart'])
+        return initial
+
+    def get_form_kwargs(self, **kwargs):
+        kwargs = super(AddCartView, self).get_form_kwargs(**kwargs)
+        kwargs['initial']['owner'] = self.request.user
+        return kwargs
+
+    def form_valid(self, form):
+        instance = form.save()
+        if instance:
+            messages.add_message(
+                self.request,
+                self.messages['cart_created']['level'],
+                self.messages['cart_created']['text'])
+        return super(AddCartView, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('oscm:products')

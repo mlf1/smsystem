@@ -6,10 +6,18 @@ from django.conf.urls import (patterns, url)
 from django.views.generic.base import TemplateView
 
 # OSCM imports
-from .cart.cart_views import (
+from .cart.views.cart_views import (
+    AddCartView,
     CartDisplay,
     CartInterest,
-    CartsDisplay)
+    CartsDisplay,
+)
+from .cart.views.cart_item_views import (
+    CartItemDisplay,
+    CartItemInterest,
+    AddCartItemView,
+    DeleteCartItemView
+)
 from .cart.catalogue.views.catalogue_views import (
     Catalogue,
 )
@@ -116,7 +124,7 @@ urlpatterns += patterns(
         AddCategoryView.as_view(
             template_name='oscm_app/cart/catalogue/add_category.html'),
         name='add_category'),
-    url(r'^home/catalogue/categories/(?P<slug_name>[-\w]+)/del$',
+    url(r'^home/catalogue/categories/(?P<slug_name>[-\w]+)/delete$',
         DeleteCategoryView.as_view(
             template_name='oscm_app/cart/catalogue/delete_category.html'),
         name='delete_category'),
@@ -141,7 +149,7 @@ urlpatterns += patterns(
         AddProductView.as_view(
             template_name='oscm_app/cart/catalogue/add_product.html'),
         name='add_product'),
-    url(r'^home/catalogue/products/(?P<slug_name>[-\w]+)/del$',
+    url(r'^home/catalogue/products/(?P<slug_name>[-\w]+)/delete$',
         DeleteProductView.as_view(
             template_name='oscm_app/cart/catalogue/delete_product.html'),
         name='delete_product'),
@@ -161,11 +169,11 @@ urlpatterns += patterns(
             template_name='oscm_app/cart/catalogue/supplier_details.html',
             unsucess_template='oscm_app/cart/catalogue/supplier.html'),
         name='supplier_details'),
-    url(r'^home/catalogue/supplier/add$',
+    url(r'^home/catalogue/suppliers/add$',
         AddSupplierView.as_view(
             template_name='oscm_app/cart/catalogue/add_supplier.html'),
         name='add_supplier'),
-    url(r'^home/catalogue/suppliers/(?P<slug_name>[-\w]+)/del$',
+    url(r'^home/catalogue/suppliers/(?P<slug_name>[-\w]+)/delete$',
         DeleteSupplierView.as_view(
             template_name='oscm_app/cart/catalogue/delete_supplier.html'),
         name='delete_supplier'),
@@ -183,4 +191,26 @@ urlpatterns += patterns(
         template_name='oscm_app/cart/cart_details.html',
         unsucess_template='oscm_app/cart/cart.html'),
         name='cart_details'),
+    url(r'^home/carts/add$', AddCartView.as_view(
+        template_name='oscm_app/cart/add_cart.html'),
+        name='add_cart'),
+)
+
+urlpatterns += patterns(
+    'oscm_app.cart.cart_item_views',
+    url(r'^home/cart/items/(?P<pk>\d+)/$', CartItemDisplay.as_view(
+        template_name='oscm_app/cart/item/cart_item.html'),
+        name='cart_item'),
+    url(r'^home/cart/items/(?P<pk>\d+)/details$', CartItemInterest.as_view(
+        template_name='oscm_app/cart/item/cart_item_details.html',
+        unsucess_template='oscm_app/cart/item/cart_item.html'),
+        name='cart_item_details'),
+    url(r'^home/cart/items/(?P<slug_name>[-\w]+)/add$',
+        AddCartItemView.as_view(
+            template_name='oscm_app/cart/item/add_cart_item.html'),
+        name='add_cart_item'),
+    url(r'^home/cart/items/(?P<pk>\d+)/delete$',
+        DeleteCartItemView.as_view(
+            template_name='oscm_app/cart/item/delete_cart_item.html'),
+        name='delete_cart_item'),
 )
