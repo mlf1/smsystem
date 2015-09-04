@@ -1,3 +1,5 @@
+# coding=utf-8
+# coding=utf-8
 """
 Django settings for oscm project.
 
@@ -11,12 +13,14 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import logging.config
 import os
-from django.utils.translation import ugettext_lazy
+from django.utils.translation import ugettext_lazy as _
 from django.conf import global_settings as default_settings
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+CURRENT_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(os.path.join(CURRENT_DIR, os.pardir))
 
 APP_NAME = 'oscm_app'
+VERBOSE_APP_NAME = 'OSCM Application'
 APP_CORE = 'core'
 
 # Quick-start development settings - unsuitable for production
@@ -79,9 +83,9 @@ LANGUAGE_CODE = 'en'
 
 # List of activated languages
 LANGUAGES = (
-    ('de', ugettext_lazy('German')),
-    ('en', ugettext_lazy('English')),
-    ('fr', ugettext_lazy('French')),
+    ('de', _('German')),
+    ('en', _('English')),
+    ('fr', _('French')),
 )
 
 TIME_ZONE = 'Europe/Zurich'
@@ -99,7 +103,7 @@ USE_TZ = True
 
 STATIC_URL = os.path.join(BASE_DIR, 'static/')
 
-ROOT_PATH = os.path.join(BASE_DIR, '..')
+ROOT_PATH = os.path.abspath(os.path.join(BASE_DIR, os.pardir))
 
 STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 
@@ -147,6 +151,69 @@ DEFAULT_AUTHENTICATION_MODE = 'D'
 USER_AUTHENTICATION_MODES = (
     ('D', 'Django'),
     # The following feature doesn't yet exist. Ex: ('L', 'Ldap'),
+)
+
+# Default minimum quantity for a product
+PRODUCT_MINIMUM_QUANTITY = 50
+
+# Default cart statuses
+CART_STATUS_CREATED = 0
+CART_STATUS_SAVED = 1
+CART_STATUS_COMPLETED = 2
+
+# Cart statuses
+CART_STATUSES = (
+    (CART_STATUS_CREATED, _('oscm_cart_status_created')),
+    (CART_STATUS_SAVED, _('oscm_cart_status_saved')),
+    (CART_STATUS_COMPLETED, _('oscm_cart_status_completed')),
+)
+
+# Default cart item statuses
+CART_ITEM_STATUS_CREATED = 0
+CART_ITEM_STATUS_SAVED = 1
+CART_ITEM_STATUS_COMPLETED = 2
+
+# Cart item statuses
+CART_ITEM_STATUSES = (
+    (CART_ITEM_STATUS_CREATED, _('oscm_cart_item_status_created')),
+    (CART_ITEM_STATUS_SAVED, _('oscm_cart_item_status_saved')),
+    (CART_ITEM_STATUS_COMPLETED, _('oscm_cart_item_status_completed')),
+)
+
+# Default order statuses
+ORDER_STATUS_CREATED = 0
+ORDER_STATUS_CONFIRMED = 1
+ORDER_STATUS_CANCELLED = 2
+ORDER_STATUS_PAID = 3
+ORDER_STATUS_COMPLETED = 4
+ORDER_STATUS_ARCHIVED = 5
+
+# Order statuses
+ORDER_STATUSES = (
+    (ORDER_STATUS_CREATED, _('oscm_order_status_created')),
+    (ORDER_STATUS_CONFIRMED, _('oscm_order_status_confirmed')),
+    (ORDER_STATUS_CANCELLED, _('oscm_order_status_cancelled')),
+    (ORDER_STATUS_PAID, _('oscm_order_status_paid')),
+    (ORDER_STATUS_COMPLETED, _('oscm_order_status_completed')),
+    (ORDER_STATUS_ARCHIVED, _('oscm_order_status_archived')),
+)
+
+# Default order item statuses
+ORDER_ITEM_STATUS_CREATED = 0
+ORDER_ITEM_STATUS_CONFIRMED = 1
+ORDER_ITEM_STATUS_CANCELLED = 2
+ORDER_ITEM_STATUS_PAID = 3
+ORDER_ITEM_STATUS_COMPLETED = 4
+ORDER_ITEM_STATUS_ARCHIVED = 5
+
+# Order item statuses
+ORDER_ITEM_STATUSES = (
+    (ORDER_ITEM_STATUS_CREATED, _('oscm_order_item_status_created')),
+    (ORDER_ITEM_STATUS_CONFIRMED, _('oscm_order_item_status_confirmed')),
+    (ORDER_ITEM_STATUS_CANCELLED, _('oscm_order_item_status_cancelled')),
+    (ORDER_ITEM_STATUS_PAID, _('oscm_order_item_status_paid')),
+    (ORDER_ITEM_STATUS_COMPLETED, _('oscm_order_item_status_completed')),
+    (ORDER_ITEM_STATUS_ARCHIVED, _('oscm_order_item_status_archived')),
 )
 
 # Used for the authentication in the frontend

@@ -1,0 +1,70 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% load bootstrapform %}
+{% block title %}{% trans "Add product" %}{% endblock %}
+{% block body_id %}{% trans "add_product" %}{% endblock %}
+{% block side_block %}
+    {% include "oscm_app/menu.html" %}
+{% endblock %}
+{% block content %}
+<div class="modal-dialog panel panel-default" style="margin-bottom:0">
+    <div class="panel-heading">
+        <h3 class="panel-title">{% trans "Add product" %}</h3>
+    </div>
+    <div class="panel-body">
+        {% if form.errors and not form.non_field_errors %}
+            <p class="alert alert-danger">
+                {% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}
+                {% endif %}
+            </p>
+        {% endif %}
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <p class="alert alert-danger">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        {% endif %}
+        <form method="POST" action="{% url 'oscm:add_product' %}" role="form">
+             {% csrf_token %}
+             <fieldset>
+                 {% for field in form.visible_fields %}
+                    {% if field.errors %}
+                        <div class="form-group has-error has-feedback">
+                            <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
+                            <div class="controls">{{ field }}
+                                <span class="help-block">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    {% for error in  field.errors %}{{ error }}{% endfor %}
+                                </span>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="form-group has-feedback">
+                            <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
+                            <div class="controls">{{ field }}
+                                {% if field.help_text %}
+                                    <p class="help-block"><small>{{ field.help_text }}</small></p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% for hid in form.hidden_fields %}
+                    <div class="form-group hidden">
+                        <label for="{{ hid|bootstrapform_field_id }}" class="control-label">{{ hid.label }}</label>
+                        <div class="controls">{{ hid }}
+                            {% if hid.help_text %}
+                                <p class="help-block"><small>{{ hid.help_text }}</small></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                {% if next %}<input type="hidden" name="next" value="{% url 'oscm:product' slug_name=product.slug_name %}">{% endif %}
+                 <a href="{% url 'oscm:home' %}" role="button" class="btn btn-lg btn-default btn-block"><span class="glyphicon glyphicon-remove"></span> {% trans "Cancel" %}</a>
+                 <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Create product" %}</button>
+             </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}

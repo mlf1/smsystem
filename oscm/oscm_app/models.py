@@ -1,3 +1,4 @@
-from django.db import models
+# coding=utf-8
+# oscm_app
 
 # Create your models here.

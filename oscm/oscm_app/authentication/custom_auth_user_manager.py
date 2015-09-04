@@ -1,6 +1,7 @@
 # coding=utf-8
 # oscm_app/authentication
 
+# django imports
 from django.contrib.auth.models import BaseUserManager
 from django.core.validators import ValidationError
 from django.utils.translation import ugettext as _

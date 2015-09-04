@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load nav %}
+{% if sups %}
+    {% if is_menu %}
+        {% url 'oscm:suppliers' as oscm_suppliers_url %}
+        <li class="{% active request oscm_suppliers_url exact_match=True %}"><a href="{{ oscm_suppliers_url }}">{% trans "All" %}</a></li>
+        <li role="presentation" class="divider"></li>
+    {% endif %}
+    {% for s in sups %}
+       {% if s == act_sup %}<li class="active">{% else %}<li>{% endif %}
+        <a href="{% url 'oscm:supplier' s.slug_name %}">{{ s.name }}</a></li>
+    {% endfor %}
+{% else %}
+    <li><strong>{% trans "No supplier at present." %}</strong></li>
+{% endif %}

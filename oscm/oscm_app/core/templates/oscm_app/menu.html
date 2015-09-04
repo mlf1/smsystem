@@ -1,0 +1,56 @@
+{% load nav %}
+{% load i18n %}
+<ul class="nav nav-sidebar">
+    {% url 'oscm:account_settings' pk=user.id as oscm_account_settings_url %}
+    <li class="{% active request oscm_account_settings_url exact_match=True %}">
+        <a href="{{ oscm_account_settings_url }}">{% trans "Account Settings" %}</a>
+    </li>
+    {% if user.role == 'U' %}
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Catalogue" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuCats">
+                {% get_category_list request True category user.role %}
+            </ul>
+        </li>
+    {% endif %}
+    {% if user.role == 'U' or user.role == 'M' %}
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Carts" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuCats">
+                 {% get_carts_list request cart user %}
+            </ul>
+        </li>
+        {% url 'oscm:orders' pk=user.id as oscm_order_url %}
+        <li class="{% active request oscm_order_url exact_match=True %}">
+           <a href="{{ oscm_order_url }}">{% trans "Orders" %}</a>
+                <ul class="dropdown-menu children">
+                    <li><a href="#">Submenu 1</a></li>
+                    <li><a href="#">Submenu 2</a></li>
+                    <li><a href="#">Submenu 3</a></li>
+                </ul>
+        </li>
+    {% endif %}
+    {% if user.role == 'A' %}
+        {% comment %}
+            <li class="{% active request oscm_products_url exact_match=True %}"><a href="{{ oscm_products_url }}">{% trans "Products" %}</a></li>
+        {% endcomment %}
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Products" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuProds">
+                {% get_product_list request True product user.role %}
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Categories" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuCatas">
+                {% get_category_list request True category user.role %}
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Suppliers" %}<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuSups">
+                {% get_supplier_list request True supplier user.role %}
+            </ul>
+        </li>
+    {% endif %}
+</ul>

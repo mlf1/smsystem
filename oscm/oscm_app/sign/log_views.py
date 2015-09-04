@@ -1,9 +1,11 @@
 # coding=utf-8
 # oscm_app/sign
 
+# python imports
 # from django.contrib import messages
 import logging
 
+# django imports
 from django.contrib.auth import (login, logout)
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import csrf
@@ -14,8 +16,9 @@ from django.utils import translation
 from django.utils.translation import ugettext as _
 from django.views.decorators.debug import sensitive_post_parameters
 
+# OSCM imports
 from .log_forms import LoginForm
-from oscm_app.utils import (get_attr, next_url)
+from ..utils import (get_attr, next_url)
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)

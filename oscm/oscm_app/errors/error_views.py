@@ -1,6 +1,7 @@
 # coding=utf-8
 # oscm_app/errors
 
+# django imports
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import (Context, loader, RequestContext)
@@ -56,8 +57,7 @@ def server_error(request):
     """
     template = loader.get_template('oscm_app/errors/500.html')
     context = Context({
-        'message': 'All: %s' % request,
-        })
+        'message': 'All: %s' % request, })
     # 3. Return Template for this view + Data
     return HttpResponse(
         content=template.render(context),

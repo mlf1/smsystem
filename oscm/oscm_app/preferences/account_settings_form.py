@@ -1,15 +1,18 @@
 # coding=utf-8
 # oscm_app/preferences
 
+# python imports
 import logging
 
+# django imports
 from django import forms
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext as _
 
-from oscm_app.authentication.custom_auth_user_form import (
+# OSCM imports
+from ..authentication.custom_auth_user_form import (
     BaseCustomAuthUserForm)
-from oscm_app.utils import set_form_field_order
+from ..utils import set_form_field_order
 
 
 # Get an instance of a logger

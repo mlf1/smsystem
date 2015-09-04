@@ -1,6 +1,7 @@
 # coding=utf-8
-# oscm_app/decorator
+# oscm_app/decorators
 
+# django imports
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import redirect

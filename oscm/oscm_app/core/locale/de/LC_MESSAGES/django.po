@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-24 09:33+0200\n"
+"POT-Creation-Date: 2015-09-03 02:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,98 +18,99 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: oscm_app/admin.py:25
+#: oscm_app/admin.py:63
 msgid "oscm_admin_headerOfPersonalInfo"
 msgstr "Persönliche Informationen"
 
-#: oscm_app/admin.py:29
+#: oscm_app/admin.py:67
 msgid "oscm_admin_headerOfCommonSettings"
 msgstr "Allgemeinen Einstellungen"
 
-#: oscm_app/admin.py:31
+#: oscm_app/admin.py:69
 msgid "oscm_admin_headerOfPermissions"
 msgstr "Berechtigungen"
 
-#: oscm_app/admin.py:37
+#: oscm_app/admin.py:75
 msgid "oscm_admin_headerOfUserSettings"
 msgstr "Benutzereinstellungen"
 
-#: oscm_app/admin.py:40
+#: oscm_app/admin.py:78 oscm_app/cart/admin.py:17
+#: oscm_app/cart/catalogue/admin.py:35
 msgid "oscm_admin_headerOfImportantDates"
 msgstr "Wichtige Daten"
 
-#: oscm_app/authentication/custom_auth_user_form.py:25
+#: oscm_app/authentication/custom_auth_user_form.py:29
 #, python-format
 msgid "Duplicate username: %(username)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:26
+#: oscm_app/authentication/custom_auth_user_form.py:30
 #, python-format
 msgid "Duplicate email: %(email)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:28
+#: oscm_app/authentication/custom_auth_user_form.py:32
 #, python-format
 msgid "Invalid passwords: %(password1)s, %(password2)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:30
+#: oscm_app/authentication/custom_auth_user_form.py:34
 #, python-format
 msgid "Invalid authentication: %(authentication)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:32
+#: oscm_app/authentication/custom_auth_user_form.py:36
 #, python-format
 msgid "Invalid Ldap authentication: %(authentication)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:64
+#: oscm_app/authentication/custom_auth_user_form.py:68
 #, python-format
 msgid "Role is '%s'."
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:72
+#: oscm_app/authentication/custom_auth_user_form.py:76
 #, python-format
 msgid "There is no rights for the '%s' role."
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:87
-#: oscm_app/authentication/custom_auth_user_form.py:90
-#: oscm_app/authentication/custom_auth_user_form.py:233
+#: oscm_app/authentication/custom_auth_user_form.py:91
+#: oscm_app/authentication/custom_auth_user_form.py:94
+#: oscm_app/authentication/custom_auth_user_form.py:237
 msgid "oscm_admin_passwordLabelOfUser"
 msgstr "Passwort"
 
-#: oscm_app/authentication/custom_auth_user_form.py:94
-#: oscm_app/authentication/custom_auth_user_form.py:97
+#: oscm_app/authentication/custom_auth_user_form.py:98
+#: oscm_app/authentication/custom_auth_user_form.py:101
 msgid "oscm_admin_passwordConfirmationLabelOfUser"
 msgstr "Passwort bestätigen"
 
-#: oscm_app/authentication/custom_auth_user_form.py:98
+#: oscm_app/authentication/custom_auth_user_form.py:102
 msgid "oscm_admin_helpTextPassword2fUser"
 msgstr "Bitte das gleiche Passwort zur Überprüfung nochmal eingeben."
 
-#: oscm_app/authentication/custom_auth_user_form.py:120
-#: oscm_app/custom_auth_user.py:37
+#: oscm_app/authentication/custom_auth_user_form.py:124
+#: oscm_app/custom_auth_user.py:40
 msgid "oscm_admin_usernameOfUser"
 msgstr "anmeldename/Benutzername"
 
-#: oscm_app/authentication/custom_auth_user_form.py:124
-#: oscm_app/custom_auth_user.py:43
+#: oscm_app/authentication/custom_auth_user_form.py:128
+#: oscm_app/custom_auth_user.py:46
 msgid "oscm_admin_emailAddressOfUser"
 msgstr "e-Mail-Adresse"
 
-#: oscm_app/authentication/custom_auth_user_form.py:196
+#: oscm_app/authentication/custom_auth_user_form.py:200
 #, python-format
 msgid "Auth_mode is '%s'."
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:218
-#: oscm_app/registration/registration_forms.py:97
+#: oscm_app/authentication/custom_auth_user_form.py:222
+#: oscm_app/registration/registration_forms.py:101
 #, python-format
 msgid "OSCM User '%s' is registered."
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_form.py:234
+#: oscm_app/authentication/custom_auth_user_form.py:238
 msgid "oscm_admin_helpTextPasswordOfUser"
 msgstr ""
 "<span id=\"passwordAdminHelpBlock\" class=\"help-block\"><strong>Info: </"
@@ -118,33 +119,489 @@ msgstr ""
 "das Passwort über <a href=\"password/\">dieses Formular</a> geändert werden."
 "</span>"
 
-#: oscm_app/authentication/custom_auth_user_manager.py:29
+#: oscm_app/authentication/custom_auth_user_manager.py:31
 #, python-format
 msgid "Missing email address: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_manager.py:35
+#: oscm_app/authentication/custom_auth_user_manager.py:37
 #, python-format
 msgid "Missing username: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_manager.py:41
+#: oscm_app/authentication/custom_auth_user_manager.py:43
 #, python-format
 msgid "Missing role: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_auth_user_manager.py:47
+#: oscm_app/authentication/custom_auth_user_manager.py:49
 #, python-format
 msgid "Missing language: %(value)s"
 msgstr ""
 
-#: oscm_app/authentication/custom_read_only_password_hash_widget.py:27
+#: oscm_app/authentication/custom_read_only_password_hash_widget.py:29
 msgid "oscm_admin_noPasswordSet"
 msgstr "Kein Passwort gesetzt."
 
-#: oscm_app/authentication/custom_read_only_password_hash_widget.py:34
+#: oscm_app/authentication/custom_read_only_password_hash_widget.py:36
 msgid "oscm_admin_invalidPasswordFormatOrUnknownHashAlgo"
 msgstr "Ungültiges Passwortformat oder unbekannter Hashing-Algorithmus."
+
+#: oscm_app/cart/admin.py:11
+#, fuzzy
+#| msgid "oscm_admin_actionOfHistory"
+msgid "oscm_admin_informationHeaderOfCart"
+msgstr "Aktion"
+
+#: oscm_app/cart/admin.py:16
+msgid "oscm_admin_headerOfStatus"
+msgstr "Status"
+
+#: oscm_app/cart/catalogue/admin.py:33
+#: oscm_app/cart/catalogue/models/category.py:54
+msgid "oscm_admin_headerOfCategory"
+msgstr "OSCM Kategorie"
+
+#: oscm_app/cart/catalogue/forms/category_form.py:58
+#, fuzzy, python-format
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Category '%s' has been created."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/cart/catalogue/forms/category_interest_form.py:79
+#: oscm_app/cart/catalogue/forms/product_interest_form.py:154
+#: oscm_app/cart/catalogue/forms/supplier_interest_form.py:102
+#: oscm_app/cart/forms/cart_interest_form.py:146
+#: oscm_app/preferences/account_settings_form.py:118
+msgid "No field has been modified."
+msgstr ""
+
+#: oscm_app/cart/catalogue/forms/category_interest_form.py:101
+#, python-format
+msgid "OSCM Category details from the category '%s' has been updated."
+msgstr ""
+
+#: oscm_app/cart/catalogue/forms/object_interest_form.py:23
+#, fuzzy, python-format
+#| msgid "category (name: %s)"
+msgid "Duplicate name: %(name)s"
+msgstr "Kategorie (Name: %s)"
+
+#: oscm_app/cart/catalogue/forms/object_interest_form.py:24
+#, python-format
+msgid "Invalid unit price: %(unit_price)s"
+msgstr ""
+
+#: oscm_app/cart/catalogue/forms/object_interest_form.py:25
+#, python-format
+msgid "Invalid quantity: %(quantity)s"
+msgstr ""
+
+#: oscm_app/cart/catalogue/forms/object_interest_form.py:26
+#, python-format
+msgid "Invalid date: %(date)s"
+msgstr ""
+
+#: oscm_app/cart/catalogue/forms/object_interest_form.py:28
+#, python-format
+msgid ""
+"Wrong date: requested due date('%(requested_due_date)s') must be greater "
+"than the current date('%(today)s')"
+msgstr ""
+
+#: oscm_app/cart/catalogue/forms/product_form.py:71
+#, fuzzy, python-format
+#| msgid "Your OSCM Account has been activated."
+msgid "OSCM Product '%s' has been created."
+msgstr "Ihr OSCM Konto ist aktiviert worden."
+
+#: oscm_app/cart/catalogue/forms/product_interest_form.py:176
+#, python-format
+msgid "OSCM Product details from the product '%s' has been updated."
+msgstr ""
+
+#: oscm_app/cart/catalogue/forms/supplier_form.py:65
+#, fuzzy, python-format
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Supplier '%s' has been created."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/cart/catalogue/forms/supplier_interest_form.py:124
+#, python-format
+msgid "OSCM Supplier details from the supplier '%s' has been updated."
+msgstr ""
+
+#: oscm_app/cart/catalogue/models/category.py:34
+msgid "oscm_admin_descriptionOfCategory"
+msgstr "Beschreibung"
+
+#: oscm_app/cart/catalogue/models/category.py:36
+msgid "oscm_admin_helpTextDescriptionOfCategory"
+msgstr "Sie können die Beschreibung von der Kategorie setzen."
+
+#: oscm_app/cart/catalogue/models/category.py:40
+msgid "oscm_admin_creationDateOfCategory"
+msgstr "Erstellungsdatum"
+
+#: oscm_app/cart/catalogue/models/category.py:43
+msgid "oscm_admin_lastEditDateOfCategory"
+msgstr "letztes Ausgabedatum"
+
+#: oscm_app/cart/catalogue/models/category.py:46
+#, fuzzy
+#| msgid "oscm_admin_actionOfHistory"
+msgid "oscm_admin_displayOfCategory"
+msgstr "Aktion"
+
+#: oscm_app/cart/catalogue/models/category.py:47
+#, fuzzy
+#| msgid "oscm_admin_helpTextActiveStatusOfUser"
+msgid "oscm_admin_helpTextActiveStatusOfCategory"
+msgstr ""
+"Legt fest, ob dieser Benutzer aktiv ist. Kann deaktiviert werden, anstatt "
+"Benutzer zu löschen."
+
+#: oscm_app/cart/catalogue/models/category.py:55
+msgid "oscm_admin_headerOfCategories"
+msgstr "OSCM Kategorien"
+
+#: oscm_app/cart/catalogue/models/category.py:64
+#, python-format
+msgid "category (name: %(name)s)"
+msgstr "Kategorie (Name: %(name)s)"
+
+#: oscm_app/cart/catalogue/models/product.py:38
+msgid "oscm_admin_creationDateOfProduct"
+msgstr "Erstellungsdatum"
+
+#: oscm_app/cart/catalogue/models/product.py:41
+msgid "oscm_admin_lastEditDateOfProduct"
+msgstr "letztes Ausgabedatum"
+
+#: oscm_app/cart/catalogue/models/product.py:44
+msgid "oscm_admin_nameOfProduct"
+msgstr "Name"
+
+#: oscm_app/cart/catalogue/models/product.py:45
+#, fuzzy
+#| msgid "oscm_admin_helpTextRoleOfUser"
+msgid "oscm_admin_helpTextNameOfProduct"
+msgstr ""
+"Sie müssen die Rolle für einen spezifischen Benutzer zwischen Vielfalten von "
+"gegebenen Rollen wählen."
+
+#: oscm_app/cart/catalogue/models/product.py:55
+msgid "oscm_admin_codeOfProduct"
+msgstr "Code"
+
+#: oscm_app/cart/catalogue/models/product.py:63
+msgid "oscm_admin_descriptionOfProduct"
+msgstr "Beschreibung"
+
+#: oscm_app/cart/catalogue/models/product.py:65
+msgid "oscm_admin_helpTextDescriptionOfProduct"
+msgstr "Sie können die Beschreibung von dem Produkt setzen."
+
+#: oscm_app/cart/catalogue/models/product.py:69
+msgid "oscm_admin_priceOfProduct"
+msgstr "Einheitspreis"
+
+#: oscm_app/cart/catalogue/models/product.py:76
+msgid "oscm_admin_quantityOfProduct"
+msgstr "verfügbare Menge"
+
+#: oscm_app/cart/catalogue/models/product.py:81
+msgid "oscm_admin_bookedQuantityOfProduct"
+msgstr "vorbehaltene Menge"
+
+#: oscm_app/cart/catalogue/models/product.py:86
+msgid "oscm_admin_minimumQuantityOfProduct"
+msgstr "minimum Menge"
+
+#: oscm_app/cart/catalogue/models/product.py:91
+msgid "oscm_admin_skuOfProduct"
+msgstr "SKU"
+
+#: oscm_app/cart/catalogue/models/product.py:92
+#, fuzzy
+#| msgid "oscm_admin_helpTextRoleOfUser"
+msgid "oscm_admin_helpTextUniqueArticleNoOfProduct"
+msgstr ""
+"Sie müssen die Rolle für einen spezifischen Benutzer zwischen Vielfalten von "
+"gegebenen Rollen wählen."
+
+#: oscm_app/cart/catalogue/models/product.py:97
+msgid "oscm_admin_displayOfProduct"
+msgstr "angezeigt"
+
+#: oscm_app/cart/catalogue/models/product.py:98
+#, fuzzy
+#| msgid "oscm_admin_helpTextActiveStatusOfUser"
+msgid "oscm_admin_helpTextActiveStatusOfProduct"
+msgstr ""
+"Legt fest, ob dieser Benutzer aktiv ist. Kann deaktiviert werden, anstatt "
+"Benutzer zu löschen."
+
+#: oscm_app/cart/catalogue/models/product.py:104
+msgid "oscm_admin_headerOfProduct"
+msgstr "OSCM Produkt"
+
+#: oscm_app/cart/catalogue/models/product.py:105
+msgid "oscm_admin_headerOfProducts"
+msgstr "OSCM Produkte"
+
+#: oscm_app/cart/catalogue/models/product.py:134
+#, python-format
+msgid ""
+"product (name: %(name)s, quantity: %(quantity)d, unit price: %(unit_price)d, "
+"category: %(category)s, code: %(code)s)"
+msgstr ""
+"Produkt (Name: %(name)s, Menge: %(quantity)d, Einheitspreis: %(unit_price)d, "
+"Kategorie: %(category)s, Code: %(code)s)"
+
+#: oscm_app/cart/catalogue/models/supplier.py:40
+msgid "Enter a valid URL"
+msgstr ""
+
+#: oscm_app/cart/catalogue/models/supplier.py:84
+msgid "oscm_admin_descriptionOfSupplier"
+msgstr "Beschreibung"
+
+#: oscm_app/cart/catalogue/models/supplier.py:86
+msgid "oscm_admin_helpTextDescriptionOfSupplier"
+msgstr "Sie können die Beschreibung von dem Lieferant setzen."
+
+#: oscm_app/cart/catalogue/models/supplier.py:90
+msgid "oscm_admin_creationDateOfSupplier"
+msgstr "Erstellungsdatum"
+
+#: oscm_app/cart/catalogue/models/supplier.py:93
+msgid "oscm_admin_lastEditDateOfSupplier"
+msgstr "letztes Ausgabedatum"
+
+#: oscm_app/cart/catalogue/models/supplier.py:95
+msgid "oscm_admin_addressOfSupplier"
+msgstr "Adresse"
+
+#: oscm_app/cart/catalogue/models/supplier.py:99
+msgid "oscm_admin_websiteOfSupplier"
+msgstr "Lieferant-Website"
+
+#: oscm_app/cart/catalogue/models/supplier.py:103
+msgid "Url must start with 'http://' or 'https://'."
+msgstr ""
+
+#: oscm_app/cart/catalogue/models/supplier.py:107
+msgid "oscm_admin_activeStatusOfSupplier"
+msgstr "angezeigt"
+
+#: oscm_app/cart/catalogue/models/supplier.py:110
+#, fuzzy
+#| msgid "oscm_admin_helpTextActiveStatusOfUser"
+msgid "oscm_admin_helpTextActiveStatusOfSupplier"
+msgstr ""
+"Legt fest, ob dieser Benutzer aktiv ist. Kann deaktiviert werden, anstatt "
+"Benutzer zu löschen."
+
+#: oscm_app/cart/catalogue/models/supplier.py:115
+msgid "oscm_admin_headerOfSupplier"
+msgstr "OSCM Lieferant"
+
+#: oscm_app/cart/catalogue/models/supplier.py:116
+msgid "oscm_admin_headerOfSuppliers"
+msgstr "OSCM Lieferanten"
+
+#: oscm_app/cart/catalogue/models/supplier.py:147
+#, python-format
+msgid "supplier (name: %(name)s, address: %(address)s)"
+msgstr "Lieferant (Name: %(name)s, Addresse: %(address)s)"
+
+#: oscm_app/cart/catalogue/views/category_views.py:47
+#, fuzzy
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Category details updated."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/cart/catalogue/views/product_views.py:46
+msgid "OSCM Product details updated."
+msgstr "Aktualisierte Produktdetails."
+
+#: oscm_app/cart/catalogue/views/product_views.py:132
+msgid "OSCM Product created."
+msgstr "Erstelltes Produkt."
+
+#: oscm_app/cart/catalogue/views/supplier_views.py:79
+#, fuzzy
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Supplier details updated."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/cart/forms/cart_interest_form.py:32
+msgid "oscm_admin_nbCartItemsLabelOfCart"
+msgstr "Zahl der Artikel"
+
+#: oscm_app/cart/forms/cart_interest_form.py:36
+msgid "oscm_admin_totalAmountLabelOfCart"
+msgstr "Gesamtsumme"
+
+#: oscm_app/cart/forms/cart_interest_form.py:168
+#, python-format
+msgid "OSCM Cart details from the cart '%s' has been updated."
+msgstr ""
+
+#: oscm_app/cart/models/cart.py:27
+msgid "oscm_admin_ownerOfCart"
+msgstr "Besitzer"
+
+#: oscm_app/cart/models/cart.py:28
+#, fuzzy
+#| msgid "oscm_admin_helpTextStaffStatusOfUser"
+msgid "oscm_admin_helpTextOwnerOfCart"
+msgstr ""
+"Legt fest, ob sich der Benutzer an der Administrationsseite anmelden kann."
+
+#: oscm_app/cart/models/cart.py:34
+msgid "oscm_admin_projectNameOfCart"
+msgstr "Projektname"
+
+#: oscm_app/cart/models/cart.py:35
+#, fuzzy
+#| msgid "oscm_admin_helpTextRoleOfUser"
+msgid "oscm_admin_helpTextProjectNameOfCart"
+msgstr ""
+"Sie müssen die Rolle für einen spezifischen Benutzer zwischen Vielfalten von "
+"gegebenen Rollen wählen."
+
+#: oscm_app/cart/models/cart.py:43
+msgid "oscm_admin_creationDateOfCart"
+msgstr "Erstellungsdatum"
+
+#: oscm_app/cart/models/cart.py:48
+msgid "oscm_admin_lastEditDateOfCart"
+msgstr "letztes Ausgabedatum"
+
+#: oscm_app/cart/models/cart.py:53
+#, fuzzy
+#| msgid "oscm_admin_usernameOfUser"
+msgid "oscm_admin_requestedDueDateOfCart"
+msgstr "anmeldename/Benutzername"
+
+#: oscm_app/cart/models/cart.py:54
+#, fuzzy
+#| msgid "oscm_admin_helpTextRoleOfUser"
+msgid "oscm_admin_helpTextRequestedDueDateOfCart"
+msgstr ""
+"Sie müssen die Rolle für einen spezifischen Benutzer zwischen Vielfalten von "
+"gegebenen Rollen wählen."
+
+#: oscm_app/cart/models/cart.py:63
+msgid "oscm_admin_statusOfCart"
+msgstr "Status"
+
+#: oscm_app/cart/models/cart.py:67
+#, fuzzy
+#| msgid "oscm_admin_helpTextStaffStatusOfUser"
+msgid "oscm_admin_helpTextStatusOfCart"
+msgstr ""
+"Legt fest, ob sich der Benutzer an der Administrationsseite anmelden kann."
+
+#: oscm_app/cart/models/cart.py:71
+msgid "oscm_admin_descriptionOfCart"
+msgstr "Beschreibung"
+
+#: oscm_app/cart/models/cart.py:73
+msgid "oscm_admin_helpTextDescriptionOfCart"
+msgstr "Sie können die Beschreibung von dem Warenkorb setzen."
+
+#: oscm_app/cart/models/cart.py:80
+msgid "oscm_admin_headerOfCart"
+msgstr "OSCM Warenkorb"
+
+#: oscm_app/cart/models/cart.py:81
+msgid "oscm_admin_headerOfCarts"
+msgstr "OSCM Warenkörbe"
+
+#: oscm_app/cart/models/cart.py:91
+#, python-format
+msgid ""
+"cart (status: %(status)s, owner: %(owner)s, project name: %(project_name)s, "
+"number of cart items: %(nb_cart_items)d, total amount: %(total_amount)d)"
+msgstr ""
+"Warenkorb (Status: %(status)s, Besitzer: %(owner)s, Projektname: "
+"%(project_name)s, Zahl der Artikel: %(nb_cart_items)d, Gesamtsumme: "
+"%(total_amount)d)"
+
+#: oscm_app/cart/models/cart_item.py:28
+msgid "oscm_admin_statusOfCartItem"
+msgstr "Status"
+
+#: oscm_app/cart/models/cart_item.py:32
+#, fuzzy
+#| msgid "oscm_admin_helpTextStaffStatusOfUser"
+msgid "oscm_admin_helpTextStatusOfCartItem"
+msgstr ""
+"Legt fest, ob sich der Benutzer an der Administrationsseite anmelden kann."
+
+#: oscm_app/cart/models/cart_item.py:40
+msgid "oscm_admin_quantityOfCartItem"
+msgstr "Menge"
+
+#: oscm_app/cart/models/cart_item.py:45
+msgid "oscm_admin_totalPriceOfCartItem"
+msgstr "Gesamtpreis"
+
+#: oscm_app/cart/models/cart_item.py:52
+msgid "oscm_admin_creationDateOfCartItem"
+msgstr "Erstellungsdatum"
+
+#: oscm_app/cart/models/cart_item.py:57
+msgid "oscm_admin_lastEditDateOfCartItem"
+msgstr "letztes Ausgabedatum"
+
+#: oscm_app/cart/models/cart_item.py:64
+msgid "oscm_admin_headerOfCartItem"
+msgstr "OSCM Artikel"
+
+#: oscm_app/cart/models/cart_item.py:65
+msgid "oscm_admin_headerOfCartItems"
+msgstr "OSCM Artikel"
+
+#: oscm_app/cart/models/cart_item.py:101
+#, python-format
+msgid ""
+"cart item (project name: %(cart_projet_name)s, product name: "
+"%(product_name)s, status: %(status)s, quantity: %(quantity)d, total price: "
+"%(total_price)d)"
+msgstr ""
+"Artikel (Projektname: %(cart_projet_name)s, Produktname: %(product_name)s, "
+"Status: %(status)s, Menge: %(quantity)d, Gesamtpreis: %(total_price)d)"
+
+#: oscm_app/cart/models/cart_item.py:113
+#, python-format
+msgid ""
+"cart item (product name: %(product_name)s, status: %(status)s, quantity: "
+"%(quantity)d, total price: %(total_price)d)"
+msgstr ""
+"Artikel (Produktname: %(product_name)s, Status: %(status)s, Menge: "
+"%(quantity)d, Gesamtpreis: %(total_price)d)"
+
+#: oscm_app/cart/views/cart_item_views.py:64
+#, fuzzy
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Cart item details updated."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/cart/views/cart_views.py:85
+#, fuzzy
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Cart details updated."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/cart/views/cart_views.py:131
+#, fuzzy
+#| msgid "OSCM Product created."
+msgid "OSCM Cart created."
+msgstr "Erstelltes Produkt."
 
 #: oscm_app/core/templates/admin/auth/user/add_form.html:6
 msgid "oscm_admin_headerOfAddForm"
@@ -209,11 +666,11 @@ msgid ""
 "framework Django – a Python based framework."
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/base.html:43
+#: oscm_app/core/templates/oscm_app/base.html:44
 msgid "OSCM"
 msgstr "OSCM"
 
-#: oscm_app/core/templates/oscm_app/base.html:47
+#: oscm_app/core/templates/oscm_app/base.html:49
 #: oscm_app/core/templates/oscm_app/index.html:10
 #: oscm_app/core/templates/oscm_app/registration/registration.html:9
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:10
@@ -224,39 +681,524 @@ msgstr "OSCM"
 msgid "Home"
 msgstr "Start"
 
-#: oscm_app/core/templates/oscm_app/base.html:48
+#: oscm_app/core/templates/oscm_app/base.html:51
 msgid "About"
 msgstr "Über"
 
-#: oscm_app/core/templates/oscm_app/base.html:49
+#: oscm_app/core/templates/oscm_app/base.html:53
 msgid "Contact"
 msgstr "Kontakt"
 
-#: oscm_app/core/templates/oscm_app/base.html:54
+#: oscm_app/core/templates/oscm_app/base.html:59
 msgid "Admin"
 msgstr "Verwaltung"
 
-#: oscm_app/core/templates/oscm_app/base.html:63
+#: oscm_app/core/templates/oscm_app/base.html:69
 #: oscm_app/core/templates/oscm_app/sign/logout.html:3
 #: oscm_app/core/templates/oscm_app/sign/logout.html:9
 #: oscm_app/core/templates/oscm_app/sign/logout.html:19
-#: oscm_app/sign/log_views.py:73
+#: oscm_app/sign/log_views.py:77
 msgid "Log out"
 msgstr "Abmelden"
 
-#: oscm_app/core/templates/oscm_app/base.html:65
+#: oscm_app/core/templates/oscm_app/base.html:72
 #: oscm_app/core/templates/oscm_app/errors/403.html:20
-#: oscm_app/core/templates/oscm_app/home.html:26
+#: oscm_app/core/templates/oscm_app/home.html:20
 #: oscm_app/core/templates/oscm_app/index.html:18
 #: oscm_app/core/templates/oscm_app/sign/login.html:4
-#: oscm_app/core/templates/oscm_app/sign/login.html:55
-#: oscm_app/sign/log_views.py:121
+#: oscm_app/core/templates/oscm_app/sign/login.html:56
+#: oscm_app/sign/log_views.py:125
 msgid "Log in"
 msgstr "Anmelden"
 
-#: oscm_app/core/templates/oscm_app/base.html:74
+#: oscm_app/core/templates/oscm_app/base.html:81
 msgid "oscm_nameOfApplication"
 msgstr "OSCM Anwendung"
+
+#: oscm_app/core/templates/oscm_app/cart/add_cart.html:4
+#: oscm_app/core/templates/oscm_app/cart/add_cart.html:12
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:52
+msgid "Add cart"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/add_cart.html:5
+#, fuzzy
+#| msgid "category"
+msgid "add_cart"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/add_cart.html:17
+#: oscm_app/core/templates/oscm_app/cart/cart.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:17
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:14
+#: oscm_app/core/templates/oscm_app/registration/registration.html:19
+#: oscm_app/core/templates/oscm_app/sign/login.html:18
+msgid "Please correct the error below."
+msgstr "Korrigieren Sie bitte den aufgeführten Fehler unten."
+
+#: oscm_app/core/templates/oscm_app/cart/add_cart.html:17
+#: oscm_app/core/templates/oscm_app/cart/cart.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:17
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:17
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:14
+#: oscm_app/core/templates/oscm_app/registration/registration.html:19
+#: oscm_app/core/templates/oscm_app/sign/login.html:18
+msgid "Please correct the errors below."
+msgstr "Bitte die unten aufgeführten Fehler korrigieren."
+
+#: oscm_app/core/templates/oscm_app/cart/add_cart.html:64
+#: oscm_app/core/templates/oscm_app/cart/cart_details.html:41
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:64
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:64
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:64
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_details.html:46
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:46
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_details.html:46
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:64
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item_details.html:45
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:52
+#: oscm_app/core/templates/oscm_app/sign/logout.html:18
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: oscm_app/core/templates/oscm_app/cart/add_cart.html:65
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:65
+#, fuzzy
+#| msgid "product"
+msgid "Create product"
+msgstr "Produkte"
+
+#: oscm_app/core/templates/oscm_app/cart/cart.html:4
+msgid "Cart"
+msgstr "Warenkorb"
+
+#: oscm_app/core/templates/oscm_app/cart/cart.html:5
+msgid "cart"
+msgstr "Warenkorb"
+
+#: oscm_app/core/templates/oscm_app/cart/cart.html:29
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category.html:29
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:29
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:29
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:29
+msgid "Details"
+msgstr "Details"
+
+#: oscm_app/core/templates/oscm_app/cart/cart.html:30
+msgid "Cart items"
+msgstr "Artikel"
+
+#: oscm_app/core/templates/oscm_app/cart/cart_details.html:42
+msgid "Update cart parameters"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:8
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:9
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:19
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:9
+msgid "name"
+msgstr "Name"
+
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:9
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:11
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:11
+msgid "sku"
+msgstr "SKU"
+
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:10
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:10
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:10
+msgid "price"
+msgstr "Einheitspreis"
+
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:11
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:12
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:12
+msgid "quantity"
+msgstr "Menge"
+
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:12
+msgid "total price"
+msgstr "Gesamtpreis"
+
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:13
+msgid "status"
+msgstr "Status"
+
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:47
+#: oscm_app/core/templates/oscm_app/cart/cart_items.html:63
+msgid "No cart items"
+msgstr "Keine Artikel"
+
+#: oscm_app/core/templates/oscm_app/cart/carts.html:4
+#: oscm_app/core/templates/oscm_app/cart/carts.html:12
+#: oscm_app/core/templates/oscm_app/menu.html:18
+msgid "Carts"
+msgstr "Warenkorb"
+
+#: oscm_app/core/templates/oscm_app/cart/carts.html:5
+msgid "carts"
+msgstr "Warenkorb"
+
+#: oscm_app/core/templates/oscm_app/cart/carts.html:27
+msgid "No carts"
+msgstr "Kein Warenkorb"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:4
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:12
+msgid "Add category"
+msgstr "Kategorie hinzufügen"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:5
+#, fuzzy
+#| msgid "category"
+msgid "add_category"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_category.html:65
+#, fuzzy
+#| msgid "category"
+msgid "Create category"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:4
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:12
+#, fuzzy
+#| msgid "product"
+msgid "Add product"
+msgstr "Produkte"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_product.html:5
+#, fuzzy
+#| msgid "product"
+msgid "add_product"
+msgstr "Produkte"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:4
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:12
+#, fuzzy
+#| msgid "supplier"
+msgid "Add supplier"
+msgstr "Lieferant"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:5
+#, fuzzy
+#| msgid "supplier"
+msgid "add_supplier"
+msgstr "Lieferant"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/add_supplier.html:65
+#, fuzzy
+#| msgid "supplier"
+msgid "Create supplier"
+msgstr "Lieferant"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/catalogue.html:4
+#: oscm_app/core/templates/oscm_app/cart/catalogue/catalogue.html:12
+#: oscm_app/core/templates/oscm_app/menu.html:10
+msgid "Catalogue"
+msgstr "Katalog"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/catalogue.html:5
+msgid "catalogue"
+msgstr "Katalog"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/catalogue.html:16
+#: oscm_app/core/templates/oscm_app/cart/catalogue/categories.html:3
+#: oscm_app/core/templates/oscm_app/cart/catalogue/categories.html:11
+#: oscm_app/core/templates/oscm_app/menu.html:45
+msgid "Categories"
+msgstr "Kategorien"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/catalogue.html:17
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:30
+#: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:3
+#: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:11
+#: oscm_app/core/templates/oscm_app/menu.html:51
+msgid "Suppliers"
+msgstr "Lieferanten"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/catalogue.html:18
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category.html:30
+#: oscm_app/core/templates/oscm_app/cart/catalogue/products.html:3
+#: oscm_app/core/templates/oscm_app/cart/catalogue/products.html:11
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:30
+#: oscm_app/core/templates/oscm_app/menu.html:39
+msgid "Products"
+msgstr "Produkte"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/categories.html:4
+msgid "categories"
+msgstr "Kategorien"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/categories.html:26
+msgid "No categories"
+msgstr "Keine Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/categories.html:34
+#: oscm_app/core/templates/oscm_app/cart/catalogue/products.html:34
+#: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:34
+msgid "Add"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category.html:4
+msgid "Category"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category.html:5
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:15
+msgid "category"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_details.html:48
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:48
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_details.html:48
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item_details.html:47
+msgid "Delete"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_details.html:50
+msgid "Update category parameters"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:13
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:21
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:13
+msgid "description"
+msgstr "Beschreibung"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:14
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:23
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:14
+msgid "is_active"
+msgstr "angezeigt"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:44
+#: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:57
+#: oscm_app/core/templates/oscm_app/cart/catalogue/products.html:26
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:46
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:60
+msgid "No products"
+msgstr "Kein Produkt"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/cats.html:7
+#: oscm_app/core/templates/oscm_app/cart/catalogue/cats.html:11
+#: oscm_app/core/templates/oscm_app/cart/catalogue/prods.html:6
+#: oscm_app/core/templates/oscm_app/cart/catalogue/sups.html:6
+#: oscm_app/core/templates/oscm_app/cart/cts.html:5
+msgid "All"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/cats.html:20
+msgid "No category at present."
+msgstr "Keine Kategorie zur Zeit."
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:4
+#, fuzzy
+#| msgid "category"
+msgid "Delete category"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:5
+#, fuzzy
+#| msgid "category"
+msgid "delete_category"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:12
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:12
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:12
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:12
+msgid "Confirm delete"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:30
+#, fuzzy
+#| msgid "Are you sure you want to log out ?"
+msgid "Are you sure you want to delete the following category ?"
+msgstr "Bist Du sicher, dass du Dich abmelden möchtest ?"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:32
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:32
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:32
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:32
+msgid "No"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_category.html:37
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:37
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:37
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:33
+msgid "Yes"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:4
+#, fuzzy
+#| msgid "product"
+msgid "Delete product"
+msgstr "Produkte"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:5
+#, fuzzy
+#| msgid "product"
+msgid "delete_product"
+msgstr "Produkte"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_product.html:30
+#, fuzzy
+#| msgid "Are you sure you want to log out ?"
+msgid "Are you sure you want to delete the following product ?"
+msgstr "Bist Du sicher, dass du Dich abmelden möchtest ?"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:4
+#, fuzzy
+#| msgid "supplier"
+msgid "Delete supplier"
+msgstr "Lieferant"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:5
+#, fuzzy
+#| msgid "supplier"
+msgid "delete_supplier"
+msgstr "Lieferant"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/delete_supplier.html:30
+#, fuzzy
+#| msgid "Are you sure you want to log out ?"
+msgid "Are you sure you want to delete the following supplier ?"
+msgstr "Bist Du sicher, dass du Dich abmelden möchtest ?"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/prods.html:14
+msgid "No product at present."
+msgstr "Kein Produkt zur Zeit."
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:4
+msgid "Product"
+msgstr "Produkt"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product.html:5
+msgid "product"
+msgstr "Produkte"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_details.html:50
+msgid "Update product parameters"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:20
+msgid "address"
+msgstr "Addresse"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:22
+msgid "website"
+msgstr "Website"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:52
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:65
+#: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:26
+msgid "No suppliers"
+msgstr "Keine Lieferant"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/products.html:4
+msgid "products"
+msgstr "Produkt"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:4
+msgid "Supplier"
+msgstr "Lieferant"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier.html:5
+msgid "supplier"
+msgstr "Lieferant"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_details.html:50
+msgid "Update supplier parameters"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:4
+msgid "suppliers"
+msgstr "Lieferanten"
+
+#: oscm_app/core/templates/oscm_app/cart/catalogue/sups.html:14
+msgid "No supplier at present."
+msgstr "Kein Lieferant zur Zeit."
+
+#: oscm_app/core/templates/oscm_app/cart/cts.html:12
+msgid "No cart at present."
+msgstr "Keine Kategorie zur Zeit."
+
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:4
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:12
+#, fuzzy
+#| msgid "No cart items"
+msgid "Add cart item"
+msgstr "Keine Artikel Warenkorb"
+
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:5
+#, fuzzy
+#| msgid "category"
+msgid "add_cart_item"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/item/add_cart_item.html:65
+#, fuzzy
+#| msgid "category"
+msgid "Create cart item"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:4
+#, fuzzy
+#| msgid "Cart items"
+msgid "Cart Item"
+msgstr "Artikel"
+
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item.html:5
+#, fuzzy
+#| msgid "cart_item"
+msgid "cart item"
+msgstr "artikel"
+
+#: oscm_app/core/templates/oscm_app/cart/item/cart_item_details.html:49
+msgid "Update cart item parameters"
+msgstr ""
+
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:4
+#, fuzzy
+#| msgid "category"
+msgid "Delete cart item"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:5
+#, fuzzy
+#| msgid "category"
+msgid "delete_cart_item"
+msgstr "Kategorie"
+
+#: oscm_app/core/templates/oscm_app/cart/item/delete_cart_item.html:30
+#, fuzzy
+#| msgid "Are you sure you want to log out ?"
+msgid "Are you sure you want to delete the following cart item ?"
+msgstr "Bist Du sicher, dass du Dich abmelden möchtest ?"
 
 #: oscm_app/core/templates/oscm_app/errors/403.html:4
 msgid "oscm_labelOfError403"
@@ -286,10 +1228,10 @@ msgstr ""
 #: oscm_app/core/templates/oscm_app/errors/403.html:25
 #: oscm_app/core/templates/oscm_app/index.html:23
 #: oscm_app/core/templates/oscm_app/registration/registration.html:4
-#: oscm_app/core/templates/oscm_app/registration/registration.html:55
+#: oscm_app/core/templates/oscm_app/registration/registration.html:56
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:20
-#: oscm_app/core/templates/oscm_app/sign/login.html:67
-#: oscm_app/registration/registration_views.py:65
+#: oscm_app/core/templates/oscm_app/sign/login.html:68
+#: oscm_app/registration/registration_views.py:69
 msgid "Register"
 msgstr "Registrieren"
 
@@ -351,23 +1293,17 @@ msgid ""
 "Technology, 2015"
 msgstr "&copy; Berner Fachhochschule Technik und Informatik, 2015"
 
-#: oscm_app/core/templates/oscm_app/home.html:5
+#: oscm_app/core/templates/oscm_app/home.html:4
 msgid "Welcome to your OSCM's homepage."
 msgstr "Willkommen auf der Startseite Ihrer OSCM."
 
-#: oscm_app/core/templates/oscm_app/home.html:11
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:4
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:9
-msgid "Account Settings"
-msgstr "Kontoeinstellungen"
-
-#: oscm_app/core/templates/oscm_app/home.html:18
+#: oscm_app/core/templates/oscm_app/home.html:12
 #: oscm_app/core/templates/oscm_app/index.html:11
 #, python-format
 msgid "Welcome, %(oscm_username)s. Thanks for logging in."
 msgstr "Willkommen, %(oscm_username)s. Schön, dass Sie hier sind."
 
-#: oscm_app/core/templates/oscm_app/home.html:24
+#: oscm_app/core/templates/oscm_app/home.html:18
 msgid "Welcome, new OSCM User. Please log in."
 msgstr "Willkommen, neue Benutzer. Bitte anmelden."
 
@@ -397,32 +1333,25 @@ msgstr ""
 "Oder wenn Sie in vorher dann nicht geloggt haben, tragen Sie sich bitte "
 "erstens an."
 
+#: oscm_app/core/templates/oscm_app/menu.html:6
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:4
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:9
+msgid "Account Settings"
+msgstr "Kontoeinstellungen"
+
+#: oscm_app/core/templates/oscm_app/menu.html:25
+msgid "Orders"
+msgstr "Bestellungen"
+
 #: oscm_app/core/templates/oscm_app/preferences/settings.html:5
 msgid "settings"
 msgstr "einstellungen"
 
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:14
-#: oscm_app/core/templates/oscm_app/registration/registration.html:19
-#: oscm_app/core/templates/oscm_app/sign/login.html:18
-msgid "Please correct the error below."
-msgstr "Korrigieren Sie bitte den aufgeführten Fehler unten."
-
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:14
-#: oscm_app/core/templates/oscm_app/registration/registration.html:19
-#: oscm_app/core/templates/oscm_app/sign/login.html:18
-msgid "Please correct the errors below."
-msgstr "Bitte die unten aufgeführten Fehler korrigieren."
-
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:26
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:28
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:51
-#: oscm_app/core/templates/oscm_app/sign/logout.html:18
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: oscm_app/core/templates/oscm_app/preferences/settings.html:52
+#: oscm_app/core/templates/oscm_app/preferences/settings.html:53
 msgid "Update settings"
 msgstr "Update-Einstellungen"
 
@@ -440,7 +1369,7 @@ msgstr ""
 msgid "Registration"
 msgstr "Registrierung"
 
-#: oscm_app/core/templates/oscm_app/registration/registration.html:31
+#: oscm_app/core/templates/oscm_app/registration/registration.html:33
 msgid "Sign Up For Your Account"
 msgstr "Registrieren Sie sich für ein Benutzerkonto"
 
@@ -449,15 +1378,15 @@ msgstr "Registrieren Sie sich für ein Benutzerkonto"
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:6
 #: oscm_app/core/templates/oscm_app/registration/registration_completed.html:6
 msgid "Registration closed"
-msgstr ""
+msgstr "Registrierung für neue Benutzer geschlossen"
 
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:6
 msgid "Registration opened"
-msgstr ""
+msgstr "Registrierung für neue Benutzer geöffneten"
 
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:16
 msgid "Registration is currently closed on this site."
-msgstr ""
+msgstr "Denn jetzt ist die Registrierung für neue Benutzer geschlossen."
 
 #: oscm_app/core/templates/oscm_app/registration/registration_closed.html:21
 msgid "You can register your OSCM account."
@@ -494,11 +1423,11 @@ msgstr "Bestätigung"
 msgid "You are already logged as %(oscm_username)s."
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/sign/login.html:30
+#: oscm_app/core/templates/oscm_app/sign/login.html:32
 msgid "Log in to an existing account"
 msgstr "Melden Sie sich bei einem bestehenden Konto an"
 
-#: oscm_app/core/templates/oscm_app/sign/login.html:67
+#: oscm_app/core/templates/oscm_app/sign/login.html:68
 msgid "Don't have an account ?"
 msgstr "Noch keinen Account ? "
 
@@ -510,221 +1439,409 @@ msgstr "abmelden"
 msgid "Are you sure you want to log out ?"
 msgstr "Bist Du sicher, dass du Dich abmelden möchtest ?"
 
-#: oscm_app/custom_auth_user.py:32
+#: oscm_app/custom_auth_user.py:35
 msgid "oscm_admin_usernameValidatorOfUser"
 msgstr "Nur alphanumerische Zeichen [0-9a-zA-Z] sind erlaubt."
 
-#: oscm_app/custom_auth_user.py:48
+#: oscm_app/custom_auth_user.py:51
 msgid "oscm_admin_firstNameOfUser"
 msgstr "vorname"
 
-#: oscm_app/custom_auth_user.py:54
+#: oscm_app/custom_auth_user.py:57
 msgid "oscm_admin_lastNameOfUser"
 msgstr "nachname"
 
-#: oscm_app/custom_auth_user.py:60
+#: oscm_app/custom_auth_user.py:63
 msgid "oscm_admin_dateJoinedOfUser"
 msgstr "mitglied seit"
 
-#: oscm_app/custom_auth_user.py:68
+#: oscm_app/custom_auth_user.py:71
 msgid "oscm_admin_activeStatusOfUser"
 msgstr "aktiv"
 
-#: oscm_app/custom_auth_user.py:71
+#: oscm_app/custom_auth_user.py:74
 msgid "oscm_admin_helpTextActiveStatusOfUser"
 msgstr ""
 "Legt fest, ob dieser Benutzer aktiv ist. Kann deaktiviert werden, anstatt "
 "Benutzer zu löschen."
 
-#: oscm_app/custom_auth_user.py:77
+#: oscm_app/custom_auth_user.py:80
 msgid "oscm_admin_staffStatusOfUser"
 msgstr "mitarbeiter-Status"
 
-#: oscm_app/custom_auth_user.py:80
+#: oscm_app/custom_auth_user.py:83
 msgid "oscm_admin_helpTextStaffStatusOfUser"
 msgstr ""
 "Legt fest, ob sich der Benutzer an der Administrationsseite anmelden kann."
 
-#: oscm_app/custom_auth_user.py:99
+#: oscm_app/custom_auth_user.py:102
 msgid "oscm_admin_roleOfUser"
 msgstr "rolle"
 
-#: oscm_app/custom_auth_user.py:102
+#: oscm_app/custom_auth_user.py:105
 msgid "oscm_admin_helpTextRoleOfUser"
 msgstr ""
 "Sie müssen die Rolle für einen spezifischen Benutzer zwischen Vielfalten von "
 "gegebenen Rollen wählen."
 
-#: oscm_app/custom_auth_user.py:106
+#: oscm_app/custom_auth_user.py:109
 msgid "oscm_admin_languageOfUser"
 msgstr "Sprache"
 
-#: oscm_app/custom_auth_user.py:109
+#: oscm_app/custom_auth_user.py:112
 msgid "oscm_admin_helpTextLanguageOfUser"
 msgstr ""
 "Sie können die Sprache für einen spezifischen Benutzer zwischen Vielfalten "
 "gegeben wählen Sprachen."
 
-#: oscm_app/custom_auth_user.py:113
+#: oscm_app/custom_auth_user.py:116
 msgid "oscm_admin_authenticationModeOfApplication"
 msgstr "Authentifizierungsmodus"
 
-#: oscm_app/custom_auth_user.py:116
+#: oscm_app/custom_auth_user.py:119
 msgid "oscm_admin_helpTextAuthenticationModeOfApplication"
 msgstr "Es gibt gerade die Django Authentifizierung."
 
-#: oscm_app/custom_auth_user.py:131
+#: oscm_app/custom_auth_user.py:134
 msgid "oscm_admin_headerOfOSCMUser"
 msgstr "OSCM Benutzer"
 
-#: oscm_app/custom_auth_user.py:132
+#: oscm_app/custom_auth_user.py:135
 msgid "oscm_admin_headerOfOSCMUsers"
 msgstr "OSCM Benutzer"
 
-#: oscm_app/errors/error_views.py:75
+#: oscm_app/errors/error_views.py:76
 msgid "access to the view. "
 msgstr ""
 
-#: oscm_app/preferences/account_settings_form.py:114
-msgid "No field has been modified."
+#: oscm_app/handlers.py:30
+#, fuzzy
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Category deleted."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/handlers.py:34
+#, fuzzy
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Product deleted."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/handlers.py:38
+#, fuzzy
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Supplier deleted."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/handlers.py:59
+#, fuzzy, python-format
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Category '%s' has been deleted."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/handlers.py:69
+#, fuzzy, python-format
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Product '%s' has been deleted."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/handlers.py:79
+#, fuzzy, python-format
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Supplier '%s' has been deleted."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/order/order.py:64
+#, fuzzy
+#| msgid "oscm_admin_roleOfUser"
+msgid "oscm_admin_orderIdOfOrder"
+msgstr "rolle"
+
+#: oscm_app/order/order.py:72
+msgid "oscm_admin_statusOfOrder"
+msgstr "Status"
+
+#: oscm_app/order/order.py:76
+#, fuzzy
+#| msgid "oscm_admin_helpTextStaffStatusOfUser"
+msgid "oscm_admin_helpTextStatusOfOrder"
+msgstr ""
+"Legt fest, ob sich der Benutzer an der Administrationsseite anmelden kann."
+
+#: oscm_app/order/order.py:80
+msgid "oscm_admin_creationDateOfOrder"
+msgstr "Erstellungsdatum"
+
+#: oscm_app/order/order.py:83
+msgid "oscm_admin_lastEditDateOfOrder"
+msgstr "letztes Ausgabedatum"
+
+#: oscm_app/order/order.py:86
+#, fuzzy
+#| msgid "oscm_admin_usernameOfUser"
+msgid "oscm_admin_dueDateOfOrder"
+msgstr "anmeldename/Benutzername"
+
+#: oscm_app/order/order.py:87
+#, fuzzy
+#| msgid "oscm_admin_helpTextLanguageOfUser"
+msgid "oscm_admin_helpTextDueDateOfOrder"
+msgstr ""
+"Sie können die Sprache für einen spezifischen Benutzer zwischen Vielfalten "
+"gegeben wählen Sprachen."
+
+#: oscm_app/order/order.py:91
+#, fuzzy
+#| msgid "oscm_admin_usernameOfUser"
+msgid "oscm_admin_deliveryDateOfOrder"
+msgstr "anmeldename/Benutzername"
+
+#: oscm_app/order/order.py:92
+#, fuzzy
+#| msgid "oscm_admin_helpTextActiveStatusOfUser"
+msgid "oscm_admin_helpTextDeliveryDateOfOrder"
+msgstr ""
+"Legt fest, ob dieser Benutzer aktiv ist. Kann deaktiviert werden, anstatt "
+"Benutzer zu löschen."
+
+#: oscm_app/order/order.py:96
+#, fuzzy
+#| msgid "oscm_admin_roleOfUser"
+msgid "oscm_admin_notesOfOrder"
+msgstr "rolle"
+
+#: oscm_app/order/order.py:98
+#, fuzzy
+#| msgid "oscm_admin_helpTextRoleOfUser"
+msgid "oscm_admin_helpTextNotesOfOrder"
+msgstr ""
+"Sie müssen die Rolle für einen spezifischen Benutzer zwischen Vielfalten von "
+"gegebenen Rollen wählen."
+
+#: oscm_app/order/order.py:102
+msgid "oscm_admin_totalOfOrder"
+msgstr "Gesamtbestell"
+
+#: oscm_app/order/order.py:109
+msgid "oscm_admin_headerOfOrder"
+msgstr "OSCM Bestellung"
+
+#: oscm_app/order/order.py:110
+msgid "oscm_admin_headerOfOrders"
+msgstr "OSCM Bestellungen"
+
+#: oscm_app/order/order.py:117
+#, python-format
+msgid "%(status)s order (order_id: %(order_id)d)"
 msgstr ""
 
-#: oscm_app/preferences/account_settings_form.py:136
+#: oscm_app/preferences/account_settings_form.py:140
 #, python-format
 msgid "OSCM Account settings from the OSCM User '%s' has been updated."
 msgstr ""
 
-#: oscm_app/preferences/account_settings_view.py:34
+#: oscm_app/preferences/account_settings_view.py:38
 msgid "OSCM Account settings updated."
 msgstr "Aktualisierte Kontoeinstellungen."
 
-#: oscm_app/registration/registration_forms.py:26
+#: oscm_app/registration/registration_forms.py:30
 msgid "I have read and agree to the Terms of Service"
 msgstr "Ich habe die Nutzungsvereinbarung gelesen und stimme ihr zu"
 
-#: oscm_app/registration/registration_forms.py:28
+#: oscm_app/registration/registration_forms.py:32
 msgid "You must agree to the terms to register"
 msgstr "Sie müssen der Nutzungsvereinbarung zustimmen, um sich zu registrieren"
 
-#: oscm_app/registration/registration_forms.py:64
+#: oscm_app/registration/registration_forms.py:68
 msgid "Appends the '{0:s}' field to the excluded fields list."
 msgstr ""
 
-#: oscm_app/registration/registration_forms.py:75
+#: oscm_app/registration/registration_forms.py:79
 #, python-format
 msgid "Remove %s field."
 msgstr ""
 
-#: oscm_app/registration/registration_forms.py:89
+#: oscm_app/registration/registration_forms.py:93
 #, python-format
 msgid "OSCM User '%s' is activated."
 msgstr ""
 
-#: oscm_app/registration/registration_forms.py:92
+#: oscm_app/registration/registration_forms.py:96
 #, python-format
 msgid "OSCM User '%s' is not yet activated."
 msgstr ""
 
-#: oscm_app/registration/registration_views.py:36
+#: oscm_app/registration/registration_views.py:40
 msgid "OSCM Account created."
 msgstr "OSCM angelegte Benutzerkonto."
 
-#: oscm_app/registration/registration_views.py:40
+#: oscm_app/registration/registration_views.py:44
 msgid "Your OSCM Account has been activated."
 msgstr "Ihr OSCM Konto ist aktiviert worden."
 
-#: oscm_app/registration/registration_views.py:44
+#: oscm_app/registration/registration_views.py:48
 msgid "But your OSCM Account is not yet activated."
 msgstr "Aber Ihr OSCM Konto wird noch nicht aktiviert."
 
-#: oscm_app/registration/registration_views.py:55
+#: oscm_app/registration/registration_views.py:59
 msgid "Registration is closed."
 msgstr ""
 
-#: oscm_app/registration/registration_views.py:79
-#: oscm_app/sign/log_views.py:95
+#: oscm_app/registration/registration_views.py:83
+#: oscm_app/sign/log_views.py:99
 msgid "OSCM User '{0:s}' is logged in."
 msgstr "OSCM User '{0:s}' is logged in."
 
-#: oscm_app/sign/log_forms.py:24 oscm_app/sign/log_forms.py:26
+#: oscm_app/sign/log_forms.py:28 oscm_app/sign/log_forms.py:30
 msgid "Username"
 msgstr "Benutzername"
 
-#: oscm_app/sign/log_forms.py:29 oscm_app/sign/log_forms.py:32
+#: oscm_app/sign/log_forms.py:33 oscm_app/sign/log_forms.py:36
 msgid "Password"
 msgstr "Passwort"
 
-#: oscm_app/sign/log_forms.py:35
+#: oscm_app/sign/log_forms.py:39
 msgid "Remember Me"
 msgstr "Auf desem Computer merken"
 
-#: oscm_app/sign/log_forms.py:37
+#: oscm_app/sign/log_forms.py:41
 msgid "If checked you will stay logged in for 3 weeks."
 msgstr ""
 "Wenn diese Einstellung aktiv ist, werden Sie während 3 Wochen angemeldet."
 
-#: oscm_app/sign/log_forms.py:42
+#: oscm_app/sign/log_forms.py:46
 msgid "This account is currently inactive."
 msgstr "Dieses Konto ist derzeit inaktiv."
 
-#: oscm_app/sign/log_forms.py:44
+#: oscm_app/sign/log_forms.py:48
 msgid "The username and/or password you specified are not correct."
 msgstr "Der Benutzername und/oder das angegebene Passwort sind nicht korrekt."
 
-#: oscm_app/sign/log_forms.py:72
+#: oscm_app/sign/log_forms.py:76
 #, python-format
 msgid "OSCM User: '%s'."
 msgstr ""
 
-#: oscm_app/sign/log_forms.py:95
+#: oscm_app/sign/log_forms.py:99
 #, python-brace-format
 msgid ""
 "No logging in! An inactive account was used with the following OSCM User: "
 "'{0}'."
 msgstr ""
 
-#: oscm_app/sign/log_forms.py:104
+#: oscm_app/sign/log_forms.py:108
 #, python-brace-format
 msgid "Invalid login details: username='{0}', password='{1}'."
 msgstr ""
 
-#: oscm_app/sign/log_views.py:53
+#: oscm_app/sign/log_views.py:57
 msgid "OSCM User '{0:s}' is logged out."
 msgstr ""
 
-#: oscm_app/sign/log_views.py:61
+#: oscm_app/sign/log_views.py:65
 #, python-format
 msgid ""
 "Change the current language '%(current_language)s' to '%(default_language)s'."
 msgstr ""
 
-#: oscm_app/sign/log_views.py:89
+#: oscm_app/sign/log_views.py:93
 msgid "OSCM User with '{0:s}' is invalid!!"
 msgstr ""
 
-#: oscm_app/sign/log_views.py:103
+#: oscm_app/sign/log_views.py:107
 #, python-format
 msgid ""
 "Change the current language '%(current_language)s' to the OSCM User's "
 "language '%(user_language)s'."
 msgstr ""
 
-#: oscm_app/sign/log_views.py:117
+#: oscm_app/sign/log_views.py:121
 msgid "OSCM User '{0:s}' is inactive!!"
 msgstr ""
 
-#: oscm_app/utils.py:23
+#: oscm_app/utils.py:29
 msgid "oscm_settings_noAttribute"
 msgstr "Sie haben das folgende Attribut nicht gesetzt"
 
-#: oscm_system/settings.py:83
+#: oscm_system/settings/local.py:86 oscm_system/settings/test.py:91
 msgid "German"
 msgstr "Deutsch"
 
-#: oscm_system/settings.py:84
+#: oscm_system/settings/local.py:87 oscm_system/settings/test.py:92
 msgid "English"
 msgstr "Englisch"
 
-#: oscm_system/settings.py:85
+#: oscm_system/settings/local.py:88 oscm_system/settings/test.py:93
 msgid "French"
 msgstr "Französisch"
+
+#: oscm_system/settings/local.py:166 oscm_system/settings/test.py:171
+msgid "oscm_cart_status_created"
+msgstr "erstellt"
+
+#: oscm_system/settings/local.py:167 oscm_system/settings/test.py:172
+msgid "oscm_cart_status_saved"
+msgstr "gespeichert"
+
+#: oscm_system/settings/local.py:168 oscm_system/settings/test.py:173
+msgid "oscm_cart_status_completed"
+msgstr "ergänzt"
+
+#: oscm_system/settings/local.py:178 oscm_system/settings/test.py:183
+msgid "oscm_cart_item_status_created"
+msgstr "erstellt"
+
+#: oscm_system/settings/local.py:179 oscm_system/settings/test.py:184
+msgid "oscm_cart_item_status_saved"
+msgstr "gespeichert"
+
+#: oscm_system/settings/local.py:180 oscm_system/settings/test.py:185
+msgid "oscm_cart_item_status_completed"
+msgstr "ergänzt"
+
+#: oscm_system/settings/local.py:193 oscm_system/settings/test.py:198
+msgid "oscm_order_status_created"
+msgstr "erstellt"
+
+#: oscm_system/settings/local.py:194 oscm_system/settings/test.py:199
+msgid "oscm_order_status_confirmed"
+msgstr "bestätigt"
+
+#: oscm_system/settings/local.py:195 oscm_system/settings/test.py:200
+msgid "oscm_order_status_cancelled"
+msgstr "abgebrochen"
+
+#: oscm_system/settings/local.py:196 oscm_system/settings/test.py:201
+msgid "oscm_order_status_paid"
+msgstr "bezahlt"
+
+#: oscm_system/settings/local.py:197 oscm_system/settings/test.py:202
+msgid "oscm_order_status_completed"
+msgstr "ergänzt"
+
+#: oscm_system/settings/local.py:198 oscm_system/settings/test.py:203
+msgid "oscm_order_status_archived"
+msgstr "archiviert"
+
+#: oscm_system/settings/local.py:211 oscm_system/settings/test.py:216
+msgid "oscm_order_item_status_created"
+msgstr "erstellt"
+
+#: oscm_system/settings/local.py:212 oscm_system/settings/test.py:217
+msgid "oscm_order_item_status_confirmed"
+msgstr "bestätigt"
+
+#: oscm_system/settings/local.py:213 oscm_system/settings/test.py:218
+msgid "oscm_order_item_status_cancelled"
+msgstr "abgebrochen"
+
+#: oscm_system/settings/local.py:214 oscm_system/settings/test.py:219
+msgid "oscm_order_item_status_paid"
+msgstr "bezahlt"
+
+#: oscm_system/settings/local.py:215 oscm_system/settings/test.py:220
+msgid "oscm_order_item_status_completed"
+msgstr "ergänzt"
+
+#: oscm_system/settings/local.py:216 oscm_system/settings/test.py:221
+msgid "oscm_order_item_status_archived"
+msgstr "archiviert"

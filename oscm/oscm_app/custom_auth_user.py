@@ -1,13 +1,15 @@
 # coding=utf-8
 # oscm_app
 
+# django imports
 from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin)
-from django.core.validators import RegexValidator
 from django.core.mail import send_mail
+from django.core.validators import RegexValidator
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
+# OSCM imports
 from .authentication.custom_auth_user_manager import (
     CustomAuthUserManager)
 from .constants import (ADMIN_FIRST_NAME, ADMIN_LAST_NAME)

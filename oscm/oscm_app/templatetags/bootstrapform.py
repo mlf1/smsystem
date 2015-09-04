@@ -1,6 +1,7 @@
 # coding=utf-8
 # oscm_app/templatetags
 
+# django imports
 from django import template
 from django.template.loader import render_to_string
 
@@ -62,6 +63,7 @@ def append_attr(field, attr):
 
 @register.filter
 def bootstrapform_field_id(field):
+    widget = None
     try:
         if (hasattr(field, 'field')) and (
                 hasattr(field.field, 'widget')) and field.field.widget:
@@ -75,4 +77,5 @@ def bootstrapform_field_id(field):
                 append_attr(field, 'class:' + css_class)
     except AttributeError:
         widget = field.widget
-    return widget.attrs.get(id, field.auto_id)
+    if widget:
+        return widget.attrs.get(id, field.auto_id)

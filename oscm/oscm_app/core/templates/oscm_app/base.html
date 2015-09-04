@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load nav %}
 {% load static from staticfiles %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
@@ -44,25 +45,31 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{% url 'oscm:home' %}">{% trans "Home" %}</a></li>
-            <li><a href="{% url 'oscm:about' %}">{% trans "About" %}</a></li>
-            <li><a href="{% url '404' %}">{% trans "Contact" %}</a></li>
+            {% url 'oscm:home' as oscm_home_url %}
+            <li class="{% active request oscm_home_url exact_match=True %}"><a href="{{oscm_home_url}}">{% trans "Home" %}</a></li>
+            {% url 'oscm:about' as oscm_about_url %}
+            <li class="{% active request oscm_about_url exact_match=True %}"><a href="{{oscm_about_url}}">{% trans "About" %}</a></li>
+            {% url 'oscm:contact' as oscm_contact_url %}
+            <li class="{% active request oscm_contact_url exact_match=True %}"><a href="{{oscm_contact_url}}">{% trans "Contact" %}</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
               {% if user.is_superuser %}
-                <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
+                {% url 'admin:index' as admin_index_url %}
+                <li class="{% active request admin_index_url exact_match=True %}"><a href="{{admin_index_url}}">{% trans "Admin" %}</a></li>
               {% endif %}
               <li><p class="navbar-text">
-                {% if request.user.first_name or request.user.last_name %}
-                  {{ request.user.first_name }} {{ request.user.last_name }}
+                {% if user.first_name and user.last_name %}
+                  {{ user.first_name }} {{ user.last_name }}
                 {% else %}
-                  {{ request.user.username }}
+                  {{ user.username }}
                 {% endif %}
               </p></li>
-              <li><a href="{% url 'oscm:logout' %}">{% trans 'Log out' %}</a></li>
+              {% url 'oscm:logout' as oscm_logout_url %}
+              <li class="{% active request oscm_logout_url exact_match=True %}"><a href="{{oscm_logout_url}}">{% trans 'Log out' %}</a></li>
             {% else %}
-              <li><a href="{% url 'oscm:login' %}">{% trans 'Log in' %}</a>
+              {% url 'oscm:login' as oscm_login_url %}
+              <li class="{% active request oscm_login_url exact_match=True %}"><a href="{{oscm_login_url}}">{% trans 'Log in' %}</a>
               {% include "oscm_app/language-selector.html" %}
             {% endif %}
           </ul>
@@ -77,7 +84,7 @@
           <div class="col-sm-3 col-md-2 sidebar">
             {% block side_block %}{% endblock %}
           </div>
-          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-0 main">
             <div>
               {% block content_title %}{% endblock %}
             </div>
@@ -109,5 +116,29 @@
 
     <script src="{% static 'oscm_app/js/jquery-1.11.2.min.js' %}"></script>
     <script src="{% static 'oscm_app/js/bootstrap.min.js' %}"></script>
+    <script type="application/javascript">
+    jQuery(function() {
+      $('#cartTabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+      });
+      $('#categoryTabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      });
+      $('#catalogueTabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      });
+      $('#productTabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      });
+      $('#supplierTabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      });
+    });
+    </script>
   </body>
 </html>

@@ -27,15 +27,16 @@
                         {% endfor %}
                     {% endif %}
                     <form method="POST" action="{% url 'oscm:login' %}" role="form">
-                        <legend>{% trans "Log in to an existing account" %}</legend>
+                        {% csrf_token %}
                         <fieldset>
-                            {% csrf_token %}
+                            <legend>{% trans "Log in to an existing account" %}</legend>
                             {% for field in form %}
                                 {% if field.errors %}
                                     <div class="form-group has-error has-feedback">
                                         <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
                                         <div class="controls">{{ field }}
                                             <span class="help-block">
+                                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                                 {% for error in  field.errors %}{{ error }}{% endfor %}
                                             </span>
                                         </div>
@@ -52,7 +53,7 @@
                                 {% endif %}
                             {% endfor %}
                             {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
-                          <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Log in" %}</button>
+                          <button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-in"></span> {% trans "Log in" %}</button>
                         </fieldset>
                         {% comment %}
                             <!-- Into the future: retrieve password feature -->
