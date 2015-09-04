@@ -73,7 +73,7 @@ def permission_denied(request):
     template = loader.get_template('oscm_app/errors/403.html')
     context = {
         'message': 'All: %s' % request,
-        'error_message': _("access to the view. ").format(request.path),
+        'error_message': _("Unable to access to the view '{0:s}'.").format(request.path),
     }
     c = RequestContext(request, context, processors=[custom_proc])
     # 3. Return Template for this view + Data

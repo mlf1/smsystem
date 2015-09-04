@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-03 02:40+0200\n"
+"POT-Creation-Date: 2015-09-04 20:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -815,7 +815,7 @@ msgstr ""
 
 #: oscm_app/core/templates/oscm_app/cart/cart_items.html:8
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:9
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:19
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:9
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:9
 msgid "name"
 msgstr "Name"
@@ -983,13 +983,13 @@ msgid "Update category parameters"
 msgstr ""
 
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:13
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:21
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:11
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:13
 msgid "description"
 msgstr "Beschreibung"
 
 #: oscm_app/core/templates/oscm_app/cart/catalogue/category_products.html:14
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:23
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:13
 #: oscm_app/core/templates/oscm_app/cart/catalogue/supplier_products.html:14
 msgid "is_active"
 msgstr "angezeigt"
@@ -1105,16 +1105,16 @@ msgstr "Produkte"
 msgid "Update product parameters"
 msgstr ""
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:20
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:10
 msgid "address"
 msgstr "Addresse"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:22
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:12
 msgid "website"
 msgstr "Website"
 
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:52
-#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:65
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:42
+#: oscm_app/core/templates/oscm_app/cart/catalogue/product_suppliers.html:55
 #: oscm_app/core/templates/oscm_app/cart/catalogue/suppliers.html:26
 msgid "No suppliers"
 msgstr "Keine Lieferant"
@@ -1511,43 +1511,49 @@ msgid "oscm_admin_headerOfOSCMUsers"
 msgstr "OSCM Benutzer"
 
 #: oscm_app/errors/error_views.py:76
-msgid "access to the view. "
+msgid "Unable to access to the view '{0:s}'."
 msgstr ""
 
-#: oscm_app/handlers.py:30
+#: oscm_app/handlers.py:32
 #, fuzzy
 #| msgid "OSCM Account settings updated."
 msgid "OSCM Category deleted."
 msgstr "Aktualisierte Kontoeinstellungen."
 
-#: oscm_app/handlers.py:34
+#: oscm_app/handlers.py:36
 #, fuzzy
 #| msgid "OSCM Account settings updated."
 msgid "OSCM Product deleted."
 msgstr "Aktualisierte Kontoeinstellungen."
 
-#: oscm_app/handlers.py:38
+#: oscm_app/handlers.py:40
 #, fuzzy
 #| msgid "OSCM Account settings updated."
 msgid "OSCM Supplier deleted."
 msgstr "Aktualisierte Kontoeinstellungen."
 
-#: oscm_app/handlers.py:59
+#: oscm_app/handlers.py:61
 #, fuzzy, python-format
 #| msgid "OSCM Account settings updated."
 msgid "OSCM Category '%s' has been deleted."
 msgstr "Aktualisierte Kontoeinstellungen."
 
-#: oscm_app/handlers.py:69
+#: oscm_app/handlers.py:71
 #, fuzzy, python-format
 #| msgid "OSCM Account settings updated."
 msgid "OSCM Product '%s' has been deleted."
 msgstr "Aktualisierte Kontoeinstellungen."
 
-#: oscm_app/handlers.py:79
+#: oscm_app/handlers.py:81
 #, fuzzy, python-format
 #| msgid "OSCM Account settings updated."
 msgid "OSCM Supplier '%s' has been deleted."
+msgstr "Aktualisierte Kontoeinstellungen."
+
+#: oscm_app/handlers.py:91
+#, fuzzy, python-format
+#| msgid "OSCM Account settings updated."
+msgid "OSCM Cart Item '%s' has been deleted."
 msgstr "Aktualisierte Kontoeinstellungen."
 
 #: oscm_app/order/order.py:64
