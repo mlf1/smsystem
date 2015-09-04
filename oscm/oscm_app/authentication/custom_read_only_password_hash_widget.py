@@ -1,5 +1,7 @@
+# coding=utf-8
 # oscm_app/authentication
 
+# django imports
 from django import forms
 from django.contrib.auth.hashers import (
     UNUSABLE_PASSWORD_PREFIX, identify_hasher)

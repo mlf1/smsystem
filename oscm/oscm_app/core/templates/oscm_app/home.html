@@ -1,16 +1,10 @@
 {% extends "oscm_app/base.html" %}
-{% load nav %}
 {% load i18n %}
 {% block title %}
 {% trans "Welcome to your OSCM's homepage." %}
 {% endblock %}
 {% block side_block %}
-    <ul class="nav nav-sidebar">
-        {% url 'oscm:account_settings' pk=user.id as oscm_account_settings_url %}
-        <li class="{% active request oscm_account_settings_url exact_match=True %}">
-            <a href="{{ oscm_account_settings_url }}">{% trans "Account Settings" %}</a>
-        </li>
-    </ul>
+    {% include "oscm_app/menu.html" %}
 {% endblock %}
 {% block content %}
 {% if user.is_authenticated and user.is_active %}
@@ -23,7 +17,7 @@
             <p>
             {% blocktrans %}Welcome, new OSCM User. Please log in.{% endblocktrans %}
             </p>
-            <a href="{% url "oscm:login" %}" class="btn btn-link"><mark>{% trans "Log in" %}</mark></a>
+            <a href="{% url 'oscm:login' %}" class="btn btn-link"><mark>{% trans "Log in" %}</mark></a>
         </li>
     </ul>
 {% endif %}

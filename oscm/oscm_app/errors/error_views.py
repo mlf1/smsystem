@@ -1,5 +1,7 @@
+# coding=utf-8
 # oscm_app/errors
 
+# django imports
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import (Context, loader, RequestContext)
@@ -55,8 +57,7 @@ def server_error(request):
     """
     template = loader.get_template('oscm_app/errors/500.html')
     context = Context({
-        'message': 'All: %s' % request,
-        })
+        'message': 'All: %s' % request, })
     # 3. Return Template for this view + Data
     return HttpResponse(
         content=template.render(context),
@@ -72,7 +73,7 @@ def permission_denied(request):
     template = loader.get_template('oscm_app/errors/403.html')
     context = {
         'message': 'All: %s' % request,
-        'error_message': _("access to the view. ").format(request.path),
+        'error_message': _("Unable to access to the view '{0:s}'.").format(request.path),
     }
     c = RequestContext(request, context, processors=[custom_proc])
     # 3. Return Template for this view + Data

@@ -6,20 +6,24 @@ OSCM Prototype requires:
 * Python==3.4.2
 * Django==1.7.3
 * django-extensions==1.4.9
-	- six [required: >=1.2, installed: 1.8.0]
+	- six [required: >=1.2, installed: 1.9.0]
+* mysqlclient==1.3.6
+* wheel==0.24.0
 
+* Bootstrap==3.3.4
+* JQuery==1.11.2
 
 Usage
 =====
 
-Enter the project and take a look around::
+Enter the project and take a look around:
 
 .. code-block:: console
 
 	$ cd smsystem/
 	$ ls
 
-Create a GitHub repo and push it there::
+Create a GitHub repo and push it there:
 
 .. code-block:: console
 
@@ -42,21 +46,20 @@ The steps below will get you up and running with a local development environment
 * virtualenv (see below)
 * MySQL (replace your configurations in the setting files)
 
-
 Development and Testing
 =======================
 
 Dependencies for developing OSCM are listed in requirements.txt.
 Use of a virtual environment is strongly recommended.
 
-First make sure to create and activate a virtualenv_, then open a terminal at the project root and install the requirements for local development::
+First make sure to create and activate a 'virtualenv_', then open a terminal at the project root and install the requirements for local development:
+
+.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 
 .. code-block:: console
 
 	$ virtualenv .
 	$ source bin/activate
-
-.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 
 .. code-block:: console
 

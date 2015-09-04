@@ -1,0 +1,60 @@
+{% load i18n %}
+{% load nav %}
+<div id="category_products" role="tabpanel" class="table-responsive fade">
+{% if user.role == 'A' %}
+    {% if products_list %}
+        <table class="table table-condensed table-striped text-center" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-flat="true" data-show-export="true" data-pagination="true">
+            <thead>
+                <tr>
+                    <th class="text-center" data-field="name" data-sortable="true">{% trans 'name' %}</th>
+                    <th class="text-center" data-field="unit_price" data-sortable="true">{% trans 'price' %}</th>
+                    <th class="text-center" data-field="sku" data-sortable="true">{% trans 'sku' %}</th>
+                    <th class="text-center" data-field="quantity" data-sortable="true">{% trans 'quantity' %}</th>
+                    <th class="text-center" data-field="description" data-sortable="true">{% trans 'description' %}</th>
+                    <th class="text-center" data-field="is_active" data-sortable="true">{% trans 'is_active' %}</th>
+               </tr>
+            </thead>
+            <tbody style="overflow:auto;">
+                {% for product in products_list %}
+                    <tr>
+                        <td><a href="{% url 'oscm:product' product.slug_name %}">{{ product.name }}</a></td>
+                        <td>{{ product.unit_price }}</td>
+                        <td>{% if product.sku %}{{ product.sku }}{% else %}<span class="glyphicon glyphicon-minus"></span>{% endif %}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>{% if product.description %}{{ product.description }}{% else %}<span class="glyphicon glyphicon-minus"></span>{% endif %}</td>
+                        <td>{% if product.is_active %}<span class="glyphicon glyphicon-ok-circle"></span>{% else %}<span class="glyphicon glyphicon-ban-circle"></span>{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    {% comment %}
+        <ol>
+        {% for product in products_list %}
+            {% url 'oscm:product' cat_slug_name=category.slug_name cat_slug_name=product.slug_name as oscm_category_products_url %}
+            <li class="{% active request oscm_category_products_url exact_match=True %}">
+                <a href="{{oscm_category_products_url}}">{{product}}</a>
+            </li>
+        {% endfor %}
+        </ol>
+    {% endcomment %}
+    {% else %}
+        <ul><li>{% trans "No products" %}</li></ul>
+    {% endif %}
+{% else %}
+    {% if active_products_list %}
+        <ol>
+        {% for product in active_products_list %}
+            {% url 'oscm:product' slug_name=product.slug_name as oscm_category_producs_url %}
+            <li class="{% active request oscm_category_producs_url exact_match=True %}">
+                <a href="{{oscm_category_producs_url}}">{{product}}</a>
+            </li>
+        {% endfor %}
+        </ol>
+        {% else %}
+            <ul><li>{% trans "No products" %}</li></ul>
+        {% endif %}
+
+{% endif %}
+</div>

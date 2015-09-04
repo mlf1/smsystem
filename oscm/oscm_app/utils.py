@@ -1,13 +1,19 @@
+# coding=utf-8
 # oscm_app
 
+# python imports
 import logging
-
+import uuid
 from collections import OrderedDict
 
+# django imports
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.http import is_safe_url
 from django.utils.translation import ugettext as _
+
+# OSCM imports
+from .constants import ORDER_BASE
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -48,7 +54,50 @@ def set_form_field_order(form, fields_order):
     form.fields = OrderedDict(
         (f, form.fields[f]) for f in fields_order)
 
-LOGIN_REDIRECT_URL = getattr(settings, 'LOGIN_REDIRECT_URL', '/')
-USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
-PASSWORD_INPUT_RENDER_VALUE = False
-SESSION_REMEMBER = None
+
+class OrderNumberGenerator(object):
+
+    """
+    Simple object for generating order numbers.
+    We need this as the order number is required for invoice
+    which takes place before the order model has been created.
+    """
+
+    # No order
+    no_order = 0
+
+    def generate_order_number(self, cart):
+        """
+        Return a new order number for a given cart.
+        """
+        self.no_order = ORDER_BASE + cart.id
+        return str(self.no_order)
+
+    def __str__(self):
+        """
+        Displays the new order number.
+        """
+        return 'No order: {0}'.format(self.no_order)
+
+
+class ProductNumberGenerator(object):
+
+    """
+    Simple object for generating product numbers.
+    """
+
+    # No prod
+    no_prod = 0
+
+    def generate_product_number(self):
+        """
+        Return a new product number.
+        """
+        self.no_prod = uuid.uuid4()
+        return str(self.no_prod)
+
+    def __str__(self):
+        """
+        Displays the new product number.
+        """
+        return 'No product: {0}'.format(self.no_prod)

@@ -1,0 +1,38 @@
+{% extends "oscm_app/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Suppliers" %}{% endblock %}
+{% block body_id %}{% trans "suppliers" %}{% endblock %}
+{% block side_block %}
+    {% include "oscm_app/menu.html" %}
+{% endblock %}
+{% block content %}
+<div class="modal-dialog panel panel-default" style="margin-bottom:0">
+    <div class="panel-heading">
+        <h3 class="panel-title">{% trans "Suppliers" %}</h3>
+    </div>
+    <div class="panel-body">
+        {% if suppliers %}
+            <div class="list-group"><ol>
+            {% for sup in suppliers %}
+                <li>
+                    <a href="{% url 'oscm:supplier' sup.slug_name %}" class="list-group-item">
+                        {% if sup.is_active %}<span class="badge alert-info"><span class="glyphicon glyphicon-ok-circle"></span></span>
+                        {% else %}<span class="badge alert-danger"><span class="glyphicon glyphicon-ban-circle"></span></span>{% endif %}{{ sup }}
+                    </a>
+                </li>
+            {% endfor %}
+             </ol></div>
+        {% else %}
+            <ul><li><strong>{% trans "No suppliers" %}</strong></li></ul>
+        {% endif %}
+        {% if user.role == 'A' %}
+            {% comment %}
+            <a href="{% url 'oscm:add_supplier' %}" role="button" class="btn btn-primary btn-lg btn-block">{% trans "Add supplier" %}</a>
+            {% endcomment %}
+            <a href="{% url 'oscm:add_supplier' %}" role="button" class="btn btn-primary btn-lg btn-block" data-adding-text="&lt;span class='glyphicon glyphicon-plus'&gt;&lt;/span&gt; Adding...">
+                <span class="glyphicon glyphicon-plus"></span> {% trans "Add" %}
+            </a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

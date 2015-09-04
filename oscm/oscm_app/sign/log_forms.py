@@ -1,12 +1,16 @@
+# coding=utf-8
 # oscm_app/sign
 
+# python imports
 import logging
 
+# django imports
 from django import forms
 from django.contrib.auth import authenticate
 from django.utils.translation import ugettext_lazy as _
 
-from oscm_app.utils import (set_form_field_order, get_attr)
+# OSCM imports
+from ..utils import (get_attr, set_form_field_order)
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)

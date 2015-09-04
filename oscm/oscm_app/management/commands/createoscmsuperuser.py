@@ -1,10 +1,12 @@
+# coding=utf-8
 # oscm_app/management/commands
 
-import sys
+# python imports
 import getpass
-
+import sys
 from optparse import make_option
 
+# django imports
 from django.core.management.base import (BaseCommand, CommandError)
 from django.contrib.auth import get_user_model
 from django.contrib.auth.management import get_default_username

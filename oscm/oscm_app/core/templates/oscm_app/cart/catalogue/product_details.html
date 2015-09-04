@@ -1,0 +1,55 @@
+{% load i18n %}
+{% load bootstrapform %}
+<div id="product_details" role="tabpanel" class="tab-pane fade in active">
+ {% comment %}
+    <p>{% blocktrans with product_description=product.description %}Description: {{ product_description }}{% endblocktrans %}</p>
+    <p>{% blocktrans with product_active=product.is_active %}Active: {{ product_active }}{% endblocktrans %}</p>
+    {% endcomment %}
+    <form method="POST" action="{% url 'oscm:product_details' slug_name=product.slug_name %}" role="form">
+        {% csrf_token %}
+        <fieldset>
+            {% for field in form.visible_fields %}
+                {% if field.errors %}
+                    <div class="form-group has-error has-feedback">
+                        <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
+                        <div class="controls">{{ field }}
+                            <span class="help-block">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                {% for error in  field.errors %}{{ error }}{% endfor %}
+                            </span>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="form-group has-feedback">
+                        <label for="{{ field|bootstrapform_field_id }}" class="control-label">{{ field.label }}</label>
+                        <div class="controls">{{ field }}
+                            {% if field.help_text %}
+                                <p class="help-block"><small>{{ field.help_text }}</small></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% for hid in form.hidden_fields %}
+                <div class="form-group hidden">
+                    <label for="{{ hid|bootstrapform_field_id }}" class="control-label">{{ hid.label }}</label>
+                    <div class="controls">{{ hid }}
+                        {% if hid.help_text %}
+                            <p class="help-block"><small>{{ hid.help_text }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+            {% if next %}<input type="hidden" name="next" value="{% url 'oscm:product' slug_name=product.slug_name %}">{% endif %}
+            {% if user.role == 'A' %}
+                <a href="{% url 'oscm:product' slug_name=product.slug_name %}" role="button" class="btn btn-lg btn-default btn-block"><span class="glyphicon glyphicon-remove"></span> {% trans "Cancel" %}</a>
+                <a href="{{ product.get_delete_url }}" role="button" class="btn btn-lg btn-danger btn-block" data-deleting-text="&lt;span class='glyphicon glyphicon-trash'&gt;&lt;/span&gt; Deleting...">
+                    <span class="glyphicon glyphicon-trash"></span> {% trans "Delete" %}
+                </a>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Update product parameters" %}</button>
+            {% else %}
+                <a href="{% url 'oscm:add_cart_item' product.slug_name %}" role="button" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-shopping-cart"></span> {% trans "Add cart" %}</a>
+            {% endif %}
+        </fieldset>
+    </form>
+</div>

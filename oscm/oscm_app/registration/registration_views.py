@@ -1,7 +1,10 @@
+# coding=utf-8
 # oscm_app/register
 
+# python imports
 import logging
 
+# django imports
 from django.contrib import messages
 from django.contrib.auth import (authenticate, get_user_model, login, logout)
 from django.core.urlresolvers import reverse
@@ -12,8 +15,9 @@ from django.views.generic.edit import CreateView
 
 # from registration import signals
 
+# OSCM imports
 from .registration_forms import RegistrationFormTOS
-from oscm_app.utils import get_attr
+from ..utils import get_attr
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -97,7 +101,6 @@ class Registration(CreateView):
                 self.request,
                 self.messages['account_created']['level'],
                 self.messages['account_created']['text'])
-            print("is_active: %s" % user.is_active)
             if user.is_active:
                 messages.add_message(
                     self.request,

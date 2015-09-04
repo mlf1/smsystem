@@ -1,7 +1,10 @@
+# coding=utf-8
 # oscm_app/preferences
 
+# python imports
 import logging
 
+# django imports
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.core.urlresolvers import reverse
@@ -9,8 +12,9 @@ from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import UpdateView
 
+# OSCM imports
 from .account_settings_form import AccountSettingsForm
-from oscm_app.decorators.user_check_mixin import UserCheckMixin
+from ..decorators.user_check_mixin import UserCheckMixin
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -43,7 +47,7 @@ class AccountSettings(UserCheckMixin, UpdateView):
         """
         If the form is valid, save the associated model.
         """
-        self.object = form.save()
+        instance = form.save()
         # Set the user's language if necessary
         current_language = translation.get_language()
         user_language = self.get_object().language
@@ -58,7 +62,7 @@ class AccountSettings(UserCheckMixin, UpdateView):
                 translation.LANGUAGE_SESSION_KEY] = user_language
             # self.request.session['django_language'] = user_language
             # self.request.LANGUAGE_CODE = translation.get_language()
-        if self.object:
+        if instance:
             messages.add_message(
                 self.request,
                 self.messages['settings_updated']['level'],

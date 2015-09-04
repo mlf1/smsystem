@@ -7,7 +7,7 @@
 {% block content %}
 {% if user.is_authenticated and user.is_active %}
     <p class="alert alert-info">
-        <a href="{% url "oscm:home" %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>
+        <a href="{% url 'oscm:home' %}" class="close" data-dismiss="alert">{% trans "Home" %}</a>
         {% blocktrans with oscm_username=user.username %}Welcome, {{ oscm_username }}. Thanks for logging in.{% endblocktrans %}
     </p>
 {% else %}
@@ -15,12 +15,12 @@
     <li>
         <p class="text-info">{% blocktrans %}Welcome, new OSCM User to the OSCM application.{% endblocktrans %}
         {% trans "Please log in." %}</p>
-        <a href="{% url "oscm:login" %}" class="btn btn-link"><mark>{% trans "Log in" %}</mark></a>
+        <a href="{% url 'oscm:login' %}" class="btn btn-link"><mark>{% trans "Log in" %}</mark></a>
     </li>
     {% if registration_allowed %}
         <li>
             <p class="text-info">{% blocktrans %}Or if you have not logged in before, then please register first.{% endblocktrans %}</p>
-            <a href="{% url "oscm:registration" %}" class="btn btn-link"><mark>{% trans "Register" %}</mark></a>
+            <a href="{% url 'oscm:registration' %}" class="btn btn-link"><mark>{% trans "Register" %}</mark></a>
         </li>
     {% endif %}
 </ul>
