@@ -8,6 +8,9 @@ OSCM Prototype requires:
 * django-extensions==1.4.9
 	- six [required: >=1.2, installed: 1.8.0]
 
+* Bootstrap==3.3.4
+* JQuery==1.11.2
+
 Usage
 =====
 
